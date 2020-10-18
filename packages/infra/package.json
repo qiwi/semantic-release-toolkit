@@ -1,0 +1,64 @@
+{
+  "name": "blank-ts-monorepo-infra",
+  "version": "0.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Infra",
+  "keywords": [],
+  "main": "target/es5/index.js",
+  "source": "target/ts/index.ts",
+  "types": "target/es5/index.d.ts",
+  "typescript": {
+    "definition": "target/es5/index.d.ts"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "target",
+    "typings",
+    "flow-typed"
+  ],
+  "scripts": {
+    "postupdate": "yarn"
+  },
+  "dependencies": {
+    "@qiwi/substrate": "^1.19.0",
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {
+    "@qiwi/libdefkit": "^2.0.1",
+    "@qiwi/semantic-release-gh-pages-plugin": "^5.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.1.1",
+    "@semantic-release/npm": "^7.0.6",
+    "@swissquote/crafty-preset-jest": "^1.12.0",
+    "@types/jest": "^26.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-qiwi": "^1.9.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2",
+    "prettier-config-qiwi": "^1.2.0",
+    "rimraf": "^3.0.2",
+    "terser": "^5.3.2",
+    "ts-jest": "^26.4.0",
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-external-module-name": "^4.0.3",
+    "typescript": "^4.0.3",
+    "typescript-eslint-parser": "^22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antongolub/blank-ts-monorepo.git"
+  },
+  "author": "Anton Golub <mailbox@antongolub.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antongolub/blank-ts-monorepo/issues"
+  },
+  "homepage": "https://github.com/antongolub/blank-ts-monorepo/#readme"
+}
