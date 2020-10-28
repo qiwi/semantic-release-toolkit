@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "clean": "lerna clean --yes && lerna run clean",
-    "build": "yarn clean && lerna run build --stream --concurrency 2 && cat ./packages/config-monorepo/target/es5/index.js",
+    "build": "yarn clean && lerna run build --stream --concurrency 2",
     "bootstrap": "lerna bootstrap",
     "jest": "jest",
     "test:report": "yarn test && yarn coveralls:push",

@@ -3,5 +3,6 @@ All-in-one package to run [semantic-release](https://github.com/semantic-release
 
 ## Usage
 ```shell script
-npx -p @qiwi/semrel-toolkit semantic-release
+npx -p @qiwi/semrel-toolkit semrel
+npx -p @qiwi/semrel-toolkit multi-semrel
 ```

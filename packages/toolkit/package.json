@@ -11,6 +11,10 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "bin": {
+    "semrel": "./node_modules/.bin/semantic-release",
+    "multi-semrel": "./node_modules/.bin/multi-semantic-release"
+  },
   "scripts": {},
   "dependencies": {
     "@qiwi/multi-semantic-release": "*",
