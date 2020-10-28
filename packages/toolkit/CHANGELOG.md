@@ -1,3 +1,10 @@
+# @qiwi/semrel-toolkit [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.0.0...@qiwi/semrel-toolkit@1.1.0) (2020-10-28)
+
+
+### Features
+
+* **toolkit:** reexport semrel bins ([4eec0ad](https://github.com/qiwi/semantic-release-toolkit/commit/4eec0ad803982bf4fa7ec789edfdf12cafee92d1))
+
 # @qiwi/semrel-toolkit 1.0.0 (2020-10-28)
 
 
