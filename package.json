@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "clean": "lerna clean --yes && lerna run clean",
-    "build": "yarn clean && lerna run build --stream --concurrency 2",
+    "build": "yarn clean && lerna run build --stream --concurrency 2 && cat ./packages/config-monorepo/target/es5/index.js",
     "bootstrap": "lerna bootstrap",
     "jest": "jest",
     "test:report": "yarn test && yarn coveralls:push",
@@ -26,6 +26,7 @@
     "find-git-root": "^1.0.4",
     "jest": "^26.6.1",
     "lerna": "^3.22.1",
+    "rimraf": "^3.0.2",
     "snazzy": "^9.0.0"
   },
   "repository": {
