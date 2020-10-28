@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-toolkit",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -11,13 +11,12 @@
     "README.md",
     "CHANGELOG.md"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "@qiwi/multi-semantic-release": "*",
     "semantic-release": "*",
-    "@qiwi/semrel-config": "*",
-    "@qiwi/semrel-config-monorepo": "*"
+    "@qiwi/semrel-config": "1.0.0",
+    "@qiwi/semrel-config-monorepo": "1.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {},
