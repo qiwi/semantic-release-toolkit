@@ -1,16 +1,14 @@
 {
-  "name": "blank-ts-monorepo",
+  "name": "@qiwi/semrel-toolkit-monorepo",
   "version": "0.0.0",
-  "description": "Blank TS monorepo",
-  "main": "target/es5/index.ts",
+  "description": "Semantic release tools, plugins and configs for QIWI OSS projects",
   "workspaces": [
     "packages/*"
   ],
   "private": true,
   "scripts": {
     "clean": "lerna clean --yes && lerna run clean",
-    "prebuild": "tsc -b packages/facade/tsconfig.es5.json",
-    "build": "yarn clean && yarn prebuild && lerna run build --stream --concurrency 2",
+    "build": "yarn clean && lerna run build --stream --concurrency 2",
     "bootstrap": "lerna bootstrap",
     "jest": "jest",
     "test:report": "yarn test && yarn coveralls:push",
@@ -23,17 +21,15 @@
     "release": "multi-semantic-release"
   },
   "devDependencies": {
-    "@qiwi/multi-semantic-release": "^3.8.4",
-    "@types/jest": "^26.0.14",
-    "@types/node": "^14.11.2",
+    "@swissquote/crafty-preset-jest": "^1.13.7",
     "coveralls": "^3.1.0",
     "find-git-root": "^1.0.4",
-    "jest": "^26.4.2",
+    "jest": "^26.6.1",
     "lerna": "^3.22.1",
-    "snazzy": "^8.0.0"
+    "snazzy": "^9.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antongolub/blank-ts-monorepo.git"
+    "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
   }
 }

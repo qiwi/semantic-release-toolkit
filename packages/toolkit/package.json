@@ -1,0 +1,35 @@
+{
+  "name": "@qiwi/semrel-toolkit",
+  "version": "0.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Semantic release tools, plugins and configs for QIWI OSS projects",
+  "keywords": [],
+  "files": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+  },
+  "dependencies": {
+    "@qiwi/multi-semantic-release": "*",
+    "semantic-release": "*",
+    "@qiwi/semrel-config": "*",
+    "@qiwi/semrel-config-monorepo": "*"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
+  },
+  "author": "Anton Golub <mailbox@antongolub.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiwi/semantic-release-toolkit/issues"
+  },
+  "homepage": "https://github.com/qiwi/semantic-release-toolkit/#readme"
+}

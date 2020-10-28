@@ -3,9 +3,9 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "blank-ts-monorepo-common": ["./common/src/main/ts"],
-      "blank-ts-monorepo-facade": ["./facade/src/main/ts"],
-      "blank-ts-monorepo-plugin": ["./plugin/src/main/ts"]
+      "@qiwi/semantic-release-toolkit-common": ["./common/src/main/ts"],
+      "@qiwi/semantic-release-toolkit-facade": ["./facade/src/main/ts"],
+      "@qiwi/semantic-release-toolkit-plugin": ["./plugin/src/main/ts"]
     }
   }
 }
