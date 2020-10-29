@@ -10,7 +10,7 @@
     "clean": "lerna clean --yes && lerna run clean",
     "build": "yarn clean && lerna run build --stream --concurrency 2",
     "bootstrap": "lerna bootstrap",
-    "jest": "jest",
+    "jest": "jest --detectOpenHandles",
     "test:report": "yarn test && yarn coveralls:push",
     "test": "yarn jest",
     "test:concurrent": "lerna run test --concurrency 1 --stream --no-prefix && yarn coverage:merge",

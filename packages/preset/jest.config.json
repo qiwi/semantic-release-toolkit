@@ -1,0 +1,21 @@
+{
+  "testEnvironment": "node",
+  "transform": {
+    "^.+\\.jsx?$": "@swissquote/crafty-preset-jest/src/esm-transformer"
+  },
+  "collectCoverage": false,
+  "coveragePathIgnorePatterns": [
+  ],
+  "collectCoverageFrom": [],
+  "testMatch": [
+    "<rootDir>/src/test/js/*.js"
+  ],
+  "testPathIgnorePatterns": [
+    "/node_modules/"
+  ],
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "node"
+  ]
+}

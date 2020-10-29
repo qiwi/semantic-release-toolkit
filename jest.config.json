@@ -2,6 +2,7 @@
   "collectCoverage": true,
   "projects": [
     "<rootDir>/packages/config/jest.config.json",
-    "<rootDir>/packages/config-monorepo/jest.config.json"
+    "<rootDir>/packages/config-monorepo/jest.config.json",
+    "<rootDir>/packages/preset/jest.config.json"
   ]
 }

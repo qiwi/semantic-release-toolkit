@@ -15,25 +15,15 @@
     "target"
   ],
   "scripts": {
-    "test": "yarn lint && yarn test:spec",
-    "jest": "jest -w=1 --config=jest.config.json",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "yarn lint --fix",
+    "test": "yarn test:spec",
+    "test:spec": "jest -w=1 --config=jest.config.json",
     "clean": "rimraf target",
     "build": "yarn build:es5",
     "build:es5": "mkdir -p target/es5 && cp src/main/js/index.js target/es5/index.js",
     "postupdate": "yarn && yarn build && yarn test",
     "format": "prettier --write 'src/**/*.ts'"
   },
-  "dependencies": {
-    "@qiwi/semantic-release-gh-pages-plugin": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/github": "^7.1.1",
-    "@semantic-release/npm": "^7.0.6",
-    "@semantic-release/release-notes-generator": "^9.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {},
   "optionalDependencies": {},
