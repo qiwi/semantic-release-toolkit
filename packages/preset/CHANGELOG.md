@@ -1,3 +1,10 @@
+# @qiwi/semrel-preset 1.0.0 (2020-10-29)
+
+
+### Features
+
+* introduce plugin preset package ([dff254f](https://github.com/qiwi/semantic-release-toolkit/commit/dff254ff4b4d5088e165acb97e28f9e40f84bd20))
+
 # @qiwi/semrel-config 1.0.0 (2020-10-28)
 
 
