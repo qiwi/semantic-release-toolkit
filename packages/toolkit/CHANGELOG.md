@@ -1,3 +1,20 @@
+# @qiwi/semrel-toolkit [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.1.0...@qiwi/semrel-toolkit@1.2.0) (2020-10-29)
+
+
+### Features
+
+* introduce plugin preset package ([dff254f](https://github.com/qiwi/semantic-release-toolkit/commit/dff254ff4b4d5088e165acb97e28f9e40f84bd20))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.1.0
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.1.0
+* **@qiwi/semrel-preset:** upgraded to 1.0.0
+
 # @qiwi/semrel-toolkit [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.0.0...@qiwi/semrel-toolkit@1.1.0) (2020-10-28)
 
 
