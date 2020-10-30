@@ -12,8 +12,8 @@
     "CHANGELOG.md"
   ],
   "bin": {
-    "semrel": "./node_modules/.bin/semantic-release",
-    "multi-semrel": "./node_modules/.bin/multi-semantic-release"
+    "semrel": "./node_modules/semantic-release/bin/semantic-release.js",
+    "multi-semrel": "./node_modules/@qiwi/multi-semantic-release/bin/cli.js"
   },
   "scripts": {},
   "dependencies": {
