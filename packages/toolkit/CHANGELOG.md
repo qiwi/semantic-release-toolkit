@@ -1,3 +1,10 @@
+# @qiwi/semrel-toolkit [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.2.0...@qiwi/semrel-toolkit@1.3.0) (2020-10-30)
+
+
+### Features
+
+* provide npx-v7 support ([42160d4](https://github.com/qiwi/semantic-release-toolkit/commit/42160d4de4e642e9d708dcf1ba78e5945fddbac1))
+
 # @qiwi/semrel-toolkit [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.1.0...@qiwi/semrel-toolkit@1.2.0) (2020-10-29)
 
 
