@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [1.3.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.1...@qiwi/semrel-toolkit@1.3.2) (2020-11-23)
+
+
+### Bug Fixes
+
+* up msr version ([5da66f3](https://github.com/qiwi/semantic-release-toolkit/commit/5da66f33fefd1239e4751316a7075587bd94c65d))
+
 ## @qiwi/semrel-toolkit [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.0...@qiwi/semrel-toolkit@1.3.1) (2020-11-23)
 
 
