@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.0...@qiwi/semrel-toolkit@1.3.1) (2020-11-23)
+
+
+### Performance Improvements
+
+* up deps, lock semrel & msr versions ([f875439](https://github.com/qiwi/semantic-release-toolkit/commit/f87543963a8c8e43a691371ba53bb5cd08091c20))
+
 # @qiwi/semrel-toolkit [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.2.0...@qiwi/semrel-toolkit@1.3.0) (2020-10-30)
 
 
