@@ -1,3 +1,13 @@
+## @qiwi/semrel-toolkit [1.3.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.2...@qiwi/semrel-toolkit@1.3.3) (2020-11-24)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 1.0.1
+
 ## @qiwi/semrel-toolkit [1.3.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.1...@qiwi/semrel-toolkit@1.3.2) (2020-11-23)
 
 
