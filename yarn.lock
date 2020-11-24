@@ -1512,7 +1512,7 @@
     stream-buffers "^3.0.2"
     tempy "^1.0.0"
 
-"@qiwi/semantic-release-gh-pages-plugin@^5.0.1":
+"@qiwi/semantic-release-gh-pages-plugin@^5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@qiwi/semantic-release-gh-pages-plugin/-/semantic-release-gh-pages-plugin-5.0.2.tgz#5e927499e249ecfc31e2ce892c5097d629ca75a3"
   integrity sha512-Vld7qHf0VRZf5vFguHTOk9hsS80i/hLdydNHNJiwXFojW/KFtRfDwdpuIhoOmO0floGCuNdJlzBkRqfa0Y/+sA==
@@ -1576,7 +1576,7 @@
     micromatch "^4.0.0"
     p-reduce "^2.0.0"
 
-"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.1.1":
+"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.2.0.tgz#925f3efd91adabfc4bbe0de24b79fe1a8a38b4e2"
   integrity sha512-tMRnWiiWb43whRHvbDGXq4DGEbKRi56glDpXDJZit4PIiwDPX7Kx3QzmwRtDOcG+8lcpGjpdPabYZ9NBxoI2mw==
@@ -1598,7 +1598,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.0.6":
+"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.0.8":
   version "7.0.8"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.0.8.tgz#228b6327d9e9e9d0adc7bf37b8be3d6fc9744e3e"
   integrity sha512-8c1TLwKB/xT5E1FNs5l4GFtaNTznHesJk7tw3pGSlVxRqDXa1EZI+DfziZlO58Wk3PpS2ecu661kvBdz9aMgYQ==
