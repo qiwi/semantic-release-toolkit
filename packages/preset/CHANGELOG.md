@@ -1,3 +1,10 @@
+## @qiwi/semrel-preset [1.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.0.0...@qiwi/semrel-preset@1.0.1) (2020-11-24)
+
+
+### Performance Improvements
+
+* **deps:** up semrel plugins ([1447753](https://github.com/qiwi/semantic-release-toolkit/commit/1447753324ae5f4ace676adf5795ab49106ed8cf))
+
 # @qiwi/semrel-preset 1.0.0 (2020-10-29)
 
 
