@@ -21,6 +21,7 @@
     "coverage:merge": "node scripts/js/coverage-merge.js",
     "coveralls:push": "cat ./coverage/lcov.info | coveralls || echo 'coveralls push failed :(' && exit 0",
     "docs": "typedoc packages/**/src/main",
+    "uglify": "lerna run uglify --stream --parallel",
     "postupdate": "yarn && yarn bootstrap && yarn test:depcheck && yarn build && yarn test",
     "release": "multi-semantic-release"
   },
