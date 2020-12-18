@@ -1,5 +1,6 @@
 {
   "collectCoverage": true,
+  "testFailureExitCode": 1,
   "projects": [
     "<rootDir>/packages/config/jest.config.json",
     "<rootDir>/packages/config-monorepo/jest.config.json",

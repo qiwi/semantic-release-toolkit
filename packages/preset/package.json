@@ -12,14 +12,14 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "yarn test:spec",
-    "test:spec": "jest -w=1 --config=jest.config.json",
+    "test": "yarn test:unit",
+    "test:unit": "jest --config=jest.config.json --runInBand",
     "clean": "rimraf target",
     "postupdate": "yarn && yarn build && yarn test",
     "format": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
-    "@qiwi/semantic-release-gh-pages-plugin": "^5.0.3",
+    "@qiwi/semantic-release-gh-pages-plugin": "^5.0.4",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
