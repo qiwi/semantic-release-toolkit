@@ -1,11 +1,10 @@
 {
-  "extends": "./packages/infra/tsconfig.compiler.json",
   "compilerOptions": {
-    "baseUrl": "./packages",
-    "paths": {
-      "@qiwi/semantic-release-toolkit-common": ["./common/src/main/ts"],
-      "@qiwi/semantic-release-toolkit-facade": ["./facade/src/main/ts"],
-      "@qiwi/semantic-release-toolkit-plugin": ["./plugin/src/main/ts"]
-    }
-  }
+    "outDir": "temp/prebuild",
+    "emitDeclarationOnly": true,
+    "declaration": true
+  },
+  "references": [
+    { "path": "./packages/plugin-creator/tsconfig.es5.json" }
+  ]
 }
