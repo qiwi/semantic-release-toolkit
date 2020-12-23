@@ -1545,10 +1545,10 @@
     tslib "^2.0.3"
     yargs-parser "^20.2.3"
 
-"@qiwi/multi-semantic-release@~3.9.5":
-  version "3.9.5"
-  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.9.5.tgz#5ebb4ed431ea4208d06a41ac368c587f59e1d831"
-  integrity sha512-HI9HnUUOMSdQnHVIcXHzUMn29etePySieTL4RrbukDnemIqspLgEZ6KpJX1fOt6d4ZtRL0xl+gEQ+2xdHCmH/g==
+"@qiwi/multi-semantic-release@~3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.10.0.tgz#95ac24989257944dad2e5d0725c66247532748ce"
+  integrity sha512-30a2icVoT6ItLgsBiKN+UW9yyj7CiOanYQFDNRYqmLrvlRgJMmwianY6YXzCLxo8Qwi1z6uGIhmTn1b6coqPuQ==
   dependencies:
     bash-glob "^2.0.0"
     blork "^9.2.2"
