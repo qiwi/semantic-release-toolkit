@@ -4,7 +4,7 @@ import {
 
 export type ReleaseType = 'patch' | 'minor' | 'major'
 
-type PluginMethod<T = void> = (pluginOptions: Record<any, any>, ctx: Context) => Promise<T>
+export type PluginMethod<T = void> = (pluginOptions: Record<any, any>, ctx: Context) => Promise<T>
 
 export interface Plugin {
   verifyConditions?: PluginMethod
