@@ -1,11 +1,12 @@
-import {Plugin, PluginFactory, ReleaseStep, ReleaseType} from './interface'
-import {Context} from "semantic-release";
+import {Context} from 'semantic-release'
+
+import {Plugin, PluginFactory, ReleaseStep} from './interface'
 
 export const foo = 'bar'
 
 export * from './interface'
 
-const releaseSteps: Array<ReleaseStep> = [
+export const releaseSteps: Array<ReleaseStep> = [
   'verifyConditions',
   'analyzeCommits',
   'verifyRelease',
@@ -18,9 +19,8 @@ const releaseSteps: Array<ReleaseStep> = [
 
 export const createPlugin: PluginFactory = (releaseHandler) =>
   releaseSteps.reduce<Plugin>((m, v) => {
-    m[v] = (pluginOptions: Record<any, any>, ctx: Context) => {
-      return releaseHandler(pluginOptions, ctx, v)
-    }
+    m[v] = (pluginOptions: Record<any, any>, ctx: Context) =>
+      releaseHandler(pluginOptions, ctx, v)
 
     return m
   }, {})
