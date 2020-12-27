@@ -1,3 +1,5 @@
+import { sync as readPkgUp } from 'read-pkg-up'
+
 import {
   TPlugin,
   TPluginConfig,
@@ -28,16 +30,16 @@ export const defaultOptions = {
   handler: async (): Promise<void> => {
     /* async noop */
   },
+  name: String(readPkgUp({ cwd: module?.parent?.filename })?.packageJson?.name)
 }
 
 export const normalizeOptions = (
   options: TReleaseHandler | TPluginFactoryOptions,
 ): TPluginFactoryOptionsNormalized => {
-  if (typeof options === 'function') {
-    return { ...defaultOptions, handler: options }
-  }
+  const preOptions =
+    typeof options === 'function' ? { handler: options } : options
 
-  return { ...defaultOptions, ...options }
+  return { ...defaultOptions, ...preOptions }
 }
 
 export const createPlugin: TPluginFactory = (options) => {
