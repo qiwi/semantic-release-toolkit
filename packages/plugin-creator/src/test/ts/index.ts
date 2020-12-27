@@ -1,10 +1,11 @@
-import {Context} from 'semantic-release'
-
 import {
   createPlugin,
+  defaultOptions,
   foo,
-  releaseSteps,
-  PluginMethod,
+  normalizeOptions,
+  releaseSteps, TPluginFactoryOptions,
+  TPluginMethod,
+  TSemrelContext,
 } from '../../main/ts'
 
 describe('', () => {
@@ -13,7 +14,31 @@ describe('', () => {
   })
 })
 
-describe('createPlugin', () => {
+describe('normalizeOptions()', () => {
+  it('handles fn as input', () => {
+    const handler: any = jest.fn()
+    expect(normalizeOptions(handler).handler).toBe(handler)
+  })
+
+  it('merges `defaultOptions` with passed opts', () => {
+    const handler: any = jest.fn()
+    const name = 'foobar'
+    const options: TPluginFactoryOptions = {
+      handler,
+      include: ['fail'],
+      exclude: ['success'],
+      name
+    }
+
+    expect(normalizeOptions(options)).toEqual(options)
+  })
+
+  it('uses `defaultOptions` otherwise', () => {
+    expect(normalizeOptions({})).toEqual(defaultOptions)
+  })
+})
+
+describe('createPlugin()', () => {
   it('factory returns a new plugin each time', () => {
     const handler: any = jest.fn()
     const plugin1 = createPlugin(handler)
@@ -27,16 +52,16 @@ describe('createPlugin', () => {
   it('plugin properly invokes inner handler', () => {
     const handler: any = jest.fn()
     const plugin = createPlugin(handler)
-    const pluginOptions = {}
-    const ctx: Context = {
+    const pluginConfig = {}
+    const context: TSemrelContext = {
       logger: console,
       env: {}
     }
 
     releaseSteps.forEach((step) => {
-      (plugin[step] as PluginMethod)(pluginOptions, ctx)
+      (plugin[step] as TPluginMethod)(pluginConfig, context)
 
-      expect(handler).toHaveBeenCalledWith(pluginOptions, ctx, step)
+      expect(handler).toHaveBeenCalledWith({pluginConfig, context, step})
     })
 
     expect(handler).toBeCalledTimes(releaseSteps.length)
