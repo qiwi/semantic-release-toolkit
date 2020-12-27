@@ -3,12 +3,11 @@ import {
   TPluginConfig,
   TPluginFactory,
   TPluginFactoryOptions,
+  TPluginFactoryOptionsNormalized,
   TReleaseHandler,
   TReleaseStep,
-  TSemrelContext
+  TSemrelContext,
 } from './interface'
-
-export const foo = 'bar'
 
 export * from './interface'
 
@@ -20,29 +19,36 @@ export const releaseSteps: Array<TReleaseStep> = [
   'prepare',
   'publish',
   'success',
-  'fail'
+  'fail',
 ]
 
 export const defaultOptions = {
   include: releaseSteps,
   exclude: [],
-  handler: async (): Promise<void> => { /* async noop */ }
+  handler: async (): Promise<void> => {
+    /* async noop */
+  },
 }
 
-export const normalizeOptions = (options: TReleaseHandler | TPluginFactoryOptions): TPluginFactoryOptions => {
-
+export const normalizeOptions = (
+  options: TReleaseHandler | TPluginFactoryOptions,
+): TPluginFactoryOptionsNormalized => {
   if (typeof options === 'function') {
-    return {...defaultOptions, handler: options}
+    return { ...defaultOptions, handler: options }
   }
 
-  return {...defaultOptions, ...options}
+  return { ...defaultOptions, ...options }
 }
 
-export const createPlugin: TPluginFactory = (releaseHandler) =>
-  releaseSteps.reduce<TPlugin>((m, step) => {
-    m[step] = (pluginConfig: TPluginConfig, context: TSemrelContext) =>
-      releaseHandler({pluginConfig, context, step})
+export const createPlugin: TPluginFactory = (options) => {
+  const { handler, include, exclude } = normalizeOptions(options)
 
-    return m
-  }, {})
+  return releaseSteps
+    .filter((step) => include.includes(step) && !exclude.includes(step))
+    .reduce<TPlugin>((m, step) => {
+      m[step] = (pluginConfig: TPluginConfig, context: TSemrelContext) =>
+        handler({ pluginConfig, context, step })
 
+      return m
+    }, {})
+}

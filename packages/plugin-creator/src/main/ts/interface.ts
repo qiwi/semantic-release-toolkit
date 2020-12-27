@@ -1,6 +1,4 @@
-import {
-  Context
-} from 'semantic-release'
+import { Context } from 'semantic-release'
 
 export type TSemrelContext = Context
 
@@ -8,7 +6,10 @@ export type TReleaseType = 'patch' | 'minor' | 'major'
 
 export type TPluginConfig = Record<any, any>
 
-export type TPluginMethod<T = void> = (pluginConfig: TPluginConfig, context: TSemrelContext) => Promise<T>
+export type TPluginMethod<T = void> = (
+  pluginConfig: TPluginConfig,
+  context: TSemrelContext,
+) => Promise<T>
 
 export interface TPlugin {
   verifyConditions?: TPluginMethod
@@ -31,11 +32,15 @@ export type TPluginHandlerContext = {
 
 export type TReleaseHandler = (context: TPluginHandlerContext) => Promise<any>
 
-export type TPluginFactory = (handler: TReleaseHandler) => TPlugin
-
-export type TPluginFactoryOptions = {
-  handler?: TReleaseHandler
+export type TPluginFactoryOptionsNormalized = {
+  handler: TReleaseHandler
   name?: string
-  include?: TReleaseStep[]
-  exclude?: TReleaseStep[]
+  include: TReleaseStep[]
+  exclude: TReleaseStep[]
 }
+
+export type TPluginFactoryOptions = Partial<TPluginFactoryOptionsNormalized>
+
+export type TPluginFactory = (
+  handler: TPluginFactoryOptions | TReleaseHandler,
+) => TPlugin
