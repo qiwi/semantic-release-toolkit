@@ -2,23 +2,40 @@ import {
   Context
 } from 'semantic-release'
 
-export type ReleaseType = 'patch' | 'minor' | 'major'
+export type TSemrelContext = Context
 
-export type PluginMethod<T = void> = (pluginOptions: Record<any, any>, ctx: Context) => Promise<T>
+export type TReleaseType = 'patch' | 'minor' | 'major'
 
-export interface Plugin {
-  verifyConditions?: PluginMethod
-  analyzeCommits?: PluginMethod<ReleaseType>
-  verifyRelease?: PluginMethod
-  generateNotes?: PluginMethod<string>
-  prepare?: PluginMethod
-  publish?: PluginMethod
-  success?: PluginMethod
-  fail?: PluginMethod
+export type TPluginConfig = Record<any, any>
+
+export type TPluginMethod<T = void> = (pluginConfig: TPluginConfig, context: TSemrelContext) => Promise<T>
+
+export interface TPlugin {
+  verifyConditions?: TPluginMethod
+  analyzeCommits?: TPluginMethod<TReleaseType>
+  verifyRelease?: TPluginMethod
+  generateNotes?: TPluginMethod<string>
+  prepare?: TPluginMethod
+  publish?: TPluginMethod
+  success?: TPluginMethod
+  fail?: TPluginMethod
 }
 
-export type ReleaseStep = keyof Plugin
+export type TReleaseStep = keyof TPlugin
 
-export type ReleaseHandler = (pluginOptions: Record<any, any>, ctx: Context, releaseStep: ReleaseStep) => Promise<any>
+export type TPluginHandlerContext = {
+  pluginConfig: TPluginConfig
+  context: TSemrelContext
+  step: TReleaseStep
+}
 
-export type PluginFactory = (handler: ReleaseHandler) => Plugin
+export type TReleaseHandler = (context: TPluginHandlerContext) => Promise<any>
+
+export type TPluginFactory = (handler: TReleaseHandler) => TPlugin
+
+export type TPluginFactoryOptions = {
+  handler?: TReleaseHandler
+  name?: string
+  include?: TReleaseStep[]
+  exclude?: TReleaseStep[]
+}

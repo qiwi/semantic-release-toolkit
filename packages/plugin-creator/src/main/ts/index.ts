@@ -1,12 +1,18 @@
-import {Context} from 'semantic-release'
-
-import {Plugin, PluginFactory, ReleaseStep} from './interface'
+import {
+  TPlugin,
+  TPluginConfig,
+  TPluginFactory,
+  TPluginFactoryOptions,
+  TReleaseHandler,
+  TReleaseStep,
+  TSemrelContext
+} from './interface'
 
 export const foo = 'bar'
 
 export * from './interface'
 
-export const releaseSteps: Array<ReleaseStep> = [
+export const releaseSteps: Array<TReleaseStep> = [
   'verifyConditions',
   'analyzeCommits',
   'verifyRelease',
@@ -17,10 +23,25 @@ export const releaseSteps: Array<ReleaseStep> = [
   'fail'
 ]
 
-export const createPlugin: PluginFactory = (releaseHandler) =>
-  releaseSteps.reduce<Plugin>((m, v) => {
-    m[v] = (pluginOptions: Record<any, any>, ctx: Context) =>
-      releaseHandler(pluginOptions, ctx, v)
+export const defaultOptions = {
+  include: releaseSteps,
+  exclude: [],
+  handler: async (): Promise<void> => { /* async noop */ }
+}
+
+export const normalizeOptions = (options: TReleaseHandler | TPluginFactoryOptions): TPluginFactoryOptions => {
+
+  if (typeof options === 'function') {
+    return {...defaultOptions, handler: options}
+  }
+
+  return {...defaultOptions, ...options}
+}
+
+export const createPlugin: TPluginFactory = (releaseHandler) =>
+  releaseSteps.reduce<TPlugin>((m, step) => {
+    m[step] = (pluginConfig: TPluginConfig, context: TSemrelContext) =>
+      releaseHandler({pluginConfig, context, step})
 
     return m
   }, {})
