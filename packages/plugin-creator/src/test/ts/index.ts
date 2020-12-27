@@ -1,18 +1,12 @@
 import {
   createPlugin,
   defaultOptions,
-  foo,
   normalizeOptions,
-  releaseSteps, TPluginFactoryOptions,
+  releaseSteps,
+  TPluginFactoryOptions,
   TPluginMethod,
   TSemrelContext,
 } from '../../main/ts'
-
-describe('', () => {
-  it('', () => {
-    expect(foo).toBe('bar')
-  })
-})
 
 describe('normalizeOptions()', () => {
   it('handles fn as input', () => {
@@ -27,7 +21,7 @@ describe('normalizeOptions()', () => {
       handler,
       include: ['fail'],
       exclude: ['success'],
-      name
+      name,
     }
 
     expect(normalizeOptions(options)).toEqual(options)
@@ -55,15 +49,29 @@ describe('createPlugin()', () => {
     const pluginConfig = {}
     const context: TSemrelContext = {
       logger: console,
-      env: {}
+      env: {},
     }
 
     releaseSteps.forEach((step) => {
-      (plugin[step] as TPluginMethod)(pluginConfig, context)
+      ;(plugin[step] as TPluginMethod)(pluginConfig, context)
 
-      expect(handler).toHaveBeenCalledWith({pluginConfig, context, step})
+      expect(handler).toHaveBeenCalledWith({ pluginConfig, context, step })
     })
 
     expect(handler).toBeCalledTimes(releaseSteps.length)
+  })
+
+  it('plugin exposes `included` methods only if option passed', () => {
+    const plugin = createPlugin({ include: ['success', 'prepare'] })
+
+    expect(Object.keys(plugin)).toEqual(['prepare', 'success'])
+  })
+
+  it('plugin omits `excluded` methods if option passed', () => {
+    const plugin = createPlugin({ exclude: ['success', 'prepare'] })
+
+    expect(Object.keys(plugin)).toEqual(
+      releaseSteps.filter((step) => step !== 'success' && step !== 'prepare'),
+    )
   })
 })
