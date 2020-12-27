@@ -30,6 +30,11 @@ describe('normalizeOptions()', () => {
   it('uses `defaultOptions` otherwise', () => {
     expect(normalizeOptions({})).toEqual(defaultOptions)
   })
+
+  it('resolves plugin`s pkg name', () => {
+    expect(normalizeOptions({name: 'foo'}).name).toBe('foo')
+    expect(normalizeOptions({}).name).toBe('@qiwi/semrel-plugin-creator')
+  })
 })
 
 describe('createPlugin()', () => {
