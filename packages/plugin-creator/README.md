@@ -11,7 +11,7 @@ yarn add @qiwi/semrel-plugin-creator
 import {createPlugin} from '@qiwi/semrel-plugin-creator'
 
 const handler = async ({step, pluginConfig, context, name}) => {
-  if (step === 'prepate') {
+  if (step === 'prepare') {
     pluginConfig.foo = 'bar'
   }
 
