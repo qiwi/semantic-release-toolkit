@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [1.3.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.5...@qiwi/semrel-toolkit@1.3.6) (2020-12-28)
+
+
+### Bug Fixes
+
+* **plugin-creator:** fix release config ([11e2114](https://github.com/qiwi/semantic-release-toolkit/commit/11e211477c1eabfa948ee4b3930360a6dcd803b7))
+
 ## @qiwi/semrel-toolkit [1.3.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.4...@qiwi/semrel-toolkit@1.3.5) (2020-12-24)
 
 
