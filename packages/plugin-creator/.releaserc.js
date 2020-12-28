@@ -1,1 +1,1 @@
-module.exports = require(require('path').join(__dirname, './target/es5/index'))
+module.exports = require(require('path').join(__dirname, '../config-monorepo/target/es5/index'))
