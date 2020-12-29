@@ -32,7 +32,7 @@ export const defaultOptions = {
   handler: async (): Promise<void> => {
     /* async noop */
   },
-  name: String(readPkgUp({ cwd: module?.parent?.filename })?.packageJson?.name)
+  name: String(readPkgUp({ cwd: module?.parent?.filename })?.packageJson?.name),
 }
 
 export const normalizeOptions = (
@@ -44,16 +44,24 @@ export const normalizeOptions = (
   return { ...defaultOptions, ...preOptions }
 }
 
-const checkPrevSteps = ({invoked}: TPluginMetaContext, {name, require}: TPluginFactoryOptionsNormalized, step: TReleaseStep): void => {
+const checkPrevSteps = (
+  { invoked }: TPluginMetaContext,
+  { name, require }: TPluginFactoryOptionsNormalized,
+  step: TReleaseStep,
+): void => {
   if (require.length === 0) {
     return
   }
 
   const prevSteps = releaseSteps.slice(0, releaseSteps.indexOf(step))
-  const missedStep = prevSteps.find(step => require.includes(step) && !invoked.includes(step))
+  const missedStep = prevSteps.find(
+    (step) => require.includes(step) && !invoked.includes(step),
+  )
 
   if (missedStep) {
-    throw new Error(`plugin '${name}' requires ${missedStep} to be invoked before ${step}`)
+    throw new Error(
+      `plugin '${name}' requires ${missedStep} to be invoked before ${step}`,
+    )
   }
 }
 
@@ -61,7 +69,7 @@ export const createPlugin: TPluginFactory = (options) => {
   const normalizedOpions = normalizeOptions(options)
   const { handler, include, exclude } = normalizedOpions
   const metaContext: TPluginMetaContext = {
-    invoked: []
+    invoked: [],
   }
 
   return releaseSteps
