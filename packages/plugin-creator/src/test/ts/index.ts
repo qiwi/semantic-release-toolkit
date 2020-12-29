@@ -21,6 +21,7 @@ describe('normalizeOptions()', () => {
       handler,
       include: ['fail'],
       exclude: ['success'],
+      require: [],
       name,
     }
 
@@ -66,17 +67,48 @@ describe('createPlugin()', () => {
     expect(handler).toBeCalledTimes(releaseSteps.length)
   })
 
-  it('plugin exposes `included` methods only if option passed', () => {
-    const plugin = createPlugin({ include: ['success', 'prepare'] })
+  describe('options', () => {
+    it('plugin exposes `included` methods only if option passed', () => {
+      const plugin = createPlugin({ include: ['success', 'prepare'] })
 
-    expect(Object.keys(plugin)).toEqual(['prepare', 'success'])
-  })
+      expect(Object.keys(plugin)).toEqual(['prepare', 'success'])
+    })
 
-  it('plugin omits `excluded` methods if option passed', () => {
-    const plugin = createPlugin({ exclude: ['success', 'prepare'] })
+    it('plugin omits `excluded` methods if option passed', () => {
+      const plugin = createPlugin({ exclude: ['success', 'prepare'] })
 
-    expect(Object.keys(plugin)).toEqual(
-      releaseSteps.filter((step) => step !== 'success' && step !== 'prepare'),
-    )
+      expect(Object.keys(plugin)).toEqual(
+        releaseSteps.filter((step) => step !== 'success' && step !== 'prepare'),
+      )
+    })
+
+    it('`require` option asserts that all plugin steps have been called', () => {
+      const plugin = createPlugin({ require: ['verifyConditions', 'prepare'] })
+      const pluginConfig = {}
+      const context: TSemrelContext = {
+        logger: console,
+        env: {},
+      }
+      const verifyConditions = plugin.verifyConditions as TPluginMethod
+      const analyzeCommits = plugin.analyzeCommits as TPluginMethod<string>
+      const prepare = plugin.prepare as TPluginMethod
+      const publish = plugin.publish as TPluginMethod
+
+
+      expect(() => analyzeCommits(pluginConfig, context))
+        .toThrowError('plugin \'@qiwi/semrel-plugin-creator\' requires verifyConditions to be invoked before analyzeCommits')
+
+      verifyConditions(pluginConfig, context)
+      analyzeCommits(pluginConfig, context)
+
+
+      expect(() => publish(pluginConfig, context))
+        .toThrowError('plugin \'@qiwi/semrel-plugin-creator\' requires prepare to be invoked before publish')
+
+      prepare(pluginConfig, context)
+      publish(pluginConfig, context)
+    })
   })
 })
+
+

@@ -37,6 +37,7 @@ export type TPluginFactoryOptionsNormalized = {
   name?: string
   include: TReleaseStep[]
   exclude: TReleaseStep[]
+  require: TReleaseStep[]
 }
 
 export type TPluginFactoryOptions = Partial<TPluginFactoryOptionsNormalized>
@@ -44,3 +45,7 @@ export type TPluginFactoryOptions = Partial<TPluginFactoryOptionsNormalized>
 export type TPluginFactory = (
   handler: TPluginFactoryOptions | TReleaseHandler,
 ) => TPlugin
+
+export type TPluginMetaContext = {
+  invoked: TReleaseStep[]
+}
