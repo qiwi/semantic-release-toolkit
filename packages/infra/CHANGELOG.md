@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [1.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.0.1...@qiwi/semrel-infra@1.0.2) (2020-12-29)
+
+
+### Performance Improvements
+
+* **toolkit:** update msr ([7f9e2a8](https://github.com/qiwi/semantic-release-toolkit/commit/7f9e2a827056635bb8307417135c1a31cf85ec7e))
+
 ## @qiwi/semrel-infra [1.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.0.0...@qiwi/semrel-infra@1.0.1) (2020-12-28)
 
 
