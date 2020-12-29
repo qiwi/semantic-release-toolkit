@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [1.3.7](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.6...@qiwi/semrel-toolkit@1.3.7) (2020-12-29)
+
+
+### Performance Improvements
+
+* **toolkit:** update msr ([7f9e2a8](https://github.com/qiwi/semantic-release-toolkit/commit/7f9e2a827056635bb8307417135c1a31cf85ec7e))
+
 ## @qiwi/semrel-toolkit [1.3.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.5...@qiwi/semrel-toolkit@1.3.6) (2020-12-28)
 
 
