@@ -1,3 +1,10 @@
+# @qiwi/semrel-plugin-creator [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.0.2...@qiwi/semrel-plugin-creator@1.1.0) (2020-12-29)
+
+
+### Features
+
+* **plugin-creator:** add required steps checker ([c78b6f2](https://github.com/qiwi/semantic-release-toolkit/commit/c78b6f2dfc6d85a1af4478c9b99abdc9af5b7c09)), closes [#15](https://github.com/qiwi/semantic-release-toolkit/issues/15)
+
 ## @qiwi/semrel-plugin-creator [1.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.0.1...@qiwi/semrel-plugin-creator@1.0.2) (2020-12-29)
 
 
