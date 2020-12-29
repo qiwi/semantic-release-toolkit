@@ -1,5 +1,5 @@
 # @qiwi/semrel-toolkit-monorepo
-Semantic release tools, plugins and configs for QIWI OSS projects
+[Semantic-release](https://github.com/semantic-release/semantic-release) tools, plugins and configs for QIWI OSS projects
 
 |Package | Description
 |---|---|
@@ -7,8 +7,10 @@ Semantic release tools, plugins and configs for QIWI OSS projects
 |[@qiwi/semrel-config](./packages/config/README.md)| Basic config to deploy a single github-hosted npm-package
 |[@qiwi/semrel-config-monorepo](./packages/config/README.md)| Config to run a release for github-hosted monorepo
 |[@qiwi/semrel-preset](./packages/preset/README.md)| Semrel plugin preset
+|[@qiwi/@qiwi/semrel-plugin-creator](./packages/plugin-creator/README.md)| Semrel plugin factory
 
 ## Usage
 ```shell script
 npx -p @qiwi/semrel-toolkit semrel -e @qiwi/semrel-config
+npx -p @qiwi/semrel-toolkit multi-semrel
 ```
