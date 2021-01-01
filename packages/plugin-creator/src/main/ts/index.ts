@@ -21,6 +21,7 @@ export const releaseSteps: Array<TReleaseStep> = [
   'generateNotes',
   'prepare',
   'publish',
+  'addChannel',
   'success',
   'fail',
 ]
