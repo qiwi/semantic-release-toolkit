@@ -18,6 +18,7 @@ export interface TPlugin {
   generateNotes?: TPluginMethod<string>
   prepare?: TPluginMethod
   publish?: TPluginMethod
+  addChannel?: TPluginMethod
   success?: TPluginMethod
   fail?: TPluginMethod
 }
