@@ -7,7 +7,7 @@
 |[@qiwi/semrel-config](./packages/config/README.md)| Basic config to deploy a single github-hosted npm-package
 |[@qiwi/semrel-config-monorepo](./packages/config/README.md)| Config to run a release for github-hosted monorepo
 |[@qiwi/semrel-preset](./packages/preset/README.md)| Semrel plugin preset
-|[@qiwi/@qiwi/semrel-plugin-creator](./packages/plugin-creator/README.md)| Semrel plugin factory
+|[@qiwi/semrel-plugin-creator](./packages/plugin-creator/README.md)| Semrel plugin factory
 
 ## Usage
 ```shell script
