@@ -1,3 +1,10 @@
+## @qiwi/semrel-plugin-creator [1.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.1.0...@qiwi/semrel-plugin-creator@1.1.1) (2021-01-01)
+
+
+### Bug Fixes
+
+* **plugin-creator:** add addChannel method ([789b92a](https://github.com/qiwi/semantic-release-toolkit/commit/789b92a4b5a208dc6076a1c617d207545cb0a26b))
+
 # @qiwi/semrel-plugin-creator [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.0.2...@qiwi/semrel-plugin-creator@1.1.0) (2020-12-29)
 
 
