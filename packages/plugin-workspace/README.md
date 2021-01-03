@@ -1,9 +1,9 @@
 # @qiwi/semrel-workspace
-[Semantic-release] plugin for data syncing with remote workspaces.
+[Semrel](https://github.com/semantic-release/semantic-release) plugin for data syncing with remote workspaces
 
 ## Motivation
 The main purpose of this plugin is to provide _non-blocking_ release flow (no commits, no conflicts),
-but save the benefits of stateful operations like changelog appending, docs publishing and so on.
+but keep the benefits of stateful operations like changelog appending, docs publishing and so on.
 
 ## Usage area
 * Shared build state
@@ -15,14 +15,14 @@ but save the benefits of stateful operations like changelog appending, docs publ
 yarn add @qiwi/semrel-workspace -D
 ```
 
-## Examples
+## Config examples
 ```json
 {
   "plugins": [
     ["@qiwi/semrel-workspace", {
       "providers": [
         {
-          "name": "metabranch",
+          "provider": "metabranch",
           "options": {
             "branch": "metabranch",
             "url": "repoUrl"
