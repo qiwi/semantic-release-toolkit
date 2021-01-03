@@ -1,11 +1,11 @@
 {
   "name": "@qiwi/semrel-workspace",
-  "version": "1.1.0",
+  "version": "0.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
-  "description": "Semrel plugin for data syncing with remote workspaces",
+  "description": "Semrel plugin for data sync with remote workspaces",
   "keywords": [],
   "main": "target/es5/index.js",
   "source": "target/ts/index.ts",
@@ -39,13 +39,10 @@
   },
   "dependencies": {
     "tslib": "^2.0.3",
-    "@types/semantic-release": "^17.2.0",
-    "@types/node": "^14.14.17",
-    "read-pkg-up": "^7.0.1"
+    "@qiwi/semrel-plugin-creator": "^1.0.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "1.0.2",
-    "semantic-release": "^17.3.1"
+    "@qiwi/semrel-infra": "1.0.2"
   },
   "peerDependencies": {},
   "optionalDependencies": {},
