@@ -1,11 +1,26 @@
 import semanticRelease from 'semantic-release'
 import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
 import {createPlugin} from '../../main/ts'
+import {gitInit, gitInitOrigin, gitCommitAll, gitPush} from './assets/git'
+import {copyDirectory} from './assets/file'
+import {resolve} from 'path'
+
+const fixtures = resolve(__dirname, '../fixtures')
 
 describe('integration', () => {
-  const handler: any = jest.fn()
+  const handler: any = jest.fn(({step}) => {
+    if (step === 'analyzeCommits') {
+      return 'patch'
+    }
+  })
   const pluginName = 'some-plugin'
   const plugin = createPlugin({handler, name: pluginName})
+  const cwd = gitInit()
+
+  copyDirectory(`${fixtures}/yarnWorkspaces/`, cwd)
+  gitCommitAll(cwd, "feat: Initial release")
+  gitInitOrigin(cwd)
+  gitPush(cwd)
 
   beforeAll(() => {
     jest.mock(pluginName, () => plugin, {virtual: true})
@@ -25,8 +40,65 @@ describe('integration', () => {
 
   it('plugin is compatible with semrel', async () => {
     await semanticRelease({
-      dryRun: true,
+      branches: ['master'],
+      noCi: true,
+      dryRun: false,
       plugins: [pluginName]
+    },
+    {
+      cwd
     })
+
+    expect(handler).toBeCalledTimes(7)
+  }, 30000)
+
+  it('release handler is invoked with proper context', async () => {
+    const commonPluginConfig = {common: true}
+    const preparePluginConfig = {prepare: true}
+    const publishPluginConfig = {publish: true}
+    const env = {...process.env, FOO: 'bar'}
+    await semanticRelease({
+        branches: ['master'],
+        noCi: true,
+        dryRun: false,
+        plugins: [[pluginName, commonPluginConfig]],
+        prepare: [[pluginName, preparePluginConfig]],
+        publish: [[pluginName, publishPluginConfig]],
+      },
+      {
+        cwd,
+        env,
+      })
+
+    const expectedContext = {
+      env
+    }
+    const expectedArgs = [
+      {step: 'verifyConditions', pluginConfig: commonPluginConfig, context: expectedContext},
+      {step: 'analyzeCommits', context: expectedContext},
+      {step: 'verifyRelease', context: expectedContext},
+      {step: 'generateNotes'},
+      {
+        step: 'prepare',
+        pluginConfig: preparePluginConfig,
+        context: {
+          ...expectedContext,
+          nextRelease: {
+            type: 'patch',
+            version: '1.0.0',
+            gitTag: 'v1.0.0',
+            name: 'v1.0.0',
+            notes: ''
+          }
+        }
+      },
+      {step: 'publish', pluginConfig: publishPluginConfig},
+      {step: 'success'},
+    ]
+    expectedArgs.forEach((handlerContext, index) =>
+      expect(handler.mock.calls[index][0]).toMatchObject(handlerContext)
+    )
+
+    expect(handler).toBeCalledTimes(7)
   }, 30000)
 })
