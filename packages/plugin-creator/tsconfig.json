@@ -5,7 +5,8 @@
     "baseUrl": "./src/main/ts/",
     "target": "es5",
     "outDir": "target/es5",
-    "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
+    "tsBuildInfoFile": "./buildcache/.tsbuildinfo",
+    "esModuleInterop": true
   },
   "references": [],
   "include": [

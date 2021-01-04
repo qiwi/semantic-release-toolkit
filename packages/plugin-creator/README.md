@@ -1,5 +1,5 @@
 # @qiwi/semrel-plugin-creator
-Semrel plugin creator
+[Semrel](https://github.com/semantic-release/semantic-release) plugin creator
 
 ## Install
 ```shell script
