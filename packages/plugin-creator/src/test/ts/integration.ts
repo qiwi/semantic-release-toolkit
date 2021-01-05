@@ -1,36 +1,39 @@
-import semanticRelease from 'semantic-release'
+import { resolve } from 'path'
 import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
-import {createPlugin} from '../../main/ts'
-import {gitInit, gitInitOrigin, gitCommitAll, gitPush} from './assets/git'
-import {copyDirectory} from './assets/file'
-import {resolve} from 'path'
+import semanticRelease from 'semantic-release'
+
+import { createPlugin } from '../../main/ts'
+import { copyDirectory } from './assets/file'
+import { gitCommitAll, gitInit, gitInitOrigin, gitPush } from './assets/git'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
 describe('integration', () => {
-  const handler: any = jest.fn(({step}) => {
+  const handler: any = jest.fn(({ step }) => {
     if (step === 'analyzeCommits') {
       return 'patch'
     }
   })
   const pluginName = 'some-plugin'
-  const plugin = createPlugin({handler, name: pluginName})
+  const plugin = createPlugin({ handler, name: pluginName })
   const cwd = gitInit()
 
   copyDirectory(`${fixtures}/yarnWorkspaces/`, cwd)
-  gitCommitAll(cwd, "feat: Initial release")
+  gitCommitAll(cwd, 'feat: Initial release')
   gitInitOrigin(cwd)
   gitPush(cwd)
 
   beforeAll(() => {
-    jest.mock(pluginName, () => plugin, {virtual: true})
-    jest.spyOn(resolveFrom, 'silent').mockImplementation((fromDir: string, moduleId: string) => {
-      if (moduleId === pluginName) {
-        return pluginName
-      }
+    jest.mock(pluginName, () => plugin, { virtual: true })
+    jest
+      .spyOn(resolveFrom, 'silent')
+      .mockImplementation((fromDir: string, moduleId: string) => {
+        if (moduleId === pluginName) {
+          return pluginName
+        }
 
-      return resolveFromSilent(fromDir, moduleId) as string
-    })
+        return resolveFromSilent(fromDir, moduleId) as string
+      })
   })
 
   afterAll(() => {
@@ -41,46 +44,52 @@ describe('integration', () => {
   afterEach(jest.clearAllMocks)
 
   it('plugin is compatible with semrel', async () => {
-    await semanticRelease({
-      branches: ['master'],
-      noCi: true,
-      dryRun: true,
-      plugins: [pluginName]
-    },
-    {
-      cwd
-    })
+    await semanticRelease(
+      {
+        branches: ['master'],
+        noCi: true,
+        dryRun: true,
+        plugins: [pluginName],
+      },
+      {
+        cwd,
+      },
+    )
 
     expect(handler).toBeCalledTimes(4)
   }, 15000)
 
   it.only('release handler is invoked with proper context', async () => {
-    const commonPluginConfig = {common: true}
-    const preparePluginConfig = {prepare: true}
-    const publishPluginConfig = {publish: true}
+    const commonPluginConfig = { common: true }
+    const preparePluginConfig = { prepare: true }
+    const publishPluginConfig = { publish: true }
     const stepConfigs = {
       prepare: preparePluginConfig,
-      publish: publishPluginConfig
+      publish: publishPluginConfig,
     }
-    const env = {...process.env, FOO: 'bar'}
-    await semanticRelease({
+    const env = { ...process.env, FOO: 'bar' }
+    await semanticRelease(
+      {
         branches: ['master'],
         noCi: true,
         dryRun: false,
         plugins: [[pluginName, commonPluginConfig]],
         prepare: [[pluginName, preparePluginConfig]],
-        publish: [{
-          path: pluginName,
-          ...publishPluginConfig
-        }],
+        publish: [
+          {
+            path: pluginName,
+            ...publishPluginConfig,
+          },
+        ],
       },
       {
         cwd,
         env,
-      })
+      },
+    )
 
     const expectedContext = {
-      env
+      env,
     }
     // prettier-ignore
     const expectedArgs = [
@@ -108,7 +117,7 @@ describe('integration', () => {
       {step: 'success'},
     ]
     expectedArgs.forEach((handlerContext, index) =>
-      expect(handler.mock.calls[index][0]).toMatchObject(handlerContext)
+      expect(handler.mock.calls[index][0]).toMatchObject(handlerContext),
     )
 
     expect(handler).toBeCalledTimes(7)

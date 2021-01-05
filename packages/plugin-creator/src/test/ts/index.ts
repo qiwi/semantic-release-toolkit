@@ -76,7 +76,7 @@ describe('createPlugin()', () => {
           addChannel: {},
           success: {},
           fail: {},
-        }
+        },
       })
     })
 

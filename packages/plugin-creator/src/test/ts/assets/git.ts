@@ -4,11 +4,14 @@
  */
 
 // import { check } from 'blork'
-import tempy from 'tempy'
 import execa from 'execa'
 import fileUrl from 'file-url'
+import tempy from 'tempy'
 
-const check = (...args: any[]): void => { void args}
+// eslint-disable-line
+const check = (...args: any[]): void => {
+  Boolean(args)
+}
 
 /**
  * @typedef {Object} Commit
@@ -26,20 +29,20 @@ const check = (...args: any[]): void => { void args}
  * @param {string} branch='master' The branch to initialize the repository to.
  * @return {Promise<string>} Promise that resolves to string pointing to the CWD for the created Git repository.
  */
-export const gitInit = (branch = 'master') => {
-	// Check params.
-	check(branch, 'branch: kebab')
+export const gitInit = (branch = 'master'): string => {
+  // Check params.
+  check(branch, 'branch: kebab')
 
-	// Init Git in a temp directory.
-	const cwd = tempy.directory()
-	execa.sync('git', ['init'], { cwd })
-	execa.sync('git', ['checkout', '-b', branch], { cwd })
+  // Init Git in a temp directory.
+  const cwd = tempy.directory()
+  execa.sync('git', ['init'], { cwd })
+  execa.sync('git', ['checkout', '-b', branch], { cwd })
 
-	// Disable GPG signing for commits.
-	gitConfig(cwd, 'commit.gpgsign', false)
+  // Disable GPG signing for commits.
+  gitConfig(cwd, 'commit.gpgsign', false)
 
-	// Return directory.
-	return cwd
+  // Return directory.
+  return cwd
 }
 
 /**
@@ -48,13 +51,13 @@ export const gitInit = (branch = 'master') => {
  *
  * @return {Promise<string>} Promise that resolves to string URL of the of the remote origin.
  */
-export const gitInitRemote = () => {
-	// Init bare Git repository in a temp directory.
-	const cwd = tempy.directory()
-	execa.sync('git', ['init', '--bare'], { cwd })
+export const gitInitRemote = (): string => {
+  // Init bare Git repository in a temp directory.
+  const cwd = tempy.directory()
+  execa.sync('git', ['init', '--bare'], { cwd })
 
-	// Turn remote path into a file URL.
-	return fileUrl(cwd)
+  // Turn remote path into a file URL.
+  return fileUrl(cwd)
 }
 
 /**
@@ -66,25 +69,25 @@ export const gitInitRemote = () => {
  * @return {Promise<string>} Promise that resolves to string URL of the of the remote origin.
  */
 export const gitInitOrigin = (cwd: string, releaseBranch?: string): string => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
+  // Check params.
+  check(cwd, 'cwd: absolute')
 
-	// Turn remote path into a file URL.
-	const url = gitInitRemote()
+  // Turn remote path into a file URL.
+  const url = gitInitRemote()
 
-	// Set origin on local repo.
-	execa.sync('git', ['remote', 'add', 'origin', url], { cwd })
+  // Set origin on local repo.
+  execa.sync('git', ['remote', 'add', 'origin', url], { cwd })
 
-	// Set up a release branch. Return to master afterwards.
-	if (releaseBranch) {
-		execa.sync('git', ['checkout', '-b', releaseBranch], { cwd })
-		execa.sync('git', ['checkout', 'master'], { cwd })
-	}
+  // Set up a release branch. Return to master afterwards.
+  if (releaseBranch) {
+    execa.sync('git', ['checkout', '-b', releaseBranch], { cwd })
+    execa.sync('git', ['checkout', 'master'], { cwd })
+  }
 
-	execa.sync('git', ['push', '--all', 'origin'], { cwd })
+  execa.sync('git', ['push', '--all', 'origin'], { cwd })
 
-	// Return URL for remote.
-	return url
+  // Return URL for remote.
+  return url
 }
 
 // Add.
@@ -97,11 +100,11 @@ export const gitInitOrigin = (cwd: string, releaseBranch?: string): string => {
  * @return {Promise<void>} Promise that resolves when done.
  */
 export const gitAdd = (cwd: string, file = '.'): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
+  // Check params.
+  check(cwd, 'cwd: absolute')
 
-	// Await command.
-	execa.sync('git', ['add', file], { cwd })
+  // Await command.
+  execa.sync('git', ['add', file], { cwd })
 }
 
 // Commits.
@@ -115,15 +118,15 @@ export const gitAdd = (cwd: string, file = '.'): void => {
  * @returns {Promise<string>} Promise that resolves to the SHA for the commit.
  */
 export const gitCommit = (cwd: string, message: string): string => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(message, 'message: string+')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(message, 'message: string+')
 
-	// Await the command.
-	execa.sync('git', ['commit', '-m', message, '--no-gpg-sign'], { cwd })
+  // Await the command.
+  execa.sync('git', ['commit', '-m', message, '--no-gpg-sign'], { cwd })
 
-	// Return HEAD SHA.
-	return gitGetHead(cwd)
+  // Return HEAD SHA.
+  return gitGetHead(cwd)
 }
 
 /**
@@ -135,15 +138,15 @@ export const gitCommit = (cwd: string, message: string): string => {
  * @returns {Promise<string>} Promise that resolves to the SHA for the commit.
  */
 export const gitCommitAll = (cwd: string, message: string): string => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(message, 'message: string+')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(message, 'message: string+')
 
-	// Await command.
-	gitAdd(cwd)
+  // Await command.
+  gitAdd(cwd)
 
-	// Await command and return the SHA hash.
-	return gitCommit(cwd, message)
+  // Await command and return the SHA hash.
+  return gitCommit(cwd, message)
 }
 
 // Push.
@@ -157,14 +160,18 @@ export const gitCommitAll = (cwd: string, message: string): string => {
  * @returns {Promise<void>} Promise that resolves when done.
  * @throws {Error} if the push failed.
  */
-export const gitPush = (cwd: string, remote = 'origin', branch = 'master'): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(remote, 'remote: string')
-	check(branch, 'branch: lower')
+export const gitPush = (
+  cwd: string,
+  remote = 'origin',
+  branch = 'master',
+): void => {
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(remote, 'remote: string')
+  check(branch, 'branch: lower')
 
-	// Await command.
-	execa.sync('git', ['push', '--tags', remote, `HEAD:${branch}`], { cwd })
+  // Await command.
+  execa.sync('git', ['push', '--tags', remote, `HEAD:${branch}`], { cwd })
 }
 
 // Branches.
@@ -177,12 +184,12 @@ export const gitPush = (cwd: string, remote = 'origin', branch = 'master'): void
  * @returns {Promise<void>} Promise that resolves when done.
  */
 export const gitBranch = (cwd: string, branch: string): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(branch, 'branch: lower')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(branch, 'branch: lower')
 
-	// Await command.
-	execa.sync('git', ['branch', branch], { cwd })
+  // Await command.
+  execa.sync('git', ['branch', branch], { cwd })
 }
 
 /**
@@ -193,12 +200,12 @@ export const gitBranch = (cwd: string, branch: string): void => {
  * @returns {Promise<void>} Promise that resolves when done.
  */
 export const gitCheckout = (cwd: string, branch: string): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(branch, 'branch: lower')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(branch, 'branch: lower')
 
-	// Await command.
-	execa.sync('git', ['checkout', branch], { cwd })
+  // Await command.
+  execa.sync('git', ['checkout', branch], { cwd })
 }
 
 // Hashes.
@@ -210,11 +217,11 @@ export const gitCheckout = (cwd: string, branch: string): void => {
  * @return {Promise<string>} Promise that resolves to the SHA of the head commit.
  */
 export const gitGetHead = (cwd: string): string => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
+  // Check params.
+  check(cwd, 'cwd: absolute')
 
-	// Await command and return HEAD SHA.
-	return execa.sync('git', ['rev-parse', 'HEAD'], { cwd }).stdout
+  // Await command and return HEAD SHA.
+  return execa.sync('git', ['rev-parse', 'HEAD'], { cwd }).stdout
 }
 
 // Tags.
@@ -228,13 +235,15 @@ export const gitGetHead = (cwd: string): string => {
  * @returns {Promise<void>} Promise that resolves when done.
  */
 export const gitTag = (cwd: string, tagName: string, hash?: string): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(tagName, 'tagName: string+')
-	check(hash, 'hash: alphanumeric{40}?')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(tagName, 'tagName: string+')
+  check(hash, 'hash: alphanumeric{40}?')
 
-	// Run command.
-	execa.sync('git', hash ? ['tag', '-f', tagName, hash] : ['tag', tagName], { cwd })
+  // Run command.
+  execa.sync('git', hash ? ['tag', '-f', tagName, hash] : ['tag', tagName], {
+    cwd,
+  })
 }
 
 /**
@@ -245,12 +254,14 @@ export const gitTag = (cwd: string, tagName: string, hash?: string): void => {
  * @return {Promise<string>} The tag associated with the SHA in parameter or `null`.
  */
 export const gitGetTags = (cwd: string, hash: string): string => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(hash, 'hash: alphanumeric{40}')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(hash, 'hash: alphanumeric{40}')
 
-	// Run command.
-	return execa.sync('git', ['describe', '--tags', '--exact-match', hash], { cwd }).stdout
+  // Run command.
+  return execa.sync('git', ['describe', '--tags', '--exact-match', hash], {
+    cwd,
+  }).stdout
 }
 
 /**
@@ -261,12 +272,12 @@ export const gitGetTags = (cwd: string, hash: string): string => {
  * @return {Promise<string>} Promise that resolves to the SHA of the first commit associated with `tagName`.
  */
 export const gitGetTagHash = (cwd: string, tagName: string): string => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(tagName, 'tagName: string+')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(tagName, 'tagName: string+')
 
-	// Run command.
-	return execa.sync('git', ['rev-list', '-1', tagName], { cwd }).stdout
+  // Run command.
+  return execa.sync('git', ['rev-list', '-1', tagName], { cwd }).stdout
 }
 
 // Configs.
@@ -280,12 +291,12 @@ export const gitGetTagHash = (cwd: string, tagName: string): string => {
  * @returns {Promise<void>} Promise that resolves when done.
  */
 export const gitConfig = (cwd: string, name: string, value: any): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(name, 'name: string+')
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(name, 'name: string+')
 
-	// Run command.
-	execa.sync('git', ['config', '--add', name, value], { cwd })
+  // Run command.
+  execa.sync('git', ['config', '--add', name, value], { cwd })
 }
 
 /**
@@ -295,12 +306,11 @@ export const gitConfig = (cwd: string, name: string, value: any): void => {
  * @param {string} name Config name.
  * @returns {Promise<void>} Promise that resolves when done.
  */
-export const gitGetConfig = (cwd: string, name: string): void => {
-	// Check params.
-	check(cwd, 'cwd: absolute')
-	check(name, 'name: string+')
+export const gitGetConfig = (cwd: string, name: string): string => {
+  // Check params.
+  check(cwd, 'cwd: absolute')
+  check(name, 'name: string+')
 
-	// Run command.
-	execa.sync('git', ['config', name], { cwd }).stdout
+  // Run command.
+  return execa.sync('git', ['config', name], { cwd }).stdout
 }
-

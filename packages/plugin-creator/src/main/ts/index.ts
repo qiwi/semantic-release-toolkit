@@ -1,5 +1,5 @@
-import { sync as readPkgUp } from 'read-pkg-up'
 import { castArray } from 'lodash'
+import { sync as readPkgUp } from 'read-pkg-up'
 
 import {
   TPlugin,
@@ -67,9 +67,13 @@ const checkPrevSteps = (
   }
 }
 
-export const getStepConfig = (context: TSemrelContext, step: TReleaseStep, name = ''): TPluginConfig =>
+export const getStepConfig = (
+  context: TSemrelContext,
+  step: TReleaseStep,
+  name = '',
+): TPluginConfig =>
   castArray(context.options?.[step])
-    .map(config => {
+    .map((config) => {
       if (Array.isArray(config)) {
         const [path, opts] = config
 
@@ -80,7 +84,10 @@ export const getStepConfig = (context: TSemrelContext, step: TReleaseStep, name 
     })
     .find((config) => config?.path === name) || {}
 
-export const getStepConfigs = (context: TSemrelContext, name = ''): Record<TReleaseStep, TPluginConfig> =>
+export const getStepConfigs = (
+  context: TSemrelContext,
+  name = '',
+): Record<TReleaseStep, TPluginConfig> =>
   releaseSteps.reduce<Record<TReleaseStep, TPluginConfig>>((configs, step) => {
     configs[step] = getStepConfig(context, step, name)
 
