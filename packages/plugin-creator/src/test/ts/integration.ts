@@ -3,7 +3,7 @@ import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
 import semanticRelease from 'semantic-release'
 
 import { createPlugin } from '../../main/ts'
-import { copyDirectory } from './assets/file'
+import { cleanPath,copyDirectory } from './assets/file'
 import { gitCommitAll, gitInit, gitInitOrigin, gitPush } from './assets/git'
 
 const fixtures = resolve(__dirname, '../fixtures')
@@ -49,12 +49,12 @@ describe('integration', () => {
     await semanticRelease(
       {
         branches: ['master'],
-        ci: false,
         dryRun: true,
+        ci: false,
         plugins: [pluginName],
       },
       {
-        cwd,
+        cwd: cleanPath(cwd),
       },
     )
 
@@ -85,7 +85,7 @@ describe('integration', () => {
         ],
       },
       {
-        cwd,
+        cwd: cleanPath(cwd),
         env,
       },
     )
