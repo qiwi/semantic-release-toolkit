@@ -45,16 +45,22 @@ describe('integration', () => {
 
   afterEach(jest.clearAllMocks)
 
+  const env = {
+    ...process.env,
+    TRAVIS_PULL_REQUEST_BRANCH: 'master',
+    TRAVIS_BRANCH: 'master'
+  }
+
   it('plugin is compatible with semrel', async () => {
     await semanticRelease(
       {
         branches: ['master'],
         dryRun: true,
-        ci: false,
         plugins: [pluginName],
       },
       {
         cwd: cleanPath(cwd),
+        env,
       },
     )
 
@@ -69,12 +75,11 @@ describe('integration', () => {
       prepare: preparePluginConfig,
       publish: publishPluginConfig,
     }
-    const env = { ...process.env, FOO: 'bar' }
+
     await semanticRelease(
       {
         branches: ['master'],
         dryRun: false,
-        ci: false,
         plugins: [[pluginName, commonPluginConfig]],
         prepare: [[pluginName, preparePluginConfig]],
         publish: [
