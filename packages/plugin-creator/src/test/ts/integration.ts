@@ -38,24 +38,30 @@ describe('integration', () => {
     jest.resetModules()
   })
 
+  afterEach(jest.clearAllMocks)
+
   it('plugin is compatible with semrel', async () => {
     await semanticRelease({
       branches: ['master'],
       noCi: true,
-      dryRun: false,
+      dryRun: true,
       plugins: [pluginName]
     },
     {
       cwd
     })
 
-    expect(handler).toBeCalledTimes(7)
-  }, 30000)
+    expect(handler).toBeCalledTimes(4)
+  }, 15000)
 
-  it('release handler is invoked with proper context', async () => {
+  it.only('release handler is invoked with proper context', async () => {
     const commonPluginConfig = {common: true}
     const preparePluginConfig = {prepare: true}
     const publishPluginConfig = {publish: true}
+    const stepConfigs = {
+      prepare: preparePluginConfig,
+      publish: publishPluginConfig
+    }
     const env = {...process.env, FOO: 'bar'}
     await semanticRelease({
         branches: ['master'],
@@ -63,7 +69,10 @@ describe('integration', () => {
         dryRun: false,
         plugins: [[pluginName, commonPluginConfig]],
         prepare: [[pluginName, preparePluginConfig]],
-        publish: [[pluginName, publishPluginConfig]],
+        publish: [{
+          path: pluginName,
+          ...publishPluginConfig
+        }],
       },
       {
         cwd,
@@ -73,6 +82,7 @@ describe('integration', () => {
     const expectedContext = {
       env
     }
+    // prettier-ignore
     const expectedArgs = [
       {step: 'verifyConditions', pluginConfig: commonPluginConfig, context: expectedContext},
       {step: 'analyzeCommits', context: expectedContext},
@@ -81,6 +91,8 @@ describe('integration', () => {
       {
         step: 'prepare',
         pluginConfig: preparePluginConfig,
+        stepConfig: preparePluginConfig,
+        stepConfigs,
         context: {
           ...expectedContext,
           nextRelease: {
@@ -92,7 +104,7 @@ describe('integration', () => {
           }
         }
       },
-      {step: 'publish', pluginConfig: publishPluginConfig},
+      {step: 'publish', pluginConfig: publishPluginConfig, stepConfig: publishPluginConfig, stepConfigs},
       {step: 'success'},
     ]
     expectedArgs.forEach((handlerContext, index) =>
@@ -100,5 +112,5 @@ describe('integration', () => {
     )
 
     expect(handler).toBeCalledTimes(7)
-  }, 30000)
+  }, 15000)
 })

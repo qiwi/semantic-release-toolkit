@@ -1,4 +1,5 @@
 import { sync as readPkgUp } from 'read-pkg-up'
+import { castArray } from 'lodash'
 
 import {
   TPlugin,
@@ -66,9 +67,29 @@ const checkPrevSteps = (
   }
 }
 
+export const getStepConfig = (context: TSemrelContext, step: TReleaseStep, name = ''): TPluginConfig =>
+  castArray(context.options?.[step])
+    .map(config => {
+      if (Array.isArray(config)) {
+        const [path, opts] = config
+
+        return { ...opts, path }
+      }
+
+      return config
+    })
+    .find((config) => config?.path === name) || {}
+
+export const getStepConfigs = (context: TSemrelContext, name = ''): Record<TReleaseStep, TPluginConfig> =>
+  releaseSteps.reduce<Record<TReleaseStep, TPluginConfig>>((configs, step) => {
+    configs[step] = getStepConfig(context, step, name)
+
+    return configs
+  }, {} as Record<TReleaseStep, TPluginConfig>)
+
 export const createPlugin: TPluginFactory = (options) => {
   const normalizedOpions = normalizeOptions(options)
-  const { handler, include, exclude } = normalizedOpions
+  const { handler, include, exclude, name } = normalizedOpions
   const metaContext: TPluginMetaContext = {
     invoked: [],
   }
@@ -81,7 +102,10 @@ export const createPlugin: TPluginFactory = (options) => {
 
         metaContext.invoked.push(step)
 
-        return handler({ pluginConfig, context, step })
+        const stepConfigs = getStepConfigs(context, name)
+        const stepConfig = stepConfigs[step]
+
+        return handler({ pluginConfig, context, step, stepConfig, stepConfigs })
       }
 
       return m
