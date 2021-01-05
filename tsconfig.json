@@ -2,9 +2,11 @@
   "compilerOptions": {
     "outDir": "temp/prebuild",
     "emitDeclarationOnly": true,
+    "esModuleInterop": true,
     "declaration": true
   },
   "references": [
-    { "path": "./packages/plugin-creator/tsconfig.es5.json" }
+    { "path": "./packages/plugin-creator/tsconfig.es5.json" },
+    { "path": "./packages/plugin-workspace/tsconfig.es5.json" }
   ]
 }

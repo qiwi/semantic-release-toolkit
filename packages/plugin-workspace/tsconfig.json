@@ -7,7 +7,9 @@
     "outDir": "target/es5",
     "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
   },
-  "references": [],
+  "references": [
+    { "path": "../plugin-creator" }
+  ],
   "include": [
     "src/main/**/*"
   ],
