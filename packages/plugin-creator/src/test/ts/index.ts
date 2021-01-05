@@ -61,7 +61,23 @@ describe('createPlugin()', () => {
     releaseSteps.forEach((step) => {
       ;(plugin[step] as TPluginMethod)(pluginConfig, context)
 
-      expect(handler).toHaveBeenCalledWith({ pluginConfig, context, step })
+      expect(handler).toHaveBeenCalledWith({
+        pluginConfig,
+        context,
+        step,
+        stepConfig: {},
+        stepConfigs: {
+          verifyConditions: {},
+          analyzeCommits: {},
+          verifyRelease: {},
+          generateNotes: {},
+          prepare: {},
+          publish: {},
+          addChannel: {},
+          success: {},
+          fail: {},
+        }
+      })
     })
 
     expect(handler).toBeCalledTimes(releaseSteps.length)

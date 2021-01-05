@@ -25,8 +25,12 @@ export interface TPlugin {
 
 export type TReleaseStep = keyof TPlugin
 
+export type TStepConfigs = Record<TReleaseStep, TPluginConfig>
+
 export type TPluginHandlerContext = {
   pluginConfig: TPluginConfig
+  stepConfig: TPluginConfig
+  stepConfigs: TStepConfigs
   context: TSemrelContext
   step: TReleaseStep
 }
