@@ -10,6 +10,9 @@ but keep the benefits of stateful operations like changelog appending, docs publ
 * Cross-release semaphore
 * Build meta publishing: coverage, buildstamp
 
+## Status
+🚧 WIP 🚧
+
 ## Install
 ```shell script
 yarn add @qiwi/semrel-workspace -D
