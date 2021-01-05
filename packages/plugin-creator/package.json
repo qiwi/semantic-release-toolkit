@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-plugin-creator",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -45,7 +45,7 @@
     "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "1.0.2",
+    "@qiwi/semrel-infra": "1.0.3",
     "semantic-release": "^17.3.1",
     "resolve-from": "^5.0.0",
     "tempy": "^1.0.0",

@@ -1,3 +1,23 @@
+# @qiwi/semrel-plugin-creator [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.1.1...@qiwi/semrel-plugin-creator@1.2.0) (2021-01-05)
+
+
+### Features
+
+* **plugin-creator:** add step opts resolver ([d1e2d3d](https://github.com/qiwi/semantic-release-toolkit/commit/d1e2d3d50d980a02fa4486660b0747dfc047b88b)), closes [#21](https://github.com/qiwi/semantic-release-toolkit/issues/21)
+
+
+### Performance Improvements
+
+* deps revision ([b586bd5](https://github.com/qiwi/semantic-release-toolkit/commit/b586bd55912cd58eb2c64ead73790d73f1e9cbeb))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 1.0.3
+
 ## @qiwi/semrel-plugin-creator [1.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.1.0...@qiwi/semrel-plugin-creator@1.1.1) (2021-01-01)
 
 
