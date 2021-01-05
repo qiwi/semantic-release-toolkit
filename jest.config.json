@@ -1,10 +1,14 @@
 {
   "collectCoverage": true,
+  "collectCoverageFrom": [
+    "<rootDir>/**/src/main/**/*.(j|t)s"
+  ],
   "testFailureExitCode": 1,
   "projects": [
     "<rootDir>/packages/config/jest.config.json",
     "<rootDir>/packages/config-monorepo/jest.config.json",
     "<rootDir>/packages/preset/jest.config.json",
-    "<rootDir>/packages/plugin-creator/jest.config.json"
+    "<rootDir>/packages/plugin-creator/jest.config.json",
+    "<rootDir>/packages/plugin-workspace/jest.config.json"
   ]
 }

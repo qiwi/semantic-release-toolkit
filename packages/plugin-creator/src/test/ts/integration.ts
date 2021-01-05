@@ -59,7 +59,7 @@ describe('integration', () => {
     expect(handler).toBeCalledTimes(4)
   }, 15000)
 
-  it.only('release handler is invoked with proper context', async () => {
+  it('release handler is invoked with proper context', async () => {
     const commonPluginConfig = { common: true }
     const preparePluginConfig = { prepare: true }
     const publishPluginConfig = { publish: true }
