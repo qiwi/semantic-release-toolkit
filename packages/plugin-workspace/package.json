@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "tslib": "^2.0.3",
-    "@qiwi/semrel-plugin-creator": "^1.0.0"
+    "@qiwi/semrel-plugin-creator": "^1.1.1"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.0.2"
