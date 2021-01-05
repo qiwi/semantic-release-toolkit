@@ -23,6 +23,8 @@ describe('integration', () => {
   gitInitOrigin(cwd)
   gitPush(cwd)
 
+  console.log('cwd=', cwd)
+
   beforeAll(() => {
     jest.mock(pluginName, () => plugin, { virtual: true })
     jest
@@ -47,7 +49,7 @@ describe('integration', () => {
     await semanticRelease(
       {
         branches: ['master'],
-        noCi: true,
+        ci: false,
         dryRun: true,
         plugins: [pluginName],
       },
@@ -71,8 +73,8 @@ describe('integration', () => {
     await semanticRelease(
       {
         branches: ['master'],
-        noCi: true,
         dryRun: false,
+        ci: false,
         plugins: [[pluginName, commonPluginConfig]],
         prepare: [[pluginName, preparePluginConfig]],
         publish: [
