@@ -1,3 +1,10 @@
+# @qiwi/semrel-plugin-creator [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.2.0...@qiwi/semrel-plugin-creator@1.3.0) (2021-01-06)
+
+
+### Features
+
+* **plugin-creator:** make `metaContext` unique for each semrel exec context ([16f3121](https://github.com/qiwi/semantic-release-toolkit/commit/16f3121abd4c646a5e3a66260377ed8ff91ff58d))
+
 # @qiwi/semrel-plugin-creator [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.1.1...@qiwi/semrel-plugin-creator@1.2.0) (2021-01-05)
 
 
