@@ -1,3 +1,13 @@
+## @qiwi/semrel-workspace [1.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-workspace@1.0.0...@qiwi/semrel-workspace@1.0.1) (2021-01-06)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 1.3.0
+
 # @qiwi/semrel-workspace 1.0.0 (2021-01-05)
 
 
