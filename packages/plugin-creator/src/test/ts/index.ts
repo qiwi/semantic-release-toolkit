@@ -125,4 +125,33 @@ describe('createPlugin()', () => {
       publish(pluginConfig, context)
     })
   })
+
+  describe('metaContext', () => {
+    it('is unique for each semrel context', () => {
+      const plugin = createPlugin({ require: ['verifyConditions'] })
+      const pluginConfig = {}
+      const verifyConditions = plugin.verifyConditions as TPluginMethod
+      const analyzeCommits = plugin.analyzeCommits as TPluginMethod<string>
+      const context1: TSemrelContext = {
+        logger: console,
+        env: {},
+      }
+      const context2: TSemrelContext = {
+        logger: console,
+        env: {},
+      }
+
+      expect(() => analyzeCommits(pluginConfig, context1)).toThrowError(
+        "plugin '@qiwi/semrel-plugin-creator' requires verifyConditions to be invoked before analyzeCommits",
+      )
+      verifyConditions(pluginConfig, context1)
+      analyzeCommits(pluginConfig, context1)
+
+      expect(() => analyzeCommits(pluginConfig, context2)).toThrowError(
+        "plugin '@qiwi/semrel-plugin-creator' requires verifyConditions to be invoked before analyzeCommits",
+      )
+      verifyConditions(pluginConfig, context2)
+      analyzeCommits(pluginConfig, context2)
+    })
+  })
 })
