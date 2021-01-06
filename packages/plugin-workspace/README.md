@@ -63,5 +63,4 @@ yarn add @qiwi/semrel-workspace -D
     }]
   ]
 }
-
 ```

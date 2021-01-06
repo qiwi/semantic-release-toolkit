@@ -26,3 +26,30 @@ const plugin = createPlugin({
   include: ['prepare', 'publish']
 })
 ```
+
+## API
+```typescript
+export type TPluginHandlerContext = {
+  pluginConfig: TPluginConfig
+  stepConfig: TPluginConfig
+  stepConfigs: TStepConfigs
+  context: TSemrelContext
+  step: TReleaseStep
+}
+
+export type TPluginFactoryOptionsNormalized = {
+  handler: TReleaseHandler
+  name?: string
+  include: TReleaseStep[]
+  exclude: TReleaseStep[]
+  require: TReleaseStep[]
+}
+
+export type TPluginFactoryOptions = Partial<TPluginFactoryOptionsNormalized>
+
+export type TReleaseHandler = (context: TPluginHandlerContext) => Promise<any>
+
+export type TPluginFactory = (
+  handler: TPluginFactoryOptions | TReleaseHandler,
+) => TPlugin
+```
