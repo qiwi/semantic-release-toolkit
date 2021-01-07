@@ -1,12 +1,6 @@
-import {
-  existsSync,
-  lstatSync,
-  writeFileSync,
-} from 'fs'
-
-import { isAbsolute, join, normalize } from 'path'
-
+import { existsSync, lstatSync, writeFileSync } from 'fs'
 import { ensureFileSync } from 'fs-extra'
+import { isAbsolute, join, normalize } from 'path'
 
 export { copySync as copyDirectory } from 'fs-extra'
 
@@ -45,5 +39,8 @@ export const cleanPath = (path: string, cwd = process.cwd()): string => {
   // check(cwd, "cwd: absolute");
 
   // Normalize, absolutify, and trim trailing slashes from the path.
-  return normalize(isAbsolute(path) ? path : join(cwd, path)).replace(/[/\\]+$/, "");
+  return normalize(isAbsolute(path) ? path : join(cwd, path)).replace(
+    /[/\\]+$/,
+    '',
+  )
 }

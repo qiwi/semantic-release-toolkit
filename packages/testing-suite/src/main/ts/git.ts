@@ -260,13 +260,11 @@ export const gitGetTags = (cwd: string, hash: string): string[] => {
 
   // Run command.
   // const tags = execa.sync('git', ['describe', '--tags', '--exact-match', hash], {
-  const tags = execa.sync('git', ['tag', '--merged',  hash], {
+  const tags = execa.sync('git', ['tag', '--merged', hash], {
     cwd,
   }).stdout
 
-  return tags
-    ? tags.split('\n')
-    : []
+  return tags ? tags.split('\n') : []
 }
 
 /**
