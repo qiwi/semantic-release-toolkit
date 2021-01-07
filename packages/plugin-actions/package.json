@@ -1,11 +1,11 @@
 {
-  "name": "@qiwi/semrel-workspace",
-  "version": "1.0.1",
+  "name": "@qiwi/semrel-actions",
+  "version": "0.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
-  "description": "Semrel plugin for data sync with remote workspaces",
+  "description": "Semrel actions provider",
   "keywords": [],
   "main": "target/es5/index.js",
   "source": "target/ts/index.ts",

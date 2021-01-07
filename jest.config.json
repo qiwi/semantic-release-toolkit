@@ -9,7 +9,7 @@
     "<rootDir>/packages/config-monorepo/jest.config.json",
     "<rootDir>/packages/preset/jest.config.json",
     "<rootDir>/packages/plugin-creator/jest.config.json",
-    "<rootDir>/packages/plugin-workspace/jest.config.json",
+    "<rootDir>/packages/plugin-actions/jest.config.json",
     "<rootDir>/packages/testing-suite/jest.config.json"
   ]
 }

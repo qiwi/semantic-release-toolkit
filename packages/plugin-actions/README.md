@@ -1,4 +1,4 @@
-# @qiwi/semrel-workspace
+# @qiwi/semrel-actions
 [Semrel](https://github.com/semantic-release/semantic-release) plugin for data syncing with remote workspaces
 
 ## Motivation
@@ -15,14 +15,14 @@ but keep the benefits of stateful operations like changelog appending, docs publ
 
 ## Install
 ```shell script
-yarn add @qiwi/semrel-workspace -D
+yarn add @qiwi/semrel-actions -D
 ```
 
 ## Config examples
 ```json
 {
   "plugins": [
-    ["@qiwi/semrel-workspace", {
+    ["@qiwi/semrel-actions", {
       "providers": [
         {
           "provider": "metabranch",
@@ -35,7 +35,7 @@ yarn add @qiwi/semrel-workspace -D
     }]
   ],
   "prepare": [
-    ["@qiwi/semrel-workspace", {
+    ["@qiwi/semrel-actions", {
       "actions": [{
         "provider": "metabranch",
         "options": {
@@ -46,7 +46,7 @@ yarn add @qiwi/semrel-workspace -D
     }]
   ],
   "publish": [
-    ["@qiwi/semrel-workspace", {
+    ["@qiwi/semrel-actions", {
       "actions": [{
         "provider": "metabranch",
         "options": {

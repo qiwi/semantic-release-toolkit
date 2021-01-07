@@ -1,5 +1,5 @@
 {
-  "name": "@qiwi/semrel-workspace",
+  "name": "@qiwi/semrel-actions",
   "out": "./docs",
   "exclude": ["src/test", "**/node_modules/**", "paralleljs"],
   "externalPattern": ["**/node_modules/**"],
