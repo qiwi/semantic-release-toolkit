@@ -1,10 +1,16 @@
+import {
+  cleanPath,
+  copyDirectory,
+  gitCommitAll,
+  gitInit,
+  gitInitOrigin,
+  gitPush,
+} from '@qiwi/semrel-testing-suite'
 import { resolve } from 'path'
 import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
 import semanticRelease from 'semantic-release'
 
 import { createPlugin } from '../../main/ts'
-import { cleanPath,copyDirectory } from './assets/file'
-import { gitCommitAll, gitInit, gitInitOrigin, gitPush } from './assets/git'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
@@ -48,7 +54,7 @@ describe('integration', () => {
   const env = {
     ...process.env,
     TRAVIS_PULL_REQUEST_BRANCH: 'master',
-    TRAVIS_BRANCH: 'master'
+    TRAVIS_BRANCH: 'master',
   }
 
   it('plugin is compatible with semrel', async () => {

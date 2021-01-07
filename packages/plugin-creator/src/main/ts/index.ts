@@ -94,7 +94,6 @@ export const getStepConfigs = (
     return configs
   }, {} as Record<TReleaseStep, TPluginConfig>)
 
-
 const metaContexts: WeakMap<TSemrelContext, TPluginMetaContext> = new WeakMap()
 
 const getMetaContext = (context: TSemrelContext): TPluginMetaContext => {
@@ -106,7 +105,7 @@ const getMetaContext = (context: TSemrelContext): TPluginMetaContext => {
     }
     metaContexts.set(context, metaContext)
   }
-  
+
   return metaContext
 }
 
@@ -119,7 +118,7 @@ export const createPlugin: TPluginFactory = (options) => {
     .reduce<TPlugin>((m, step) => {
       m[step] = (pluginConfig: TPluginConfig, context: TSemrelContext) => {
         const metaContext = getMetaContext(context)
-        
+
         checkPrevSteps(metaContext, normalizedOpions, step)
 
         metaContext.invoked.push(step)
