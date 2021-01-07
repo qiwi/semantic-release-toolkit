@@ -38,11 +38,13 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "tslib": "^2.0.3",
-    "fs-extra": "^9.0.1"
+    "tslib": "^2.1.0",
+    "fs-extra": "^9.0.1",
+    "tempy": "^1.0.0",
+    "file-url": "^3.0.0",
+    "execa": "^5.0.0"
   },
   "devDependencies": {
-    "execa": "^5.0.0",
     "@types/node": "^14.14.20",
     "@qiwi/semrel-infra": "1.0.3"
   },
