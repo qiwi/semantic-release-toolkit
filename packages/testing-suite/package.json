@@ -38,7 +38,8 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "tslib": "^2.0.3"
+    "tslib": "^2.0.3",
+    "fs-extra": "^9.0.1"
   },
   "devDependencies": {
     "execa": "^5.0.0",
