@@ -1,9 +1,5 @@
 import execa from 'execa'
 import { resolve } from 'path'
-// import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
-// import semanticRelease from 'semantic-release'
-
-// import { readdirSync } from 'fs'
 
 import {
   gitCommit,
@@ -18,7 +14,6 @@ import {
   gitGetTags,
   gitCheckout,
   gitBranch,
-  // cleanPath,
   copyDirectory,
 } from '../../main/ts'
 
