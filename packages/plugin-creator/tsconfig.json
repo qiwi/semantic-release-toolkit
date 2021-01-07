@@ -8,7 +8,11 @@
     "tsBuildInfoFile": "./buildcache/.tsbuildinfo",
     "esModuleInterop": true
   },
-  "references": [],
+  "references": [
+    {
+      "path": "../testing-suite"
+    }
+  ],
   "include": [
     "src/main/**/*"
   ],
