@@ -1,11 +1,8 @@
-import {
-  isDirectory,
-  cleanPath,
-  createTestingFiles,
-} from '../../main/ts'
-import {resolve} from 'path'
+import { readFileSync } from 'fs'
+import { resolve } from 'path'
 import tempy from 'tempy'
-import {readFileSync} from 'fs'
+
+import { cleanPath, createTestingFiles,isDirectory } from '../../main/ts'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
@@ -51,7 +48,11 @@ describe('createTestingFiles', () => {
 
     createTestingFiles(cwd, folters)
 
-    expect(readFileSync(resolve(cwd, 'foo/test.txt'), {encoding: 'utf-8'})).toBe('foo')
-    expect(readFileSync(resolve(cwd, 'bar/test.txt'), {encoding: 'utf-8'})).toBe('bar')
+    expect(
+      readFileSync(resolve(cwd, 'foo/test.txt'), { encoding: 'utf-8' }),
+    ).toBe('foo')
+    expect(
+      readFileSync(resolve(cwd, 'bar/test.txt'), { encoding: 'utf-8' }),
+    ).toBe('bar')
   })
 })

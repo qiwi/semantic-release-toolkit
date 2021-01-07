@@ -2,19 +2,19 @@ import execa from 'execa'
 import { resolve } from 'path'
 
 import {
+  copyDirectory,
+  gitAdd,
+  gitBranch,
+  gitCheckout,
   gitCommit,
   gitCommitAll,
-  gitInit,
-  gitInitOrigin,
   gitGetConfig,
-  gitPush,
-  gitAdd,
-  gitTag,
   gitGetTagHash,
   gitGetTags,
-  gitCheckout,
-  gitBranch,
-  copyDirectory,
+  gitInit,
+  gitInitOrigin,
+  gitPush,
+  gitTag,
 } from '../../main/ts'
 
 const fixtures = resolve(__dirname, '../fixtures')
@@ -25,7 +25,9 @@ describe('testing suite', () => {
       const branch = 'foobarbaz'
       const cwd = gitInit(branch)
 
-      expect(execa.sync('git', ['branch', '--show-current'], {cwd}).stdout).toBe(branch)
+      expect(
+        execa.sync('git', ['branch', '--show-current'], { cwd }).stdout,
+      ).toBe(branch)
       expect(cwd).toEqual(expect.any(String))
     })
   })
@@ -39,8 +41,9 @@ describe('testing suite', () => {
 
       expect(url).toEqual(expect.any(String))
       expect(commitId).toEqual(expect.any(String))
-      expect(execa.sync('git', ['remote', 'show', 'origin'], {cwd}).stdout)
-        .toMatch(/master\s+tracked\n\s+release\s+tracked/)
+      expect(
+        execa.sync('git', ['remote', 'show', 'origin'], { cwd }).stdout,
+      ).toMatch(/master\s+tracked\n\s+release\s+tracked/)
     })
   })
 
@@ -102,10 +105,14 @@ describe('testing suite', () => {
       gitCommitAll(cwd, 'feat: initial commit')
       gitBranch(cwd, 'release')
 
-      expect(execa.sync('git', ['branch', '--show-current'], {cwd}).stdout).toBe('master')
+      expect(
+        execa.sync('git', ['branch', '--show-current'], { cwd }).stdout,
+      ).toBe('master')
 
       gitCheckout(cwd, 'release')
-      expect(execa.sync('git', ['branch', '--show-current'], {cwd}).stdout).toBe('release')
+      expect(
+        execa.sync('git', ['branch', '--show-current'], { cwd }).stdout,
+      ).toBe('release')
     })
   })
 })
