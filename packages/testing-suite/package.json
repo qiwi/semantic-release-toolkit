@@ -41,6 +41,8 @@
     "tslib": "^2.0.3"
   },
   "devDependencies": {
+    "execa": "^5.0.0",
+    "@types/node": "^14.14.20",
     "@qiwi/semrel-infra": "1.0.3"
   },
   "peerDependencies": {},
