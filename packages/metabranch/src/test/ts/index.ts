@@ -7,6 +7,7 @@ describe('metabranch', () => {
         branch: 'gh-pages',
         from: [],
         to: '/foo',
+        repo: 'https://github.com/qiwi/semantic-release-toolkit.git'
       }
 
       await fetch(opts)

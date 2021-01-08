@@ -27,7 +27,7 @@ export const gitFindUp = async (cwd?: string): Promise<Match> => findUp(async di
 
 }, {type: 'directory', cwd})
 
-export const gitInit = async (cwd = tempy.directory(), branch = 'master'): Promise<string> => {
+export const gitInit = async (cwd = tempy.directory(), branch?: string): Promise<string> => {
   if (await gitFindUp(cwd)) {
     return cwd
   }
@@ -36,7 +36,10 @@ export const gitInit = async (cwd = tempy.directory(), branch = 'master'): Promi
   // check(branch, 'branch: kebab')
 
   await execa('git', ['init'], { cwd })
-  await execa('git', ['checkout', '-b', branch], { cwd })
+
+  if (branch) {
+    await execa('git', ['checkout', '-b', branch], { cwd })
+  }
 
   // Disable GPG signing for commits.
   gitConfig(cwd, 'commit.gpgsign', false)
@@ -58,6 +61,15 @@ export const gitFetch = async (cwd: string, remote = 'origin', branch?: string):
   await gitFetchAll(cwd)
 }
 
+export const gitSetRemoteHead = async (cwd: string, remote = 'origin'): Promise<void> => {
+  await execa('git', ['remote', 'set-head', remote, '--auto'], { cwd })
+}
+
+
 export const gitFetchAll = async (cwd: string): Promise<void> => {
   await execa('git', ['fetch', '--all'], { cwd })
+}
+
+export const gitCheckout = async (cwd: string, branch: string): Promise<void> => {
+  await execa('git', ['checkout', '-f', branch], { cwd })
 }
