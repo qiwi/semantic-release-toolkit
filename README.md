@@ -20,7 +20,7 @@
 |Package | Description
 |---|---|
 |@qiwi/semrel-actions | Configurable custom actions/side-effects provider
-|@qiwi/semrel-metabranch | Plugin to provide two-way data sync with remote branch
+|@qiwi/semrel-metabranch | Plugin for two-way data sync with remote branch
 |@qiwi/msr | **[multi-semantic-release](https://github.com/qiwi/multi-semantic-release)** reforged with TS
 |@qiwi/semrel-monorepo | Represents **msr** as a regular plugin
 

@@ -1,0 +1,69 @@
+{
+  "name": "@qiwi/semrel-metabranch",
+  "version": "0.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Semrel plugin for two-way data sync with remote branch",
+  "keywords": [],
+  "main": "target/es5/index.js",
+  "source": "target/ts/index.ts",
+  "types": "target/es5/index.d.ts",
+  "typescript": {
+    "definition": "target/es5/index.d.ts"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "target",
+    "typings",
+    "flow-typed"
+  ],
+  "scripts": {
+    "clean": "rimraf target typings flow-typed buildcache coverage docs",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write 'src/**/*.ts'",
+    "test": "npm-run-all -p -l lint test:unit test:depcheck",
+    "test:unit": "jest --config=jest.config.json --runInBand",
+    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra --ignore-patterns typings,flow-typed/*",
+    "build": "npm-run-all -p -l build:es5 build:es6 build:ts build:libdef docs",
+    "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
+    "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
+    "build:ts": "cpy src/main/ts/ target/ts/",
+    "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
+    "docs": "typedoc --options ./typedoc.json ./src/main/ts",
+    "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
+    "postupdate": "yarn && yarn build && yarn test"
+  },
+  "dependencies": {
+    "@types/execa": "^2.0.0",
+    "@types/semantic-release": "^17.2.0",
+    "@types/node": "^14.14.20",
+    "tslib": "^2.1.0",
+    "execa": "^5.0.0",
+    "lodash": "^4.17.20",
+    "tempy": "^1.0.0",
+    "find-up": "^5.0.0"
+  },
+  "devDependencies": {
+    "@qiwi/semrel-infra": "1.0.3",
+    "@qiwi/semrel-testing-suite": "1.0.0",
+    "semantic-release": "^17.3.1",
+    "resolve-from": "^5.0.0"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
+  },
+  "author": "Anton Golub <mailbox@antongolub.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiwi/semantic-release-toolkit/issues"
+  },
+  "homepage": "https://github.com/qiwi/semantic-release-toolkit/#readme",
+  "prettier": "prettier-config-qiwi"
+}
