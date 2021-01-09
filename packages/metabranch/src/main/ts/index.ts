@@ -9,6 +9,8 @@ import {
   gitAddRemote,
   gitSetRemoteHead,
 } from './git'
+import fs from 'fs-extra'
+import path from 'path'
 
 export * from './interface'
 
@@ -16,6 +18,7 @@ export const fetch = async (opts: TSyncOptions): Promise<void> => {
   const {
     branch,
     from,
+    to,
     cwd = tempy.directory(),
     repo
   } = opts
@@ -31,6 +34,8 @@ export const fetch = async (opts: TSyncOptions): Promise<void> => {
     await gitSetRemoteHead(cwd, 'origin')
     await gitCheckout(cwd, `origin/HEAD`)
   }
+
+  fs.copySync(path.resolve(cwd, from + ''), path.resolve(to))
 
   console.log('from=', from)
   console.log('cwd=', cwd)

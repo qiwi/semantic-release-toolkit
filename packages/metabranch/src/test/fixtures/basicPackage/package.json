@@ -1,5 +1,5 @@
 {
-	"name": "msr-test-yarn",
+	"name": "msr-test-basic",
 	"author": "Dave Houlbrooke <dave@shax.com",
 	"version": "0.0.0-semantically-released",
 	"private": true,
@@ -7,9 +7,6 @@
 	"engines": {
 		"node": ">=8.3"
 	},
-	"workspaces": [
-		"packages/*"
-	],
 	"release": {
 		"plugins": [
 			"@semantic-release/commit-analyzer",
