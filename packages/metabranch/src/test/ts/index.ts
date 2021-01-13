@@ -40,19 +40,23 @@ describe('metabranch', () => {
 
   describe('push()', () => {
     it('pushes files to remote', async () => {
-      const { repo, cwd } = initTempRepo()
-      const from = path.resolve(fixtures, 'foobar')
+      const { repo, cwd } = initTempRepo(path.resolve(fixtures, 'foo'))
+      const from = path.resolve(cwd, 'bar')
       const opts = {
         branch: 'metabranch',
         from,
         to: 'foo',
-        repo
+        repo,
+        base: cwd
       }
 
-      await push(opts)
+      const commitId = await push(opts)
 
       await execa('git', ['fetch', 'origin', 'metabranch'], { cwd })
       await execa('git', ['checkout', 'origin/metabranch'], { cwd })
+
+      expect((await execa('git', ['rev-parse', 'HEAD'], { cwd })).stdout).toBe(commitId)
+      expect(fs.readFileSync(path.join(cwd, 'foo', 'bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
     })
   })
 })
