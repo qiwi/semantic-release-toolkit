@@ -4,4 +4,5 @@ export type TSyncOptions = {
   repo: string
   from: string | string[]
   to: string
+  base?: string
 }
