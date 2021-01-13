@@ -16,7 +16,7 @@ describe('normalizeOptions()', () => {
 
   it('merges `defaultOptions` with passed opts', () => {
     const handler: any = jest.fn()
-    const name = 'foobar'
+    const name = 'fixtures.foobar'
     const options: TPluginFactoryOptions = {
       handler,
       include: ['fail'],

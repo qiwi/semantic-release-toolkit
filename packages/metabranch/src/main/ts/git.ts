@@ -73,3 +73,50 @@ export const gitFetchAll = async (cwd: string): Promise<void> => {
 export const gitCheckout = async (cwd: string, branch: string): Promise<void> => {
   await execa('git', ['checkout', '-f', branch], { cwd })
 }
+
+export const gitAdd = async (cwd: string, file = '.'): Promise<void> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+
+  await execa('git', ['add', file], { cwd })
+}
+
+/**
+ * Get the current HEAD SHA in a local Git repository.
+ *
+ * @param {string} cwd The CWD of the Git repository.
+ * @return {Promise<string>} Promise that resolves to the SHA of the head commit.
+ */
+export const gitGetHead = async (cwd: string): Promise<string> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+
+  // Await command and return HEAD SHA.
+  return (await execa('git', ['rev-parse', 'HEAD'], { cwd })).stdout
+}
+
+export const gitCommit = async (cwd: string, message: string): Promise<string> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+  // check(message, 'message: string+')
+
+  // Await the command.
+  await execa('git', ['commit', '-m', message, '--no-gpg-sign'], { cwd })
+
+  // Return HEAD SHA.
+  return gitGetHead(cwd)
+}
+
+export const gitPush = async (
+  cwd: string,
+  remote = 'origin',
+  branch = 'master',
+): Promise<void> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+  // check(remote, 'remote: string')
+  // check(branch, 'branch: lower')
+
+  // Await command.
+  await execa('git', ['push', '--tags', remote, `HEAD:${branch}`], { cwd })
+}
