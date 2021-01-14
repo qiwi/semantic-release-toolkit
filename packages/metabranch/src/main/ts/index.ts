@@ -98,6 +98,7 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
   await gitAdd(cwd)
   // console.log('diff=', await execa('git', ['diff', '--cached', '--name-only'], { cwd }))
   const commitId = await gitCommit(cwd, 'update meta')
+
   await gitPush(cwd, 'origin', `refs/heads/${branch}`)
 
   return commitId
