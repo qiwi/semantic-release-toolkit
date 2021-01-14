@@ -120,3 +120,33 @@ export const gitPush = async (
   // Await command.
   await execa('git', ['push', '--tags', remote, `HEAD:${branch}`], { cwd })
 }
+
+export const gitRebaseToRemote = async (
+  cwd: string,
+  remote = 'origin',
+  branch = 'master',
+): Promise<void> => {
+  await execa('git', ['rebase', remote, branch], { cwd })
+}
+
+export const gitPushRebase = async (
+  cwd: string,
+  remote = 'origin',
+  branch = 'master',
+): Promise<void> => {
+  let retries = 10
+  let ok = false
+
+  while (!ok && retries > 0) {
+
+    try {
+      await gitFetch(cwd, remote, branch)
+      await gitRebaseToRemote(cwd, remote, branch)
+      await gitPush(cwd, remote, branch)
+      ok = true
+    } catch (e) {
+      retries -= 1
+    }
+  }
+
+}
