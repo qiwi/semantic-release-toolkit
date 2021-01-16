@@ -10,24 +10,15 @@ import {
   gitCheckout,
   gitAddRemote,
   gitSetRemoteHead,
-  gitPush,
+  gitPushRebase,
 } from './git'
 import fs from 'fs-extra'
 import path from 'path'
 import globby from 'globby'
-// import execa from "execa";
-
-// const _opts: GlobbyOptions = { cwd: 'string', gitignore: false }
 
 export * from './interface'
 
-export const prepareTempRepo = async (opts: TSyncOptions): Promise<string> => {
-  const {
-    branch,
-    cwd = tempy.directory(),
-    repo
-  } = opts
-
+export const prepareTempRepo = async (cwd: string, repo: string, branch: string): Promise<string> => {
   await gitInit(cwd)
   await gitAddRemote(cwd, repo)
 
@@ -48,58 +39,45 @@ export const fetch = async (opts: TSyncOptions): Promise<void> => {
     branch,
     from,
     to,
-    cwd = tempy.directory(),
-    repo
+    cwd = process.cwd(),
+    temp = tempy.directory(),
+    repo,
   } = opts
 
-  await gitInit(cwd)
-  await gitAddRemote(cwd, repo)
+  await prepareTempRepo(temp, repo, branch)
 
-  try {
-    await gitFetch(cwd, 'origin', branch)
-    await gitCheckout(cwd, `origin/${branch}`)
-  } catch {
-    await gitFetch(cwd, 'origin')
-    await gitSetRemoteHead(cwd, 'origin')
-    await gitCheckout(cwd, `origin/HEAD`)
-  }
+  const files = await globby(from, { cwd: temp, absolute: true })
 
-  fs.copySync(path.resolve(cwd, from + ''), path.resolve(to))
-
-  console.log('from=', from)
-  console.log('cwd=', cwd)
+  files
+      .forEach(file => fs.copySync(file, path.resolve(cwd, to, path.relative(temp, file))))
 }
 
 export const push = async (opts: TSyncOptions): Promise<string> => {
-  const { from, to, branch, base = process.cwd() } = opts
-  const cwd = await prepareTempRepo(opts)
-  const files = await globby(from, { cwd: base })
+  const {
+    from,
+    to,
+    branch,
+    repo,
+    cwd = process.cwd(),
+    temp = tempy.directory()
+  } = opts
 
+  await prepareTempRepo(temp, repo, branch)
 
+  const files = await globby(from, { cwd, absolute: true })
 
+  console.log('opts=', opts)
+  console.log('files=', files)
 
-  // const _to = path.resolve(cwd, to)
-  // const __from = path.resolve(from + '')
-  // fs.copySync(__from, _to)
 
   files
-    .forEach(file => {
-      fs.copySync(file, path.resolve(cwd, to, path.relative(base, file)))
-    })
+    .forEach(file => fs.copySync(file, path.resolve(temp, to, path.relative(cwd, file))))
 
+  await gitAdd(temp)
 
+  const commitId = await gitCommit(temp, 'update meta')
 
-/*  console.log('from=', from)
-  console.log('to=', to)
-  console.log('dir=', fs.readdirSync(path.resolve(cwd, to)))
-  console.log('cwd=', fs.readdirSync(cwd))
-  console.log('untracked=', await execa('git', ['ls-files', '.', '--exclude-standard', '--others'], { cwd }))
- */
-  await gitAdd(cwd)
-  // console.log('diff=', await execa('git', ['diff', '--cached', '--name-only'], { cwd }))
-  const commitId = await gitCommit(cwd, 'update meta')
-
-  await gitPush(cwd, 'origin', `refs/heads/${branch}`)
+  await gitPushRebase(temp, 'origin', `refs/heads/${branch}`)
 
   return commitId
 }

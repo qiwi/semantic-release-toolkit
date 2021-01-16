@@ -5,7 +5,6 @@ import findUp, {Match} from 'find-up'
 import path from 'path'
 import fs from 'fs'
 
-
 export const gitFindUp = async (cwd?: string): Promise<Match> => findUp(async directory => {
   const gitDir = path.join(directory, '.git')
   const exists = await findUp.exists(gitDir)
@@ -140,8 +139,13 @@ export const gitPushRebase = async (
   while (!ok && retries > 0) {
 
     try {
-      await gitFetch(cwd, remote, branch)
-      await gitRebaseToRemote(cwd, remote, branch)
+      try {
+        await gitFetch(cwd, remote, branch)
+        await gitRebaseToRemote(cwd, remote, branch)
+      } catch (e) {
+        console.warn(e)
+      }
+
       await gitPush(cwd, remote, branch)
       ok = true
     } catch (e) {

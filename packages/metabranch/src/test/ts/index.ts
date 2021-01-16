@@ -21,42 +21,47 @@ describe('metabranch', () => {
     }
   }
 
-  xdescribe('fetch()', () => {
+  describe('fetch()', () => {
     it('clones files from remote to target dir', async () => {
-      const to = path.join(tempy.directory(), )
-      const { repo } = initTempRepo()
+      const cwd = tempy.directory()
+      const to = 'foo/bar/baz'
+      const { repo } = initTempRepo(`${fixtures}/basicPackage/`)
       const opts: TSyncOptions = {
         branch: 'gh-pages',
         from: '.',
         to,
-        repo
+        repo,
+        cwd,
       }
 
       await fetch(opts)
 
-      expect(fs.readFileSync(path.join(to, 'package.json'), {encoding: 'utf8'})).toBe('bar')
+      expect(fs.readFileSync(path.join(cwd, to, 'inner/file.txt'), {encoding: 'utf8'}).trim()).toBe('contents')
     })
   })
 
   describe('push()', () => {
     it('pushes files to remote', async () => {
-      const { repo, cwd } = initTempRepo(path.resolve(fixtures, 'foo'))
-      const from = path.resolve(cwd, 'bar')
+      const cwd = `${fixtures}/foo/`
+      const from = 'bar'
+      const to = 'baz'
+
+      const { repo, cwd: _cwd } = initTempRepo()
       const opts = {
+        cwd,
         branch: 'metabranch',
         from,
-        to: 'foo',
+        to,
         repo,
-        base: cwd
       }
 
       const commitId = await push(opts)
 
-      await execa('git', ['fetch', 'origin', 'metabranch'], { cwd })
-      await execa('git', ['checkout', 'origin/metabranch'], { cwd })
+      await execa('git', ['fetch', 'origin', 'metabranch'], { cwd: _cwd })
+      await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd  })
 
-      expect((await execa('git', ['rev-parse', 'HEAD'], { cwd })).stdout).toBe(commitId)
-      expect(fs.readFileSync(path.join(cwd, 'foo', 'bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
+      expect((await execa('git', ['rev-parse', 'HEAD'], { cwd: _cwd  })).stdout).toBe(commitId)
+      expect(fs.readFileSync(path.join(_cwd, 'baz/bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
     })
   })
 })
