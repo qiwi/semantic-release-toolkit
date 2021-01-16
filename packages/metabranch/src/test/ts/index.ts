@@ -1,9 +1,10 @@
-import { fetch, TSyncOptions, push } from '../../main/ts'
 import {copyDirectory, gitCommitAll, gitInit, gitInitOrigin, gitPush} from '@qiwi/semrel-testing-suite'
+import execa from 'execa'
+import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
-import fs from 'fs'
-import execa from 'execa'
+
+import { fetch, push,TSyncOptions } from '../../main/ts'
 
 const fixtures = path.resolve(__dirname, '../fixtures')
 

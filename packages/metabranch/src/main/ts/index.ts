@@ -1,20 +1,21 @@
+import fs from 'fs-extra'
+import globby from 'globby'
+import path from 'path'
 import tempy from 'tempy'
-import {
-  TSyncOptions
-} from './interface'
+
 import {
   gitAdd,
+  gitAddRemote,
+  gitCheckout,
   gitCommit,
   gitFetch,
   gitInit,
-  gitCheckout,
-  gitAddRemote,
-  gitSetRemoteHead,
   gitPushRebase,
+  gitSetRemoteHead,
 } from './git'
-import fs from 'fs-extra'
-import path from 'path'
-import globby from 'globby'
+import {
+  TSyncOptions
+} from './interface'
 
 export * from './interface'
 

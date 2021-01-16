@@ -1,9 +1,9 @@
-import tempy from "tempy";
-import execa from "execa";
 import {gitConfig} from '@qiwi/semrel-testing-suite'
+import execa from 'execa'
 import findUp, {Match} from 'find-up'
-import path from 'path'
 import fs from 'fs'
+import path from 'path'
+import tempy from 'tempy'
 
 export const gitFindUp = async (cwd?: string): Promise<Match> => findUp(async directory => {
   const gitDir = path.join(directory, '.git')
