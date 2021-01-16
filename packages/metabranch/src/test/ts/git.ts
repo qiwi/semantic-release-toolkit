@@ -1,5 +1,6 @@
-import {gitFindUp} from '../../main/ts/git'
 import path from 'path'
+
+import {gitFindUp} from '../../main/ts/git'
 
 describe('git-utils', () => {
   describe('gitFindUp()', () => {
