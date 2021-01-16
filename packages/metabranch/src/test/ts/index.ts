@@ -86,7 +86,7 @@ describe('metabranch', () => {
         repo,
       }
 
-      await Promise.all([
+      const pushedCommits = await Promise.all([
         push(opts0),
         push(opts1),
         push(opts2),
@@ -94,7 +94,9 @@ describe('metabranch', () => {
 
       await execa('git', ['fetch', 'origin', 'metabranch'], { cwd: _cwd })
       await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd  })
+      const commits = (await execa('git', ['log', '--pretty=%H', 'origin/metabranch'], { cwd: _cwd  })).stdout.split('\n')
 
+      expect(pushedCommits.every(hash => commits.includes(hash))).toBeTruthy()
       expect(fs.readFileSync(path.join(_cwd, 'scope/foo', 'foofoo.txt'), {encoding: 'utf8'}).trim()).toBe('foofoo')
       expect(fs.readFileSync(path.join(_cwd, 'scope/bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
       expect(fs.readFileSync(path.join(_cwd, 'scope/baz', 'foobaz.txt'), {encoding: 'utf8'}).trim()).toBe('foobaz')

@@ -71,9 +71,8 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
 
   await gitAdd(temp)
 
-  const commitId = await gitCommit(temp, 'update meta')
+  await gitCommit(temp, 'update meta')
 
-  await gitPushRebase(temp, 'origin', branch)
+  return gitPushRebase(temp, 'origin', branch)
 
-  return commitId
 }
