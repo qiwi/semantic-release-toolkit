@@ -43,15 +43,12 @@ describe('metabranch', () => {
   describe('push()', () => {
     it('pushes files to remote', async () => {
       const cwd = `${fixtures}/foo/`
-      const from = 'bar'
-      const to = 'baz'
-
       const { repo, cwd: _cwd } = initTempRepo()
       const opts = {
         cwd,
         branch: 'metabranch',
-        from,
-        to,
+        from: 'bar',
+        to: 'baz',
         repo,
       }
 
@@ -62,6 +59,45 @@ describe('metabranch', () => {
 
       expect((await execa('git', ['rev-parse', 'HEAD'], { cwd: _cwd  })).stdout).toBe(commitId)
       expect(fs.readFileSync(path.join(_cwd, 'baz/bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
+    })
+
+    it('handles racing issues', async () => {
+      const cwd = `${fixtures}/foo/`
+      const { repo, cwd: _cwd } = initTempRepo()
+      const opts0 = {
+        cwd,
+        branch: 'metabranch',
+        from: 'bar',
+        to: 'scope',
+        repo,
+      }
+      const opts1 = {
+        cwd,
+        branch: 'metabranch',
+        from: 'foo',
+        to: 'scope',
+        repo,
+      }
+      const opts2 = {
+        cwd,
+        branch: 'metabranch',
+        from: 'baz',
+        to: 'scope',
+        repo,
+      }
+
+      await Promise.all([
+        push(opts0),
+        push(opts1),
+        push(opts2),
+      ])
+
+      await execa('git', ['fetch', 'origin', 'metabranch'], { cwd: _cwd })
+      await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd  })
+
+      expect(fs.readFileSync(path.join(_cwd, 'scope/foo', 'foofoo.txt'), {encoding: 'utf8'}).trim()).toBe('foofoo')
+      expect(fs.readFileSync(path.join(_cwd, 'scope/bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
+      expect(fs.readFileSync(path.join(_cwd, 'scope/baz', 'foobaz.txt'), {encoding: 'utf8'}).trim()).toBe('foobaz')
     })
   })
 })

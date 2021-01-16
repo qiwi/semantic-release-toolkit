@@ -66,10 +66,6 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
 
   const files = await globby(from, { cwd, absolute: true })
 
-  console.log('opts=', opts)
-  console.log('files=', files)
-
-
   files
     .forEach(file => fs.copySync(file, path.resolve(temp, to, path.relative(cwd, file))))
 
@@ -77,7 +73,7 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
 
   const commitId = await gitCommit(temp, 'update meta')
 
-  await gitPushRebase(temp, 'origin', `refs/heads/${branch}`)
+  await gitPushRebase(temp, 'origin', branch)
 
   return commitId
 }
