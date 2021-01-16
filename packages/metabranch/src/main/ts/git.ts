@@ -110,7 +110,7 @@ export const gitPush = async (
   cwd: string,
   remote = 'origin',
   branch = 'master',
-): Promise<void> => {
+): Promise<string> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(remote, 'remote: string')
@@ -118,6 +118,8 @@ export const gitPush = async (
 
   // Await command.
   await execa('git', ['push', '--tags', remote, `HEAD:refs/heads/${branch}`], { cwd })
+
+  return (await execa('git', ['rev-parse', 'HEAD'], { cwd })).stdout
 }
 
 export const gitRebaseToRemote = async (
@@ -132,12 +134,10 @@ export const gitPushRebase = async (
   cwd: string,
   remote = 'origin',
   branch = 'master',
-): Promise<void> => {
+): Promise<string> => {
   let retries = 5
-  let ok = false
 
-  while (!ok && retries > 0) {
-
+  while (retries > 0) {
     try {
       try {
         await gitFetch(cwd, remote, branch)
@@ -146,12 +146,12 @@ export const gitPushRebase = async (
         console.warn('rebase failed', e)
       }
 
-      await gitPush(cwd, remote, branch)
-      ok = true
+      return await gitPush(cwd, remote, branch)
     } catch (e) {
       retries -= 1
       console.warn('push failed', 'retries left', retries, e)
     }
   }
 
+  return ''
 }
