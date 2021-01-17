@@ -1,11 +1,20 @@
 import { createPlugin } from '@qiwi/semrel-plugin-creator'
-import { push } from './actions'
+import { perform } from './actions'
+import { TPluginOptions } from './interface'
 
 export const plugin = createPlugin({
-    async handler({ step , stepConfig}) {
-        console.log('step', step, stepConfig)
-        // @ts-ignore
-        console.log('push=', push())
+    async handler({ step , stepConfig, pluginConfig, context}) {
+        const { branch, from, to, message, action } = (stepConfig || pluginConfig[step]) as TPluginOptions
+        const options = {
+            branch,
+            from,
+            to,
+            message,
+            cwd: context.cwd,
+            repo: context.options?.repositoryUrl + ''
+        }
+
+        await perform(action, options)
 
         return 'patch'
     }

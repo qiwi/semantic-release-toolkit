@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
 
-import { fetch, push,TSyncOptions } from '../../main/ts'
+import { fetch, push, TActionOptions, perform } from '../../main/ts'
 
 const fixtures = path.resolve(__dirname, '../fixtures')
 
@@ -22,12 +22,19 @@ describe('metabranch', () => {
     }
   }
 
+  describe('perform()', () => {
+    it('Throws an error on unsupported action', () => {
+      // @ts-ignore
+      return expect(perform('foo', {})).rejects.toThrowError(/unsupported action 'foo'/)
+    })
+  })
+
   describe('fetch()', () => {
     it('clones files from remote to target dir', async () => {
       const cwd = tempy.directory()
       const to = 'foo/bar/baz'
       const { repo } = initTempRepo(`${fixtures}/basicPackage/`)
-      const opts: TSyncOptions = {
+      const opts: TActionOptions = {
         branch: 'gh-pages',
         from: '.',
         to,
