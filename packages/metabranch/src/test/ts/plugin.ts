@@ -1,0 +1,88 @@
+import {
+    cleanPath,
+    copyDirectory,
+    gitCommitAll,
+    gitInit,
+    gitInitOrigin,
+    gitPush,
+} from '@qiwi/semrel-testing-suite'
+import { resolve } from 'path'
+import resolveFrom from 'resolve-from'
+import semanticRelease from 'semantic-release'
+
+const fixtures = resolve(__dirname, '../fixtures')
+
+const initTempRepo = (fixture = `${fixtures}/basicPackage/`): { cwd: string, repo: string } => {
+    const cwd = gitInit()
+    copyDirectory(fixture, cwd)
+    gitCommitAll(cwd, 'feat: initial commit')
+    const repo = gitInitOrigin(cwd)
+    gitPush(cwd)
+
+    return {
+        cwd,
+        repo
+    }
+}
+
+describe('integration', () => {
+    const pluginName = 'some-plugin'
+    const { cwd } = initTempRepo()
+    const push = jest.fn()
+    const fetch = jest.fn()
+
+    beforeAll(() => {
+        const resolveFromSilent = require('resolve-from').silent
+
+        jest.mock(require.resolve('../../main/ts/actions'), () => ({ push, fetch }))
+        jest.mock(pluginName, () => require('../../main/ts/plugin').plugin, { virtual: true })
+        jest
+            .spyOn(resolveFrom, 'silent')
+            .mockImplementation((fromDir: string, moduleId: string) => {
+                console.log('moduleId=', moduleId)
+
+                if (moduleId === pluginName) {
+                    return pluginName
+                }
+
+                return resolveFromSilent(fromDir, moduleId) as string
+            })
+
+    })
+
+    afterAll(() => {
+        jest.restoreAllMocks()
+        jest.resetModules()
+    })
+
+    afterEach(jest.clearAllMocks)
+
+    const env = {
+        ...process.env,
+        TRAVIS_PULL_REQUEST_BRANCH: 'master',
+        TRAVIS_BRANCH: 'master',
+    }
+
+    it('plugin is compatible with semrel', async () => {
+        await semanticRelease(
+            {
+                branches: ['master'],
+                dryRun: true,
+                plugins: [[pluginName, {
+                    publish: {
+                        foo: 'bar'
+                    }
+                }]],
+            },
+            {
+                cwd: cleanPath(cwd),
+                env,
+            },
+        )
+
+        expect(push).toHaveBeenCalledWith(1)
+
+
+        // expect(handler).toBeCalledTimes(4)
+    }, 15000)
+})

@@ -6,3 +6,7 @@ export type TSyncOptions = {
   cwd?: string
   temp?: string
 }
+
+export type TMetabranchPluginOptions = {
+
+}
