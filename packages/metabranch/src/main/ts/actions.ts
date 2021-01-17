@@ -40,6 +40,7 @@ export const normalizeOptions = ({
   branch = defaults.branch,
   from = defaults.from,
   to = defaults.to,
+  message = defaults.message,
   cwd = process.cwd(),
   temp = tempy.directory(),
   repo
@@ -47,6 +48,7 @@ export const normalizeOptions = ({
   branch,
   from,
   to,
+  message,
   cwd,
   temp,
   repo
@@ -78,6 +80,7 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
     cwd,
     temp,
     repo,
+    message,
   } = normalizeOptions(opts)
 
   await prepareTempRepo(temp, repo, branch)
@@ -89,7 +92,7 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
 
   await gitAdd(temp)
 
-  await gitCommit(temp, 'update meta')
+  await gitCommit(temp, message)
 
   return gitPushRebase(temp, 'origin', branch)
 
