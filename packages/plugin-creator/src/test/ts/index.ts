@@ -54,6 +54,16 @@ describe('createPlugin()', () => {
     const plugin = createPlugin(handler)
     const pluginConfig = {}
     const context: TSemrelContext = {
+      cwd: process.cwd(),
+      branch: {
+        tags: [],
+        type: 'release',
+        name: 'master',
+        range: '>1.0.0',
+        accept: [ 'patch', 'minor', 'major' ],
+        main: true
+      },
+      branches: ['master'],
       logger: console,
       env: {},
     }
@@ -102,6 +112,16 @@ describe('createPlugin()', () => {
       const plugin = createPlugin({ require: ['verifyConditions', 'prepare'] })
       const pluginConfig = {}
       const context: TSemrelContext = {
+        cwd: process.cwd(),
+        branch: {
+          tags: [],
+          type: 'release',
+          name: 'master',
+          range: '>1.0.0',
+          accept: [ 'patch', 'minor', 'major' ],
+          main: true
+        },
+        branches: ['master'],
         logger: console,
         env: {},
       }
@@ -133,10 +153,30 @@ describe('createPlugin()', () => {
       const verifyConditions = plugin.verifyConditions as TPluginMethod
       const analyzeCommits = plugin.analyzeCommits as TPluginMethod<string>
       const context1: TSemrelContext = {
+        cwd: process.cwd(),
+        branch: {
+          tags: [],
+          type: 'release',
+          name: 'master',
+          range: '>1.0.0',
+          accept: [ 'patch', 'minor', 'major' ],
+          main: true
+        },
+        branches: ['master'],
         logger: console,
         env: {},
       }
       const context2: TSemrelContext = {
+        cwd: process.cwd(),
+        branch: {
+          tags: [],
+          type: 'release',
+          name: 'master',
+          range: '>1.0.0',
+          accept: [ 'patch', 'minor', 'major' ],
+          main: true
+        },
+        branches: ['master'],
         logger: console,
         env: {},
       }
