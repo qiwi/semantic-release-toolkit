@@ -29,8 +29,6 @@ describe('integration', () => {
   gitInitOrigin(cwd)
   gitPush(cwd)
 
-  console.log('cwd=', cwd)
-
   beforeAll(() => {
     jest.mock(pluginName, () => plugin, { virtual: true })
     jest
