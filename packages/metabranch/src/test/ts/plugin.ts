@@ -28,13 +28,12 @@ const initTempRepo = (fixture = `${fixtures}/basicPackage/`): { cwd: string, rep
 describe('integration', () => {
     const pluginName = 'some-plugin'
     const { cwd } = initTempRepo()
-    const push = jest.fn()
-    const fetch = jest.fn()
+    const perform = jest.fn()
 
     beforeAll(() => {
         const resolveFromSilent = require('resolve-from').silent
 
-        jest.mock(require.resolve('../../main/ts/actions'), () => ({ push, fetch }))
+        jest.mock(require.resolve('../../main/ts/actions'), () => ({ perform }))
         jest.mock(pluginName, () => require('../../main/ts/plugin').plugin, { virtual: true })
         jest
             .spyOn(resolveFrom, 'silent')
@@ -80,7 +79,7 @@ describe('integration', () => {
             },
         )
 
-        expect(push).toHaveBeenCalledWith(1)
+        expect(perform).toHaveBeenCalledWith(1)
 
 
         // expect(handler).toBeCalledTimes(4)

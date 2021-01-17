@@ -14,11 +14,12 @@ import {
   gitPushRebase,
   gitSetRemoteHead,
 } from './git'
-import {
-  TSyncOptions, TSyncOptionsNormalized
-} from './interface'
 
-export * from './interface'
+import {
+  TActionOptions,
+  TActionOptionsNormalized,
+  TActionType,
+} from './interface'
 
 export const prepareTempRepo = async (cwd: string, repo: string, branch: string): Promise<string> => {
   await gitInit(cwd)
@@ -44,7 +45,7 @@ export const normalizeOptions = ({
   cwd = process.cwd(),
   temp = tempy.directory(),
   repo
-}: TSyncOptions): TSyncOptionsNormalized => ({
+}: TActionOptions): TActionOptionsNormalized => ({
   branch,
   from,
   to,
@@ -54,7 +55,7 @@ export const normalizeOptions = ({
   repo
 })
 
-export const fetch = async (opts: TSyncOptions): Promise<void> => {
+export const fetch = async (opts: TActionOptions): Promise<void> => {
   const {
     branch,
     from,
@@ -72,7 +73,7 @@ export const fetch = async (opts: TSyncOptions): Promise<void> => {
     .forEach(file => fs.copySync(file, path.resolve(cwd, to, path.relative(temp, file))))
 }
 
-export const push = async (opts: TSyncOptions): Promise<string> => {
+export const push = async (opts: TActionOptions): Promise<string> => {
   const {
     branch,
     from,
@@ -96,4 +97,16 @@ export const push = async (opts: TSyncOptions): Promise<string> => {
 
   return gitPushRebase(temp, 'origin', branch)
 
+}
+
+export const perform = async (action: TActionType, options: TActionOptions): Promise<string|void> => {
+  if (action === 'push') {
+    return push(options)
+  }
+
+  if (action === 'fetch') {
+    return fetch(options)
+  }
+
+  throw new Error(`[metabranch] unsupported action '${action}'. Allowed values: 'fetch' and 'push'`)
 }
