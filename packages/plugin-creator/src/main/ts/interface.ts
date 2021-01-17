@@ -1,8 +1,22 @@
 import { Context } from 'semantic-release'
 
-export type TSemrelContext = Context
-
 export type TReleaseType = 'patch' | 'minor' | 'major'
+
+export type TBranch = {
+  channel?: string
+  tags: string[]
+  type: string
+  name: string
+  range: string
+  accept: TReleaseType[]
+  main: boolean
+}
+
+export type TSemrelContext = Context & {
+  cwd: string
+  branch?: TBranch
+  branches: string[]
+}
 
 export type TPluginConfig = Record<any, any>
 
