@@ -1,15 +1,23 @@
-import {copyDirectory, gitCommitAll, gitInit, gitInitOrigin, gitPush} from '@qiwi/semrel-testing-suite'
+import {
+  copyDirectory,
+  gitCommitAll,
+  gitInit,
+  gitInitOrigin,
+  gitPush,
+} from '@qiwi/semrel-testing-suite'
 import execa from 'execa'
 import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
 
-import { fetch, perform,push, TActionOptions } from '../../main/ts'
+import { fetch, perform, push, TActionOptions } from '../../main/ts'
 
 const fixtures = path.resolve(__dirname, '../fixtures')
 
 describe('metabranch', () => {
-  const initTempRepo = (fixture = `${fixtures}/basicPackage/`): { cwd: string, repo: string } => {
+  const initTempRepo = (
+    fixture = `${fixtures}/basicPackage/`,
+  ): { cwd: string; repo: string } => {
     const cwd = gitInit()
     copyDirectory(fixture, cwd)
     gitCommitAll(cwd, 'feat: initial commit')
@@ -18,14 +26,16 @@ describe('metabranch', () => {
 
     return {
       cwd,
-      repo
+      repo,
     }
   }
 
   describe('perform()', () => {
     it('Throws an error on unsupported action', () => {
       // @ts-ignore
-      return expect(perform('foo', {})).rejects.toThrowError(/unsupported action 'foo'/)
+      return expect(perform('foo', {})).rejects.toThrowError(
+        /unsupported action 'foo'/,
+      )
     })
   })
 
@@ -44,7 +54,13 @@ describe('metabranch', () => {
 
       await fetch(opts)
 
-      expect(fs.readFileSync(path.join(cwd, to, 'inner/file.txt'), {encoding: 'utf8'}).trim()).toBe('contents')
+      expect(
+        fs
+          .readFileSync(path.join(cwd, to, 'inner/file.txt'), {
+            encoding: 'utf8',
+          })
+          .trim(),
+      ).toBe('contents')
     })
   })
 
@@ -63,10 +79,18 @@ describe('metabranch', () => {
       const commitId = await push(opts)
 
       await execa('git', ['fetch', 'origin', 'metabranch'], { cwd: _cwd })
-      await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd  })
+      await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd })
 
-      expect((await execa('git', ['rev-parse', 'HEAD'], { cwd: _cwd  })).stdout).toBe(commitId)
-      expect(fs.readFileSync(path.join(_cwd, 'baz/bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
+      expect(
+        (await execa('git', ['rev-parse', 'HEAD'], { cwd: _cwd })).stdout,
+      ).toBe(commitId)
+      expect(
+        fs
+          .readFileSync(path.join(_cwd, 'baz/bar', 'foobar.txt'), {
+            encoding: 'utf8',
+          })
+          .trim(),
+      ).toBe('foobar')
     })
 
     it('handles racing issues', async () => {
@@ -101,13 +125,35 @@ describe('metabranch', () => {
       ])
 
       await execa('git', ['fetch', 'origin', 'metabranch'], { cwd: _cwd })
-      await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd  })
-      const commits = (await execa('git', ['log', '--pretty=%H', 'origin/metabranch'], { cwd: _cwd  })).stdout.split('\n')
+      await execa('git', ['checkout', 'origin/metabranch'], { cwd: _cwd })
+      const commits = (
+        await execa('git', ['log', '--pretty=%H', 'origin/metabranch'], {
+          cwd: _cwd,
+        })
+      ).stdout.split('\n')
 
-      expect(pushedCommits.every(hash => commits.includes(hash))).toBeTruthy()
-      expect(fs.readFileSync(path.join(_cwd, 'scope/foo', 'foofoo.txt'), {encoding: 'utf8'}).trim()).toBe('foofoo')
-      expect(fs.readFileSync(path.join(_cwd, 'scope/bar', 'foobar.txt'), {encoding: 'utf8'}).trim()).toBe('foobar')
-      expect(fs.readFileSync(path.join(_cwd, 'scope/baz', 'foobaz.txt'), {encoding: 'utf8'}).trim()).toBe('foobaz')
+      expect(pushedCommits.every((hash) => commits.includes(hash))).toBeTruthy()
+      expect(
+        fs
+          .readFileSync(path.join(_cwd, 'scope/foo', 'foofoo.txt'), {
+            encoding: 'utf8',
+          })
+          .trim(),
+      ).toBe('foofoo')
+      expect(
+        fs
+          .readFileSync(path.join(_cwd, 'scope/bar', 'foobar.txt'), {
+            encoding: 'utf8',
+          })
+          .trim(),
+      ).toBe('foobar')
+      expect(
+        fs
+          .readFileSync(path.join(_cwd, 'scope/baz', 'foobaz.txt'), {
+            encoding: 'utf8',
+          })
+          .trim(),
+      ).toBe('foobaz')
     })
   })
 })

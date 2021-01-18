@@ -1,32 +1,36 @@
-import {gitConfig} from '@qiwi/semrel-testing-suite'
+import { gitConfig } from '@qiwi/semrel-testing-suite'
 import execa from 'execa'
-import findUp, {Match} from 'find-up'
+import findUp, { Match } from 'find-up'
 import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
 
-export const gitFindUp = async (cwd?: string): Promise<Match> => findUp(async directory => {
-  const gitDir = path.join(directory, '.git')
-  const exists = await findUp.exists(gitDir)
+export const gitFindUp = async (cwd?: string): Promise<Match> =>
+  findUp(
+    async (directory) => {
+      const gitDir = path.join(directory, '.git')
+      const exists = await findUp.exists(gitDir)
 
-  if (!exists) {
-    return
-  }
+      if (!exists) {
+        return
+      }
 
-  const isDirectory = fs.lstatSync(gitDir).isDirectory()
-  if (isDirectory) {
-    return directory
-  }
+      const isDirectory = fs.lstatSync(gitDir).isDirectory()
+      if (isDirectory) {
+        return directory
+      }
 
-  const gitRef = fs.readFileSync(gitDir, { encoding: 'utf-8' })
-  const match = /^gitdir: (.*)\.git\s*$/.exec(gitRef)
-  return match
-    ? match[1]
-    : undefined
+      const gitRef = fs.readFileSync(gitDir, { encoding: 'utf-8' })
+      const match = /^gitdir: (.*)\.git\s*$/.exec(gitRef)
+      return match ? match[1] : undefined
+    },
+    { type: 'directory', cwd },
+  )
 
-}, {type: 'directory', cwd})
-
-export const gitInit = async (cwd = tempy.directory(), branch?: string): Promise<string> => {
+export const gitInit = async (
+  cwd = tempy.directory(),
+  branch?: string,
+): Promise<string> => {
   if (await gitFindUp(cwd)) {
     return cwd
   }
@@ -47,11 +51,19 @@ export const gitInit = async (cwd = tempy.directory(), branch?: string): Promise
   return cwd
 }
 
-export const gitAddRemote = async (cwd: string, url: string, remote = 'origin'): Promise<void> => {
+export const gitAddRemote = async (
+  cwd: string,
+  url: string,
+  remote = 'origin',
+): Promise<void> => {
   await execa('git', ['remote', 'add', remote, url], { cwd })
 }
 
-export const gitFetch = async (cwd: string, remote = 'origin', branch?: string): Promise<void> => {
+export const gitFetch = async (
+  cwd: string,
+  remote = 'origin',
+  branch?: string,
+): Promise<void> => {
   if (branch) {
     await execa('git', ['fetch', remote, branch], { cwd })
     return
@@ -60,16 +72,21 @@ export const gitFetch = async (cwd: string, remote = 'origin', branch?: string):
   await gitFetchAll(cwd)
 }
 
-export const gitSetRemoteHead = async (cwd: string, remote = 'origin'): Promise<void> => {
+export const gitSetRemoteHead = async (
+  cwd: string,
+  remote = 'origin',
+): Promise<void> => {
   await execa('git', ['remote', 'set-head', remote, '--auto'], { cwd })
 }
-
 
 export const gitFetchAll = async (cwd: string): Promise<void> => {
   await execa('git', ['fetch', '--all'], { cwd })
 }
 
-export const gitCheckout = async (cwd: string, branch: string): Promise<void> => {
+export const gitCheckout = async (
+  cwd: string,
+  branch: string,
+): Promise<void> => {
   await execa('git', ['checkout', '-f', branch], { cwd })
 }
 
@@ -94,7 +111,10 @@ export const gitGetHead = async (cwd: string): Promise<string> => {
   return (await execa('git', ['rev-parse', 'HEAD'], { cwd })).stdout
 }
 
-export const gitCommit = async (cwd: string, message: string): Promise<string> => {
+export const gitCommit = async (
+  cwd: string,
+  message: string,
+): Promise<string> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(message, 'message: string+')
@@ -117,7 +137,9 @@ export const gitPush = async (
   // check(branch, 'branch: lower')
 
   // Await command.
-  await execa('git', ['push', '--tags', remote, `HEAD:refs/heads/${branch}`], { cwd })
+  await execa('git', ['push', '--tags', remote, `HEAD:refs/heads/${branch}`], {
+    cwd,
+  })
 
   return (await execa('git', ['rev-parse', 'HEAD'], { cwd })).stdout
 }

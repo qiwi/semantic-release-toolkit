@@ -13,6 +13,10 @@ export type TActionOptionsNormalized = TBaseActionOptions & {
 
 export type TActionType = 'fetch' | 'push'
 
-export type TActionOptions = Partial<TActionOptionsNormalized> & { repo: string }
+export type TActionOptions = Partial<TActionOptionsNormalized> & {
+  repo: string
+}
 
-export type TPluginOptions = Partial<TBaseActionOptions> & { action: TActionType }
+export type TPluginOptions = Partial<TBaseActionOptions> & {
+  action: TActionType
+}
