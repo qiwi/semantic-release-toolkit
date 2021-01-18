@@ -1,11 +1,13 @@
 import path from 'path'
 
-import {gitFindUp} from '../../main/ts/git'
+import { gitFindUp } from '../../main/ts/git'
 
 describe('git-utils', () => {
   describe('gitFindUp()', () => {
     it('returns the closest .git containing path', async () => {
-      expect(await gitFindUp(__filename)).toBe(path.resolve(__dirname, '../../../../../'))
+      expect(await gitFindUp(__filename)).toBe(
+        path.resolve(__dirname, '../../../../../'),
+      )
     })
   })
 })

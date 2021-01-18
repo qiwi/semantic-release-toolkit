@@ -6,13 +6,15 @@ import {
   gitInitOrigin,
   gitPush,
 } from '@qiwi/semrel-testing-suite'
-import {resolve} from 'path'
+import { resolve } from 'path'
 import resolveFrom from 'resolve-from'
 import semanticRelease from 'semantic-release'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
-const initTempRepo = (fixture = `${fixtures}/basicPackage/`): { cwd: string, repo: string } => {
+const initTempRepo = (
+  fixture = `${fixtures}/basicPackage/`,
+): { cwd: string; repo: string } => {
   const cwd = gitInit()
   copyDirectory(fixture, cwd)
   gitCommitAll(cwd, 'feat: initial commit')
@@ -21,20 +23,22 @@ const initTempRepo = (fixture = `${fixtures}/basicPackage/`): { cwd: string, rep
 
   return {
     cwd,
-    repo
+    repo,
   }
 }
 
 describe('integration', () => {
   const pluginName = 'some-plugin'
-  const {cwd} = initTempRepo()
+  const { cwd } = initTempRepo()
   const perform = jest.fn()
 
   beforeAll(() => {
     const resolveFromSilent = require('resolve-from').silent
 
-    jest.mock(require.resolve('../../main/ts/actions'), () => ({perform}))
-    jest.mock(pluginName, () => require('../../main/ts/plugin').plugin, {virtual: true})
+    jest.mock(require.resolve('../../main/ts/actions'), () => ({ perform }))
+    jest.mock(pluginName, () => require('../../main/ts/plugin').plugin, {
+      virtual: true,
+    })
     jest
       .spyOn(resolveFrom, 'silent')
       .mockImplementation((fromDir: string, moduleId: string) => {
@@ -46,7 +50,6 @@ describe('integration', () => {
 
         return resolveFromSilent(fromDir, moduleId) as string
       })
-
   })
 
   afterAll(() => {
@@ -67,15 +70,20 @@ describe('integration', () => {
       {
         branches: ['master'],
         dryRun: true,
-        plugins: [[pluginName, {
-          verifyConditions: {
-            action: 'fetch',
-            branch: 'metabranch',
-            from: 'foo',
-            to: 'bar',
-            message: 'commit message'
-          }
-        }]],
+        plugins: [
+          [
+            pluginName,
+            {
+              verifyConditions: {
+                action: 'fetch',
+                branch: 'metabranch',
+                from: 'foo',
+                to: 'bar',
+                message: 'commit message',
+              },
+            },
+          ],
+        ],
       },
       {
         cwd: cleanPath(cwd),
@@ -89,9 +97,8 @@ describe('integration', () => {
       to: 'bar',
       cwd: expect.any(String),
       repo: expect.any(String),
-      message: 'commit message'
+      message: 'commit message',
     })
-
 
     // expect(handler).toBeCalledTimes(4)
   }, 15000)
