@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
 
-import { fetch, push, TActionOptions, perform } from '../../main/ts'
+import { fetch, perform,push, TActionOptions } from '../../main/ts'
 
 const fixtures = path.resolve(__dirname, '../fixtures')
 
