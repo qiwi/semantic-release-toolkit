@@ -40,14 +40,14 @@
   "dependencies": {
     "tslib": "^2.1.0",
     "@types/semantic-release": "^17.2.0",
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.21",
     "read-pkg-up": "^7.0.1",
     "lodash": "^4.17.20"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.0.3",
     "@qiwi/semrel-testing-suite": "1.0.0",
-    "semantic-release": "^17.3.1",
+    "semantic-release": "^17.3.3",
     "resolve-from": "^5.0.0",
     "@types/execa": "^2.0.0"
   },
