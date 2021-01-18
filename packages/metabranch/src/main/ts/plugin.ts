@@ -4,8 +4,14 @@ import { TPluginOptions } from './interface'
 
 export const plugin = createPlugin({
     async handler({ step , stepConfig, pluginConfig, context}) {
-        const { branch, from, to, message, action } = (stepConfig || pluginConfig[step]) as TPluginOptions
-        const options = {
+        const options = (stepConfig || pluginConfig[step])
+
+        if (!options) {
+            return
+        }
+
+        const { branch, from, to, message, action } = options as TPluginOptions
+        const actionOptions = {
             branch,
             from,
             to,
@@ -14,8 +20,6 @@ export const plugin = createPlugin({
             repo: context.options?.repositoryUrl + ''
         }
 
-        await perform(action, options)
-
-        return 'patch'
+        await perform(action, actionOptions)
     }
 })
