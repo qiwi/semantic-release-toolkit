@@ -71,7 +71,7 @@ export const getStepConfig = (
   context: TSemrelContext,
   step: TReleaseStep,
   name = '',
-): TPluginConfig =>
+): TPluginConfig | undefined =>
   castArray(context.options?.[step])
     .map((config) => {
       if (Array.isArray(config)) {
@@ -82,17 +82,20 @@ export const getStepConfig = (
 
       return config
     })
-    .find((config) => config?.path === name) || {}
+    .find((config) => config?.path === name)
 
 export const getStepConfigs = (
   context: TSemrelContext,
   name = '',
-): Record<TReleaseStep, TPluginConfig> =>
-  releaseSteps.reduce<Record<TReleaseStep, TPluginConfig>>((configs, step) => {
-    configs[step] = getStepConfig(context, step, name)
+): Record<TReleaseStep, TPluginConfig | undefined> =>
+  releaseSteps.reduce<Record<TReleaseStep, TPluginConfig | undefined>>(
+    (configs, step) => {
+      configs[step] = getStepConfig(context, step, name)
 
-    return configs
-  }, {} as Record<TReleaseStep, TPluginConfig>)
+      return configs
+    },
+    {} as Record<TReleaseStep, TPluginConfig | undefined>,
+  )
 
 const metaContexts: WeakMap<TSemrelContext, TPluginMetaContext> = new WeakMap()
 

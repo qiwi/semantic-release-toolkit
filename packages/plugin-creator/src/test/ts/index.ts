@@ -3,6 +3,7 @@ import {
   defaultOptions,
   normalizeOptions,
   releaseSteps,
+  TBranch,
   TPluginFactoryOptions,
   TPluginMethod,
   TSemrelContext,
@@ -51,21 +52,41 @@ describe('createPlugin()', () => {
 
   it('plugin properly invokes inner handler', () => {
     const handler: any = jest.fn()
-    const plugin = createPlugin(handler)
+    const pluginName = 'some-plugin'
+    const plugin = createPlugin({ handler, name: pluginName })
     const pluginConfig = {}
+    const branches = ['master']
+    const branch: TBranch = {
+      tags: [],
+      type: 'release',
+      name: 'master',
+      range: '>1.0.0',
+      accept: ['patch', 'minor', 'major'],
+      main: true,
+    }
     const context: TSemrelContext = {
       cwd: process.cwd(),
-      branch: {
-        tags: [],
-        type: 'release',
-        name: 'master',
-        range: '>1.0.0',
-        accept: [ 'patch', 'minor', 'major' ],
-        main: true
-      },
-      branches: ['master'],
+      branch,
+      branches,
       logger: console,
       env: {},
+      options: {
+        branch,
+        branches,
+        repositoryUrl: 'url',
+        tagFormat: '@${version}', // eslint-disable-line no-template-curly-in-string
+        plugins: [['some-plugin', { a: 'b' }]],
+        publish: [
+          {
+            path: 'some-plugin',
+            foo: 'bar',
+          },
+          {
+            path: 'other-plugin',
+            bar: 'baz',
+          },
+        ],
+      },
     }
 
     releaseSteps.forEach((step) => {
@@ -75,17 +96,26 @@ describe('createPlugin()', () => {
         pluginConfig,
         context,
         step,
-        stepConfig: {},
+        stepConfig:
+          step === 'publish'
+            ? {
+                path: 'some-plugin',
+                foo: 'bar',
+              }
+            : undefined,
         stepConfigs: {
-          verifyConditions: {},
-          analyzeCommits: {},
-          verifyRelease: {},
-          generateNotes: {},
-          prepare: {},
-          publish: {},
-          addChannel: {},
-          success: {},
-          fail: {},
+          verifyConditions: undefined,
+          analyzeCommits: undefined,
+          verifyRelease: undefined,
+          generateNotes: undefined,
+          prepare: undefined,
+          publish: {
+            path: 'some-plugin',
+            foo: 'bar',
+          },
+          addChannel: undefined,
+          success: undefined,
+          fail: undefined,
         },
       })
     })
@@ -118,8 +148,8 @@ describe('createPlugin()', () => {
           type: 'release',
           name: 'master',
           range: '>1.0.0',
-          accept: [ 'patch', 'minor', 'major' ],
-          main: true
+          accept: ['patch', 'minor', 'major'],
+          main: true,
         },
         branches: ['master'],
         logger: console,
@@ -159,8 +189,8 @@ describe('createPlugin()', () => {
           type: 'release',
           name: 'master',
           range: '>1.0.0',
-          accept: [ 'patch', 'minor', 'major' ],
-          main: true
+          accept: ['patch', 'minor', 'major'],
+          main: true,
         },
         branches: ['master'],
         logger: console,
@@ -173,8 +203,8 @@ describe('createPlugin()', () => {
           type: 'release',
           name: 'master',
           range: '>1.0.0',
-          accept: [ 'patch', 'minor', 'major' ],
-          main: true
+          accept: ['patch', 'minor', 'major'],
+          main: true,
         },
         branches: ['master'],
         logger: console,
