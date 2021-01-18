@@ -1,4 +1,5 @@
 import { createPlugin } from '@qiwi/semrel-plugin-creator'
+
 import { perform } from './actions'
 import { TPluginOptions } from './interface'
 

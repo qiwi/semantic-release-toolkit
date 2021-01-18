@@ -2,8 +2,8 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import tempy from 'tempy'
-import { defaults } from './defaults'
 
+import { defaults } from './defaults'
 import {
   gitAdd,
   gitAddRemote,
@@ -14,7 +14,6 @@ import {
   gitPushRebase,
   gitSetRemoteHead,
 } from './git'
-
 import {
   TActionOptions,
   TActionOptionsNormalized,
