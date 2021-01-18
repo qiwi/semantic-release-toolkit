@@ -2,6 +2,13 @@ import { Context } from 'semantic-release'
 
 export type TReleaseType = 'patch' | 'minor' | 'major'
 
+export type TTag = {
+  version: string
+  channel: string
+  gitTag: string
+  gitHead: string
+}
+
 export type TBranch = {
   channel?: string
   tags: string[]
@@ -39,11 +46,11 @@ export interface TPlugin {
 
 export type TReleaseStep = keyof TPlugin
 
-export type TStepConfigs = Record<TReleaseStep, TPluginConfig>
+export type TStepConfigs = Record<TReleaseStep, TPluginConfig | undefined>
 
 export type TPluginHandlerContext = {
   pluginConfig: TPluginConfig
-  stepConfig: TPluginConfig
+  stepConfig?: TPluginConfig
   stepConfigs: TStepConfigs
   context: TSemrelContext
   step: TReleaseStep
