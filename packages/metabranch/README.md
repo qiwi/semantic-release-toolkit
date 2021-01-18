@@ -1,55 +1,111 @@
-# @qiwi/semrel-plugin-creator
-[Semrel](https://github.com/semantic-release/semantic-release) plugin creator
+# @qiwi/semrel-metabranch
+[Semrel](https://github.com/semantic-release/semantic-release) plugin for two-way data sync with remote branch. 
 
 ## Install
 ```shell script
-yarn add @qiwi/semrel-plugin-creator
+yarn add @qiwi/semrel-metabranch -D
 ```
 
 ## Usage
-```typescript
-import {createPlugin} from '@qiwi/semrel-plugin-creator'
-
-const handler = async ({step, pluginConfig, context, name}) => {
-  if (step === 'prepare') {
-    pluginConfig.foo = 'bar'
-  }
-
-  if (step === 'publish') {
-    await doSomething()
-  }
+**.release.rc**
+```json
+{
+  "plugins": [[
+    "@qiwi/semrel-multibranch",
+    {
+      "verify": {
+        "action": "fetch",
+        "branch": "metabranch",
+        "from": "foo",
+        "to": "bar"
+      }
+    }
+  ]]
 }
-
-const plugin = createPlugin({
-  handler,
-  name: 'plugin-name',
-  include: ['prepare', 'publish']
-})
+```
+```json
+{
+  "publish": [[
+    "@qiwi/semrel-multibranch",
+    {
+      "action": "push",
+      "branch": "metabranch",
+      "from": "foo/**/*.txt",
+      "to": "bar",
+      "message": "commit message"
+    }
+  ]]
+}
 ```
 
+| Step               | Description |
+|--------------------|-------------|
+| `verifyConditions` | Performs actions as declared in step options. |
+| `analyzeCommits`   | As prev. |
+| `verifyRelease`    | ... |
+| `generateNotes`    | ... |
+| `prepare`          | ... |
+| `publish`          | ... |
+| `addChannel`       | ... |
+| `success`          | ... |
+| `fail`             | ... |
+
+### Configuration
+##### Environment variables
+
+| Variable                     | Description                                               |
+|------------------------------| --------------------------------------------------------- |
+| `GH_TOKEN` or `GITHUB_TOKEN` | **Required.** The token used to authenticate with GitHub. |
+
+##### Options
+
+| Option          | Description            | Default |
+|-----------------|------------------------| --------|
+| `action`        | Action to perform: `fetch`/`push` |
+| `branch`        | Branch to push         | `metabranch` |
+| `message`       | Commit message         | `update meta` |
+| `from`          | Source glob pattern    | `.` (root) |
+| `to`            | Destination directory  | `.` (root) |
+
+
 ## API
+### TActionOptions
 ```typescript
-export type TPluginHandlerContext = {
-  pluginConfig: TPluginConfig
-  stepConfig: TPluginConfig
-  stepConfigs: TStepConfigs
-  context: TSemrelContext
-  step: TReleaseStep
+export type TBaseActionOptions = {
+  branch: string
+  from: string | string[]
+  to: string
+  message: string
 }
 
-export type TPluginFactoryOptionsNormalized = {
-  handler: TReleaseHandler
-  name?: string
-  include: TReleaseStep[]
-  exclude: TReleaseStep[]
-  require: TReleaseStep[]
+export type TActionOptionsNormalized = TBaseActionOptions & {
+  repo: string
+  cwd: string
+  temp: string
 }
 
-export type TPluginFactoryOptions = Partial<TPluginFactoryOptionsNormalized>
+export type TActionType = 'fetch' | 'push'
 
-export type TReleaseHandler = (context: TPluginHandlerContext) => Promise<any>
+export type TActionOptions = Partial<TActionOptionsNormalized> & {
+  repo: string
+}
 
-export type TPluginFactory = (
-  handler: TPluginFactoryOptions | TReleaseHandler,
-) => TPlugin
+export type TPluginOptions = Partial<TBaseActionOptions> & {
+  action: TActionType
+}
+```
+
+### Defaults
+```typescript
+export const branch = 'metabranch'
+export const from = '.'
+export const to = '.'
+export const message = 'update meta'
+
+export const defaults = {
+  branch,
+  from,
+  to,
+  message,
+}
 ```
