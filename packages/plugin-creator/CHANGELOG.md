@@ -1,3 +1,18 @@
+## @qiwi/semrel-plugin-creator [1.6.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.6.0...@qiwi/semrel-plugin-creator@1.6.1) (2021-01-19)
+
+
+### Bug Fixes
+
+* **metabranch:** check git status before commit ([5a7b6f8](https://github.com/qiwi/semantic-release-toolkit/commit/5a7b6f842d63f4b272735f331860b918e28197c9))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-testing-suite:** upgraded to 1.1.0
+
 # @qiwi/semrel-plugin-creator [1.6.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.5.1...@qiwi/semrel-plugin-creator@1.6.0) (2021-01-19)
 
 
