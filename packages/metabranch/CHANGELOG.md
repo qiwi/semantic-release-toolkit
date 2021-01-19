@@ -1,3 +1,10 @@
+## @qiwi/semrel-metabranch [1.3.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.2...@qiwi/semrel-metabranch@1.3.3) (2021-01-19)
+
+
+### Bug Fixes
+
+* **metabranch:** rm fallback HEAD checkout ([e0eb1d8](https://github.com/qiwi/semantic-release-toolkit/commit/e0eb1d869f547150ba81871371c7e955ea35cb6a))
+
 ## @qiwi/semrel-metabranch [1.3.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.1...@qiwi/semrel-metabranch@1.3.2) (2021-01-19)
 
 
