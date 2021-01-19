@@ -1,3 +1,4 @@
+import { Debugger } from 'debug'
 import { Context } from 'semantic-release'
 
 export type TReleaseType = 'patch' | 'minor' | 'major'
@@ -54,6 +55,7 @@ export type TPluginHandlerContext = {
   stepConfigs: TStepConfigs
   context: TSemrelContext
   step: TReleaseStep
+  debug: Debugger
 }
 
 export type TReleaseHandler = (context: TPluginHandlerContext) => Promise<any>
@@ -64,9 +66,14 @@ export type TPluginFactoryOptionsNormalized = {
   include: TReleaseStep[]
   exclude: TReleaseStep[]
   require: TReleaseStep[]
+  debug: Debugger
 }
 
-export type TPluginFactoryOptions = Partial<TPluginFactoryOptionsNormalized>
+export type TPluginFactoryOptions = Partial<
+  Omit<TPluginFactoryOptionsNormalized, 'debug'> & {
+    debug: string | Debugger
+  }
+>
 
 export type TPluginFactory = (
   handler: TPluginFactoryOptions | TReleaseHandler,
