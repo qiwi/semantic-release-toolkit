@@ -1,3 +1,16 @@
+# @qiwi/semrel-plugin-creator [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.3.1...@qiwi/semrel-plugin-creator@1.4.0) (2021-01-19)
+
+
+### Bug Fixes
+
+* **plugin-creator:** add missed semrel context fields ([c56b3e5](https://github.com/qiwi/semantic-release-toolkit/commit/c56b3e53435c98781656a3f0dbefbf983070eaca))
+
+
+### Features
+
+* **metabranch:** introduce metabranch plugin pkg ([a00c67d](https://github.com/qiwi/semantic-release-toolkit/commit/a00c67d0315939125bb55fb5d7e74fbc7a81f708))
+* **plugin-creator:** use undefined as default step config ([96a2600](https://github.com/qiwi/semantic-release-toolkit/commit/96a26002ce866b0974df8d868fef847ad0dbb61d))
+
 ## @qiwi/semrel-plugin-creator [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.3.0...@qiwi/semrel-plugin-creator@1.3.1) (2021-01-07)
 
 
