@@ -1,3 +1,18 @@
+# @qiwi/semrel-metabranch [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.1.0...@qiwi/semrel-metabranch@1.2.0) (2021-01-19)
+
+
+### Features
+
+* **metabranch:** add debugger ([5180777](https://github.com/qiwi/semantic-release-toolkit/commit/51807779f12a6d6afbf4efb1545bb20a34c85efb))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 1.5.0
+
 # @qiwi/semrel-metabranch [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.0.0...@qiwi/semrel-metabranch@1.1.0) (2021-01-19)
 
 
