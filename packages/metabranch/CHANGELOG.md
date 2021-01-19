@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.2.2...@qiwi/semrel-metabranch@1.3.0) (2021-01-19)
+
+
+### Bug Fixes
+
+* **metabranch:** fix git add pattern ([a68c885](https://github.com/qiwi/semantic-release-toolkit/commit/a68c88539b12c39402a4dbeb1eca5459b38762e4))
+
+
+### Features
+
+* tech release ([fe7ad84](https://github.com/qiwi/semantic-release-toolkit/commit/fe7ad84fc6e66777d40ecda65bb4a9bad72e5454))
+
 ## [1.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.2.1...@qiwi/semrel-metabranch@1.2.2) (2021-01-19)
 
 
