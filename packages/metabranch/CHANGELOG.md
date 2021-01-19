@@ -1,3 +1,10 @@
+## @qiwi/semrel-metabranch [1.3.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.1...@qiwi/semrel-metabranch@1.3.2) (2021-01-19)
+
+
+### Performance Improvements
+
+* **metabranch:** log temp dir contents on empty git status result ([26f309b](https://github.com/qiwi/semantic-release-toolkit/commit/26f309bbeb27b25f9cc4a5e68da353b47585eaf2))
+
 ## [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.0...@qiwi/semrel-metabranch@1.3.1) (2021-01-19)
 
 
