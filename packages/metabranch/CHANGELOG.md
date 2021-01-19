@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.0...@qiwi/semrel-metabranch@1.3.1) (2021-01-19)
+
+
+### Bug Fixes
+
+* **metabranch:** check git status before commit ([5a7b6f8](https://github.com/qiwi/semantic-release-toolkit/commit/5a7b6f842d63f4b272735f331860b918e28197c9))
+
 # [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.2.2...@qiwi/semrel-metabranch@1.3.0) (2021-01-19)
 
 
