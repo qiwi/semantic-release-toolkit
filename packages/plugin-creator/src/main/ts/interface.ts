@@ -1,6 +1,8 @@
 import { Debugger } from 'debug'
 import { Context } from 'semantic-release'
 
+export { Debugger } from 'debug'
+
 export type TReleaseType = 'patch' | 'minor' | 'major'
 
 export type TTag = {

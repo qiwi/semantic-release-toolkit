@@ -1,3 +1,5 @@
+import { Debugger } from '@qiwi/semrel-plugin-creator'
+
 export type TBaseActionOptions = {
   branch: string
   from: string | string[]
@@ -6,6 +8,7 @@ export type TBaseActionOptions = {
 }
 
 export type TActionOptionsNormalized = TBaseActionOptions & {
+  debug: Debugger
   repo: string
   cwd: string
   temp: string
@@ -14,6 +17,7 @@ export type TActionOptionsNormalized = TBaseActionOptions & {
 export type TActionType = 'fetch' | 'push'
 
 export type TActionOptions = Partial<TActionOptionsNormalized> & {
+  debug: Debugger
   repo: string
 }
 
