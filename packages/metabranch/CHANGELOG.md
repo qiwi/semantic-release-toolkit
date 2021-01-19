@@ -1,3 +1,10 @@
+## @qiwi/semrel-metabranch [1.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.2.0...@qiwi/semrel-metabranch@1.2.1) (2021-01-19)
+
+
+### Performance Improvements
+
+* **metabranch:** add some debug notes ([7e4bfee](https://github.com/qiwi/semantic-release-toolkit/commit/7e4bfeed44beccf4a0b2700db6ed898543ba8579))
+
 # @qiwi/semrel-metabranch [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.1.0...@qiwi/semrel-metabranch@1.2.0) (2021-01-19)
 
 
