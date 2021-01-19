@@ -14,6 +14,7 @@ import {
   gitPushRebase,
   gitSetRemoteHead,
   gitShowCommitted,
+  gitStatus,
 } from './git'
 import {
   TActionOptions,
@@ -100,6 +101,13 @@ export const push = async (opts: TActionOptions): Promise<string> => {
   })
 
   await gitAddAll(temp)
+
+  const status = await gitStatus(temp)
+  debug('status=', status)
+
+  if (!status) {
+    return ''
+  }
 
   await gitCommit(temp, message)
 

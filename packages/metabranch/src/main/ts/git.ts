@@ -197,3 +197,12 @@ export const gitShowCommitted = async (
     )
   ).stdout.split('\n')
 }
+
+export const gitStatus = async (cwd: string): Promise<string> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+  // check(name, 'name: string+')
+
+  // Run command.
+  return (await execa('git', ['status', '--short'], { cwd })).stdout
+}
