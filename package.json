@@ -35,6 +35,6 @@
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
   },
   "resolutions": {
-    "*/find-up": "^5.0.0"
+    "*/**/find-up": "^5.0.0"
   }
 }
