@@ -183,6 +183,10 @@ export const gitShowCommitted = async (
   hash = 'HEAD',
 ): Promise<string[]> => {
   return (
-    await execa('git', ['diff-tree', '--no-commit-id', '--name-only', '-r', hash], { cwd })
+    await execa(
+      'git',
+      ['diff-tree', '--no-commit-id', '--name-only', '-r', hash],
+      { cwd },
+    )
   ).stdout.split('\n')
 }

@@ -8,6 +8,14 @@ export const plugin = createPlugin({
   async handler({ step, stepConfig, pluginConfig, context, debug }) {
     const stepOptions = stepConfig || pluginConfig[step]
 
+    debug(
+      'handler exec:',
+      'step=',
+      step,
+      'stepConfig=',
+      JSON.stringify(stepOptions),
+    )
+
     if (!stepOptions) {
       return
     }
@@ -22,15 +30,6 @@ export const plugin = createPlugin({
       repo: context.options?.repositoryUrl + '',
       debug,
     }
-
-    debug(
-      'step=',
-      step,
-      'action=',
-      action,
-      'stepConfig=',
-      JSON.stringify(stepOptions),
-    )
 
     if (context.options?.dryRun && action === 'push') {
       context.logger.log(

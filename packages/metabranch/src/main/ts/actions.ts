@@ -106,12 +106,7 @@ export const push = async (opts: TActionOptions): Promise<string> => {
   const commitId = await gitPushRebase(temp, 'origin', branch)
   const committedFiles = await gitShowCommitted(temp, commitId)
 
-  debug(
-    'commitId=',
-    commitId,
-    'committedFiles=',
-    committedFiles.join(', '),
-  )
+  debug('commitId=', commitId, 'committedFiles=', committedFiles.join(', '))
 
   return commitId
 }
