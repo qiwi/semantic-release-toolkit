@@ -1,3 +1,10 @@
+# @qiwi/semrel-metabranch [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.0.0...@qiwi/semrel-metabranch@1.1.0) (2021-01-19)
+
+
+### Features
+
+* **metabranch:** handle dry-run option ([62e8add](https://github.com/qiwi/semantic-release-toolkit/commit/62e8add90d6da37ca4627ad9660cb51ce9acc693)), closes [#27](https://github.com/qiwi/semantic-release-toolkit/issues/27)
+
 # @qiwi/semrel-metabranch 1.0.0 (2021-01-19)
 
 
