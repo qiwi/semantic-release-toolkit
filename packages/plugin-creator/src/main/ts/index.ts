@@ -1,3 +1,4 @@
+import debugFactory, { Debugger } from 'debug'
 import { castArray } from 'lodash'
 import { sync as readPkgUp } from 'read-pkg-up'
 
@@ -37,13 +38,23 @@ export const defaultOptions = {
   name: String(readPkgUp({ cwd: module?.parent?.filename })?.packageJson?.name),
 }
 
+const createDebugger = (scope: string | Debugger): Debugger => {
+  if (typeof scope === 'string') {
+    return debugFactory(scope)
+  }
+
+  return scope
+}
+
 export const normalizeOptions = (
   options: TReleaseHandler | TPluginFactoryOptions,
 ): TPluginFactoryOptionsNormalized => {
   const preOptions =
     typeof options === 'function' ? { handler: options } : options
 
-  return { ...defaultOptions, ...preOptions }
+  const debug = createDebugger(preOptions.debug || defaultOptions.name)
+
+  return { ...defaultOptions, ...preOptions, debug }
 }
 
 const checkPrevSteps = (
@@ -114,7 +125,7 @@ const getMetaContext = (context: TSemrelContext): TPluginMetaContext => {
 
 export const createPlugin: TPluginFactory = (options) => {
   const normalizedOpions = normalizeOptions(options)
-  const { handler, include, exclude, name } = normalizedOpions
+  const { handler, include, exclude, name, debug } = normalizedOpions
 
   return releaseSteps
     .filter((step) => include.includes(step) && !exclude.includes(step))
@@ -129,7 +140,14 @@ export const createPlugin: TPluginFactory = (options) => {
         const stepConfigs = getStepConfigs(context, name)
         const stepConfig = stepConfigs[step]
 
-        return handler({ pluginConfig, context, step, stepConfig, stepConfigs })
+        return handler({
+          pluginConfig,
+          context,
+          step,
+          stepConfig,
+          stepConfigs,
+          debug,
+        })
       }
 
       return m

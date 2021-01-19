@@ -24,13 +24,17 @@ describe('normalizeOptions()', () => {
       exclude: ['success'],
       require: [],
       name,
+      debug: 'scope',
     }
 
-    expect(normalizeOptions(options)).toEqual(options)
+    expect(normalizeOptions(options)).toMatchObject({
+      ...options,
+      debug: expect.any(Function),
+    })
   })
 
   it('uses `defaultOptions` otherwise', () => {
-    expect(normalizeOptions({})).toEqual(defaultOptions)
+    expect(normalizeOptions({})).toMatchObject(defaultOptions)
   })
 
   it('resolves plugin`s pkg name', () => {
@@ -117,6 +121,7 @@ describe('createPlugin()', () => {
           success: undefined,
           fail: undefined,
         },
+        debug: expect.any(Function),
       })
     })
 
