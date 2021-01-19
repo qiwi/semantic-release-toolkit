@@ -27,7 +27,7 @@ const initTempRepo = (
   }
 }
 
-describe('integration', () => {
+describe('plugin', () => {
   const pluginName = 'some-plugin'
   const { cwd } = initTempRepo()
   const perform = jest.fn()
@@ -96,6 +96,7 @@ describe('integration', () => {
       cwd: expect.any(String),
       repo: expect.any(String),
       message: 'commit message',
+      debug: expect.any(Function),
     })
   }, 15000)
 

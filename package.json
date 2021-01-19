@@ -22,7 +22,7 @@
     "coverage:merge": "node scripts/js/coverage-merge.js",
     "coveralls:push": "cat ./coverage/lcov.info | coveralls || echo 'coveralls push failed :(' && exit 0",
     "uglify": "lerna run uglify --stream --parallel",
-    "release": "multi-semantic-release",
+    "release": "DEBUG='semantic-release:metabranch' multi-semantic-release",
     "postupdate": "yarn && yarn bootstrap && yarn test:depauditfix && yarn clean && yarn build && yarn test"
   },
   "devDependencies": {

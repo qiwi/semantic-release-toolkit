@@ -4,7 +4,8 @@ import { perform } from './actions'
 import { TPluginOptions } from './interface'
 
 export const plugin = createPlugin({
-  async handler({ step, stepConfig, pluginConfig, context }) {
+  debug: 'semantic-release:metabranch',
+  async handler({ step, stepConfig, pluginConfig, context, debug }) {
     const stepOptions = stepConfig || pluginConfig[step]
 
     if (!stepOptions) {
@@ -19,7 +20,17 @@ export const plugin = createPlugin({
       message,
       cwd: context.cwd,
       repo: context.options?.repositoryUrl + '',
+      debug,
     }
+
+    debug(
+      'step=',
+      step,
+      'action=',
+      action,
+      'stepConfig=',
+      JSON.stringify(stepOptions),
+    )
 
     if (context.options?.dryRun && action === 'push') {
       context.logger.log(

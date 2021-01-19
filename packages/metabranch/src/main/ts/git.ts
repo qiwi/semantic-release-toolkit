@@ -177,3 +177,12 @@ export const gitPushRebase = async (
 
   return ''
 }
+
+export const gitShowCommitted = async (
+  cwd: string,
+  hash = 'HEAD',
+): Promise<string[]> => {
+  return (
+    await execa('git', ['diff-tree', '--no-commit-id', '--name-only', '-r', hash], { cwd })
+  ).stdout.split('\n')
+}

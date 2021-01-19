@@ -13,6 +13,7 @@ import {
   gitInit,
   gitPushRebase,
   gitSetRemoteHead,
+  gitShowCommitted,
 } from './git'
 import {
   TActionOptions,
@@ -48,6 +49,7 @@ export const normalizeOptions = ({
   cwd = process.cwd(),
   temp = tempy.directory(),
   repo,
+  debug,
 }: TActionOptions): TActionOptionsNormalized => ({
   branch,
   from,
@@ -56,36 +58,62 @@ export const normalizeOptions = ({
   cwd,
   temp,
   repo,
+  debug,
 })
 
 export const fetch = async (opts: TActionOptions): Promise<void> => {
-  const { branch, from, to, cwd, temp, repo } = normalizeOptions(opts)
+  const { branch, from, to, cwd, temp, repo, debug } = normalizeOptions(opts)
 
   await prepareTempRepo(temp, repo, branch)
 
   const files = await globby(from, { cwd: temp, absolute: true })
 
-  files.forEach((file) =>
-    fs.copySync(file, path.resolve(cwd, to, path.relative(temp, file))),
-  )
+  files.forEach((src) => {
+    const dest = path.resolve(cwd, to, path.relative(temp, src))
+    debug('copy', 'src=', src, 'dest=', dest)
+
+    fs.copySync(src, dest)
+  })
 }
 
 export const push = async (opts: TActionOptions): Promise<string> => {
-  const { branch, from, to, cwd, temp, repo, message } = normalizeOptions(opts)
+  const {
+    branch,
+    from,
+    to,
+    cwd,
+    temp,
+    repo,
+    message,
+    debug,
+  } = normalizeOptions(opts)
 
   await prepareTempRepo(temp, repo, branch)
 
   const files = await globby(from, { cwd, absolute: true })
 
-  files.forEach((file) =>
-    fs.copySync(file, path.resolve(temp, to, path.relative(cwd, file))),
-  )
+  files.forEach((src) => {
+    const dest = path.resolve(temp, to, path.relative(cwd, src))
+    debug('copy', 'src=', src, 'dest=', dest)
+
+    fs.copySync(src, dest)
+  })
 
   await gitAdd(temp)
 
   await gitCommit(temp, message)
 
-  return gitPushRebase(temp, 'origin', branch)
+  const commitId = await gitPushRebase(temp, 'origin', branch)
+  const committedFiles = await gitShowCommitted(temp, commitId)
+
+  debug(
+    'commitId=',
+    commitId,
+    'committedFiles=',
+    committedFiles.join(', '),
+  )
+
+  return commitId
 }
 
 export const perform = async (

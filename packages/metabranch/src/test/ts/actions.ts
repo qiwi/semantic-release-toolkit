@@ -1,3 +1,4 @@
+import { Debugger } from '@qiwi/semrel-plugin-creator'
 import {
   copyDirectory,
   gitCommitAll,
@@ -14,7 +15,7 @@ import { perform, push, TActionOptions } from '../../main/ts'
 
 const fixtures = path.resolve(__dirname, '../fixtures')
 
-describe('metabranch', () => {
+describe('actions', () => {
   const initTempRepo = (
     fixture = `${fixtures}/basicPackage/`,
   ): { cwd: string; repo: string } => {
@@ -50,6 +51,7 @@ describe('metabranch', () => {
         to,
         repo,
         cwd,
+        debug: console.log as Debugger,
       }
 
       await perform('fetch', opts)
@@ -74,6 +76,7 @@ describe('metabranch', () => {
         from: 'bar',
         to: 'baz',
         repo,
+        debug: console.log as Debugger,
       }
 
       const commitId = await perform('push', opts)
@@ -96,12 +99,14 @@ describe('metabranch', () => {
     it('handles racing issues', async () => {
       const cwd = `${fixtures}/foo/`
       const { repo, cwd: _cwd } = initTempRepo()
+      const debug = console.log as Debugger
       const opts0 = {
         cwd,
         branch: 'metabranch',
         from: 'bar',
         to: 'scope',
         repo,
+        debug,
       }
       const opts1 = {
         cwd,
@@ -109,6 +114,7 @@ describe('metabranch', () => {
         from: 'foo',
         to: 'scope',
         repo,
+        debug,
       }
       const opts2 = {
         cwd,
@@ -116,6 +122,7 @@ describe('metabranch', () => {
         from: 'baz',
         to: 'scope',
         repo,
+        debug,
       }
 
       const pushedCommits = await Promise.all([

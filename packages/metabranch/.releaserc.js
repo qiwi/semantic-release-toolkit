@@ -1,4 +1,5 @@
 module.exports = {
+  debug: true,
   branch: 'master',
   plugins: [
     [
