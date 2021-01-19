@@ -19,7 +19,7 @@ import {
   gitInitOrigin,
   gitPush
 } from '@qiwi/semrel-testing-suite'
-import { createPlugin } from '../../main/ts'
+import { createPlugin } from '@qiwi/semrel-plugin-creator'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
