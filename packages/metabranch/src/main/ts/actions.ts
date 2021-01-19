@@ -106,6 +106,7 @@ export const push = async (opts: TActionOptions): Promise<string> => {
   debug('status=', status)
 
   if (!status) {
+    debug('contents=', fs.readdirSync(temp))
     return ''
   }
 
