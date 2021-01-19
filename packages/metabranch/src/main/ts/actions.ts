@@ -5,7 +5,7 @@ import tempy from 'tempy'
 
 import { defaults } from './defaults'
 import {
-  gitAdd,
+  gitAddAll,
   gitAddRemote,
   gitCheckout,
   gitCommit,
@@ -99,7 +99,7 @@ export const push = async (opts: TActionOptions): Promise<string> => {
     fs.copySync(src, dest)
   })
 
-  await gitAdd(temp)
+  await gitAddAll(temp)
 
   await gitCommit(temp, message)
 

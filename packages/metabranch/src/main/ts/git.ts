@@ -90,11 +90,18 @@ export const gitCheckout = async (
   await execa('git', ['checkout', '-f', branch], { cwd })
 }
 
-export const gitAdd = async (cwd: string, file = '.'): Promise<void> => {
+export const gitAdd = async (cwd: string, file = '*'): Promise<void> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
 
   await execa('git', ['add', file], { cwd })
+}
+
+export const gitAddAll = async (cwd: string): Promise<void> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+
+  await execa('git', ['add', '--all'], { cwd })
 }
 
 /**
