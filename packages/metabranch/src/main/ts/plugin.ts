@@ -5,13 +5,13 @@ import { TPluginOptions } from './interface'
 
 export const plugin = createPlugin({
   async handler({ step, stepConfig, pluginConfig, context }) {
-    const options = stepConfig || pluginConfig[step]
+    const stepOptions = stepConfig || pluginConfig[step]
 
-    if (!options) {
+    if (!stepOptions) {
       return
     }
 
-    const { branch, from, to, message, action } = options as TPluginOptions
+    const { branch, from, to, message, action } = stepOptions as TPluginOptions
     const actionOptions = {
       branch,
       from,
@@ -19,6 +19,14 @@ export const plugin = createPlugin({
       message,
       cwd: context.cwd,
       repo: context.options?.repositoryUrl + '',
+    }
+
+    if (context.options?.dryRun && action === 'push') {
+      context.logger.log(
+        '[metabranch] `push` action is disabled in dry-run mode',
+      )
+
+      return
     }
 
     await perform(action, actionOptions)

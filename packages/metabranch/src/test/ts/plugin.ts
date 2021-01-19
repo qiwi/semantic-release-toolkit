@@ -42,8 +42,6 @@ describe('integration', () => {
     jest
       .spyOn(resolveFrom, 'silent')
       .mockImplementation((fromDir: string, moduleId: string) => {
-        console.log('moduleId=', moduleId)
-
         if (moduleId === pluginName) {
           return pluginName
         }
@@ -99,7 +97,30 @@ describe('integration', () => {
       repo: expect.any(String),
       message: 'commit message',
     })
-
-    // expect(handler).toBeCalledTimes(4)
   }, 15000)
+
+  it('handles `dry-run` option', async () => {
+    await semanticRelease(
+      {
+        branches: ['master'],
+        dryRun: true,
+        plugins: [
+          [
+            pluginName,
+            {
+              verifyConditions: {
+                action: 'push',
+              },
+            },
+          ],
+        ],
+      },
+      {
+        cwd: cleanPath(cwd),
+        env,
+      },
+    )
+  }, 5000)
+
+  expect(perform).not.toHaveBeenCalled()
 })
