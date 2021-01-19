@@ -14,13 +14,14 @@
 |[@qiwi/semrel-preset](./packages/preset/README.md)| Semrel plugin preset
 |[@qiwi/semrel-plugin-creator](./packages/plugin-creator/README.md)| Semrel plugin factory
 |[@qiwi/semrel-infra](./packages/infra/README.md)| Infra package: common assets, deps, etc
-|[@qiwi/semrel-testing-suite](./packages/testing-suite/README.md) | Testing helpers to verify release flow
+|[@qiwi/semrel-testing-suite](./packages/testing-suite/README.md) | Testing helpers to verify release flow<br/>**experimental**
+|[@qiwi/semrel-metabranch](./packages/metabranch/README.md) | Plugin for two-way data sync with remote branch<br/>**experimental**
+
 
 ### Coming soon
 |Package | Description
 |---|---|
 |@qiwi/semrel-actions | Configurable custom actions/side-effects provider
-|@qiwi/semrel-metabranch | Plugin for two-way data sync with remote branch
 |@qiwi/msr | **[multi-semantic-release](https://github.com/qiwi/multi-semantic-release)** reforged with TS
 |@qiwi/semrel-monorepo | Represents **msr** as a regular plugin
 
