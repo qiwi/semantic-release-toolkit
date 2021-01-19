@@ -15,6 +15,7 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
 
+    "moduleResolution": "node",
     "module": "commonjs",
     "declaration": true,
     "declarationMap": true,
@@ -24,7 +25,7 @@
 
     "esModuleInterop": true,
     "incremental": true,
-    "composite": true
+    "composite": true,
   },
   "include": [
     "src/main/**/*"

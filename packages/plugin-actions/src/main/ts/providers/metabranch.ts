@@ -1,3 +1,4 @@
+/*
 import { TAction } from '../interface'
 
 export type TSyncPoint = {
@@ -15,3 +16,6 @@ export interface TMetabranchPluginAction extends TAction {
   provider: 'metabranch'
   options: TSyncPoint | TSyncBatch
 }
+*/
+
+export const foo = 'bar'
