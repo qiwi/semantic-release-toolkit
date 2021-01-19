@@ -46,7 +46,7 @@ describe('actions', () => {
       const to = 'foo/bar/baz'
       const { repo } = initTempRepo(`${fixtures}/basicPackage/`)
       const opts: TActionOptions = {
-        branch: 'gh-pages',
+        branch: 'master',
         from: '.',
         to,
         repo,

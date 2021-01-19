@@ -36,7 +36,6 @@ export const prepareTempRepo = async (
   } catch {
     await gitFetch(cwd, 'origin')
     await gitSetRemoteHead(cwd, 'origin')
-    await gitCheckout(cwd, `origin/HEAD`)
   }
 
   return cwd
@@ -106,7 +105,7 @@ export const push = async (opts: TActionOptions): Promise<string> => {
   debug('status=', status)
 
   if (!status) {
-    debug('contents=', fs.readdirSync(temp))
+    // debug('contents=', fs.readdirSync(temp))
     return ''
   }
 
