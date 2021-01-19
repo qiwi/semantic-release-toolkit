@@ -11,6 +11,21 @@
 
 ### Dependencies
 
+* **@qiwi/semrel-plugin-creator:** upgraded to 1.6.1
+
+## @qiwi/semrel-actions [1.0.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.2...@qiwi/semrel-actions@1.0.3) (2021-01-19)
+
+
+### Bug Fixes
+
+* **metabranch:** fix module exports ([b3c2399](https://github.com/qiwi/semantic-release-toolkit/commit/b3c239968b56be7fe8ea2d2639991108f0fb3f7c))
+
+
+
+
+
+### Dependencies
+
 * **@qiwi/semrel-plugin-creator:** upgraded to 1.6.0
 
 ## @qiwi/semrel-actions [1.0.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.2...@qiwi/semrel-actions@1.0.3) (2021-01-19)
