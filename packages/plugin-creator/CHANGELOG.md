@@ -1,3 +1,11 @@
+# @qiwi/semrel-plugin-creator [1.5.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.4.0...@qiwi/semrel-plugin-creator@1.5.0) (2021-01-19)
+
+
+### Features
+
+* **metabranch:** add debugger ([5180777](https://github.com/qiwi/semantic-release-toolkit/commit/51807779f12a6d6afbf4efb1545bb20a34c85efb))
+* **plugin-creator:** add debugger to handler context ([733c0b2](https://github.com/qiwi/semantic-release-toolkit/commit/733c0b227c31204bf3e821802768d15f3e1f4c8b)), closes [#30](https://github.com/qiwi/semantic-release-toolkit/issues/30)
+
 # @qiwi/semrel-plugin-creator [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.3.1...@qiwi/semrel-plugin-creator@1.4.0) (2021-01-19)
 
 
