@@ -1,3 +1,14 @@
+## @qiwi/semrel-plugin-creator [1.5.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.5.0...@qiwi/semrel-plugin-creator@1.5.1) (2021-01-19)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 1.0.4
+* **@qiwi/semrel-testing-suite:** upgraded to 1.0.1
+
 # @qiwi/semrel-plugin-creator [1.5.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.4.0...@qiwi/semrel-plugin-creator@1.5.0) (2021-01-19)
 
 
