@@ -1,3 +1,10 @@
+# @qiwi/semrel-metabranch [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.3...@qiwi/semrel-metabranch@1.4.0) (2021-01-21)
+
+
+### Features
+
+* **metabranch:** exclude regular dirs from glob pattern ([619a6c4](https://github.com/qiwi/semantic-release-toolkit/commit/619a6c418577fcc08741e5175e253265052f02f1))
+
 ## @qiwi/semrel-metabranch [1.3.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.3.2...@qiwi/semrel-metabranch@1.3.3) (2021-01-19)
 
 
