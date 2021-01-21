@@ -67,7 +67,7 @@ describe('actions', () => {
   })
 
   describe('push()', () => {
-    fit('pushes files to remote', async () => {
+    it('pushes files to remote', async () => {
       const cwd = `${fixtures}/foo/`
       const { repo, cwd: _cwd } = initTempRepo()
       const opts = {
@@ -142,21 +142,21 @@ describe('actions', () => {
       expect(pushedCommits.every((hash) => commits.includes(hash))).toBeTruthy()
       expect(
         fs
-          .readFileSync(path.join(_cwd, 'scope/foo', 'foofoo.txt'), {
+          .readFileSync(path.join(_cwd, 'scope', 'foofoo.txt'), {
             encoding: 'utf8',
           })
           .trim(),
       ).toBe('foofoo')
       expect(
         fs
-          .readFileSync(path.join(_cwd, 'scope/bar', 'foobar.txt'), {
+          .readFileSync(path.join(_cwd, 'scope', 'foobar.txt'), {
             encoding: 'utf8',
           })
           .trim(),
       ).toBe('foobar')
       expect(
         fs
-          .readFileSync(path.join(_cwd, 'scope/baz', 'foobaz.txt'), {
+          .readFileSync(path.join(_cwd, 'scope', 'foobaz.txt'), {
             encoding: 'utf8',
           })
           .trim(),

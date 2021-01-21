@@ -1,8 +1,8 @@
+import { Debugger } from '@qiwi/semrel-plugin-creator'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import tempy from 'tempy'
-import { Debugger } from '@qiwi/semrel-plugin-creator'
 
 import { defaults } from './defaults'
 import {
@@ -62,14 +62,21 @@ export const normalizeOptions = ({
   debug,
 })
 
-const synchronize = async (
-  from: string | string[],
-  to: string,
-  baseFrom: string,
-  baseTo: string,
+type TSyncOptions = {
+  from: string | string[]
+  to: string
+  baseFrom: string
+  baseTo: string
   debug: Debugger
-): Promise<void> => {
+}
 
+const synchronize = async ({
+  from,
+  to,
+  baseFrom,
+  baseTo,
+  debug,
+}: TSyncOptions): Promise<void> => {
   const copy = (src: string, dest: string) => {
     debug('copy', 'from=', src, 'to=', dest)
     return fs.copy(src, dest)
@@ -78,27 +85,30 @@ const synchronize = async (
   const patterns: string[] = []
   const dirs: string[] = []
 
-  await Promise.all(entries.map(async (entry: string) => {
-    const entryAbs = path.resolve(baseFrom, entry)
+  await Promise.all(
+    entries.map(async (entry: string) => {
+      const entryAbs = path.resolve(baseFrom, entry)
 
-    if ((await fs.lstat(entryAbs))?.isDirectory()) {
-      dirs.push(entryAbs)
+      try {
+        if ((await fs.lstat(entryAbs))?.isDirectory()) {
+          dirs.push(entryAbs)
 
-      return
-    }
+          return
+        }
+      } catch {}
 
-    patterns.push(entry)
-  }))
-
-  await globby(patterns, { cwd: baseFrom, absolute: true }).then(files =>
-    Promise.all(
-      [
-        ...files.map(file => copy(file, path.resolve(baseTo, to, path.relative(baseFrom, file)))),
-        ...dirs.map(dir => copy(dir, path.resolve(baseTo, to)))
-      ]
-    )
+      patterns.push(entry)
+    }),
   )
 
+  await globby(patterns, { cwd: baseFrom, absolute: true }).then((files) =>
+    Promise.all([
+      ...files.map((file) =>
+        copy(file, path.resolve(baseTo, to, path.relative(baseFrom, file))),
+      ),
+      ...dirs.map((dir) => copy(dir, path.resolve(baseTo, to))),
+    ]),
+  )
 }
 
 export const fetch = async (opts: TActionOptions): Promise<void> => {
@@ -106,16 +116,7 @@ export const fetch = async (opts: TActionOptions): Promise<void> => {
 
   await prepareTempRepo(temp, repo, branch)
 
-  await synchronize(from, temp, to, cwd, debug)
-
-  /*const sources = await absolutize(from, temp)
-
-  sources.forEach((src) => {
-    const dest = path.resolve(cwd, to, path.relative(temp, src))
-    debug('copy', 'src=', src, 'dest=', dest)
-
-    fs.copySync(src, dest)
-  })*/
+  await synchronize({ from, to, baseFrom: temp, baseTo: cwd, debug })
 }
 
 export const push = async (opts: TActionOptions): Promise<string> => {
@@ -132,16 +133,7 @@ export const push = async (opts: TActionOptions): Promise<string> => {
 
   await prepareTempRepo(temp, repo, branch)
 
-  await synchronize(from, cwd, to, temp, debug)
-
-  /*const sources = await absolutize(from, cwd)
-
-  sources.forEach((src) => {
-    const dest = path.resolve(temp, to, path.relative(cwd, src))
-    debug('copy', 'src=', src, 'dest=', dest)
-
-    fs.copySync(src, dest)
-  })*/
+  await synchronize({ from, to, baseFrom: cwd, baseTo: temp, debug })
 
   await gitAddAll(temp)
 
