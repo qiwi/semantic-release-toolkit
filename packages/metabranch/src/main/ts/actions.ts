@@ -2,6 +2,7 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import tempy from 'tempy'
+import { Debugger } from '@qiwi/semrel-plugin-creator'
 
 import { defaults } from './defaults'
 import {
@@ -61,19 +62,60 @@ export const normalizeOptions = ({
   debug,
 })
 
+const synchronize = async (
+  from: string | string[],
+  to: string,
+  baseFrom: string,
+  baseTo: string,
+  debug: Debugger
+): Promise<void> => {
+
+  const copy = (src: string, dest: string) => {
+    debug('copy', 'from=', src, 'to=', dest)
+    return fs.copy(src, dest)
+  }
+  const entries: string[] = ([] as string[]).concat(from)
+  const patterns: string[] = []
+  const dirs: string[] = []
+
+  await Promise.all(entries.map(async (entry: string) => {
+    const entryAbs = path.resolve(baseFrom, entry)
+
+    if ((await fs.lstat(entryAbs))?.isDirectory()) {
+      dirs.push(entryAbs)
+
+      return
+    }
+
+    patterns.push(entry)
+  }))
+
+  await globby(patterns, { cwd: baseFrom, absolute: true }).then(files =>
+    Promise.all(
+      [
+        ...files.map(file => copy(file, path.resolve(baseTo, to, path.relative(baseFrom, file)))),
+        ...dirs.map(dir => copy(dir, path.resolve(baseTo, to)))
+      ]
+    )
+  )
+
+}
+
 export const fetch = async (opts: TActionOptions): Promise<void> => {
   const { branch, from, to, cwd, temp, repo, debug } = normalizeOptions(opts)
 
   await prepareTempRepo(temp, repo, branch)
 
-  const files = await globby(from, { cwd: temp, absolute: true })
+  await synchronize(from, temp, to, cwd, debug)
 
-  files.forEach((src) => {
+  /*const sources = await absolutize(from, temp)
+
+  sources.forEach((src) => {
     const dest = path.resolve(cwd, to, path.relative(temp, src))
     debug('copy', 'src=', src, 'dest=', dest)
 
     fs.copySync(src, dest)
-  })
+  })*/
 }
 
 export const push = async (opts: TActionOptions): Promise<string> => {
@@ -90,14 +132,16 @@ export const push = async (opts: TActionOptions): Promise<string> => {
 
   await prepareTempRepo(temp, repo, branch)
 
-  const files = await globby(from, { cwd, absolute: true })
+  await synchronize(from, cwd, to, temp, debug)
 
-  files.forEach((src) => {
+  /*const sources = await absolutize(from, cwd)
+
+  sources.forEach((src) => {
     const dest = path.resolve(temp, to, path.relative(cwd, src))
     debug('copy', 'src=', src, 'dest=', dest)
 
     fs.copySync(src, dest)
-  })
+  })*/
 
   await gitAddAll(temp)
 
