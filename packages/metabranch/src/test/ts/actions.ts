@@ -67,13 +67,13 @@ describe('actions', () => {
   })
 
   describe('push()', () => {
-    it('pushes files to remote', async () => {
+    fit('pushes files to remote', async () => {
       const cwd = `${fixtures}/foo/`
       const { repo, cwd: _cwd } = initTempRepo()
       const opts = {
         cwd,
         branch: 'metabranch',
-        from: 'bar',
+        from: ['bar', 'unknown'],
         to: 'baz',
         repo,
         debug: console.log as Debugger,
@@ -89,7 +89,7 @@ describe('actions', () => {
       ).toBe(commitId)
       expect(
         fs
-          .readFileSync(path.join(_cwd, 'baz/bar', 'foobar.txt'), {
+          .readFileSync(path.join(_cwd, 'baz', 'foobar.txt'), {
             encoding: 'utf8',
           })
           .trim(),
