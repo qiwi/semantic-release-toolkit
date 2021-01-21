@@ -40,19 +40,19 @@
   "dependencies": {
     "@types/execa": "^2.0.0",
     "@types/semantic-release": "^17.2.0",
-    "@types/node": "^14.14.21",
+    "@types/node": "^14.14.22",
     "@qiwi/semrel-plugin-creator": "1.6.1",
     "tslib": "^2.1.0",
     "execa": "^5.0.0",
     "tempy": "^1.0.0",
     "find-up": "^5.0.0",
     "globby": "^11.0.2",
-    "fs-extra": "^9.0.1"
+    "fs-extra": "^9.1.0"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.0.4",
     "@qiwi/semrel-testing-suite": "1.1.0",
-    "semantic-release": "^17.3.3",
+    "semantic-release": "^17.3.6",
     "resolve-from": "^5.0.0"
   },
   "peerDependencies": {},

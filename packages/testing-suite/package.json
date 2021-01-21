@@ -39,13 +39,13 @@
   },
   "dependencies": {
     "tslib": "^2.1.0",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^9.1.0",
     "tempy": "^1.0.0",
     "file-url": "^3.0.0",
     "execa": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.21",
+    "@types/node": "^14.14.22",
     "@qiwi/semrel-infra": "1.0.4"
   },
   "peerDependencies": {},
