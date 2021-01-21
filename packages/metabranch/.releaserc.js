@@ -7,7 +7,7 @@ module.exports = {
       {
         publish: {
           action: 'push',
-          branch: 'docs',
+          branch: 'gh-pages',
           from: './docs',
           to: '.',
         }
