@@ -1,4 +1,4 @@
 export type TGitExecContext = {
-  cwd: string,
+  cwd: string
   args?: string
 }
