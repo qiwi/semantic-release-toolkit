@@ -1,10 +1,7 @@
 import path from 'path'
 import tempy from 'tempy'
 
-import {
-  gitFindUp,
-  gitInit,
-} from '../../main/ts/git'
+import { gitFindUp, gitInit } from '../../main/ts/git'
 
 const root = path.resolve(__dirname, '../../../../../')
 
@@ -16,7 +13,8 @@ describe('git-utils', () => {
   })
 
   describe('gitInit()', () => {
-    const isGitDir = async (cwd: string): Promise<boolean> => await gitFindUp(cwd) === cwd
+    const isGitDir = async (cwd: string): Promise<boolean> =>
+      (await gitFindUp(cwd)) === cwd
 
     it('inits a new git project in temp dir', async () => {
       const cwd = await gitInit()
@@ -35,7 +33,9 @@ describe('git-utils', () => {
     })
 
     it('asserts that cwd does not belong to git repo', async () => {
-      expect(gitInit(__dirname)).rejects.toThrowError(`${__dirname} belongs to repo ${root} already`)
+      expect(gitInit(__dirname)).rejects.toThrowError(
+        `${__dirname} belongs to repo ${root} already`,
+      )
     })
   })
 })
