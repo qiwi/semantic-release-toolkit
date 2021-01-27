@@ -1,4 +1,6 @@
 export type TGitExecContext = {
   cwd: string
-  args?: string
+  cmd: string
+  sync?: boolean
+  args?: any[]
 }

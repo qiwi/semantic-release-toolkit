@@ -2,7 +2,12 @@ import path from 'path'
 import tempy from 'tempy'
 import fs from 'fs-extra'
 
-import { gitFindUp, gitInit } from '../../main/ts'
+import {
+  gitFindUp,
+  gitInit,
+  gitConfigAdd,
+  gitConfigGet,
+} from '../../main/ts'
 
 const root = path.resolve(__dirname, '../../../../../')
 
@@ -46,6 +51,18 @@ describe('git-utils', () => {
 
     it('returns undefined if `.git` is not found', async () => {
       expect(await gitFindUp(tempy.root)).toBeUndefined()
+    })
+  })
+
+  describe('gitConfigAdd() / gitConfigGet()', () => {
+    it('sets git config value', async () => {
+      const key = 'user.name'
+      const value = 'Foo Bar'
+      const cwd = await gitInit()
+
+      await gitConfigAdd(cwd, key, value)
+
+      expect(await gitConfigGet(cwd, key)).toBe(value)
     })
   })
 

@@ -3,7 +3,21 @@ import findUp, { Match } from 'find-up'
 import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
+import { TGitExecContext } from './interface'
 // import { check } from 'blork'
+
+export const gitExec = (context: TGitExecContext): Promise<string> | string => {
+  const { sync, cmd, cwd, args = [] } = context
+  const execaArgs: [string, string[], any] = ['git', [cmd, ...args], { cwd }]
+
+  console.log('execaArgs=', execaArgs)
+
+  if (sync) {
+    return execa.sync(...execaArgs).stdout
+  }
+
+  return execa(...execaArgs).then(({stdout}) => stdout)
+}
 
 export const gitFindUp = async (cwd?: string): Promise<Match> =>
   findUp(
@@ -44,7 +58,32 @@ export const gitConfig = async (
   // check(cwd, 'cwd: absolute')
   // check(name, 'name: string+')
 
-  await execa('git', ['config', '--add', name, value], { cwd })
+  await gitExec({
+    cwd,
+    cmd: 'config',
+    args: ['--add', name, value]
+  })
+}
+
+export const gitConfigAdd = gitConfig
+
+/**
+ * Get a Git config setting.
+ *
+ * @param {string} cwd The CWD of the Git repository.
+ * @param {string} name Config name.
+ * @returns {Promise<void>} Promise that resolves when done.
+ */
+export const gitConfigGet = async (cwd: string, name: string): Promise<string> => {
+  // Check params.
+  // check(cwd, 'cwd: absolute')
+  // check(name, 'name: string+')
+
+  return gitExec({
+    cwd,
+    cmd: 'config',
+    args: [name]
+  })
 }
 
 export const gitInit = async (
