@@ -5,25 +5,6 @@ import path from 'path'
 import tempy from 'tempy'
 // import { check } from 'blork'
 
-/**
- * Add a Git config setting.
- *
- * @param {string} cwd The CWD of the Git repository.
- * @param {string} name Config name.
- * @param {any} value Config value.
- * @returns {Promise<void>} Promise that resolves when done.
- */
-export const gitConfig = async (
-  cwd: string,
-  name: string,
-  value: any,
-): Promise<void> => {
-  // check(cwd, 'cwd: absolute')
-  // check(name, 'name: string+')
-
-  await execa('git', ['config', '--add', name, value], { cwd })
-}
-
 export const gitFindUp = async (cwd?: string): Promise<Match> =>
   findUp(
     async (directory) => {
@@ -41,10 +22,30 @@ export const gitFindUp = async (cwd?: string): Promise<Match> =>
 
       const gitRef = fs.readFileSync(gitDir, { encoding: 'utf-8' })
       const match = /^gitdir: (.*)\.git\s*$/.exec(gitRef)
+
       return match ? match[1] : undefined
     },
     { type: 'directory', cwd },
   )
+
+/**
+ * Add a Git config setting.
+ *
+ * @param {string} cwd The CWD of the Git repository.
+ * @param {string} name Config name.
+ * @param {any} value Config value.
+ * @returns {Promise<void>} Promise that resolves when done.
+ */
+export const gitConfig = async (
+    cwd: string,
+    name: string,
+    value: any,
+): Promise<void> => {
+  // check(cwd, 'cwd: absolute')
+  // check(name, 'name: string+')
+
+  await execa('git', ['config', '--add', name, value], { cwd })
+}
 
 export const gitInit = async (
   cwd = tempy.directory(),
@@ -222,7 +223,6 @@ export const gitShowCommitted = async (
 export const gitStatus = async (cwd: string): Promise<string> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
-  // check(name, 'name: string+')
 
   // Run command.
   return (await execa('git', ['status', '--short'], { cwd })).stdout

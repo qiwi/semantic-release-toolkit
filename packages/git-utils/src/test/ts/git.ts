@@ -1,7 +1,8 @@
 import path from 'path'
 import tempy from 'tempy'
+import fs from 'fs-extra'
 
-import { gitFindUp, gitInit } from '../../main/ts/git'
+import { gitFindUp, gitInit } from '../../main/ts'
 
 const root = path.resolve(__dirname, '../../../../../')
 
@@ -9,6 +10,42 @@ describe('git-utils', () => {
   describe('gitFindUp()', () => {
     it('returns the closest .git containing path', async () => {
       expect(await gitFindUp(__filename)).toBe(root)
+    })
+
+    // https://git-scm.com/docs/gitrepository-layout
+    describe('gitdir ref', () => {
+      it('handles `gitdir: ref` and returns target path if exists', async () => {
+        const temp0 = tempy.directory()
+        const temp1 = tempy.directory()
+        const data = `gitdir: ${temp1}.git `
+
+        await fs.outputFile(path.join(temp0, '.git'), data, {encoding: 'utf8'})
+
+        expect(await gitFindUp(temp0)).toBe(temp1)
+      })
+
+      it('returns undefined if `gitdir: ref` is unreachable', async () => {
+        const temp = tempy.directory()
+        const data = `gitdir: /foo/bar/baz.git `
+
+        await fs.outputFile(path.join(temp, '.git'), data, {encoding: 'utf8'})
+
+        expect(await gitFindUp(temp)).toBeUndefined()
+      })
+
+      it('returns undefined if `gitdir: ref` is invalid', async () => {
+        const temp = tempy.directory()
+        const data = `gitdir: broken-ref-format`
+
+        await fs.outputFile(path.join(temp, '.git'), data, {encoding: 'utf8'})
+
+        expect(await gitFindUp(temp)).toBeUndefined()
+      })
+
+    })
+
+    it('returns undefined if `.git` is not found', async () => {
+      expect(await gitFindUp(tempy.root)).toBeUndefined()
     })
   })
 
