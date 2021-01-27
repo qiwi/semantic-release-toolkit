@@ -45,6 +45,7 @@
     "execa": "^5.0.0"
   },
   "devDependencies": {
+    "fs-extra": "^9.1.0",
     "@qiwi/semrel-infra": "1.0.4"
   },
   "peerDependencies": {},
