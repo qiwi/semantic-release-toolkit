@@ -1,38 +1,58 @@
-// import fs from 'fs-extra'
-// import path from 'path'
-// import tempy from 'tempy'
-// import {copyDirectory} from "@qiwi/semrel-testing-suite"
+import execa from 'execa'
 
-// import {gitCheckout, gitConfigAdd, gitConfigGet, gitExec, gitFindUp, gitInit} from '../../../main/ts'
+import {
+	gitInit,
+	gitCheckout,
+	gitConfigAdd,
+} from '../../../main/ts'
+import tempy from "tempy";
 
-// const root = path.resolve(__dirname, '../../../../../../')
-// const fixtures = path.resolve(__dirname, '../../fixtures')
-// import execa from 'execa'
-
-import {gitInit} from '../../../main/ts'
+jest.mock('execa')
 
 describe('git-utils', () => {
-	const spy = jest.fn( (..._args: any[]) => ({stdout: ''})) // eslint-disable-line
-	const fakeExeca = async (...args: any[]) => spy(...args)
-	fakeExeca.sync = spy
+	const fakeExec = (..._args: any[]) => ({stdout: 'output'})  // eslint-disable-line
+	const execaAsync = jest.fn(fakeExec)
+	const execaSync = jest.fn(fakeExec)
 
 	beforeAll(() => {
-		jest.mock('execa', () => fakeExeca)
-	})
-	afterEach(jest.resetAllMocks)
+		// @ts-ignore
+		execa.mockImplementation(async (...args: any[]) => execaAsync(...args))
 
-	const cases: [Function, Record<any, any>, string[]][] = [
+		// @ts-ignore
+		execa.sync.mockImplementation(execaSync)
+	})
+
+	afterAll(jest.clearAllMocks)
+
+	const cwd = tempy.directory()
+	const cases: [Function, Record<any, any>, any[], any?][] = [
 		[
 			gitInit,
-			{b: false},
-			[]
+			{cwd},
+			['git', ['init'], {cwd}],
+			cwd
+		],
+		[
+			gitCheckout,
+			{cwd, b: true, branch: 'foobar'},
+			['git', ['checkout', '-b', 'foobar'], {cwd}],
+			'output'
+		],
+		[
+			gitConfigAdd,
+			{cwd, key: 'user.name', value: 'Foo Bar'},
+			['git', ['config', '--add', 'user.name', 'Foo Bar'], {cwd}],
+			'output'
 		]
 	]
 
-	cases.forEach(([fn, ctx, result]) => {
+	cases.forEach(([fn, ctx, args, result]) => {
 		it(`${fn.name}`, async () => {
-			expect(await fn(ctx)).toEqual(result)
-			expect(spy).toHaveBeenCalledWith(result)
+			await fn(ctx)
+			expect(fn({...ctx, sync: true})).toBe(result)
+
+			expect(execaAsync).toHaveBeenCalledWith(...args)
+			expect(execaSync).toHaveBeenCalledWith(...args)
 		})
 	})
 })

@@ -6,6 +6,7 @@ import path from 'path'
 import tempy from 'tempy'
 import { formatFlags } from './flags'
 import debug from 'debug'
+import { Extends, ICallable } from '@qiwi/substrate'
 
 import {
   IGitCheckout,
@@ -17,7 +18,18 @@ import {
 
 const defaultDebug = debug('git-exec')
 
-export const gitExec = (context: TGitExecContext): Promise<string> | string => {
+
+type TGitResult<T, R = string> = Extends<T, {sync: true}, R, Promise<R>>
+
+const effect = <V extends any, C extends ICallable, R1 = Promise<ReturnType<C>>, R2 = ReturnType<C>>(value: V, cb: C): Extends<V, Promise<any>, R1, R2> => {
+  if (typeof (value as any)?.then === 'function') {
+    return (value as any)?.then(cb)
+  }
+
+  return cb(value)
+}
+
+export const gitExec = <T extends TGitExecContext>(context: T): TGitResult<T> => {
   const { sync, cmd, cwd, args = [], debug: _debug } = context
   const debug = _debug || defaultDebug
   const execaArgs: [string, string[], any] = ['git', [cmd, ...args], { cwd }]
@@ -29,35 +41,40 @@ export const gitExec = (context: TGitExecContext): Promise<string> | string => {
 
   log(execaArgs)
 
-  if (sync) {
-    return log(execa.sync(...execaArgs).stdout)
+  if (sync === true) {
+    return log(execa.sync(...execaArgs).stdout.toString()) as TGitResult<T>
   }
 
-  return execa(...execaArgs).then(({ stdout }) => log(stdout))
+  return execa(...execaArgs).then(({ stdout }) => log(stdout.toString())) as TGitResult<T>
 }
 
-export const gitFindUp = async (cwd?: string): Promise<Match> =>
-  findUp(
-    async (directory) => {
+export const gitFindUp = <S>(cwd?: string, sync?: S): Extends<S, boolean, Match, Promise<Match>> => {
+  const exec = sync ? findUp.sync : findUp
+
+  return exec(
+    (directory) => {
       const gitDir = path.join(directory, '.git')
-      const exists = await findUp.exists(gitDir)
 
-      if (!exists) {
-        return
-      }
+      return effect(exec.exists(gitDir), exists => {
+        if (!exists) {
+          return
+        }
 
-      const isDirectory = fs.lstatSync(gitDir).isDirectory()
-      if (isDirectory) {
-        return directory
-      }
+        const isDirectory = fs.lstatSync(gitDir).isDirectory()
+        if (isDirectory) {
+          return directory
+        }
 
-      const gitRef = fs.readFileSync(gitDir, { encoding: 'utf-8' })
-      const match = /^gitdir: (.*)\.git\s*$/.exec(gitRef)
+        const gitRef = fs.readFileSync(gitDir, { encoding: 'utf-8' })
+        const match = /^gitdir: (.*)\.git\s*$/.exec(gitRef)
 
-      return match ? match[1] : undefined
+        return match ? match[1] : undefined
+      })
+
     },
     { type: 'directory', cwd },
-  )
+  ) as Extends<S, boolean, Match, Promise<Match>>
+}
 
 /**
  * Add a Git config setting.
@@ -67,18 +84,19 @@ export const gitFindUp = async (cwd?: string): Promise<Match> =>
  * @param {any} value Config value.
  * @returns {Promise<void>} Promise that resolves when done.
  */
-export const gitConfig = async ({cwd, key, value} : IGitConfigAdd): Promise<void> => {
+export const gitConfigAdd = ({cwd, key, value, sync} : IGitConfigAdd): Promise<string> | string => {
   // check(cwd, 'cwd: absolute')
   // check(name, 'name: string+')
 
-  await gitExec({
+  return gitExec({
     cwd,
+    sync,
     cmd: 'config',
     args: ['--add', key, value],
   })
 }
 
-export const gitConfigAdd = gitConfig
+export const gitConfig = gitConfigAdd
 
 /**
  * Get a Git config setting.
@@ -99,20 +117,18 @@ export const gitConfigGet = async ({cwd, key}: IGitConfigGet): Promise<string> =
   })
 }
 
-export const gitInit = async ({cwd = tempy.directory()}: IGitInit): Promise<string> => {
-  const parentGitDir = await gitFindUp(cwd)
+export const gitInit = <T extends IGitInit>({cwd = tempy.directory(), sync}: T): TGitResult<T> =>
+  effect(gitFindUp(cwd, sync), (parentGitDir) => {
+    if (parentGitDir) {
+      throw new Error(`${cwd} belongs to repo ${parentGitDir as string} already`)
+    }
 
-  if (parentGitDir) {
-    throw new Error(`${cwd} belongs to repo ${parentGitDir as string} already`)
-  }
-
-  // Check params.
-  // check(branch, 'branch: kebab')
-
-  await gitExec({
-    cwd,
-    cmd: 'init',
-  })
+    return effect(gitExec({
+      cwd,
+      sync,
+      cmd: 'init',
+    }), () => cwd)
+  }) as TGitResult<T>
 
   /*if (branch) {
     await execa('git', ['checkout', '-b', branch], { cwd })
@@ -122,17 +138,18 @@ export const gitInit = async ({cwd = tempy.directory()}: IGitInit): Promise<stri
   await gitConfig({cwd, key: 'commit.gpgsign', value: false})*/
 
   // Return directory.
-  return cwd
-}
+  // return cwd
 
-export const gitCheckout = async ({cwd, branch, b, f = !b}: IGitCheckout): Promise<void> => {
+
+export const gitCheckout = <T extends IGitCheckout>({cwd, sync, branch, b, f = !b}: T): TGitResult<T> => {
   const flags = formatFlags({b, f})
 
-  await gitExec({
+  return gitExec({
     cwd,
+    sync,
     cmd: 'checkout',
     args: [...flags, branch],
-  })
+  }) as TGitResult<T>
 }
 
 
