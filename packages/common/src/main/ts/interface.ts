@@ -1,6 +1,9 @@
+import { Debugger } from '@qiwi/semrel-plugin-creator'
+
 export interface IGitCommon {
   cwd: string
   sync?: boolean
+  debug?: Debugger
 }
 
 export type TGitExecContext = IGitCommon & {

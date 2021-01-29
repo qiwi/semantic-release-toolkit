@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid'
 import path from 'path'
 import tempy from 'tempy'
 import { formatFlags } from './flags'
+import debug from 'debug'
 
 import {
   IGitCheckout,
@@ -14,12 +15,15 @@ import {
 } from './interface'
 // import { check } from 'blork'
 
+const defaultDebug = debug('git-exec')
+
 export const gitExec = (context: TGitExecContext): Promise<string> | string => {
-  const { sync, cmd, cwd, args = [] } = context
+  const { sync, cmd, cwd, args = [], debug: _debug } = context
+  const debug = _debug || defaultDebug
   const execaArgs: [string, string[], any] = ['git', [cmd, ...args], { cwd }]
   const gitExecId = nanoid()
   const log = <T>(output: T): T => {
-    console.log(`[${gitExecId}]`, output)
+    debug(`[${gitExecId}]`, output)
     return output
   }
 
