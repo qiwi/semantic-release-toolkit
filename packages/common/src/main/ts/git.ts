@@ -1,22 +1,35 @@
 import execa from 'execa'
 import findUp, { Match } from 'find-up'
 import fs from 'fs'
+import { nanoid } from 'nanoid'
 import path from 'path'
 import tempy from 'tempy'
-import { TGitExecContext } from './interface'
+import { formatFlags } from './flags'
+
+import {
+  IGitCheckout,
+  IGitConfigAdd,
+  IGitConfigGet, IGitInit,
+  TGitExecContext
+} from './interface'
 // import { check } from 'blork'
 
 export const gitExec = (context: TGitExecContext): Promise<string> | string => {
   const { sync, cmd, cwd, args = [] } = context
   const execaArgs: [string, string[], any] = ['git', [cmd, ...args], { cwd }]
-
-  console.log('execaArgs=', execaArgs)
-
-  if (sync) {
-    return execa.sync(...execaArgs).stdout
+  const gitExecId = nanoid()
+  const log = <T>(output: T): T => {
+    console.log(`[${gitExecId}]`, output)
+    return output
   }
 
-  return execa(...execaArgs).then(({stdout}) => stdout)
+  log(execaArgs)
+
+  if (sync) {
+    return log(execa.sync(...execaArgs).stdout)
+  }
+
+  return execa(...execaArgs).then(({ stdout }) => log(stdout))
 }
 
 export const gitFindUp = async (cwd?: string): Promise<Match> =>
@@ -50,18 +63,14 @@ export const gitFindUp = async (cwd?: string): Promise<Match> =>
  * @param {any} value Config value.
  * @returns {Promise<void>} Promise that resolves when done.
  */
-export const gitConfig = async (
-    cwd: string,
-    name: string,
-    value: any,
-): Promise<void> => {
+export const gitConfig = async ({cwd, key, value} : IGitConfigAdd): Promise<void> => {
   // check(cwd, 'cwd: absolute')
   // check(name, 'name: string+')
 
   await gitExec({
     cwd,
     cmd: 'config',
-    args: ['--add', name, value]
+    args: ['--add', key, value],
   })
 }
 
@@ -74,7 +83,7 @@ export const gitConfigAdd = gitConfig
  * @param {string} name Config name.
  * @returns {Promise<void>} Promise that resolves when done.
  */
-export const gitConfigGet = async (cwd: string, name: string): Promise<string> => {
+export const gitConfigGet = async ({cwd, key}: IGitConfigGet): Promise<string> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(name, 'name: string+')
@@ -82,14 +91,11 @@ export const gitConfigGet = async (cwd: string, name: string): Promise<string> =
   return gitExec({
     cwd,
     cmd: 'config',
-    args: [name]
+    args: [key],
   })
 }
 
-export const gitInit = async (
-  cwd = tempy.directory(),
-  branch?: string,
-): Promise<string> => {
+export const gitInit = async ({cwd = tempy.directory()}: IGitInit): Promise<string> => {
   const parentGitDir = await gitFindUp(cwd)
 
   if (parentGitDir) {
@@ -99,18 +105,32 @@ export const gitInit = async (
   // Check params.
   // check(branch, 'branch: kebab')
 
-  await execa('git', ['init'], { cwd })
+  await gitExec({
+    cwd,
+    cmd: 'init',
+  })
 
-  if (branch) {
+  /*if (branch) {
     await execa('git', ['checkout', '-b', branch], { cwd })
   }
 
   // Disable GPG signing for commits.
-  await gitConfig(cwd, 'commit.gpgsign', false)
+  await gitConfig({cwd, key: 'commit.gpgsign', value: false})*/
 
   // Return directory.
   return cwd
 }
+
+export const gitCheckout = async ({cwd, branch, b, f = !b}: IGitCheckout): Promise<void> => {
+  const flags = formatFlags({b, f})
+
+  await gitExec({
+    cwd,
+    cmd: 'checkout',
+    args: [...flags, branch],
+  })
+}
+
 
 export const gitAddRemote = async (
   cwd: string,
@@ -144,14 +164,7 @@ export const gitFetchAll = async (cwd: string): Promise<void> => {
   await execa('git', ['fetch', '--all'], { cwd })
 }
 
-export const gitCheckout = async (
-  cwd: string,
-  branch: string,
-): Promise<void> => {
-  await execa('git', ['checkout', '-f', branch], { cwd })
-}
-
-export const gitAdd = async (cwd: string, file = '*'): Promise<void> => {
+export const gitAdd = async (cwd: string, file = '.'): Promise<void> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
 

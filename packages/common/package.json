@@ -1,11 +1,11 @@
 {
-  "name": "@qiwi/semrel-git-utils",
+  "name": "@qiwi/semrel-common",
   "version": "0.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
-  "description": "Semrel git utils",
+  "description": "Semrel common utils",
   "keywords": [],
   "main": "target/es5/index.js",
   "source": "target/ts/index.ts",
@@ -42,7 +42,9 @@
     "@types/node": "^14.14.22",
     "find-up": "^5.0.0",
     "tempy": "^1.0.0",
-    "execa": "^5.0.0"
+    "execa": "^5.0.0",
+    "nanoid": "^3.1.20",
+    "minimist": "^1.2.5"
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",

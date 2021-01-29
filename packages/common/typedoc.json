@@ -1,5 +1,5 @@
 {
-  "name": "@qiwi/semrel-git-utils",
+  "name": "@qiwi/semrel-common",
   "out": "./docs",
   "exclude": ["src/test", "**/node_modules/**", "paralleljs"],
   "externalPattern": ["**/node_modules/**"],
