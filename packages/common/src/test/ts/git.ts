@@ -2,7 +2,14 @@ import fs from 'fs-extra'
 import path from 'path'
 import tempy from 'tempy'
 
-import {gitCheckout, gitConfigAdd, gitConfigGet, gitExec, gitFindUp, gitInit} from '../../main/ts'
+import {
+  gitCheckout,
+  gitConfigAdd,
+  gitConfigGet,
+  gitExec,
+  gitFindUp,
+  gitInit,
+} from '../../main/ts'
 
 const root = path.resolve(__dirname, '../../../../../')
 
@@ -56,9 +63,9 @@ describe('git-utils', () => {
       const value = 'Foo Bar'
       const cwd = await gitInit({})
 
-      await gitConfigAdd({cwd, key, value})
+      await gitConfigAdd({ cwd, key, value })
 
-      expect(await gitConfigGet({cwd, key})).toBe(value)
+      expect(await gitConfigGet({ cwd, key })).toBe(value)
     })
   })
 
@@ -76,14 +83,14 @@ describe('git-utils', () => {
 
     it('inits repo in specified dir', async () => {
       const cwd = tempy.directory()
-      const _cwd = await gitInit({cwd})
+      const _cwd = await gitInit({ cwd })
 
       expect(cwd).toBe(_cwd)
       expect(await isGitDir(cwd)).toBe(true)
     })
 
     it('asserts that cwd does not belong to git repo', async () => {
-      expect(gitInit({cwd: __dirname})).rejects.toThrowError(
+      expect(gitInit({ cwd: __dirname })).rejects.toThrowError(
         `${__dirname} belongs to repo ${root} already`,
       )
     })
@@ -91,12 +98,12 @@ describe('git-utils', () => {
 
   describe('gitCheckout()', () => {
     fit('checkout -b creates a branch', async () => {
-      const cwd = await gitInit({ cwd: tempy.directory()})
+      const cwd = await gitInit({ cwd: tempy.directory() })
 
-      await gitCheckout({cwd, b: true, branch: 'foobranch'})
-      await gitCheckout({cwd, b: true, branch: 'barbranch'})
+      await gitCheckout({ cwd, b: true, branch: 'foobranch' })
+      await gitCheckout({ cwd, b: true, branch: 'barbranch' })
 
-      const branches = await gitExec({cwd, cmd: 'branch', args: ['-a']})
+      const branches = await gitExec({ cwd, cmd: 'branch', args: ['-a'] })
 
       console.log(branches.length)
 
@@ -105,11 +112,11 @@ describe('git-utils', () => {
     })
 
     xit('checkout -f ', async () => {
-      const cwd = await gitInit({ cwd: tempy.directory()})
+      const cwd = await gitInit({ cwd: tempy.directory() })
 
-      await gitCheckout({cwd, b: true, branch: 'foobranch'})
+      await gitCheckout({ cwd, b: true, branch: 'foobranch' })
 
-      const branches = await gitExec({cwd, cmd: 'branch', args: ['-a']})
+      const branches = await gitExec({ cwd, cmd: 'branch', args: ['-a'] })
 
       expect(branches.includes('foobdranch\n'))
 
