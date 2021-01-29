@@ -6,7 +6,7 @@ export interface IGitCommon {
   debug?: Debugger
 }
 
-export type TGitExecContext = IGitCommon & {
+export interface TGitExecContext extends IGitCommon {
   cmd: string
   args?: any[]
 }
