@@ -2,27 +2,13 @@ import execa from 'execa'
 import findUp, { Match } from 'find-up'
 import fs from 'fs'
 import { Extends } from '@qiwi/substrate'
-import { nanoid } from 'nanoid'
 import path from 'path'
 import tempy from 'tempy'
-import { formatFlags } from './flags'
-import debug from 'debug'
-import { effect } from './misc'
+import { formatFlags } from '../flags'
+import { effect } from '../misc'
+import { gitExec, IGitCommon } from './exec'
 
 // import { check } from 'blork'
-
-import { Debugger } from '@qiwi/semrel-plugin-creator'
-
-export interface IGitCommon {
-  cwd: string
-  sync?: boolean
-  debug?: Debugger
-}
-
-export interface TGitExecContext extends IGitCommon {
-  cmd: string
-  args?: any[]
-}
 
 export interface IGitConfigAdd extends IGitCommon {
   key: string
@@ -55,31 +41,6 @@ export type TGitResult<T, R = string> = Extends<
   R,
   Promise<R>
 >
-
-const defaultDebug = debug('git-exec')
-
-export const gitExec = <T extends TGitExecContext>(
-  context: T,
-): TGitResult<T> => {
-  const { sync, cmd, cwd, args = [], debug: _debug } = context
-  const debug = _debug || defaultDebug
-  const execaArgs: [string, string[], any] = ['git', [cmd, ...args], { cwd }]
-  const gitExecId = nanoid()
-  const log = <T>(output: T): T => {
-    debug(`[${gitExecId}]`, output)
-    return output
-  }
-
-  log(execaArgs)
-
-  if (sync === true) {
-    return log(execa.sync(...execaArgs).stdout.toString()) as TGitResult<T>
-  }
-
-  return execa(...execaArgs).then(({ stdout }) =>
-    log(stdout.toString()),
-  ) as TGitResult<T>
-}
 
 export const gitFindUp = <S>(
   cwd?: string,
@@ -131,8 +92,7 @@ export const gitConfigAdd = <T extends IGitConfigAdd>({
   return gitExec({
     cwd,
     sync,
-    cmd: 'config',
-    args: ['--add', key, value],
+    args: ['config', '--add', key, value],
   }) as TGitResult<T>
 }
 
@@ -156,8 +116,7 @@ export const gitConfigGet = <T extends IGitConfigGet>({
   return gitExec({
     cwd,
     sync,
-    cmd: 'config',
-    args: [key],
+    args: ['config', key],
   }) as TGitResult<T>
 }
 
@@ -176,7 +135,7 @@ export const gitInit = <T extends IGitInit>({
       gitExec({
         cwd,
         sync,
-        cmd: 'init',
+        args: ['init'],
       }),
       () => cwd,
     )
@@ -204,8 +163,7 @@ export const gitCheckout = <T extends IGitCheckout>({
   return gitExec({
     cwd,
     sync,
-    cmd: 'checkout',
-    args: [...flags, branch],
+    args: ['checkout', ...flags, branch],
   }) as TGitResult<T>
 }
 
@@ -218,8 +176,7 @@ export const gitAddRemote = <T extends IGitAddRemote>({
   return gitExec({
     cwd,
     sync,
-    cmd: 'remote',
-    args: ['add', remote, url],
+    args: ['remote', 'add', remote, url],
   }) as TGitResult<T>
 }
 
@@ -235,8 +192,7 @@ export const gitFetchAll = <T extends IGitFetch>({
   return gitExec({
     cwd,
     sync,
-    cmd: 'fetch',
-    args: ['--all'],
+    args: ['fetch', '--all'],
   }) as TGitResult<T>
 }
 
@@ -250,33 +206,54 @@ export const gitFetch = <T extends IGitFetch>({
     return gitExec({
       cwd,
       sync,
-      cmd: 'fetch',
-      args: [remote, branch],
+      args: ['fetch', remote, branch],
     }) as TGitResult<T>
   }
 
   return gitFetchAll({ cwd, sync }) as TGitResult<T>
 }
 
-export const gitSetRemoteHead = async (
-  cwd: string,
+export interface IGitSetRemoteHead extends IGitCommon {
+  remote?: string
+}
+
+export const gitRemoteSetHead = <T extends IGitSetRemoteHead>({
+  cwd,
+  sync,
   remote = 'origin',
-): Promise<void> => {
-  await execa('git', ['remote', 'set-head', remote, '--auto'], { cwd })
+}: T): TGitResult<T> => {
+  return gitExec({
+    cwd,
+    sync,
+    args: ['remote', 'set-head', remote, '--auto'],
+  }) as TGitResult<T>
 }
 
-export const gitAdd = async (cwd: string, file = '.'): Promise<void> => {
-  // Check params.
-  // check(cwd, 'cwd: absolute')
-
-  await execa('git', ['add', file], { cwd })
+export interface IGitAdd extends IGitCommon {
+  file?: string
 }
 
-export const gitAddAll = async (cwd: string): Promise<void> => {
-  // Check params.
-  // check(cwd, 'cwd: absolute')
+export const gitAdd = <T extends IGitAdd>({
+  cwd,
+  sync,
+  file = '.',
+}: T): TGitResult<T> => {
+  return gitExec({
+    cwd,
+    sync,
+    args: ['add', file],
+  }) as TGitResult<T>
+}
 
-  await execa('git', ['add', '--all'], { cwd })
+export const gitAddAll = <T extends IGitAdd>({
+  cwd,
+  sync,
+}: T): TGitResult<T> => {
+  return gitExec({
+    cwd,
+    sync,
+    args: ['add', '--all'],
+  }) as TGitResult<T>
 }
 
 /**

@@ -5,9 +5,12 @@ import {
   gitCheckout,
   gitConfigAdd,
   gitConfigGet,
-  gitAddRemote,
+  gitRemoteAdd,
   gitFetchAll,
   gitFetch,
+  gitRemoteSetHead,
+  gitAdd,
+  gitAddAll, gitGetHead,
 } from '../../../main/ts'
 import tempy from 'tempy'
 import { ICallable } from '@qiwi/substrate'
@@ -51,7 +54,7 @@ describe('git-utils', () => {
       'output',
     ],
     [
-      gitAddRemote,
+      gitRemoteAdd,
       { cwd, remote: 'qiwi', url: 'git@gh.com:qiwi/foo.git' },
       ['git', ['remote', 'add', 'qiwi', 'git@gh.com:qiwi/foo.git'], { cwd }],
       'output',
@@ -63,12 +66,21 @@ describe('git-utils', () => {
       ['git', ['fetch', 'origin', 'master'], { cwd }],
       'output',
     ],
+    [gitFetch, { cwd }, ['git', ['fetch', '--all'], { cwd }], 'output'],
     [
-      gitFetch,
-      { cwd },
-      ['git', ['fetch', '--all'], { cwd }],
+      gitRemoteSetHead,
+      { cwd, remote: 'qiwi' },
+      ['git', ['remote', 'set-head', 'qiwi', '--auto'], { cwd }],
       'output',
     ],
+    [
+      gitAdd,
+      { cwd, file: 'qiwi*' },
+      ['git', ['add', 'qiwi*'], { cwd }],
+      'output',
+    ],
+    [gitAddAll, { cwd }, ['git', ['add', '--all'], { cwd }], 'output'],
+    [gitGetHead, { cwd }, ['git', ['git', 'rev-parse', 'HEAD'], { cwd }], 'output'],
   ]
 
   cases.forEach(([fn, ctx, args, result]) => {
