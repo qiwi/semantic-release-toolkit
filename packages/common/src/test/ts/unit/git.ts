@@ -1,19 +1,26 @@
+import { ICallable } from '@qiwi/substrate'
 import execa from 'execa'
+import tempy from 'tempy'
 
 import {
-  gitInit,
+  gitAdd,
+  gitAddAll,
   gitCheckout,
+  gitCommit,
   gitConfigAdd,
   gitConfigGet,
-  gitRemoteAdd,
-  gitFetchAll,
   gitFetch,
+  gitFetchAll,
+  gitGetHead,
+  gitInit,
+  gitPush,
+  gitPushRebase,
+  gitRebaseToRemote,
+  gitRemoteAdd,
   gitRemoteSetHead,
-  gitAdd,
-  gitAddAll, gitGetHead,
+  gitShowCommitted,
+  gitStatus,
 } from '../../../main/ts'
-import tempy from 'tempy'
-import { ICallable } from '@qiwi/substrate'
 
 jest.mock('execa')
 
@@ -80,13 +87,58 @@ describe('git-utils', () => {
       'output',
     ],
     [gitAddAll, { cwd }, ['git', ['add', '--all'], { cwd }], 'output'],
-    [gitGetHead, { cwd }, ['git', ['git', 'rev-parse', 'HEAD'], { cwd }], 'output'],
+    [gitGetHead, { cwd }, ['git', ['rev-parse', 'HEAD'], { cwd }], 'output'],
+    [
+      gitCommit,
+      { cwd, message: 'foo' },
+      ['git', ['commit', '-m', 'foo', '--no-gpg-sign'], { cwd }],
+      'output',
+    ],
+    [
+      gitPush,
+      { cwd, branch: 'metabranch', remote: 'qiwi' },
+      [
+        'git',
+        ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
+        { cwd },
+      ],
+      'output',
+    ],
+    [
+      gitRebaseToRemote,
+      { cwd, branch: 'metabranch', remote: 'qiwi' },
+      ['git', ['rebase', 'qiwi/metabranch'], { cwd }],
+      'output',
+    ],
+    [
+      gitPushRebase,
+      { cwd, branch: 'metabranch', remote: 'qiwi' },
+      [
+        'git',
+        ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
+        { cwd },
+      ],
+      'output',
+    ],
+    [gitStatus, { cwd }, ['git', ['status', '--short'], { cwd }], 'output'],
+    [
+      gitShowCommitted,
+      { cwd, hash: 'foo' },
+      [
+        'git',
+        ['diff-tree', '--no-commit-id', '--name-only', '-r', 'foo'],
+        { cwd },
+      ],
+      ['output'],
+    ],
   ]
+
+  // gitRebaseToRemote
 
   cases.forEach(([fn, ctx, args, result]) => {
     it(`${fn.name}`, async () => {
       await fn(ctx)
-      expect(fn({ ...ctx, sync: true })).toBe(result)
+      expect(fn({ ...ctx, sync: true })).toEqual(result)
 
       expect(execaAsync).toHaveBeenCalledWith(...args)
       expect(execaSync).toHaveBeenCalledWith(...args)

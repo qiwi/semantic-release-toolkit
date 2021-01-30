@@ -1,7 +1,6 @@
 import fs from 'fs-extra'
 import path from 'path'
 import tempy from 'tempy'
-import { copyDirectory } from '@qiwi/semrel-testing-suite'
 
 import {
   gitCheckout,
@@ -13,7 +12,6 @@ import {
 } from '../../../main/ts'
 
 const root = path.resolve(__dirname, '../../../../../../')
-const fixtures = path.resolve(__dirname, '../../fixtures')
 
 describe('git-utils', () => {
   describe('gitFindUp()', () => {
@@ -102,14 +100,14 @@ describe('git-utils', () => {
     it('checkout -b creates a branch', async () => {
       const cwd = await gitInit({ cwd: tempy.directory() })
 
-      copyDirectory(path.resolve(fixtures, 'foo'), cwd)
+      await fs.writeFile(path.resolve(cwd, 'test.txt'), 'test', {encoding: 'utf-8'})
 
-      await gitExec({ cwd, cmd: 'add', args: ['.'] })
-      await gitExec({ cwd, cmd: 'commit', args: ['-a', '-m', 'initial'] })
+      await gitExec({ cwd, args: ['add', '.'] })
+      await gitExec({ cwd, args: ['commit', '-a', '-m', 'initial'] })
 
       await gitCheckout({ cwd, b: true, branch: 'foobar' })
 
-      const branches = await gitExec({ cwd, cmd: 'branch', args: ['-a'] })
+      const branches = await gitExec({ cwd, args: ['branch', '-a'] })
 
       expect(branches.includes('foobar')).toBeTruthy()
     })

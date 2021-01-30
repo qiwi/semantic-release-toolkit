@@ -1,8 +1,9 @@
+import { Extends } from '@qiwi/substrate'
 import findUp, { Match } from 'find-up'
 import fs from 'fs'
-import { Extends } from '@qiwi/substrate'
 import path from 'path'
 import tempy from 'tempy'
+
 import { effect } from '../misc'
 import { gitExec, TGitResult } from './exec'
 
@@ -62,9 +63,9 @@ export const gitInit = <T extends IGitInit>({
     )
   }) as TGitResult<T>
 
-/*if (branch) {
+/* if (branch) {
     await execa('git', ['checkout', '-b', branch], { cwd })
   }
 
   // Disable GPG signing for commits.
-  await gitConfig({cwd, key: 'commit.gpgsign', value: false})*/
+  await gitConfig({cwd, key: 'commit.gpgsign', value: false}) */
