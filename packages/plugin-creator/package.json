@@ -48,7 +48,7 @@
   "devDependencies": {
     "@qiwi/semrel-infra": "1.0.4",
     "@qiwi/semrel-testing-suite": "1.1.0",
-    "semantic-release": "^17.3.6",
+    "semantic-release": "^17.3.7",
     "resolve-from": "^5.0.0",
     "@types/execa": "^2.0.0"
   },
