@@ -1626,6 +1626,13 @@
   dependencies:
     "@qiwi/substrate-types" "1.46.6"
 
+"@qiwi/substrate-abstract@1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/substrate-abstract/-/substrate-abstract-1.19.0.tgz#294aa1f30d50abcd8c7244d5fc49724c5ee68ce9"
+  integrity sha512-uX+U7FRmR/I3E37fnb0QFiNhx0C2sj2YSnMo7tD4QaiVXYg0H9/g9lRAqI2ImivisQmpc/X08K+8OT+CAW81ag==
+  dependencies:
+    "@qiwi/substrate-types" "1.47.0"
+
 "@qiwi/substrate-std@1.1.7":
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/@qiwi/substrate-std/-/substrate-std-1.1.7.tgz#459460f3f728aa2c67cfcbb8833a44f9ed3dd664"
@@ -1633,10 +1640,22 @@
   dependencies:
     "@qiwi/substrate-types" "1.46.6"
 
+"@qiwi/substrate-std@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/substrate-std/-/substrate-std-1.2.0.tgz#42963166b4919934c78a9ee1fbffe94f281bb61f"
+  integrity sha512-SyMNIfLBfbmYiTq5sn/8P2RlA+JuEC3JpladrUw/4bEMbo0Zf6WZ0AnPf8PVGotqTaM+BEF05zFfF4fRzSGg4w==
+  dependencies:
+    "@qiwi/substrate-types" "1.47.0"
+
 "@qiwi/substrate-types@1.46.6":
   version "1.46.6"
   resolved "https://registry.yarnpkg.com/@qiwi/substrate-types/-/substrate-types-1.46.6.tgz#807d02241ab4b57d4815493903abf063363bbfb4"
   integrity sha512-f1xcLjOibLtF3XkxtDrrXA9KMofJ3R8S2oaG+7flhlL70srCuCa+o3NsCPDiJVXIjJS7Nl+6enu5sHt+AW8jZA==
+
+"@qiwi/substrate-types@1.47.0":
+  version "1.47.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/substrate-types/-/substrate-types-1.47.0.tgz#088798e492d8e457071a72a71207feb7cb1cac4d"
+  integrity sha512-xEDo1a+1RWJKl5lVzUu6fKm53f8pjYnQyINuqr1R/KaAvyfFdifbfKe2ireZpeKG6E9Ake7jY1foA0JiCtVq0w==
 
 "@qiwi/substrate@^1.19.6":
   version "1.19.7"
@@ -1646,6 +1665,15 @@
     "@qiwi/substrate-abstract" "1.18.6"
     "@qiwi/substrate-std" "1.1.7"
     "@qiwi/substrate-types" "1.46.6"
+
+"@qiwi/substrate@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/substrate/-/substrate-1.20.0.tgz#6543a6e4cabaf6e76c920994c61bd08bbf923da7"
+  integrity sha512-DbX3R8qN4abBxszIzVdPypIZiqTlQa8zA7FkY+4tTloweV9whTkW8VP2cfuldQi+tYbJCR8azixB7BFLR8H/9Q==
+  dependencies:
+    "@qiwi/substrate-abstract" "1.19.0"
+    "@qiwi/substrate-std" "1.2.0"
+    "@qiwi/substrate-types" "1.47.0"
 
 "@semantic-release/changelog@^5.0.1":
   version "5.0.1"
