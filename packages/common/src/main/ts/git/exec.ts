@@ -22,10 +22,12 @@ export interface TGitExecContext extends IGitCommon {
 
 const defaultDebug = debug('git-exec')
 
-export const gitExec = <T extends TGitExecContext>(
-  context: T,
-): TGitResult<T> => {
-  const { sync, cwd, args = [], debug: _debug } = context
+export const gitExec = <T extends TGitExecContext>({
+  sync,
+  cwd,
+  args = [],
+  debug: _debug,
+}: T): TGitResult<T> => {
   const debug = _debug || defaultDebug
   const execaArgs: [string, string[], any] = ['git', args, { cwd }]
   const gitExecId = nanoid()
