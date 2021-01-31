@@ -81,7 +81,7 @@ const synchronize = async ({
     debug('copy', 'from=', src, 'to=', dest)
     return fs.copy(src, dest)
   }
-  const entries: string[] = ([] as string[]).concat(from)
+  const entries: string[] = Array.isArray(from) ? from : [from]
   const patterns: string[] = []
   const dirs: string[] = []
 
