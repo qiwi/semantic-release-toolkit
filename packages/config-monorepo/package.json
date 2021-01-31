@@ -23,7 +23,9 @@
     "postupdate": "yarn && yarn build && yarn test",
     "format": "prettier --write 'src/**/*.ts'"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@qiwi/semrel-preset": "^1.0.1"
+  },
   "devDependencies": {},
   "peerDependencies": {},
   "optionalDependencies": {},
