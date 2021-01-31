@@ -100,7 +100,9 @@ describe('git-utils', () => {
     it('checkout -b creates a branch', async () => {
       const cwd = await gitInit({ cwd: tempy.directory() })
 
-      await fs.writeFile(path.resolve(cwd, 'test.txt'), 'test', {encoding: 'utf-8'})
+      await fs.writeFile(path.resolve(cwd, 'test.txt'), 'test', {
+        encoding: 'utf-8',
+      })
 
       await gitExec({ cwd, args: ['add', '.'] })
       await gitExec({ cwd, args: ['commit', '-a', '-m', 'initial'] })
