@@ -1,6 +1,5 @@
 # @qiwi/semrel-config
 Shared QIWI OSS config for [semantic-release](https://github.com/semantic-release/semantic-release)  
-Note, plugin packages are not included. Use [@qiwi/semrel-preset](../preset/README.md) or install by hand if necessary.
 
 ## Install
 ```shell script
