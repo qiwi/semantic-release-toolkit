@@ -7,16 +7,16 @@ import {
   gitConfigAdd,
   gitConfigGet,
   gitExec,
-  gitFindUp,
   gitInit,
+  gitRoot,
 } from '../../../main/ts'
 
 const root = path.resolve(__dirname, '../../../../../../')
 
 describe('git-utils', () => {
-  describe('gitFindUp()', () => {
+  describe('gitRoot()', () => {
     it('returns the closest .git containing path', async () => {
-      expect(await gitFindUp(__filename)).toBe(root)
+      expect(await gitRoot(__filename)).toBe(root)
     })
 
     // https://git-scm.com/docs/gitrepository-layout
@@ -30,7 +30,7 @@ describe('git-utils', () => {
           encoding: 'utf8',
         })
 
-        expect(await gitFindUp(temp0)).toBe(temp1)
+        expect(await gitRoot(temp0)).toBe(temp1)
       })
 
       it('returns undefined if `gitdir: ref` is unreachable', async () => {
@@ -39,7 +39,7 @@ describe('git-utils', () => {
 
         await fs.outputFile(path.join(temp, '.git'), data, { encoding: 'utf8' })
 
-        expect(await gitFindUp(temp)).toBeUndefined()
+        expect(await gitRoot(temp)).toBeUndefined()
       })
 
       it('returns undefined if `gitdir: ref` is invalid', async () => {
@@ -48,12 +48,12 @@ describe('git-utils', () => {
 
         await fs.outputFile(path.join(temp, '.git'), data, { encoding: 'utf8' })
 
-        expect(await gitFindUp(temp)).toBeUndefined()
+        expect(await gitRoot(temp)).toBeUndefined()
       })
     })
 
     it('returns undefined if `.git` is not found', async () => {
-      expect(await gitFindUp(tempy.root)).toBeUndefined()
+      expect(await gitRoot(tempy.root)).toBeUndefined()
     })
   })
 
@@ -71,7 +71,7 @@ describe('git-utils', () => {
 
   describe('gitInit()', () => {
     const isGitDir = async (cwd: string): Promise<boolean> =>
-      (await gitFindUp(cwd)) === cwd
+      (await gitRoot(cwd)) === cwd
 
     it('inits a new git project in temp dir', async () => {
       const cwd = await gitInit({})
