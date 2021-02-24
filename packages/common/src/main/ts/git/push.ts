@@ -5,7 +5,7 @@ import { gitFetch } from './fetch'
 import { gitRebaseToRemote } from './rebase'
 
 export interface IGitPush extends IGitCommon {
-  branch: string
+  branch?: string
   remote?: string
 }
 
@@ -19,11 +19,15 @@ export const gitPush = <T extends IGitPush>({
   // check(remote, 'remote: string')
   // check(branch, 'branch: lower')
 
+  const args = branch
+    ? ['push', '--tags', remote, `HEAD:refs/heads/${branch}`]
+    : ['push', '--all', remote]
+
   return effect(
     gitExec({
       cwd,
       sync,
-      args: ['push', '--tags', remote, `HEAD:refs/heads/${branch}`],
+      args,
     }),
     // Return HEAD SHA.
     () => gitGetHead({ cwd, sync }),

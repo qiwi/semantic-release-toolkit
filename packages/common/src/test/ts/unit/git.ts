@@ -5,6 +5,7 @@ import tempy from 'tempy'
 import {
   gitAdd,
   gitAddAll,
+  gitBranch,
   gitCheckout,
   gitCommit,
   gitConfigAdd,
@@ -12,7 +13,11 @@ import {
   gitFetch,
   gitFetchAll,
   gitGetHead,
+  gitGetTagHash,
+  gitGetTags,
   gitInit,
+  gitInitOrigin,
+  gitInitRemote,
   gitPush,
   gitPushRebase,
   gitRebaseToRemote,
@@ -20,6 +25,7 @@ import {
   gitRemoteSetHead,
   gitShowCommitted,
   gitStatus,
+  gitTag,
 } from '../../../main/ts'
 
 jest.mock('execa')
@@ -42,6 +48,18 @@ describe('git-utils', () => {
   const cwd = tempy.directory()
   const cases: [ICallable, Record<any, any>, any[], any?][] = [
     [gitInit, { cwd }, ['git', ['init'], { cwd }], cwd],
+    [
+      gitInitRemote,
+      { cwd },
+      ['git', ['init', '--bare'], { cwd }],
+      expect.any(String),
+    ],
+    [
+      gitInitOrigin,
+      { cwd, branch: 'foo' },
+      ['git', ['push', '--tags', 'origin', 'HEAD:refs/heads/foo'], { cwd }],
+      expect.any(String),
+    ],
     [
       gitCheckout,
       { cwd, b: true, branch: 'foobar' },
@@ -87,11 +105,46 @@ describe('git-utils', () => {
       'output',
     ],
     [gitAddAll, { cwd }, ['git', ['add', '--all'], { cwd }], 'output'],
+    [gitTag, { cwd, tag: 'foo' }, ['git', ['tag', 'foo'], { cwd }], 'output'],
+    [
+      gitTag,
+      { cwd, tag: 'foo', hash: 'bar' },
+      ['git', ['tag', '-f', 'foo', 'bar'], { cwd }],
+      'output',
+    ],
+    [
+      gitGetTags,
+      { cwd, hash: 'bar' },
+      ['git', ['tag', '--merged', 'bar'], { cwd }],
+      ['output'],
+    ],
+    [
+      gitGetTagHash,
+      { cwd, tag: 'foo' },
+      ['git', ['rev-list', '-1', 'foo'], { cwd }],
+      'output',
+    ],
+    [
+      gitBranch,
+      { cwd, branch: 'foo' },
+      ['git', ['branch', 'foo'], { cwd }],
+      'output',
+    ],
     [gitGetHead, { cwd }, ['git', ['rev-parse', 'HEAD'], { cwd }], 'output'],
     [
       gitCommit,
       { cwd, message: 'foo' },
-      ['git', ['commit', '-m', 'foo', '--no-gpg-sign'], { cwd }],
+      ['git', ['commit', '--message', 'foo', '--no-gpg-sign'], { cwd }],
+      'output',
+    ],
+    [
+      gitCommit,
+      { cwd, message: 'foo', all: true },
+      [
+        'git',
+        ['commit', '--all', '--message', 'foo', '--no-gpg-sign'],
+        { cwd },
+      ],
       'output',
     ],
     [

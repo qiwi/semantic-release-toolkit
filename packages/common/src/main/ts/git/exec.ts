@@ -29,7 +29,12 @@ export const gitExec = <T extends TGitExecContext>({
   debug: _debug,
 }: T): TGitResult<T> => {
   const debug = _debug || defaultDebug
-  const execaArgs: [string, string[], any] = ['git', args, { cwd }]
+
+  const execaArgs: [string, readonly string[], execa.SyncOptions] = [
+    'git',
+    args as string[],
+    { cwd },
+  ]
   const gitExecId = nanoid()
   const log = <T>(output: T): T => {
     debug(`[${gitExecId}]`, output)
@@ -39,7 +44,7 @@ export const gitExec = <T extends TGitExecContext>({
   log(execaArgs)
 
   if (sync === true) {
-    return log(execa.sync(...execaArgs).stdout.toString()) as TGitResult<T>
+    return (log(execa.sync(...execaArgs).stdout) as unknown) as TGitResult<T>
   }
 
   return execa(...execaArgs).then(({ stdout }) =>

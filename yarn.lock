@@ -1579,10 +1579,10 @@
     pkg-dir "^5.0.0"
     tslib "^2.1.0"
 
-"@qiwi/multi-semantic-release@~3.13.1":
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.13.1.tgz#a58c6a02a98928145b2729063e8f899e8f42ec9a"
-  integrity sha512-KYwJhpfOCpHJbTSK7TyQhsCvnTyEMBVV9mMNKSdu7+R1uVqj0Le4OfUb7TP8IlDus3T1v8jOb7gPxUWnAkcnyA==
+"@qiwi/multi-semantic-release@~3.13.2":
+  version "3.13.2"
+  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.13.2.tgz#d07d7954bbfbb1b90c2268bb8d09b7f3dfa3cef4"
+  integrity sha512-2+PPfyf1RQcqRHMQ6pfgJRPNL6mowfATaJmfajhkAFFp9O8SFijDqnXlqY5qaOIj8ji79bC/J/QQhBGWx5PJpw==
   dependencies:
     blork "^9.3.0"
     cosmiconfig "^7.0.0"
@@ -9135,7 +9135,7 @@ scss-parser@^1.0.4:
     invariant "2.2.4"
     lodash "^4.17.4"
 
-semantic-release@^17.3.7, semantic-release@~17.3.7:
+semantic-release@^17.3.7, semantic-release@^17.3.8, semantic-release@~17.3.8:
   version "17.3.8"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.3.8.tgz#ae713d239f60a6ea9ca1c431318507d54b278c67"
   integrity "sha1-rnE9I59gpuqcocQxMYUH1UsnjGc= sha512-VOYRY/qm4ysTUbOTrMaVRd+boG0HQlHgSCvVgNqvG0l99RCIwuUkamD0D+T5l7XhMHc4XGxNRGrElcVyPPS86A=="
@@ -10156,10 +10156,10 @@ trim-repeated@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-ts-jest@^26.5.0:
-  version "26.5.0"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.0.tgz#3e3417d91bc40178a6716d7dacc5b0505835aa21"
-  integrity sha512-Ya4IQgvIFNa2Mgq52KaO8yBw2W8tWp61Ecl66VjF0f5JaV8u50nGoptHVILOPGoI7SDnShmEqnYQEmyHdQ+56g==
+ts-jest@^26.5.1:
+  version "26.5.1"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.1.tgz#4d53ee4481552f57c1624f0bd3425c8b17996150"
+  integrity sha512-G7Rmo3OJMvlqE79amJX8VJKDiRcd7/r61wh9fnvvG8cAjhA9edklGw/dCxRSQmfZ/z8NDums5srSVgwZos1qfg==
   dependencies:
     "@types/jest" "26.x"
     bs-logger "0.x"

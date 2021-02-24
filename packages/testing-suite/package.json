@@ -42,7 +42,8 @@
     "fs-extra": "^9.1.0",
     "tempy": "^1.0.0",
     "file-url": "^3.0.0",
-    "execa": "^5.0.0"
+    "execa": "^5.0.0",
+    "@qiwi/semrel-common": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",

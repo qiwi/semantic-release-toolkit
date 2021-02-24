@@ -16,9 +16,10 @@ export const effect = <
   isPromiseLike(value) ? (value as any)?.then(cb) : cb(value)
 
 export const extractValue = (value: any): any => {
-  if (!isPromiseLike(value)) {
-    return value
+  if (isPromiseLike(value)) {
+    // For example: "Promise { 'foo' }"
+    return util.inspect(value).slice(11, -3)
   }
-  // Promise { 'foo' }"
-  return util.inspect(value).slice(11, -3)
+
+  return value
 }
