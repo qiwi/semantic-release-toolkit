@@ -14,6 +14,8 @@ export const gitCheckout = <T extends IGitCheckout>({
   b,
   f = !b,
 }: T): TGitResult<T> => {
+  // check(branch, 'branch: kebab')
+
   const flags = formatFlags({ b, f })
 
   return gitExec({

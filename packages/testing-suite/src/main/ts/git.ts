@@ -3,47 +3,46 @@
  * https://github.com/semantic-release/semantic-release/blob/master/test/helpers/git-utils.js
  */
 
-// import { check } from 'blork'
+import { check } from 'blork'
 import execa from 'execa'
 import fileUrl from 'file-url'
 import tempy from 'tempy'
-
-// eslint-disable-line
-const check = (...args: any[]): void => {
-  Boolean(args)
-}
-
-/**
- * @typedef {Object} Commit
- * @property {string} branch The commit branch.
- * @property {string} hash The commit hash.
- * @property {string} message The commit message.
- */
-
-// Init.
+import {
+  gitInit,
+  effect,
+  TGitResult,
+  IGitInit,
+  gitCheckout,
+  gitConfigAdd,
+} from '@qiwi/semrel-common'
 
 /**
  * Create a Git repository.
  * _Created in a temp folder._
  *
- * @param {string} branch='master' The branch to initialize the repository to.
+ * @param {string} opts.branch='master' The branch to initialize the repository to.
  * @return {Promise<string>} Promise that resolves to string pointing to the CWD for the created Git repository.
  */
-export const gitInit = (branch = 'master'): string => {
-  // Check params.
-  check(branch, 'branch: kebab')
-
-  // Init Git in a temp directory.
-  const cwd = tempy.directory()
-  execa.sync('git', ['init'], { cwd })
-  execa.sync('git', ['checkout', '-b', branch], { cwd })
-
-  // Disable GPG signing for commits.
-  gitConfig(cwd, 'commit.gpgsign', false)
-
-  // Return directory.
-  return cwd
-}
+export const gitInitWithBranch = <T extends IGitInit>({
+  branch = 'master',
+  sync,
+}: T): TGitResult<T> =>
+  effect(gitInit({ sync }), (cwd) =>
+    effect(
+      gitCheckout({
+        cwd,
+        sync,
+        branch,
+        b: true,
+      }),
+      () =>
+        effect(
+          // Disable GPG signing for commits.
+          gitConfigAdd({ cwd, sync, key: 'commit.gpgsign', value: false }),
+          () => cwd,
+        ),
+    ),
+  ) as TGitResult<T>
 
 /**
  * Create a remote Git repository.
@@ -199,14 +198,14 @@ export const gitBranch = (cwd: string, branch: string): void => {
  * @param {string} branch Branch name to checkout.
  * @returns {Promise<void>} Promise that resolves when done.
  */
-export const gitCheckout = (cwd: string, branch: string): void => {
-  // Check params.
-  check(cwd, 'cwd: absolute')
-  check(branch, 'branch: lower')
-
-  // Await command.
-  execa.sync('git', ['checkout', branch], { cwd })
-}
+// export const gitCheckout = (cwd: string, branch: string): void => {
+//   // Check params.
+//   check(cwd, 'cwd: absolute')
+//   check(branch, 'branch: lower')
+//
+//   // Await command.
+//   execa.sync('git', ['checkout', branch], { cwd })
+// }
 
 // Hashes.
 
