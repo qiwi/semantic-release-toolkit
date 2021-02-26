@@ -18,7 +18,7 @@
   "scripts": {},
   "dependencies": {
     "@qiwi/multi-semantic-release": "~3.13.0",
-    "semantic-release": "~17.3.7",
+    "semantic-release": "~17.4.0",
     "@qiwi/semrel-config": "1.2.0",
     "@qiwi/semrel-config-monorepo": "1.2.0",
     "@qiwi/semrel-preset": "1.0.1"
