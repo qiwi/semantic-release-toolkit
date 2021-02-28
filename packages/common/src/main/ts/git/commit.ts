@@ -1,5 +1,5 @@
 import { formatFlags } from '../flags'
-import { effect } from '../misc'
+import {exec} from '../misc'
 import { gitGetHead } from './etc'
 import { gitExec, IGitCommon, TGitResult } from './exec'
 
@@ -14,7 +14,6 @@ export interface IGitCommit extends IGitCommon {
  * @param {string} cwd The CWD of the Git repository.
  * @return {Promise<string>} Promise that resolves to the SHA of the head commit.
  */
-
 export const gitCommit = <T extends IGitCommit>({
   cwd,
   sync,
@@ -26,13 +25,16 @@ export const gitCommit = <T extends IGitCommit>({
 
   const flags = formatFlags({ all, message })
 
-  return effect(
-    gitExec({
+  return exec(
+    sync as T['sync'],
+    () => gitExec({
       cwd,
-      sync,
+      sync: sync as T['sync'],
       args: ['commit', ...flags, '--no-gpg-sign'],
     }),
-    // Return HEAD SHA.
-    () => gitGetHead({ cwd, sync }),
-  ) as TGitResult<T>
+    //() => gitGetHead({ cwd, sync }),
+    (h) => h
+  )
 }
+
+export const a: string = gitCommit({sync: true, cwd: 'a', message: 'ff'})
