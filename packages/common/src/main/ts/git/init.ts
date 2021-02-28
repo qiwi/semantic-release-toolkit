@@ -3,7 +3,7 @@ import fileUrl from 'file-url'
 import tempy from 'tempy'
 
 import { formatFlags } from '../flags'
-import { effect } from '../misc'
+import { effect, execute } from '../misc'
 import { gitCheckout } from './checkout'
 import { gitExec, TGitResult } from './exec'
 import { gitPush } from './push'
@@ -77,21 +77,23 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
   // Check params.
   // check(cwd, 'cwd: absolute')
 
-  return effect(gitInitRemote({ sync, cwd }), (url) =>
-    effect(gitRemoteAdd({ sync, cwd, url }), () =>
-      effect(
-        () =>
-          // Create remote branch if specified
-          branch
-            ? effect(gitCheckout({ cwd, sync, branch, b: true }), () =>
-                gitCheckout({ cwd, sync, branch: 'master' }),
-              )
-            : undefined,
-        // Push state to remote origin
-        () => effect(gitPush({ cwd, sync, branch }), () => url),
+  let url: string
+
+  return execute(
+    () => gitInitRemote({ sync, cwd }),
+    (_url) => {
+      url = _url
+    },
+    () => gitRemoteAdd({ sync, cwd, url }),
+    () =>
+      branch &&
+      execute(
+        () => gitCheckout({ cwd, sync, branch, b: true }),
+        () => gitCheckout({ cwd, sync, branch: 'master' }),
       ),
-    ),
-  ) as TGitResult<T>
+    () => gitPush({ cwd, sync, branch }),
+    () => url,
+  )
 }
 
 /*  (cwd: string, releaseBranch?: string): string => {
