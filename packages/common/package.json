@@ -40,17 +40,17 @@
   "dependencies": {
     "debug": "^4.3.1",
     "tslib": "^2.1.0",
-    "@types/node": "^14.14.25",
+    "@types/node": "^14.14.31",
     "tempy": "^1.0.0",
     "execa": "^5.0.0",
     "nanoid": "^3.1.20",
     "minimist": "^1.2.5",
-    "@antongolub/git-root": "^1.5.1"
+    "@antongolub/git-root": "^1.5.1",
+    "@qiwi/substrate": "^1.20.4"
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",
-    "@qiwi/semrel-infra": "1.0.4",
-    "@qiwi/substrate": "^1.20.0"
+    "@qiwi/semrel-infra": "1.0.4"
   },
   "peerDependencies": {},
   "optionalDependencies": {},

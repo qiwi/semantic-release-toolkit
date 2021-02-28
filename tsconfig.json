@@ -6,8 +6,10 @@
     "declaration": true
   },
   "references": [
+    { "path": "./packages/common/tsconfig.es5.json" },
     { "path": "./packages/plugin-creator/tsconfig.es5.json" },
     { "path": "./packages/plugin-actions/tsconfig.es5.json" },
-    { "path": "./packages/testing-suite/tsconfig.es5.json" }
+    { "path": "./packages/metabranch/tsconfig.es5.json" },
+    { "path": "./packages/testing-suite/tsconfig.es5.json" },
   ]
 }

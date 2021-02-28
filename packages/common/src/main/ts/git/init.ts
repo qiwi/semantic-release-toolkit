@@ -3,7 +3,7 @@ import fileUrl from 'file-url'
 import tempy from 'tempy'
 
 import { formatFlags } from '../flags'
-import { effect, execute } from '../misc'
+import { effect, exec } from '../misc'
 import { gitCheckout } from './checkout'
 import { gitExec, TGitResult } from './exec'
 import { gitPush } from './push'
@@ -17,11 +17,12 @@ export interface IGitInit {
 
 export interface IGitInitOrigin extends IGitInit {
   cwd: string
-  sync?: boolean
   branch?: string
 }
 
 export { gitRoot }
+
+
 
 export const gitInit = <T extends IGitInit>({
   cwd = tempy.directory(),
@@ -79,15 +80,19 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
 
   let url: string
 
-  return execute(
+  return exec(
+    sync as T['sync'],
+    // Turn remote path into a file URL.
     () => gitInitRemote({ sync, cwd }),
     (_url) => {
       url = _url
     },
     () => gitRemoteAdd({ sync, cwd, url }),
     () =>
+      // Set up a release branch. Return to master afterwards.
       branch &&
-      execute(
+      exec(
+        sync,
         () => gitCheckout({ cwd, sync, branch, b: true }),
         () => gitCheckout({ cwd, sync, branch: 'master' }),
       ),

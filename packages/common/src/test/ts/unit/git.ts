@@ -186,8 +186,6 @@ describe('git-utils', () => {
     ],
   ]
 
-  // gitRebaseToRemote
-
   cases.forEach(([fn, ctx, args, result]) => {
     it(`${fn.name}`, async () => {
       await fn(ctx)
