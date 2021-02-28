@@ -2,7 +2,7 @@ import { Extends, ICallable, Prev, GetLength } from '@qiwi/substrate'
 import util from 'util'
 import { ISyncSensitive } from './git'
 
-export type SyncGuard<V, S extends (boolean | undefined)> = Extends<S, true, Extends<V, Promise<any>, never, V>, Extends<V, Promise<any>, V, Promise<V>>>
+export type SyncGuard<V, S extends (boolean | undefined), R = V> = Extends<S, true, Extends<R, Promise<any>, never, R>, Extends<R, Promise<any>, R, Promise<V>>>
 
 export type TSupPromise<S extends ISyncSensitive, V> = Extends<
   S,
@@ -24,24 +24,29 @@ export const execute = <C extends ICallable[]>(
 export const exec = <S extends (boolean|undefined), C extends ICallable[]>(
   sync: S,
   ...callbacks: C
-): SyncGuard<ReturnType<C[Prev<GetLength<C>>]>, S> =>
-  format(
-    sync,
-    execute(...callbacks),
-  )
+): ReturnType<C[Prev<GetLength<C>>]> =>
+  callbacks.reduce((prev, cb) => format(sync, effect(prev, cb, sync as S)), {} as any)// as SyncGuard<ReturnType<C[Prev<GetLength<C>>]>, S>
+
 
 export const effect = <
   V extends any,
   C extends ICallable,
-  R1 = Extends<Promise<ReturnType<C>>, Promise<any>, ReturnType<C>, Promise<ReturnType<C>>>,
-  R2 = ReturnType<C>
+  S extends (boolean|undefined)
+  // R1 = Extends<Promise<ReturnType<C>>, Promise<any>, ReturnType<C>, Promise<ReturnType<C>>>,
+  // R2 = ReturnType<C>
 >(
   value: V,
   cb: C,
-): Extends<V, Promise<any>, R1, R2> =>
-  isPromiseLike(value) ? (value as any)?.then(cb) : cb(value)
+  sync: S
+): SyncGuard<ReturnType<C>, S> =>
+  sync
+    ? cb(value)
+    : isPromiseLike(value)
+      ? (value as any)?.then(cb)
+      : cb(value)
+  // isPromiseLike(value) ? (value as any)?.then(cb) : cb(value)
 
-export const format = <S extends (boolean|undefined), V extends any>(
+export const format = <S extends (boolean|undefined), V>(
   sync: S,
   value: V,
 ): SyncGuard<V, S> =>

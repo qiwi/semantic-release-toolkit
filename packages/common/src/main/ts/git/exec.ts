@@ -14,7 +14,7 @@ export interface IGitCommon extends ISyncSensitive {
 
 export type SyncGuard<V, S extends (boolean | undefined)> = Extends<S, true, Extends<V, Promise<any>, never, V>, Extends<V, Promise<any>, V, Promise<V>>>
 
-export type TGitResult<T extends ISyncSensitive, R = string> = SyncGuard<R, T['sync']>
+export type TGitResult<V extends any = string, S extends (boolean | undefined) = false> = SyncGuard<V, S>
 
 // export type TGitResult<T, R = string> = Extends<
 //   T,
@@ -29,12 +29,12 @@ export interface TGitExecContext extends IGitCommon {
 
 const defaultDebug = debug('git-exec')
 
-export const gitExec = <T extends TGitExecContext, R>({
-  sync,
+export const gitExec = <T extends TGitExecContext, R = string>({
   cwd,
   args = [],
   debug: _debug,
-}: T): TGitResult<T, R> => {
+  sync
+}: T): TGitResult<R, T['sync']> => {
   const debug = _debug || defaultDebug
 
   const execaArgs: [string, readonly string[], execa.SyncOptions] = [
@@ -51,10 +51,10 @@ export const gitExec = <T extends TGitExecContext, R>({
   log(execaArgs)
 
   if (sync === true) {
-    return (log(execa.sync(...execaArgs).stdout) as unknown) as TGitResult<T, R>
+    return (log(execa.sync(...execaArgs).stdout) as unknown) as TGitResult<R, T['sync']>
   }
 
   return execa(...execaArgs).then(({ stdout }) =>
     log(stdout.toString()),
-  )  as unknown as TGitResult<T, R>
+  ) as unknown as TGitResult<R, T['sync']>
 }

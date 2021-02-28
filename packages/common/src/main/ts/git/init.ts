@@ -92,7 +92,7 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
       // Set up a release branch. Return to master afterwards.
       branch &&
       exec(
-        sync,
+        sync as T['sync'],
         () => gitCheckout({ cwd, sync, branch, b: true }),
         () => gitCheckout({ cwd, sync, branch: 'master' }),
       ),
