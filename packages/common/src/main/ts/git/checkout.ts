@@ -13,14 +13,14 @@ export const gitCheckout = <T extends IGitCheckout>({
   branch,
   b,
   f = !b,
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // check(branch, 'branch: kebab')
 
   const flags = formatFlags({ b, f })
 
   return gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['checkout', ...flags, branch],
-  }) as TGitResult<T>
+  })
 }

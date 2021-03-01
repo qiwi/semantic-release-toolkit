@@ -1,15 +1,8 @@
-import { Extends, ICallable, Prev, GetLength } from '@qiwi/substrate'
+import { ICallable, Prev, GetLength } from '@qiwi/substrate'
 import util from 'util'
-import { ISyncSensitive } from './git'
+import {SyncGuard, TSyncDirective} from './ifaces'
 
-export type SyncGuard<V, S extends (boolean | undefined), R = V> = Extends<S, true, Extends<R, Promise<any>, never, R>, Extends<R, Promise<any>, R, Promise<V>>>
-
-export type TSupPromise<S extends ISyncSensitive, V> = Extends<
-  S,
-  { sync: true },
-  Extends<V, Promise<any>, never, V>,
-  Extends<V, Promise<any>, V, Promise<V>>
->
+export type BoolOrEmpty = (boolean | undefined)
 
 export const isPromiseLike = (value: any): boolean =>
   typeof (value as any)?.then === 'function'
@@ -21,32 +14,25 @@ export const execute = <C extends ICallable[]>(
     C[Prev<GetLength<C>>]
   >
 
-export const exec = <S extends (boolean|undefined), C extends ICallable[]>(
-  sync: S,
+export const exec = <C extends ICallable[]>(
+  // sync: S,
   ...callbacks: C
 ): ReturnType<C[Prev<GetLength<C>>]> =>
-  callbacks.reduce((prev, cb) => format(sync, effect(prev, cb, sync as S)), {} as any)// as SyncGuard<ReturnType<C[Prev<GetLength<C>>]>, S>
+  callbacks.reduce((prev, cb) => effect(prev, cb), {} as any)// as SyncGuard<ReturnType<C[Prev<GetLength<C>>]>, S>
 
 
 export const effect = <
   V extends any,
-  C extends ICallable,
-  S extends (boolean|undefined)
-  // R1 = Extends<Promise<ReturnType<C>>, Promise<any>, ReturnType<C>, Promise<ReturnType<C>>>,
-  // R2 = ReturnType<C>
+  C extends ICallable
 >(
   value: V,
   cb: C,
-  sync: S
-): SyncGuard<ReturnType<C>, S> =>
-  sync
-    ? cb(value)
-    : isPromiseLike(value)
-      ? (value as any)?.then(cb)
-      : cb(value)
-  // isPromiseLike(value) ? (value as any)?.then(cb) : cb(value)
+): ReturnType<C> =>
+  isPromiseLike(value)
+    ? (value as any)?.then(cb)
+    : cb(value)
 
-export const format = <S extends (boolean|undefined), V>(
+export const format = <S extends TSyncDirective, V>(
   sync: S,
   value: V,
 ): SyncGuard<V, S> =>

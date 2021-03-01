@@ -1,7 +1,8 @@
 import { formatFlags } from '../flags'
 import {exec} from '../misc'
-import { gitGetHead, gitShowCommitted } from './etc'
+import { gitGetHead } from './etc'
 import { gitExec, IGitCommon, TGitResult } from './exec'
+import {ISyncSensitive, TSyncDirective} from "../ifaces";
 
 export interface IGitCommit extends IGitCommon {
   message: string
@@ -19,14 +20,13 @@ export const gitCommit = <T extends IGitCommit>({
   sync,
   message,
   all,
-}: T): TGitResult<string, T['sync']> => {
+}: T): TGitResult<T['sync']> => {
   // check(cwd, 'cwd: absolute')
   // check(message, 'message: string+')
 
   const flags = formatFlags({ all, message })
 
   return exec(
-    sync as T['sync'],
     () => gitExec({
       cwd,
       sync,
@@ -36,4 +36,4 @@ export const gitCommit = <T extends IGitCommit>({
   )
 }
 
-export const a: string = gitCommit({sync: true, cwd: 'a', message: 'ff'})
+// export const a: string = gitCommit({sync: false, cwd: 'a', message: 'ff'})
