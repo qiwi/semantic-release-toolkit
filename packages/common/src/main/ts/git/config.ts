@@ -46,13 +46,13 @@ export const gitConfigGet = <T extends IGitConfigGet>({
   cwd,
   key,
   sync,
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // check(cwd, 'cwd: absolute')
   // check(name, 'name: string+')
 
   return gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['config', key],
-  }) as TGitResult<T>
+  })
 }

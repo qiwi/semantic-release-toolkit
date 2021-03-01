@@ -15,14 +15,14 @@ export const gitBranch = <T extends IGitBranch>({
   cwd,
   sync,
   branch,
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(branch, 'branch: lower')
 
   return gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['branch', branch],
-  }) as TGitResult<T>
+  })
 }

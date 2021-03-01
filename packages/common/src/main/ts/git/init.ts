@@ -81,7 +81,7 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
   let url: string
 
   return exec(
-    sync as T['sync'],
+    // sync as T['sync'],
     // Turn remote path into a file URL.
     () => gitInitRemote({ sync, cwd }),
     (_url) => {
@@ -92,7 +92,7 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
       // Set up a release branch. Return to master afterwards.
       branch &&
       exec(
-        sync as T['sync'],
+        // sync as T['sync'],
         () => gitCheckout({ cwd, sync, branch, b: true }),
         () => gitCheckout({ cwd, sync, branch: 'master' }),
       ),
