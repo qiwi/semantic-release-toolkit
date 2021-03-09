@@ -19,7 +19,7 @@ export const gitTag = <T extends IGitTag>({
   sync,
   tag,
   hash,
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(tag, 'tagName: string+')
@@ -29,9 +29,9 @@ export const gitTag = <T extends IGitTag>({
 
   return gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['tag', ...flags],
-  }) as TGitResult<T>
+  })
 }
 
 /**
@@ -45,7 +45,7 @@ export const gitGetTags = <T extends IGitTag>({
   cwd,
   sync,
   hash,
-}: T): TGitResult<T, string[]> => {
+}: T): TGitResult<T['sync'], string[]> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(hash, 'hash: alphanumeric{40}')
@@ -57,7 +57,7 @@ export const gitGetTags = <T extends IGitTag>({
       args: ['tag', '--merged', hash],
     }),
     (tags) => (tags ? tags.split('\n') : []),
-  ) as TGitResult<T, string[]>
+  )
 }
 
 /**
@@ -71,7 +71,7 @@ export const gitGetTagHash = <T extends IGitTag>({
   cwd,
   sync,
   tag,
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // Check params.
   // Check params.
   // check(cwd, 'cwd: absolute')
@@ -79,7 +79,7 @@ export const gitGetTagHash = <T extends IGitTag>({
 
   return gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['rev-list', '-1', tag],
-  }) as TGitResult<T>
+  })
 }

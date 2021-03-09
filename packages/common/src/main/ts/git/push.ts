@@ -1,4 +1,4 @@
-import { effect } from '../misc'
+import { exec } from '../misc'
 import { gitGetHead } from './etc'
 import { gitExec, IGitCommon, TGitResult } from './exec'
 import { gitFetch } from './fetch'
@@ -14,7 +14,7 @@ export const gitPush = <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // check(cwd, 'cwd: absolute')
   // check(remote, 'remote: string')
   // check(branch, 'branch: lower')
@@ -23,15 +23,15 @@ export const gitPush = <T extends IGitPush>({
     ? ['push', '--tags', remote, `HEAD:refs/heads/${branch}`]
     : ['push', '--all', remote]
 
-  return effect(
-    gitExec({
-      cwd,
-      sync,
-      args,
-    }),
-    // Return HEAD SHA.
-    () => gitGetHead({ cwd, sync }),
-  ) as TGitResult<T>
+  return exec(
+    () =>
+      gitExec({
+        cwd,
+        sync,
+        args,
+      }),
+    () => gitGetHead({ cwd, sync: sync as T['sync'] }),
+  )
 }
 
 export const gitPushRebase = <T extends IGitPush>({
@@ -39,10 +39,12 @@ export const gitPushRebase = <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
-}: T): TGitResult<T> =>
+}: T): TGitResult<T['sync']> =>
   (sync
     ? gitPushRebaseSync({ cwd, sync, branch, remote })
-    : gitPushRebaseAsync({ cwd, sync, branch, remote })) as TGitResult<T>
+    : gitPushRebaseAsync({ cwd, sync, branch, remote })) as TGitResult<
+    T['sync']
+  >
 
 export const gitPushRebaseAsync = async <T extends IGitPush>({
   cwd,
@@ -61,7 +63,7 @@ export const gitPushRebaseAsync = async <T extends IGitPush>({
         console.warn('rebase failed', e)
       }
 
-      return await gitPush({ cwd, sync, branch, remote })
+      return gitPush({ cwd, sync, branch, remote })
     } catch (e) {
       retries -= 1
       console.warn('push failed', 'retries left', retries, e)
@@ -76,7 +78,7 @@ export const gitPushRebaseSync = <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
-}: T): TGitResult<T> => {
+}: T): string => {
   let retries = 5
 
   while (retries > 0) {
@@ -88,7 +90,7 @@ export const gitPushRebaseSync = <T extends IGitPush>({
         console.warn('rebase failed', e)
       }
 
-      return gitPush({ cwd, sync, branch, remote }) as TGitResult<T>
+      return (gitPush({ cwd, sync, branch, remote }) as unknown) as string
     } catch (e) {
       retries -= 1
       console.warn('push failed', 'retries left', retries, e)

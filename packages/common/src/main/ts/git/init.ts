@@ -3,7 +3,7 @@ import fileUrl from 'file-url'
 import tempy from 'tempy'
 
 import { formatFlags } from '../flags'
-import { effect, exec } from '../misc'
+import { exec, format } from '../misc'
 import { gitCheckout } from './checkout'
 import { gitExec, TGitResult } from './exec'
 import { gitPush } from './push'
@@ -22,31 +22,31 @@ export interface IGitInitOrigin extends IGitInit {
 
 export { gitRoot }
 
-
-
 export const gitInit = <T extends IGitInit>({
   cwd = tempy.directory(),
   sync,
   bare,
-}: T): TGitResult<T> =>
-  effect(gitRoot(cwd, sync), (parentGitDir) => {
-    if (parentGitDir) {
-      throw new Error(
-        `${cwd} belongs to repo ${parentGitDir as string} already`,
-      )
-    }
+}: T): TGitResult<T['sync']> =>
+  exec(
+    () => gitRoot(cwd, sync),
+    (parentGitDir) => {
+      if (parentGitDir) {
+        throw new Error(
+          `${cwd} belongs to repo ${parentGitDir as string} already`,
+        )
+      }
+    },
+    () => {
+      const flags = formatFlags({ bare })
 
-    const flags = formatFlags({ bare })
-
-    return effect(
-      gitExec({
+      return gitExec({
         cwd: cwd as string,
         sync,
         args: ['init', ...flags],
-      }),
-      () => cwd,
-    )
-  }) as TGitResult<T>
+      })
+    },
+    () => format(sync as T['sync'], cwd),
+  )
 
 /**
  * Init bare Git repository in a temp directory.
@@ -56,11 +56,12 @@ export const gitInit = <T extends IGitInit>({
 export const gitInitRemote = <T extends IGitInit>({
   cwd,
   sync,
-}: T): TGitResult<T> =>
-  effect(gitInit({ cwd, sync, bare: true }), (cwd) =>
+}: T): TGitResult<T['sync']> =>
+  exec(
+    () => gitInit({ cwd, sync, bare: true }),
     // Turn remote path into a file URL.
-    fileUrl(cwd),
-  ) as TGitResult<T>
+    (cwd) => format(sync as T['sync'], fileUrl(cwd)),
+  )
 
 /**
  * Create a remote Git repository and set it as the origin for a Git repository.
@@ -74,14 +75,13 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
   cwd,
   sync,
   branch,
-}: T): TGitResult<T> => {
+}: T): TGitResult<T['sync']> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
 
   let url: string
 
   return exec(
-    // sync as T['sync'],
     // Turn remote path into a file URL.
     () => gitInitRemote({ sync, cwd }),
     (_url) => {
@@ -97,7 +97,7 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
         () => gitCheckout({ cwd, sync, branch: 'master' }),
       ),
     () => gitPush({ cwd, sync, branch }),
-    () => url,
+    () => format(sync as T['sync'], url),
   )
 }
 
