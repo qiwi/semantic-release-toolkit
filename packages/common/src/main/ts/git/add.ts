@@ -15,7 +15,10 @@ export const gitAdd = <T extends IGitAdd>({
     args: ['add', file],
   })
 
-export const gitAddAll = <T extends IGitAdd>({ cwd, sync }: T): TGitResult<T['sync']> =>
+export const gitAddAll = <T extends IGitAdd>({
+  cwd,
+  sync,
+}: T): TGitResult<T['sync']> =>
   gitExec({
     cwd,
     sync: sync as T['sync'],

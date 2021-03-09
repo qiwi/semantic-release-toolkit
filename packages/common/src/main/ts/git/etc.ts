@@ -1,4 +1,4 @@
-import {exec, format} from '../misc'
+import { exec, format } from '../misc'
 import { gitExec, IGitCommon, TGitResult } from './exec'
 
 /**
@@ -15,7 +15,7 @@ export const gitGetHead = <T extends IGitCommon>({
   gitExec({
     cwd,
     args: ['rev-parse', 'HEAD'],
-    sync: sync as T['sync']
+    sync: sync as T['sync'],
   })
 
 export interface IGitShowCommitted extends IGitCommon {
@@ -28,21 +28,21 @@ export const gitShowCommitted = <T extends IGitShowCommitted>({
   hash = 'HEAD',
 }: T): TGitResult<T['sync'], string[]> =>
   exec(
-    () => gitExec({
-      cwd,
-      sync: sync as T['sync'],
-      args: ['diff-tree', '--no-commit-id', '--name-only', '-r', hash],
-    }),
+    () =>
+      gitExec({
+        cwd,
+        sync: sync as T['sync'],
+        args: ['diff-tree', '--no-commit-id', '--name-only', '-r', hash],
+      }),
     (stdout) => format(sync as T['sync'], (stdout as string).split('\n')),
   )
 
 export const gitStatus = <T extends IGitCommon>({
   cwd,
   sync,
-}: T): TGitResult<T> => {
-  return gitExec({
+}: T): TGitResult<T['sync']> =>
+  gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['status', '--short'],
-  }) as TGitResult<T>
-}
+  })

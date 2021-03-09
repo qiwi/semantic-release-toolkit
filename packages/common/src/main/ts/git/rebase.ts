@@ -10,9 +10,9 @@ export const gitRebaseToRemote = <T extends IGitRebase>({
   sync,
   remote,
   branch,
-}: T): TGitResult<T> =>
+}: T): TGitResult<T['sync']> =>
   gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['rebase', `${remote}/${branch}`],
-  }) as TGitResult<T>
+  })

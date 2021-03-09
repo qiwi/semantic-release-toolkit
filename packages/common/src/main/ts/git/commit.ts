@@ -1,8 +1,7 @@
 import { formatFlags } from '../flags'
-import {exec} from '../misc'
+import { exec } from '../misc'
 import { gitGetHead } from './etc'
 import { gitExec, IGitCommon, TGitResult } from './exec'
-import {ISyncSensitive, TSyncDirective} from "../ifaces";
 
 export interface IGitCommit extends IGitCommon {
   message: string
@@ -27,11 +26,12 @@ export const gitCommit = <T extends IGitCommit>({
   const flags = formatFlags({ all, message })
 
   return exec(
-    () => gitExec({
-      cwd,
-      sync,
-      args: ['commit', ...flags, '--no-gpg-sign'],
-    }),
+    () =>
+      gitExec({
+        cwd,
+        sync,
+        args: ['commit', ...flags, '--no-gpg-sign'],
+      }),
     () => gitGetHead({ cwd, sync: sync as T['sync'] }),
   )
 }

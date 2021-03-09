@@ -8,27 +8,23 @@ export interface IGitFetch extends IGitCommon {
 export const gitFetchAll = <T extends IGitFetch>({
   cwd,
   sync,
-}: T): TGitResult<T> => {
-  return gitExec({
+}: T): TGitResult<T['sync']> =>
+  gitExec({
     cwd,
-    sync,
+    sync: sync as T['sync'],
     args: ['fetch', '--all'],
-  }) as TGitResult<T>
-}
+  })
 
 export const gitFetch = <T extends IGitFetch>({
   cwd,
   remote = 'origin',
   branch,
   sync,
-}: T): TGitResult<T> => {
-  if (branch) {
-    return gitExec({
-      cwd,
-      sync,
-      args: ['fetch', remote, branch],
-    }) as TGitResult<T>
-  }
-
-  return gitFetchAll({ cwd, sync }) as TGitResult<T>
-}
+}: T): TGitResult<T['sync']> =>
+  branch
+    ? gitExec({
+        cwd,
+        sync: sync as T['sync'],
+        args: ['fetch', remote, branch],
+      })
+    : gitFetchAll({ cwd, sync: sync as T['sync'] })
