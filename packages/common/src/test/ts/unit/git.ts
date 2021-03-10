@@ -43,107 +43,111 @@ describe('git-utils', () => {
     execa.sync.mockImplementation(execaSync)
   })
 
-  afterAll(jest.clearAllMocks)
+  afterAll(jest.restoreAllMocks)
+
+  afterEach(jest.clearAllMocks)
 
   const cwd = tempy.directory()
-  const cases: [ICallable, Record<any, any>, any[], any?][] = [
-    [gitInit, { cwd }, ['git', ['init'], { cwd }], cwd],
+  const cases: [ICallable, Record<any, any>, any[][], any?][] = [
+    [gitInit, { cwd }, [['git', ['init'], { cwd }]], cwd],
     [
       gitInitRemote,
       { cwd },
-      ['git', ['init', '--bare'], { cwd }],
+      [['git', ['init', '--bare'], { cwd }]],
       expect.any(String),
     ],
     [
       gitInitOrigin,
       { cwd, branch: 'foo' },
-      ['git', ['push', '--tags', 'origin', 'HEAD:refs/heads/foo'], { cwd }],
+      [['git', ['push', '--tags', 'origin', 'HEAD:refs/heads/foo'], { cwd }]],
       expect.any(String),
     ],
     [
       gitCheckout,
       { cwd, b: true, branch: 'foobar' },
-      ['git', ['checkout', '-b', 'foobar'], { cwd }],
+      [['git', ['checkout', '-b', 'foobar'], { cwd }]],
       'output',
     ],
     [
       gitConfigAdd,
       { cwd, key: 'user.name', value: 'Foo Bar' },
-      ['git', ['config', '--add', 'user.name', 'Foo Bar'], { cwd }],
+      [['git', ['config', '--add', 'user.name', 'Foo Bar'], { cwd }]],
       'output',
     ],
     [
       gitConfigGet,
       { cwd, key: 'user.name' },
-      ['git', ['config', 'user.name'], { cwd }],
+      [['git', ['config', 'user.name'], { cwd }]],
       'output',
     ],
     [
       gitRemoteAdd,
       { cwd, remote: 'qiwi', url: 'git@gh.com:qiwi/foo.git' },
-      ['git', ['remote', 'add', 'qiwi', 'git@gh.com:qiwi/foo.git'], { cwd }],
+      [['git', ['remote', 'add', 'qiwi', 'git@gh.com:qiwi/foo.git'], { cwd }]],
       'output',
     ],
-    [gitFetchAll, { cwd }, ['git', ['fetch', '--all'], { cwd }], 'output'],
+    [gitFetchAll, { cwd }, [['git', ['fetch', '--all'], { cwd }]], 'output'],
     [
       gitFetch,
       { cwd, origin: 'qiwi', branch: 'master' },
-      ['git', ['fetch', 'origin', 'master'], { cwd }],
+      [['git', ['fetch', 'origin', 'master'], { cwd }]],
       'output',
     ],
-    [gitFetch, { cwd }, ['git', ['fetch', '--all'], { cwd }], 'output'],
+    [gitFetch, { cwd }, [['git', ['fetch', '--all'], { cwd }]], 'output'],
     [
       gitRemoteSetHead,
       { cwd, remote: 'qiwi' },
-      ['git', ['remote', 'set-head', 'qiwi', '--auto'], { cwd }],
+      [['git', ['remote', 'set-head', 'qiwi', '--auto'], { cwd }]],
       'output',
     ],
     [
       gitAdd,
       { cwd, file: 'qiwi*' },
-      ['git', ['add', 'qiwi*'], { cwd }],
+      [['git', ['add', 'qiwi*'], { cwd }]],
       'output',
     ],
-    [gitAddAll, { cwd }, ['git', ['add', '--all'], { cwd }], 'output'],
-    [gitTag, { cwd, tag: 'foo' }, ['git', ['tag', 'foo'], { cwd }], 'output'],
+    [gitAddAll, { cwd }, [['git', ['add', '--all'], { cwd }]], 'output'],
+    [gitTag, { cwd, tag: 'foo' }, [['git', ['tag', 'foo'], { cwd }]], 'output'],
     [
       gitTag,
       { cwd, tag: 'foo', hash: 'bar' },
-      ['git', ['tag', '-f', 'foo', 'bar'], { cwd }],
+      [['git', ['tag', '-f', 'foo', 'bar'], { cwd }]],
       'output',
     ],
     [
       gitGetTags,
       { cwd, hash: 'bar' },
-      ['git', ['tag', '--merged', 'bar'], { cwd }],
+      [['git', ['tag', '--merged', 'bar'], { cwd }]],
       ['output'],
     ],
     [
       gitGetTagHash,
       { cwd, tag: 'foo' },
-      ['git', ['rev-list', '-1', 'foo'], { cwd }],
+      [['git', ['rev-list', '-1', 'foo'], { cwd }]],
       'output',
     ],
     [
       gitBranch,
       { cwd, branch: 'foo' },
-      ['git', ['branch', 'foo'], { cwd }],
+      [['git', ['branch', 'foo'], { cwd }]],
       'output',
     ],
-    [gitGetHead, { cwd }, ['git', ['rev-parse', 'HEAD'], { cwd }], 'output'],
+    [gitGetHead, { cwd }, [['git', ['rev-parse', 'HEAD'], { cwd }]], 'output'],
     [
       gitCommit,
       { cwd, message: 'foo' },
-      ['git', ['commit', '--message', 'foo', '--no-gpg-sign'], { cwd }],
+      [['git', ['commit', '--message', 'foo', '--no-gpg-sign'], { cwd }]],
       'output',
     ],
     [
       gitCommit,
       { cwd, message: 'foo', all: true },
       [
-        'git',
-        ['commit', '--all', '--message', 'foo', '--no-gpg-sign'],
-        { cwd },
+        [
+          'git',
+          ['commit', '--all', '--message', 'foo', '--no-gpg-sign'],
+          { cwd },
+        ],
       ],
       'output',
     ],
@@ -151,48 +155,71 @@ describe('git-utils', () => {
       gitPush,
       { cwd, branch: 'metabranch', remote: 'qiwi' },
       [
-        'git',
-        ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
-        { cwd },
+        [
+          'git',
+          ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
+          { cwd },
+        ],
       ],
       'output',
     ],
     [
       gitRebaseToRemote,
       { cwd, branch: 'metabranch', remote: 'qiwi' },
-      ['git', ['rebase', 'qiwi/metabranch'], { cwd }],
+      [['git', ['rebase', 'qiwi/metabranch'], { cwd }]],
       'output',
     ],
     [
       gitPushRebase,
       { cwd, branch: 'metabranch', remote: 'qiwi' },
       [
-        'git',
-        ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
-        { cwd },
+        [
+          'git',
+          ['fetch', 'qiwi', 'metabranch'],
+          { cwd },
+        ],
+        [
+          'git',
+          ['rebase', 'qiwi/metabranch'],
+          { cwd },
+        ],
+        [
+          'git',
+          ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
+          { cwd },
+        ],
+        [
+          'git',
+          ['rev-parse', 'HEAD'],
+          { cwd },
+        ],
       ],
       'output',
     ],
-    [gitStatus, { cwd }, ['git', ['status', '--short'], { cwd }], 'output'],
+    [gitStatus, { cwd }, [['git', ['status', '--short'], { cwd }]], 'output'],
     [
       gitShowCommitted,
       { cwd, hash: 'foo' },
       [
-        'git',
-        ['diff-tree', '--no-commit-id', '--name-only', '-r', 'foo'],
-        { cwd },
+        [
+          'git',
+          ['diff-tree', '--no-commit-id', '--name-only', '-r', 'foo'],
+          { cwd },
+        ],
       ],
       ['output'],
     ],
   ]
 
-  cases.forEach(([fn, ctx, args, result]) => {
+  cases.forEach(([fn, ctx, argsOfArgs, result]) => {
     it(`${fn.name}`, async () => {
       await fn(ctx)
       expect(fn({ ...ctx, sync: true })).toEqual(result)
 
-      expect(execaAsync).toHaveBeenCalledWith(...args)
-      expect(execaSync).toHaveBeenCalledWith(...args)
+      argsOfArgs.forEach((args) => {
+        expect(execaAsync).toHaveBeenCalledWith(...args)
+        expect(execaSync).toHaveBeenCalledWith(...args)
+      })
     })
   })
 })
