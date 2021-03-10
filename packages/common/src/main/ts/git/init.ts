@@ -54,7 +54,7 @@ export const gitInit = <T extends IGitInit>({
  * @return {Promise<string>} Promise that resolves to string URL of the of the remote origin.
  */
 export const gitInitRemote = <T extends IGitInit>({
-  cwd,
+  cwd = tempy.directory(),
   sync,
 }: T): TGitResult<T['sync']> =>
   exec(
@@ -83,7 +83,7 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
 
   return exec(
     // Turn remote path into a file URL.
-    () => gitInitRemote({ sync, cwd }),
+    () => gitInitRemote({ sync }),
     (_url) => {
       url = _url
     },

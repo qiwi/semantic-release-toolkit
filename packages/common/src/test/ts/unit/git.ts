@@ -173,26 +173,14 @@ describe('git-utils', () => {
       gitPushRebase,
       { cwd, branch: 'metabranch', remote: 'qiwi' },
       [
-        [
-          'git',
-          ['fetch', 'qiwi', 'metabranch'],
-          { cwd },
-        ],
-        [
-          'git',
-          ['rebase', 'qiwi/metabranch'],
-          { cwd },
-        ],
+        ['git', ['fetch', 'qiwi', 'metabranch'], { cwd }],
+        ['git', ['rebase', 'qiwi/metabranch'], { cwd }],
         [
           'git',
           ['push', '--tags', 'qiwi', 'HEAD:refs/heads/metabranch'],
           { cwd },
         ],
-        [
-          'git',
-          ['rev-parse', 'HEAD'],
-          { cwd },
-        ],
+        ['git', ['rev-parse', 'HEAD'], { cwd }],
       ],
       'output',
     ],

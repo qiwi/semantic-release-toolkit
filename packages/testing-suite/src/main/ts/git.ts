@@ -1,8 +1,3 @@
-/**
- * Lifted and tweaked from semantic-release because we follow how they test their internals.
- * https://github.com/semantic-release/semantic-release/blob/master/test/helpers/git-utils.js
- */
-
 import tempy from 'tempy'
 import {
   gitInit,
@@ -10,8 +5,11 @@ import {
   TGitResult,
   IGitInit,
   gitCheckout,
-  gitConfigAdd, IGitCommit, gitAddAll, gitCommit,
-  TSupPromise
+  gitConfigAdd,
+  IGitCommit,
+  gitAddAll,
+  gitCommit,
+  format,
 } from '@qiwi/semrel-common'
 
 export * from '@qiwi/semrel-common'
@@ -30,22 +28,21 @@ export interface IGitInitTestingRepo extends IGitInit {
 export const gitInitTestingRepo = <T extends IGitInitTestingRepo>({
   branch = 'master',
   sync,
-}: T): TGitResult<T> => {
-
+}: T): TGitResult<T['sync']> => {
   const cwd = tempy.directory()
 
   return exec(
-    { sync } as T,
     () => gitInit({ sync, cwd }),
-    () => gitCheckout({
-      cwd,
-      sync,
-      branch,
-      b: true,
-    }),
+    () =>
+      gitCheckout({
+        cwd,
+        sync,
+        branch,
+        b: true,
+      }),
     // Disable GPG signing for commits.
     () => gitConfigAdd({ cwd, sync, key: 'commit.gpgsign', value: false }),
-    () => cwd
+    () => format(sync as T['sync'], cwd),
   )
 }
 
@@ -59,20 +56,16 @@ export const gitInitTestingRepo = <T extends IGitInitTestingRepo>({
  */
 export const gitCommitAll = <T extends IGitCommit>({
   cwd,
-                                                              message,
-                                                              sync,
-                                                            }: T): TGitResult<T> => {
-
-
-
+  message,
+  sync,
+}: T): TGitResult<T['sync']> => {
   // Check params.
   // check(cwd, 'cwd: absolute')
   // check(message, 'message: string+')
 
   return exec(
-    {sync} as T,
     () => gitAddAll({ cwd, sync }),
-    () => gitCommit({cwd, message, sync})
+    () => gitCommit({ cwd, message, sync: sync as T['sync'] }),
   )
 }
 
