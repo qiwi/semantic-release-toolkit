@@ -45,7 +45,7 @@ export const gitInit = async (
   }
 
   // Disable GPG signing for commits.
-  gitConfig(cwd, 'commit.gpgsign', false)
+  gitConfig({cwd, key: 'commit.gpgsign', value: false})
 
   // Return directory.
   return cwd
