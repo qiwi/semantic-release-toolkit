@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-testing-suite",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -42,11 +42,11 @@
     "fs-extra": "^9.1.0",
     "tempy": "^1.0.0",
     "execa": "^5.0.0",
-    "@qiwi/semrel-common": "^1.0.0"
+    "@qiwi/semrel-common": "1.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.33",
-    "@qiwi/semrel-infra": "1.0.4"
+    "@qiwi/semrel-infra": "1.0.5"
   },
   "peerDependencies": {},
   "optionalDependencies": {},
