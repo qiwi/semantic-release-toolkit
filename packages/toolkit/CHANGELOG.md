@@ -1,3 +1,20 @@
+## @qiwi/semrel-toolkit [1.3.11](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.10...@qiwi/semrel-toolkit@1.3.11) (2021-03-11)
+
+
+### Bug Fixes
+
+* **pkg:** up deps, fix vuls ([3bd0514](https://github.com/qiwi/semantic-release-toolkit/commit/3bd051436e6466000443d44f5aa819f67080f534))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.2.1
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.2.1
+* **@qiwi/semrel-preset:** upgraded to 1.1.0
+
 ## @qiwi/semrel-toolkit [1.3.10](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.9...@qiwi/semrel-toolkit@1.3.10) (2021-02-04)
 
 
