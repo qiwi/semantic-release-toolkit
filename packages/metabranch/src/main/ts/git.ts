@@ -1,4 +1,4 @@
-import { gitConfig } from '@qiwi/semrel-testing-suite'
+import { gitConfigAdd } from '@qiwi/semrel-common'
 import execa from 'execa'
 import findUp, { Match } from 'find-up'
 import fs from 'fs'
@@ -45,7 +45,7 @@ export const gitInit = async (
   }
 
   // Disable GPG signing for commits.
-  gitConfig({cwd, key: 'commit.gpgsign', value: false})
+  await gitConfigAdd({cwd, key: 'commit.gpgsign', value: false})
 
   // Return directory.
   return cwd
