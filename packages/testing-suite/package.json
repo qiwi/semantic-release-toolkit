@@ -45,7 +45,7 @@
     "@qiwi/semrel-common": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.25",
+    "@types/node": "^14.14.33",
     "@qiwi/semrel-infra": "1.0.4"
   },
   "peerDependencies": {},
