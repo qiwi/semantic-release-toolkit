@@ -24,7 +24,7 @@
     "format": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
-    "@qiwi/semrel-preset": "1.0.1"
+    "@qiwi/semrel-preset": "^1.0.1"
   },
   "devDependencies": {},
   "peerDependencies": {},
