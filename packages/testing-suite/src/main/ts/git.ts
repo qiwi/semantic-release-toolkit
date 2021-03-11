@@ -1,16 +1,16 @@
-import tempy from 'tempy'
 import {
-  gitInit,
   exec,
-  TGitResult,
-  IGitInit,
-  gitCheckout,
-  gitConfigAdd,
-  IGitCommit,
-  gitAddAll,
-  gitCommit,
   format,
+  gitAddAll,
+  gitCheckout,
+  gitCommit,
+  gitConfigAdd,
+  gitInit,
+  IGitCommit,
+  IGitInit,
+  TGitResult,
 } from '@qiwi/semrel-common'
+import tempy from 'tempy'
 
 export * from '@qiwi/semrel-common'
 
@@ -85,7 +85,7 @@ export const gitCommitAll = <T extends IGitCommit>({
           () => cwd,
         ),
     ),
-  ) as TGitResult<T>*/
+  ) as TGitResult<T> */
 
 // /**
 //  * Create a remote Git repository.

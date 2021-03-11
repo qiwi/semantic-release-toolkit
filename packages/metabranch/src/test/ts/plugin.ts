@@ -2,8 +2,8 @@ import {
   cleanPath,
   copyDirectory,
   gitCommitAll,
-  gitInit,
   gitInitOrigin,
+  gitInitTestingRepo,
   gitPush,
 } from '@qiwi/semrel-testing-suite'
 import { resolve } from 'path'
@@ -15,11 +15,12 @@ const fixtures = resolve(__dirname, '../fixtures')
 const initTempRepo = (
   fixture = `${fixtures}/basicPackage/`,
 ): { cwd: string; repo: string } => {
-  const cwd = gitInit()
+  const sync = true
+  const cwd = gitInitTestingRepo({sync})
   copyDirectory(fixture, cwd)
-  gitCommitAll(cwd, 'feat: initial commit')
-  const repo = gitInitOrigin(cwd)
-  gitPush(cwd)
+  gitCommitAll({cwd, message: 'feat: initial commit', sync})
+  const repo = gitInitOrigin({cwd, sync})
+  gitPush({cwd, sync})
 
   return {
     cwd,

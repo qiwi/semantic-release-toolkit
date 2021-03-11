@@ -20,14 +20,15 @@ describe('integration', () => {
       return 'patch'
     }
   })
+  const sync = true
   const pluginName = 'some-plugin'
   const plugin = createPlugin({ handler, name: pluginName })
-  const cwd = gitInit()
+  const cwd = gitInit({sync})
 
   copyDirectory(`${fixtures}/yarnWorkspaces/`, cwd)
-  gitCommitAll(cwd, 'feat: Initial release')
-  gitInitOrigin(cwd)
-  gitPush(cwd)
+  gitCommitAll({cwd, message: 'feat: Initial release', sync})
+  gitInitOrigin({cwd, sync})
+  gitPush({cwd, sync})
 
   beforeAll(() => {
     jest.mock(pluginName, () => plugin, { virtual: true })
