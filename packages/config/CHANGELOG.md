@@ -1,3 +1,13 @@
+## @qiwi/semrel-config [1.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.2.1...@qiwi/semrel-config@1.2.2) (2021-03-12)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 1.1.1
+
 ## @qiwi/semrel-config [1.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.2.0...@qiwi/semrel-config@1.2.1) (2021-03-11)
 
 
