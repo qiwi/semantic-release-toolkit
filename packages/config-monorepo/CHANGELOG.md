@@ -1,3 +1,18 @@
+# @qiwi/semrel-config-monorepo [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.2.1...@qiwi/semrel-config-monorepo@1.3.0) (2021-03-12)
+
+
+### Features
+
+* **config-mono:** use gitTag instead of version for commit message template ([06a6ccb](https://github.com/qiwi/semantic-release-toolkit/commit/06a6ccb9e2e203d0ff1a457942c1a0c76dcbdf90))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 1.1.1
+
 ## @qiwi/semrel-config-monorepo [1.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.2.0...@qiwi/semrel-config-monorepo@1.2.1) (2021-03-11)
 
 
