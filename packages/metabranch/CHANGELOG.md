@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.4.1...@qiwi/semrel-metabranch@1.4.2) (2021-03-12)
+
+
+### Performance Improvements
+
+* **deps:** update semrel to 17.4.2 ([e25c584](https://github.com/qiwi/semantic-release-toolkit/commit/e25c58410d0c67d80e58d13b76c2f005282f5708))
+
 ## [1.4.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.4.0...@qiwi/semrel-metabranch@1.4.1) (2021-03-11)
 
 
