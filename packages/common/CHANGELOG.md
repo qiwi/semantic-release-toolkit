@@ -1,3 +1,10 @@
+## @qiwi/semrel-common [1.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.0.1...@qiwi/semrel-common@1.0.2) (2021-03-12)
+
+
+### Performance Improvements
+
+* **deps:** update semrel to 17.4.2 ([e25c584](https://github.com/qiwi/semantic-release-toolkit/commit/e25c58410d0c67d80e58d13b76c2f005282f5708))
+
 ## @qiwi/semrel-common [1.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.0.0...@qiwi/semrel-common@1.0.1) (2021-03-11)
 
 
