@@ -1,3 +1,20 @@
+## @qiwi/semrel-toolkit [1.3.12](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.11...@qiwi/semrel-toolkit@1.3.12) (2021-03-12)
+
+
+### Performance Improvements
+
+* **deps:** update semrel to 17.4.2 ([e25c584](https://github.com/qiwi/semantic-release-toolkit/commit/e25c58410d0c67d80e58d13b76c2f005282f5708))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.2.2
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.3.0
+* **@qiwi/semrel-preset:** upgraded to 1.1.1
+
 ## @qiwi/semrel-toolkit [1.3.11](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.10...@qiwi/semrel-toolkit@1.3.11) (2021-03-11)
 
 
