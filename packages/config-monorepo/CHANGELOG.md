@@ -1,3 +1,10 @@
+## @qiwi/semrel-config-monorepo [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.3.0...@qiwi/semrel-config-monorepo@1.3.1) (2021-03-13)
+
+
+### Bug Fixes
+
+* **config-monorepo:** fix release commit msg ([061bc38](https://github.com/qiwi/semantic-release-toolkit/commit/061bc38ec8890637db5acd676da0e3f04bae07f7))
+
 # @qiwi/semrel-config-monorepo [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.2.1...@qiwi/semrel-config-monorepo@1.3.0) (2021-03-12)
 
 
