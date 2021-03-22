@@ -6,7 +6,7 @@ import {
   gitCreateFakeRepo,
   gitGetTags,
   gitPushFakeCommits,
-} from '../../main/ts'
+} from '../../../main/ts'
 
 const fixtures = resolve(__dirname, '../fixtures')
 const sync = true

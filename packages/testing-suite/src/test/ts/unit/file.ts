@@ -2,7 +2,7 @@ import { readFileSync } from 'fs'
 import { resolve } from 'path'
 import tempy from 'tempy'
 
-import { cleanPath, createTestingFiles, isDirectory } from '../../main/ts'
+import { cleanPath, createTestingFiles, isDirectory } from '../../../main/ts'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
