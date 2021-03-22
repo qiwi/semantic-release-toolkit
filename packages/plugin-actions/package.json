@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-actions",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "tslib": "^2.1.0",
-    "@qiwi/semrel-plugin-creator": "1.6.3"
+    "@qiwi/semrel-plugin-creator": "1.6.4"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.0.5"
