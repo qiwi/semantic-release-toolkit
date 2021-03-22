@@ -1,3 +1,19 @@
+# @qiwi/semrel-config-monorepo [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.3.1...@qiwi/semrel-config-monorepo@1.4.0) (2021-03-22)
+
+
+### Features
+
+* **config:** release refactoring as patche ([c2bbc97](https://github.com/qiwi/semantic-release-toolkit/commit/c2bbc97e4e265e839e034671bf629210ae99db45))
+* **testing-suite:** add enhanced fakeRepo builder ([284d050](https://github.com/qiwi/semantic-release-toolkit/commit/284d050076fc776b7199b967295b219fe2d3e672))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 1.1.2
+
 ## @qiwi/semrel-config-monorepo [1.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.3.0...@qiwi/semrel-config-monorepo@1.3.1) (2021-03-13)
 
 
