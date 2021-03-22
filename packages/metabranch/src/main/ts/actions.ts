@@ -1,3 +1,15 @@
+import {
+  gitAddAll,
+  gitCheckout,
+  gitCommit,
+  gitFetch,
+  gitInit,
+  gitPushRebase,
+  gitRemoteAdd,
+  gitRemoteSetHead,
+  gitShowCommitted,
+  gitStatus,
+} from '@qiwi/semrel-common'
 import { Debugger } from '@qiwi/semrel-plugin-creator'
 import fs from 'fs-extra'
 import globby from 'globby'
@@ -5,18 +17,6 @@ import path from 'path'
 import tempy from 'tempy'
 
 import { defaults } from './defaults'
-import {
-  gitAddAll,
-  gitAddRemote,
-  gitCheckout,
-  gitCommit,
-  gitFetch,
-  gitInit,
-  gitPushRebase,
-  gitSetRemoteHead,
-  gitShowCommitted,
-  gitStatus,
-} from './git'
 import {
   TActionOptions,
   TActionOptionsNormalized,
@@ -28,15 +28,15 @@ export const prepareTempRepo = async (
   repo: string,
   branch: string,
 ): Promise<string> => {
-  await gitInit(cwd)
-  await gitAddRemote(cwd, repo)
+  await gitInit({ cwd })
+  await gitRemoteAdd({ cwd, url: repo, remote: 'origin' })
 
   try {
-    await gitFetch(cwd, 'origin', branch)
-    await gitCheckout(cwd, `origin/${branch}`)
+    await gitFetch({ cwd, remote: 'origin', branch })
+    await gitCheckout({ cwd, branch: `origin/${branch}` })
   } catch {
-    await gitFetch(cwd, 'origin')
-    await gitSetRemoteHead(cwd, 'origin')
+    await gitFetch({ cwd, remote: 'origin' })
+    await gitRemoteSetHead({ cwd, remote: 'origin' })
   }
 
   return cwd
@@ -135,9 +135,9 @@ export const push = async (opts: TActionOptions): Promise<string> => {
 
   await synchronize({ from, to, baseFrom: cwd, baseTo: temp, debug })
 
-  await gitAddAll(temp)
+  await gitAddAll({ cwd: temp })
 
-  const status = await gitStatus(temp)
+  const status = await gitStatus({ cwd: temp })
   debug('status=', status)
 
   if (!status) {
@@ -145,10 +145,10 @@ export const push = async (opts: TActionOptions): Promise<string> => {
     return ''
   }
 
-  await gitCommit(temp, message)
+  await gitCommit({ cwd: temp, message })
 
-  const commitId = await gitPushRebase(temp, 'origin', branch)
-  const committedFiles = await gitShowCommitted(temp, commitId)
+  const commitId = await gitPushRebase({ cwd: temp, remote: 'origin', branch })
+  const committedFiles = await gitShowCommitted({ cwd: temp, hash: commitId })
 
   debug('commitId=', commitId, 'committedFiles=', committedFiles.join(', '))
 

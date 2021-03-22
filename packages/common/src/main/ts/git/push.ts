@@ -46,6 +46,7 @@ export const gitPushRebase = <T extends IGitPush>({
     T['sync']
   >
 
+
 export const gitPushRebaseAsync = async <T extends IGitPush>({
   cwd,
   sync,
@@ -63,7 +64,7 @@ export const gitPushRebaseAsync = async <T extends IGitPush>({
         console.warn('rebase failed', e)
       }
 
-      return gitPush({ cwd, sync, branch, remote })
+      return await gitPush({ cwd, sync, branch, remote })
     } catch (e) {
       retries -= 1
       console.warn('push failed', 'retries left', retries, e)
