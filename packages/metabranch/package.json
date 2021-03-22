@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-metabranch",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -41,17 +41,17 @@
     "@types/execa": "^2.0.0",
     "@types/semantic-release": "^17.2.0",
     "@types/node": "^14.14.35",
-    "@qiwi/semrel-plugin-creator": "1.6.3",
+    "@qiwi/semrel-plugin-creator": "1.6.4",
     "tslib": "^2.1.0",
     "execa": "^5.0.0",
     "tempy": "^1.0.1",
     "globby": "^11.0.3",
     "fs-extra": "^9.1.0",
-    "@qiwi/semrel-common": "1.0.2"
+    "@qiwi/semrel-common": "1.1.0"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.0.5",
-    "@qiwi/semrel-testing-suite": "1.1.2",
+    "@qiwi/semrel-testing-suite": "1.2.0",
     "semantic-release": "^17.4.2",
     "resolve-from": "^5.0.0"
   },
