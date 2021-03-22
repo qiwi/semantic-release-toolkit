@@ -20,11 +20,11 @@ describe('actions', () => {
     fixture = `${fixtures}/basicPackage/`,
   ): { cwd: string; repo: string } => {
     const sync = true
-    const cwd = gitInit({sync})
+    const cwd = gitInit({ sync })
     copyDirectory(fixture, cwd)
-    gitCommitAll({cwd, message: 'feat: initial commit', sync})
-    const repo = gitInitOrigin({cwd, sync})
-    gitPush({cwd, sync})
+    gitCommitAll({ cwd, message: 'feat: initial commit', sync })
+    const repo = gitInitOrigin({ cwd, sync })
+    gitPush({ cwd, sync })
 
     return {
       cwd,
@@ -97,7 +97,7 @@ describe('actions', () => {
       ).toBe('foobar')
     })
 
-    it('handles racing issues', async () => {
+    fit('handles racing issues', async () => {
       const cwd = `${fixtures}/foo/`
       const { repo, cwd: _cwd } = initTempRepo()
       const debug = console.log as Debugger

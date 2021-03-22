@@ -16,11 +16,11 @@ const initTempRepo = (
   fixture = `${fixtures}/basicPackage/`,
 ): { cwd: string; repo: string } => {
   const sync = true
-  const cwd = gitInitTestingRepo({sync})
+  const cwd = gitInitTestingRepo({ sync })
   copyDirectory(fixture, cwd)
-  gitCommitAll({cwd, message: 'feat: initial commit', sync})
-  const repo = gitInitOrigin({cwd, sync})
-  gitPush({cwd, sync})
+  gitCommitAll({ cwd, message: 'feat: initial commit', sync })
+  const repo = gitInitOrigin({ cwd, sync })
+  gitPush({ cwd, sync })
 
   return {
     cwd,
