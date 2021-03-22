@@ -97,7 +97,7 @@ describe('actions', () => {
       ).toBe('foobar')
     })
 
-    fit('handles racing issues', async () => {
+    it('handles racing issues', async () => {
       const cwd = `${fixtures}/foo/`
       const { repo, cwd: _cwd } = initTempRepo()
       const debug = console.log as Debugger

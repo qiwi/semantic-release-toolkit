@@ -1,4 +1,4 @@
-import { foo } from '../../main/ts'
+import { foo } from '../../../main/ts'
 
 describe('export', () => {
   it('`foo` defined', () => {
