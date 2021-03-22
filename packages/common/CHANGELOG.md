@@ -1,3 +1,10 @@
+# @qiwi/semrel-common [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.0.2...@qiwi/semrel-common@1.1.0) (2021-03-22)
+
+
+### Features
+
+* **testing-suite:** add enhanced fakeRepo builder ([284d050](https://github.com/qiwi/semantic-release-toolkit/commit/284d050076fc776b7199b967295b219fe2d3e672))
+
 ## @qiwi/semrel-common [1.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.0.1...@qiwi/semrel-common@1.0.2) (2021-03-12)
 
 
