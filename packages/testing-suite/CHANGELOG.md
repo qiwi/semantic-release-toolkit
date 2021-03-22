@@ -1,3 +1,18 @@
+# @qiwi/semrel-testing-suite [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.1.2...@qiwi/semrel-testing-suite@1.2.0) (2021-03-22)
+
+
+### Features
+
+* **testing-suite:** add enhanced fakeRepo builder ([284d050](https://github.com/qiwi/semantic-release-toolkit/commit/284d050076fc776b7199b967295b219fe2d3e672))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 1.1.0
+
 ## @qiwi/semrel-testing-suite [1.1.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.1.1...@qiwi/semrel-testing-suite@1.1.2) (2021-03-12)
 
 
