@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-preset",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -19,7 +19,7 @@
     "format": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
-    "@qiwi/semrel-metabranch": "1.4.2",
+    "@qiwi/semrel-metabranch": "1.4.3",
     "@qiwi/semantic-release-gh-pages-plugin": "^5.0.5",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/changelog": "^5.0.1",
