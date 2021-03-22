@@ -46,7 +46,6 @@ export const gitPushRebase = <T extends IGitPush>({
     T['sync']
   >
 
-
 export const gitPushRebaseAsync = async <T extends IGitPush>({
   cwd,
   sync,
