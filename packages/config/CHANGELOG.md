@@ -1,3 +1,18 @@
+# @qiwi/semrel-config [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.2.2...@qiwi/semrel-config@1.3.0) (2021-03-22)
+
+
+### Features
+
+* **config:** release refactoring as patche ([c2bbc97](https://github.com/qiwi/semantic-release-toolkit/commit/c2bbc97e4e265e839e034671bf629210ae99db45))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 1.1.2
+
 ## @qiwi/semrel-config [1.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.2.1...@qiwi/semrel-config@1.2.2) (2021-03-12)
 
 
