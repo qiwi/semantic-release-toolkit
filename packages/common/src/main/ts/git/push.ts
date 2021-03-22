@@ -21,7 +21,7 @@ export const gitPush = <T extends IGitPush>({
 
   const args = branch
     ? ['push', '--tags', remote, `HEAD:refs/heads/${branch}`]
-    : ['push', '--all', remote]
+    : ['push', '--all', '--follow-tags', remote]
 
   return exec(
     () =>
