@@ -41,7 +41,7 @@
     "tslib": "^2.1.0",
     "@types/semantic-release": "^17.2.0",
     "@types/node": "^14.14.35",
-    "read-pkg-up": "^7.0.1",
+    "read-pkg-up": "^8.0.0",
     "lodash": "^4.17.21",
     "debug": "^4.3.1"
   },
