@@ -4,6 +4,14 @@
     "<rootDir>/**/src/main/**/*.(j|t)s"
   ],
   "testFailureExitCode": 1,
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.jsx?$": "@swissquote/crafty-preset-jest/src/esm-transformer"
+  },
+  "transformIgnorePatterns": [
+    "<rootDir>/../../node_modules/(?!read-pkg-up8/.*)",
+    "<rootDir>/node_modules/(?!read-pkg-up8/.*)"
+  ],
   "projects": [
     "<rootDir>/packages/config/jest.config.json",
     "<rootDir>/packages/config-monorepo/jest.config.json",
