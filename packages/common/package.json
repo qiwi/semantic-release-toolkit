@@ -40,12 +40,12 @@
   "dependencies": {
     "debug": "^4.3.1",
     "tslib": "^2.1.0",
-    "@types/node": "^14.14.35",
+    "@types/node": "^14.14.37",
     "tempy": "^1.0.1",
     "execa": "^5.0.0",
     "nanoid": "^3.1.22",
     "minimist": "^1.2.5",
-    "@antongolub/git-root": "^1.5.2",
+    "@antongolub/git-root": "^1.5.3",
     "@qiwi/substrate": "^1.20.4",
     "file-url": "^3.0.0"
   },

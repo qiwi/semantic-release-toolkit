@@ -1,6 +1,6 @@
 import debugFactory, { Debugger } from 'debug'
 import { castArray } from 'lodash'
-import { sync as readPkgUp } from 'read-pkg-up'
+import { readPackageUpSync as readPkgUp } from 'read-pkg-up8'
 
 import {
   TPlugin,
