@@ -4,6 +4,10 @@
     "^.+\\.tsx?$": "ts-jest",
     "^.+\\.jsx?$": "@swissquote/crafty-preset-jest/src/esm-transformer"
   },
+  "transformIgnorePatterns": [
+    "<rootDir>/../../node_modules/(?!read-pkg-up8/.*)",
+    "<rootDir>/node_modules/(?!read-pkg-up8/.*)"
+  ],
   "collectCoverage": true,
   "coveragePathIgnorePatterns": [
   ],
@@ -11,13 +15,12 @@
     "<rootDir>/src/main/**/*.(j|t)s"
   ],
   "testMatch": [
-    "<rootDir>/src/test/js/**/*.js",
-    "<rootDir>/src/test/ts/**/*.ts"
+    "<rootDir>/src/test/js/*.js",
+    "<rootDir>/src/test/ts/*.ts"
   ],
   "testPathIgnorePatterns": [
-    "/node_modules/",
-    "<rootDir>/src/test/ts/assets/*.ts",
-    "<rootDir>/src/test/fixtures"
+    "/node_modules/"
+
   ],
   "moduleFileExtensions": [
     "ts",
