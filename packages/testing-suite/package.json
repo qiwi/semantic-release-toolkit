@@ -44,7 +44,7 @@
     "execa": "^5.0.0",
     "@qiwi/semrel-common": "1.1.0",
     "@antongolub/git-root": "^1.5.3",
-    "@qiwi/substrate": "^1.20.4"
+    "@qiwi/substrate": "^1.20.6"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
