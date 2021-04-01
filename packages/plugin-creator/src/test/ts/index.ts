@@ -39,7 +39,7 @@ describe('normalizeOptions()', () => {
 
   it('resolves plugin`s pkg name', () => {
     expect(normalizeOptions({ name: 'foo' }).name).toBe('foo')
-    expect(normalizeOptions({}).name).toBe('@qiwi/semrel-plugin-creator')
+    expect(normalizeOptions({}).name).toMatch('semrel-plugin-')
   })
 })
 
@@ -166,14 +166,14 @@ describe('createPlugin()', () => {
       const publish = plugin.publish as TPluginMethod
 
       expect(() => analyzeCommits(pluginConfig, context)).toThrowError(
-        "plugin '@qiwi/semrel-plugin-creator' requires verifyConditions to be invoked before analyzeCommits",
+        /^plugin 'semrel-plugin-\d{5}' requires verifyConditions to be invoked before analyzeCommits$/,
       )
 
       verifyConditions(pluginConfig, context)
       analyzeCommits(pluginConfig, context)
 
       expect(() => publish(pluginConfig, context)).toThrowError(
-        "plugin '@qiwi/semrel-plugin-creator' requires prepare to be invoked before publish",
+        /^plugin 'semrel-plugin-\d{5}' requires prepare to be invoked before publish$/,
       )
 
       prepare(pluginConfig, context)
@@ -217,13 +217,13 @@ describe('createPlugin()', () => {
       }
 
       expect(() => analyzeCommits(pluginConfig, context1)).toThrowError(
-        "plugin '@qiwi/semrel-plugin-creator' requires verifyConditions to be invoked before analyzeCommits",
+        /^plugin 'semrel-plugin-\d{5}' requires verifyConditions to be invoked before analyzeCommits$/,
       )
       verifyConditions(pluginConfig, context1)
       analyzeCommits(pluginConfig, context1)
 
       expect(() => analyzeCommits(pluginConfig, context2)).toThrowError(
-        "plugin '@qiwi/semrel-plugin-creator' requires verifyConditions to be invoked before analyzeCommits",
+        /^plugin 'semrel-plugin-\d{5}' requires verifyConditions to be invoked before analyzeCommits$/,
       )
       verifyConditions(pluginConfig, context2)
       analyzeCommits(pluginConfig, context2)

@@ -1,6 +1,5 @@
 import debugFactory, { Debugger } from 'debug'
-import { castArray } from 'lodash'
-import { readPackageUpSync as readPkgUp } from 'read-pkg-up8'
+import { castArray } from 'lodash-es'
 
 import {
   TPlugin,
@@ -35,7 +34,6 @@ export const defaultOptions = {
   handler: async (): Promise<void> => {
     /* async noop */
   },
-  name: String(readPkgUp({ cwd: module?.parent?.filename })?.packageJson?.name),
 }
 
 const createDebugger = (scope: string | Debugger): Debugger => {
@@ -51,10 +49,10 @@ export const normalizeOptions = (
 ): TPluginFactoryOptionsNormalized => {
   const preOptions =
     typeof options === 'function' ? { handler: options } : options
+  const name = preOptions.name || `semrel-plugin-${Math.random().toString().slice(-5)}`
+  const debug = createDebugger(preOptions.debug || name)
 
-  const debug = createDebugger(preOptions.debug || defaultOptions.name)
-
-  return { ...defaultOptions, ...preOptions, debug }
+  return { ...defaultOptions, ...preOptions, debug, name }
 }
 
 const checkPrevSteps = (
