@@ -8,10 +8,10 @@
   "description": "Semrel plugin creator",
   "type": "module",
   "exports": {
-    "import": "target/exports/es6.mjs",
-    "require": "target/exports/es5.cjs"
+    "import": "./target/exports/es6.js",
+    "require": "./target/exports/es5.cjs"
   },
-  "main": "target/es5/index.js",
+  "main": "target/exports/es5.js",
   "source": "target/ts/index.ts",
   "types": "target/es5/index.d.ts",
   "typescript": {
@@ -44,7 +44,7 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "esm": "^3.2.25",
+    "@antongolub/esm": "^1.0.0",
     "tslib": "^2.1.0",
     "@types/semantic-release": "^17.2.0",
     "@types/node": "^14.14.37",
