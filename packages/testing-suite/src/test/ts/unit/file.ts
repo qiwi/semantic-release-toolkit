@@ -4,7 +4,7 @@ import tempy from 'tempy'
 
 import { cleanPath, createTestingFiles, isDirectory } from '../../../main/ts'
 
-const fixtures = resolve(__dirname, '../fixtures')
+const fixtures = resolve(__dirname, '../../fixtures')
 
 describe('cleanPath()', () => {
   it('Relative without CWD', () => {

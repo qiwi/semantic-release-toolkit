@@ -8,7 +8,7 @@ import {
   gitPushFakeCommits,
 } from '../../../main/ts'
 
-const fixtures = resolve(__dirname, '../fixtures')
+const fixtures = resolve(__dirname, '../../fixtures')
 const sync = true
 
 describe('testing suite', () => {

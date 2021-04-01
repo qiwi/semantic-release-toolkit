@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "test": "yarn test:unit",
-    "test:unit": "jest --config=jest.config.json --runInBand",
+    "test:unit": "jest --runInBand",
     "clean": "rimraf target",
     "postupdate": "yarn && yarn build && yarn test",
     "format": "prettier --write 'src/**/*.ts'"
