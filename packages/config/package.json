@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "test": "yarn test:unit",
-    "test:unit": "jest --config=jest.config.json --runInBand",
+    "test:unit": "jest --runInBand",
     "clean": "rimraf target coverage",
     "build": "yarn build:es5",
     "build:es5": "mkdirp target/es5 && cpy src/main/js/ target/es5/",
