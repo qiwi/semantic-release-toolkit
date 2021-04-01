@@ -1,5 +1,5 @@
 require = require('@antongolub/esm')(module, {
-  mode: 'auto',
+  mode: 'all',
   cjs: {
     "cache":false,
     "esModule":true,
@@ -12,4 +12,4 @@ require = require('@antongolub/esm')(module, {
   "sourceMap": false,
 })
 
-module.exports = require('../es6')
+module.exports = require('../es5')
