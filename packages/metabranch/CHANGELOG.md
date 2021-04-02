@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.4.4...@qiwi/semrel-metabranch@1.5.0) (2021-04-02)
+
+
+### Features
+
+* **metabranch:** inherit git user env for commits ([f37852e](https://github.com/qiwi/semantic-release-toolkit/commit/f37852e93cbd2edbcef8a74a7caa24c81fbc013b))
+
+
+### Performance Improvements
+
+* migrate to gh-actions ([6b23ab6](https://github.com/qiwi/semantic-release-toolkit/commit/6b23ab61e54d856cb4b61088b11e416f04c5bfa0))
+
 ## [1.4.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.4.3...@qiwi/semrel-metabranch@1.4.4) (2021-04-02)
 
 ## [1.4.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.4.2...@qiwi/semrel-metabranch@1.4.3) (2021-03-22)
