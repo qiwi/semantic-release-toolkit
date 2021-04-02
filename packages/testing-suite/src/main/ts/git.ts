@@ -11,6 +11,7 @@ import {
   gitInitRemote,
   gitPush,
   gitRemoteAdd,
+  gitSetUser,
   gitTag,
   IGitCommit,
   IGitInit,
@@ -42,6 +43,7 @@ export const gitInitTestingRepo = <T extends IGitInitTestingRepo>({
 
   return exec(
     () => gitInit({ sync, cwd }),
+    () => gitSetUser({ sync, cwd, name: 'Foo Bar', email: 'foo@bar.com' }),
     () =>
       gitCheckout({
         cwd,
@@ -160,6 +162,7 @@ export const gitCreateFakeRepo = <T extends IGitFakeRepo>({
   return exec(
     () => gitInit({ sync, cwd }),
     () => gitConfigAdd({ cwd, sync, key: 'commit.gpgsign', value: false }),
+    () => gitSetUser({ sync, cwd, name: 'Foo Bar', email: 'foo@bar.com' }),
     () => gitInitRemote({ sync }),
     (url) => {
       res.url = url

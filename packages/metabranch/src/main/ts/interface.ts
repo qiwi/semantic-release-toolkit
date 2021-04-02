@@ -7,11 +7,17 @@ export type TBaseActionOptions = {
   message: string
 }
 
+export type TUserInfo = {
+  name: string,
+  email: string
+}
+
 export type TActionOptionsNormalized = TBaseActionOptions & {
   debug: Debugger
   repo: string
   cwd: string
-  temp: string
+  temp: string,
+  user: TUserInfo
 }
 
 export type TActionType = 'fetch' | 'push'
@@ -19,6 +25,7 @@ export type TActionType = 'fetch' | 'push'
 export type TActionOptions = Partial<TActionOptionsNormalized> & {
   debug: Debugger
   repo: string
+  user: TUserInfo
 }
 
 export type TPluginOptions = Partial<TBaseActionOptions> & {

@@ -25,7 +25,19 @@ export const gitSetUser = <T extends IGitSetUser>({
   // check(name, 'name: string+')
 
   return exec(
-    () => gitConfigAdd({ cwd, sync: sync as T['sync'], key: 'user.name', value: name }),
-    () => gitConfigAdd({ cwd, sync: sync as T['sync'], key: 'user.email', value: email })
+    () =>
+      gitConfigAdd({
+        cwd,
+        sync: sync as T['sync'],
+        key: 'user.name',
+        value: name,
+      }),
+    () =>
+      gitConfigAdd({
+        cwd,
+        sync: sync as T['sync'],
+        key: 'user.email',
+        value: email,
+      }),
   )
 }

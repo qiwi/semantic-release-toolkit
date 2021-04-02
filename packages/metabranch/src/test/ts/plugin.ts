@@ -1,10 +1,6 @@
 import {
   cleanPath,
-  copyDirectory,
-  gitCommitAll,
-  gitInitOrigin,
-  gitInitTestingRepo,
-  gitPush,
+  gitCreateFakeRepo,
 } from '@qiwi/semrel-testing-suite'
 import { resolve } from 'path'
 import resolveFrom from 'resolve-from'
@@ -12,25 +8,17 @@ import semanticRelease from 'semantic-release'
 
 const fixtures = resolve(__dirname, '../fixtures')
 
-const initTempRepo = (
-  fixture = `${fixtures}/basicPackage/`,
-): { cwd: string; repo: string } => {
-  const sync = true
-  const cwd = gitInitTestingRepo({ sync })
-  copyDirectory(fixture, cwd)
-  gitCommitAll({ cwd, message: 'feat: initial commit', sync })
-  const repo = gitInitOrigin({ cwd, sync })
-  gitPush({ cwd, sync })
-
-  return {
-    cwd,
-    repo,
-  }
-}
-
 describe('plugin', () => {
   const pluginName = 'some-plugin'
-  const { cwd } = initTempRepo()
+  const { cwd } = gitCreateFakeRepo({
+    sync: true,
+    commits: [
+      {
+        message: 'feat: initial commit',
+        from: `${fixtures}/basicPackage/`,
+      },
+    ],
+  })
   const perform = jest.fn()
 
   beforeAll(() => {
@@ -98,6 +86,10 @@ describe('plugin', () => {
       repo: expect.any(String),
       message: 'commit message',
       debug: expect.any(Function),
+      user: {
+        name: 'semantic-release-bot',
+        email: 'semantic-release-bot@martynus.net'
+      }
     })
   }, 15000)
 
