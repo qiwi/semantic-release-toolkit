@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.5.0...@qiwi/semrel-metabranch@1.6.0) (2021-04-02)
+
+
+### Features
+
+* **metabranch:** add template for commit message, other refactorings ([382e0f7](https://github.com/qiwi/semantic-release-toolkit/commit/382e0f7a707ac60410a2929ca85348a146b4a522)), closes [#35](https://github.com/qiwi/semantic-release-toolkit/issues/35)
+
 # [1.5.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.4.4...@qiwi/semrel-metabranch@1.5.0) (2021-04-02)
 
 
