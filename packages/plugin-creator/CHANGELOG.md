@@ -1,3 +1,25 @@
+# @qiwi/semrel-plugin-creator [1.7.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.6.4...@qiwi/semrel-plugin-creator@1.7.0) (2021-04-02)
+
+
+### Bug Fixes
+
+* **plugin-creator:** use patched esm adapter ([9e76dff](https://github.com/qiwi/semantic-release-toolkit/commit/9e76dffe2a7b6e83f9bb8dda4aff283220c81da4))
+
+
+### Features
+
+* use random plugin name as default ([b1718b4](https://github.com/qiwi/semantic-release-toolkit/commit/b1718b43ef028eba9a7b9fb87989c4706d62f807))
+* **plugin-creator:** provide dual export for pkg ([c2ba201](https://github.com/qiwi/semantic-release-toolkit/commit/c2ba2010026d06f400c70ed57f4b89ebdc118a1b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 1.1.0
+* **@qiwi/semrel-testing-suite:** upgraded to 1.3.0
+
 ## @qiwi/semrel-plugin-creator [1.6.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.6.3...@qiwi/semrel-plugin-creator@1.6.4) (2021-03-22)
 
 
