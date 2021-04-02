@@ -52,6 +52,8 @@ describe('integration', () => {
     ...process.env,
     TRAVIS_PULL_REQUEST_BRANCH: 'master',
     TRAVIS_BRANCH: 'master',
+    GITHUB_REF: 'master',
+    GITHUB_BASE_REF: 'master',
   }
 
   it('plugin is compatible with semrel', async () => {
