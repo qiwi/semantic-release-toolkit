@@ -1,39 +1,16 @@
 import { Debugger } from '@qiwi/semrel-plugin-creator'
-import {
-  copyDirectory,
-  gitCommitAll,
-  gitInit,
-  gitInitOrigin,
-  gitPush,
-  gitSetUser,
-} from '@qiwi/semrel-testing-suite'
+import { gitCreateFakeRepo } from '@qiwi/semrel-testing-suite'
 import execa from 'execa'
 import fs from 'fs'
 import path from 'path'
 import tempy from 'tempy'
 
-import { perform, push, TActionOptions } from '../../main/ts'
+import { perform, push, TActionOptionsNormalized } from '../../main/ts'
 
 const fixtures = path.resolve(__dirname, '../fixtures')
 
 describe('actions', () => {
   const user = { name: 'Foo Bar', email: 'foo@bar.com' }
-  const initTempRepo = (
-    fixture = `${fixtures}/basicPackage/`,
-  ): { cwd: string; repo: string } => {
-    const sync = true
-    const cwd = gitInit({ sync })
-    gitSetUser({ cwd, ...user, sync })
-    copyDirectory(fixture, cwd)
-    gitCommitAll({ cwd, message: 'feat: initial commit', sync })
-    const repo = gitInitOrigin({ cwd, sync })
-    gitPush({ cwd, sync })
-
-    return {
-      cwd,
-      repo,
-    }
-  }
 
   describe('perform()', () => {
     it('Throws an error on unsupported action', () => {
@@ -48,15 +25,25 @@ describe('actions', () => {
     it('clones files from remote to target dir', async () => {
       const cwd = tempy.directory()
       const to = 'foo/bar/baz'
-      const { repo } = initTempRepo(`${fixtures}/basicPackage/`)
-      const opts: TActionOptions = {
+      const { url: repo } = gitCreateFakeRepo({
+        sync: true,
+        commits: [
+          {
+            message: 'feat: initial commit',
+            from: `${fixtures}/basicPackage/`,
+          },
+        ],
+      })
+      const opts: TActionOptionsNormalized = {
         branch: 'master',
         from: '.',
         to,
         repo,
         cwd,
+        temp: tempy.directory(),
         debug: console.log as Debugger,
         user,
+        message: 'update meta',
       }
 
       await perform('fetch', opts)
@@ -74,14 +61,24 @@ describe('actions', () => {
   describe('push()', () => {
     it('pushes files to remote', async () => {
       const cwd = `${fixtures}/foo/`
-      const { repo, cwd: _cwd } = initTempRepo()
+      const { cwd: _cwd, url: repo } = gitCreateFakeRepo({
+        sync: true,
+        commits: [
+          {
+            message: 'feat: initial commit',
+            from: `${fixtures}/basicPackage/`,
+          },
+        ],
+      })
       const opts = {
         cwd,
+        temp: tempy.directory(),
         branch: 'metabranch',
         from: ['bar', 'unknown'],
         to: 'baz',
         repo,
         debug: console.log as Debugger,
+        message: 'update meta',
         user,
       }
 
@@ -104,34 +101,49 @@ describe('actions', () => {
 
     it('handles racing issues', async () => {
       const cwd = `${fixtures}/foo/`
-      const { repo, cwd: _cwd } = initTempRepo()
+      const { url: repo, cwd: _cwd } = gitCreateFakeRepo({
+        sync: true,
+        commits: [
+          {
+            message: 'feat: initial commit',
+            from: `${fixtures}/basicPackage/`,
+          },
+        ],
+      })
       const debug = console.log as Debugger
+      const message = 'update meta'
       const opts0 = {
         cwd,
+        temp: tempy.directory(),
         branch: 'metabranch',
         from: 'bar',
         to: 'scope',
         repo,
         debug,
         user,
+        message,
       }
       const opts1 = {
         cwd,
+        temp: tempy.directory(),
         branch: 'metabranch',
         from: 'foo',
         to: 'scope',
         repo,
         debug,
         user,
+        message,
       }
       const opts2 = {
         cwd,
+        temp: tempy.directory(),
         branch: 'metabranch',
         from: 'baz',
         to: 'scope',
         repo,
         debug,
         user,
+        message,
       }
 
       const pushedCommits = await Promise.all([

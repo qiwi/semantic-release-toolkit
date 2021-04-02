@@ -1,7 +1,9 @@
+import { tpl } from '@qiwi/semrel-common'
 import { createPlugin } from '@qiwi/semrel-plugin-creator'
 
 import { perform } from './actions'
 import { TPluginOptions } from './interface'
+import { normalizeOptions } from './options'
 
 export const plugin = createPlugin({
   debug: 'semantic-release:metabranch',
@@ -25,7 +27,7 @@ export const plugin = createPlugin({
       email: context.env.GIT_AUTHOR_EMAIL || context.env.GIT_COMMITTER_EMAIL,
     }
     const { branch, from, to, message, action } = stepOptions as TPluginOptions
-    const actionOptions = {
+    const actionOptions = normalizeOptions({
       branch,
       from,
       to,
@@ -34,7 +36,8 @@ export const plugin = createPlugin({
       cwd: context.cwd,
       repo: context.options?.repositoryUrl + '',
       debug,
-    }
+    })
+    actionOptions.message = tpl(actionOptions.message, context, context.logger)
 
     if (context.options?.dryRun && action === 'push') {
       context.logger.log(

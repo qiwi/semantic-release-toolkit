@@ -15,15 +15,8 @@ import { Debugger } from '@qiwi/semrel-plugin-creator'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
-import tempy from 'tempy'
 
-import { defaults } from './defaults'
-import {
-  TActionOptions,
-  TActionOptionsNormalized,
-  TActionType,
-  TUserInfo,
-} from './interface'
+import { TActionOptionsNormalized, TActionType, TUserInfo } from './interface'
 
 export const prepareTempRepo = async (
   cwd: string,
@@ -45,28 +38,6 @@ export const prepareTempRepo = async (
 
   return cwd
 }
-
-export const normalizeOptions = ({
-  branch = defaults.branch,
-  from = defaults.from,
-  to = defaults.to,
-  message = defaults.message,
-  cwd = process.cwd(),
-  temp = tempy.directory(),
-  repo,
-  debug,
-  user,
-}: TActionOptions): TActionOptionsNormalized => ({
-  branch,
-  from,
-  to,
-  message,
-  cwd,
-  temp,
-  repo,
-  debug,
-  user,
-})
 
 type TSyncOptions = {
   from: string | string[]
@@ -117,28 +88,16 @@ const synchronize = async ({
   )
 }
 
-export const fetch = async (opts: TActionOptions): Promise<void> => {
-  const { branch, from, to, cwd, temp, repo, debug, user } = normalizeOptions(
-    opts,
-  )
+export const fetch = async (opts: TActionOptionsNormalized): Promise<void> => {
+  const { branch, from, to, cwd, temp, repo, debug, user } = opts
 
   await prepareTempRepo(temp, repo, branch, user)
 
   await synchronize({ from, to, baseFrom: temp, baseTo: cwd, debug })
 }
 
-export const push = async (opts: TActionOptions): Promise<string> => {
-  const {
-    branch,
-    from,
-    to,
-    cwd,
-    temp,
-    repo,
-    message,
-    debug,
-    user,
-  } = normalizeOptions(opts)
+export const push = async (opts: TActionOptionsNormalized): Promise<string> => {
+  const { branch, from, to, cwd, temp, repo, message, debug, user } = opts
 
   await prepareTempRepo(temp, repo, branch, user)
 
@@ -166,7 +125,7 @@ export const push = async (opts: TActionOptions): Promise<string> => {
 
 export const perform = async (
   action: TActionType,
-  options: TActionOptions,
+  options: TActionOptionsNormalized,
 ): Promise<string | void> => {
   if (action === 'push') {
     return push(options)

@@ -1,7 +1,5 @@
 import { plugin } from './plugin'
 
-export { defaults } from './defaults'
-
 const {
   verifyConditions,
   analyzeCommits,
@@ -29,5 +27,6 @@ export {
 export * from './actions'
 export * from './interface'
 export * from './plugin'
+export * from './options'
 
 export default plugin

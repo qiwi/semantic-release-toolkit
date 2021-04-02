@@ -63,7 +63,7 @@ yarn add @qiwi/semrel-metabranch -D
 |-----------------|------------------------| --------|
 | `action`        | Action to perform: `fetch`/`push` |
 | `branch`        | Branch to push         | `metabranch` |
-| `message`       | Commit message         | `update meta` |
+| `message`       | Commit message powered by lodash.template: `docs <%= nextRelease.gitTag %>` | `update meta` |
 | `from`          | Source glob pattern    | `.` (root) |
 | `to`            | Destination directory  | `.` (root) |
 
