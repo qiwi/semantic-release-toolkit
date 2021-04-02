@@ -109,3 +109,6 @@ export const defaults = {
   message,
 }
 ```
+
+# License
+MIT
