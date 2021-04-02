@@ -27,7 +27,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
     "test:unit": "jest --runInBand",
-    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra --ignore-patterns typings,flow-typed/*",
+    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,semantic-release --ignore-patterns typings,flow-typed/*",
     "build": "npm-run-all -p -l build:es5 build:es6 build:ts build:libdef docs",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
@@ -45,9 +45,11 @@
     "execa": "^5.0.0",
     "nanoid": "^3.1.22",
     "minimist": "^1.2.5",
+    "@types/semantic-release": "^17.2.0",
     "@antongolub/git-root": "^1.5.3",
     "@qiwi/substrate": "^1.20.6",
-    "file-url": "^3.0.0"
+    "file-url": "^3.0.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",

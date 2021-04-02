@@ -82,6 +82,7 @@ describe('plugin', () => {
       from: 'foo',
       to: 'bar',
       cwd: expect.any(String),
+      temp: expect.any(String),
       repo: expect.any(String),
       message: 'commit message',
       debug: expect.any(Function),
