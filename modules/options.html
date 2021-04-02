@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@qiwi/semrel-metabranch | @qiwi/semrel-metabranch</title>
+	<title>options | @qiwi/semrel-metabranch</title>
 	<meta name="description" content="Documentation for @qiwi/semrel-metabranch">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="index.html">@qiwi/semrel-metabranch</a></strong>
+					<strong><a href="../index.html">@qiwi/semrel-metabranch</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2704,215 +2704,145 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-variable tsd-parent-kind-module">
+			<a href="options.html#branch" class="tsd-kind-icon">branch</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-parent-kind-module">
+			<a href="options.html#defaults" class="tsd-kind-icon">defaults</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-parent-kind-module">
+			<a href="options.html#from-1" class="tsd-kind-icon">from</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-parent-kind-module">
+			<a href="options.html#message-1" class="tsd-kind-icon">message</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-parent-kind-module">
+			<a href="options.html#to-1" class="tsd-kind-icon">to</a>
+		</li>
+		<li class=" tsd-kind-function tsd-parent-kind-module">
+			<a href="options.html#normalizeoptions" class="tsd-kind-icon">normalize<wbr>Options</a>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<div class="tsd-panel tsd-typography">
-			<a href="#qiwisemrel-metabranch" id="qiwisemrel-metabranch" style="color: inherit; text-decoration: none;">
-				<h1>@qiwi/semrel-metabranch</h1>
-			</a>
-			<p><a href="https://github.com/semantic-release/semantic-release">Semrel</a> plugin for two-way data sync with remote branch. </p>
-			<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-				<h2>Install</h2>
-			</a>
-			<pre><code class="language-shell"><span style="color: #000000">yarn add @qiwi/semrel-metabranch -D</span>
-</code></pre>
-			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-				<h2>Usage</h2>
-			</a>
-			<p><strong>.release.rc</strong></p>
-			<pre><code class="language-json"><span style="color: #000000">{</span>
-<span style="color: #000000">  </span><span style="color: #0451A5">&quot;plugins&quot;</span><span style="color: #000000">: [[</span>
-<span style="color: #000000">    </span><span style="color: #A31515">&quot;@qiwi/semrel-multibranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">    {</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;verify&quot;</span><span style="color: #000000">: {</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;action&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;fetch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;branch&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;metabranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;from&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;to&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;bar&quot;</span>
-<span style="color: #000000">      }</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  ]]</span>
-<span style="color: #000000">}</span>
-</code></pre>
-			<pre><code class="language-json"><span style="color: #000000">{</span>
-<span style="color: #000000">  </span><span style="color: #0451A5">&quot;publish&quot;</span><span style="color: #000000">: [[</span>
-<span style="color: #000000">    </span><span style="color: #A31515">&quot;@qiwi/semrel-multibranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">    {</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;action&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;push&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;branch&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;metabranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;from&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;foo/**/*.txt&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;to&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;bar&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;message&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;commit message&quot;</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  ]]</span>
-<span style="color: #000000">}</span>
-</code></pre>
-			<table>
-				<thead>
-					<tr>
-						<th>Step</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody><tr>
-						<td><code>verifyConditions</code></td>
-						<td>Performs actions as declared in step options.</td>
-					</tr>
-					<tr>
-						<td><code>analyzeCommits</code></td>
-						<td>As prev.</td>
-					</tr>
-					<tr>
-						<td><code>verifyRelease</code></td>
-						<td>...</td>
-					</tr>
-					<tr>
-						<td><code>generateNotes</code></td>
-						<td>...</td>
-					</tr>
-					<tr>
-						<td><code>prepare</code></td>
-						<td>...</td>
-					</tr>
-					<tr>
-						<td><code>publish</code></td>
-						<td>...</td>
-					</tr>
-					<tr>
-						<td><code>addChannel</code></td>
-						<td>...</td>
-					</tr>
-					<tr>
-						<td><code>success</code></td>
-						<td>...</td>
-					</tr>
-					<tr>
-						<td><code>fail</code></td>
-						<td>...</td>
-					</tr>
-			</tbody></table>
-			<a href="#configuration" id="configuration" style="color: inherit; text-decoration: none;">
-				<h3>Configuration</h3>
-			</a>
-			<a href="#environment-variables" id="environment-variables" style="color: inherit; text-decoration: none;">
-				<h5>Environment variables</h5>
-			</a>
-			<table>
-				<thead>
-					<tr>
-						<th>Variable</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody><tr>
-						<td><code>GH_TOKEN</code> or <code>GITHUB_TOKEN</code></td>
-						<td><strong>Required.</strong> The token used to authenticate with GitHub.</td>
-					</tr>
-			</tbody></table>
-			<a href="#options" id="options" style="color: inherit; text-decoration: none;">
-				<h5>Options</h5>
-			</a>
-			<table>
-				<thead>
-					<tr>
-						<th>Option</th>
-						<th>Description</th>
-						<th>Default</th>
-					</tr>
-				</thead>
-				<tbody><tr>
-						<td><code>action</code></td>
-						<td>Action to perform: <code>fetch</code>/<code>push</code></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td><code>branch</code></td>
-						<td>Branch to push</td>
-						<td><code>metabranch</code></td>
-					</tr>
-					<tr>
-						<td><code>message</code></td>
-						<td>Commit message powered by lodash.template: <code>docs &lt;%= nextRelease.gitTag %&gt;</code></td>
-						<td><code>update meta</code></td>
-					</tr>
-					<tr>
-						<td><code>from</code></td>
-						<td>Source glob pattern</td>
-						<td><code>.</code> (root)</td>
-					</tr>
-					<tr>
-						<td><code>to</code></td>
-						<td>Destination directory</td>
-						<td><code>.</code> (root)</td>
-					</tr>
-			</tbody></table>
-			<a href="#api" id="api" style="color: inherit; text-decoration: none;">
-				<h2>API</h2>
-			</a>
-			<a href="#tactionoptions" id="tactionoptions" style="color: inherit; text-decoration: none;">
-				<h3>TActionOptions</h3>
-			</a>
-			<pre><code class="language-typescript"><span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TBaseActionOptions</span><span style="color: #000000"> = {</span>
-<span style="color: #000000">  </span><span style="color: #001080">branch</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">  </span><span style="color: #001080">from</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000"> | </span><span style="color: #267F99">string</span><span style="color: #000000">[]</span>
-<span style="color: #000000">  </span><span style="color: #001080">to</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">  </span><span style="color: #001080">message</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">}</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TActionOptionsNormalized</span><span style="color: #000000"> = </span><span style="color: #267F99">TBaseActionOptions</span><span style="color: #000000"> &amp; {</span>
-<span style="color: #000000">  </span><span style="color: #001080">repo</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">  </span><span style="color: #001080">cwd</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">  </span><span style="color: #001080">temp</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">}</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TActionType</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;fetch&#039;</span><span style="color: #000000"> | </span><span style="color: #A31515">&#039;push&#039;</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TActionOptions</span><span style="color: #000000"> = </span><span style="color: #267F99">Partial</span><span style="color: #000000">&lt;</span><span style="color: #267F99">TActionOptionsNormalized</span><span style="color: #000000">&gt; &amp; {</span>
-<span style="color: #000000">  </span><span style="color: #001080">repo</span><span style="color: #000000">: </span><span style="color: #267F99">string</span>
-<span style="color: #000000">}</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TPluginOptions</span><span style="color: #000000"> = </span><span style="color: #267F99">Partial</span><span style="color: #000000">&lt;</span><span style="color: #267F99">TBaseActionOptions</span><span style="color: #000000">&gt; &amp; {</span>
-<span style="color: #000000">  </span><span style="color: #001080">action</span><span style="color: #000000">: </span><span style="color: #267F99">TActionType</span>
-<span style="color: #000000">}</span>
-</code></pre>
-			<a href="#defaults" id="defaults" style="color: inherit; text-decoration: none;">
-				<h3>Defaults</h3>
-			</a>
-			<pre><code class="language-typescript"><span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">branch</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;metabranch&#039;</span>
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">from</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;.&#039;</span>
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">to</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;.&#039;</span>
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">message</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;update meta&#039;</span>
-
-<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">defaults</span><span style="color: #000000"> = {</span>
-<span style="color: #000000">  </span><span style="color: #001080">branch</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">from</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">to</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">message</span><span style="color: #000000">,</span>
-<span style="color: #000000">}</span>
-</code></pre>
-			<a href="#license" id="license" style="color: inherit; text-decoration: none;">
-				<h1>License</h1>
-			</a>
-			<p>MIT</p>
-		</div>
-		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Modules</h3>
+						<h3>Variables</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-module"><a href="modules/actions.html" class="tsd-kind-icon">actions</a></li>
-							<li class="tsd-kind-module"><a href="modules/index.html" class="tsd-kind-icon">index</a></li>
-							<li class="tsd-kind-module"><a href="modules/interface.html" class="tsd-kind-icon">interface</a></li>
-							<li class="tsd-kind-module"><a href="modules/options.html" class="tsd-kind-icon">options</a></li>
-							<li class="tsd-kind-module"><a href="modules/plugin.html" class="tsd-kind-icon">plugin</a></li>
+							<li class="tsd-kind-variable tsd-parent-kind-module"><a href="options.html#branch" class="tsd-kind-icon">branch</a></li>
+							<li class="tsd-kind-variable tsd-parent-kind-module"><a href="options.html#defaults" class="tsd-kind-icon">defaults</a></li>
+							<li class="tsd-kind-variable tsd-parent-kind-module"><a href="options.html#from-1" class="tsd-kind-icon">from</a></li>
+							<li class="tsd-kind-variable tsd-parent-kind-module"><a href="options.html#message-1" class="tsd-kind-icon">message</a></li>
+							<li class="tsd-kind-variable tsd-parent-kind-module"><a href="options.html#to-1" class="tsd-kind-icon">to</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Functions</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-function tsd-parent-kind-module"><a href="options.html#normalizeoptions" class="tsd-kind-icon">normalize<wbr>Options</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Variables</h2>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<a name="branch" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> branch</h3>
+				<div class="tsd-signature tsd-kind-icon">branch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;metabranch&quot;</span><span class="tsd-signature-symbol"> = &#x27;metabranch&#x27;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/qiwi/semantic-release-toolkit/blob/382e0f7/packages/metabranch/src/main/ts/options.ts#L5">options.ts:5</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<a name="defaults" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> defaults</h3>
+				<div class="tsd-signature tsd-kind-icon">defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>branch<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/qiwi/semantic-release-toolkit/blob/382e0f7/packages/metabranch/src/main/ts/options.ts#L10">options.ts:10</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter">
+							<h5>branch<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<a name="from-1" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> from</h3>
+				<div class="tsd-signature tsd-kind-icon">from<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;.&quot;</span><span class="tsd-signature-symbol"> = &#x27;.&#x27;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/qiwi/semantic-release-toolkit/blob/382e0f7/packages/metabranch/src/main/ts/options.ts#L6">options.ts:6</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<a name="message-1" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> message</h3>
+				<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;update meta&quot;</span><span class="tsd-signature-symbol"> = &#x27;update meta&#x27;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/qiwi/semantic-release-toolkit/blob/382e0f7/packages/metabranch/src/main/ts/options.ts#L8">options.ts:8</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<a name="to-1" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> to</h3>
+				<div class="tsd-signature tsd-kind-icon">to<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;.&quot;</span><span class="tsd-signature-symbol"> = &#x27;.&#x27;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/qiwi/semantic-release-toolkit/blob/382e0f7/packages/metabranch/src/main/ts/options.ts#L7">options.ts:7</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Functions</h2>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+				<a name="normalizeoptions" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> normalize<wbr>Options</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+					<li class="tsd-signature tsd-kind-icon">normalize<wbr>Options<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><a href="interface.html#tactionoptions" class="tsd-signature-type" data-tsd-kind="Type alias">TActionOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interface.html#tactionoptionsnormalized" class="tsd-signature-type" data-tsd-kind="Type alias">TActionOptionsNormalized</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/qiwi/semantic-release-toolkit/blob/382e0f7/packages/metabranch/src/main/ts/options.ts#L17">options.ts:17</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <a href="interface.html#tactionoptions" class="tsd-signature-type" data-tsd-kind="Type alias">TActionOptions</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="interface.html#tactionoptionsnormalized" class="tsd-signature-type" data-tsd-kind="Type alias">TActionOptionsNormalized</a></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer>
