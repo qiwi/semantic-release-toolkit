@@ -1,3 +1,11 @@
+# @qiwi/semrel-common [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.2.0...@qiwi/semrel-common@1.3.0) (2021-04-02)
+
+
+### Features
+
+* **common:** add gitSetUser helper ([6161d90](https://github.com/qiwi/semantic-release-toolkit/commit/6161d9091a69d27496a9a07a23822d1612b51a11))
+* **metabranch:** inherit git user env for commits ([f37852e](https://github.com/qiwi/semantic-release-toolkit/commit/f37852e93cbd2edbcef8a74a7caa24c81fbc013b))
+
 # @qiwi/semrel-common [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.1.0...@qiwi/semrel-common@1.2.0) (2021-04-02)
 
 
