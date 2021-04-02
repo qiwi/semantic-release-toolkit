@@ -10,6 +10,7 @@ module.exports = {
           branch: 'gh-pages',
           from: './docs',
           to: '.',
+          message: 'update meta ${nextRelease.gitTag}'
         }
       }
     ],
