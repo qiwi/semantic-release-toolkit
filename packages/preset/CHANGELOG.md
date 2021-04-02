@@ -1,3 +1,18 @@
+# @qiwi/semrel-preset [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.1.2...@qiwi/semrel-preset@1.2.0) (2021-04-02)
+
+
+### Features
+
+* **plugin-creator:** provide dual export for pkg ([c2ba201](https://github.com/qiwi/semantic-release-toolkit/commit/c2ba2010026d06f400c70ed57f4b89ebdc118a1b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-metabranch:** upgraded to 1.4.4
+
 ## @qiwi/semrel-preset [1.1.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.1.1...@qiwi/semrel-preset@1.1.2) (2021-03-22)
 
 
