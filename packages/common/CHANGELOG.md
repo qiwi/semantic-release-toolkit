@@ -1,3 +1,18 @@
+# @qiwi/semrel-common [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.1.0...@qiwi/semrel-common@1.2.0) (2021-04-02)
+
+
+### Features
+
+* **plugin-creator:** provide dual export for pkg ([c2ba201](https://github.com/qiwi/semantic-release-toolkit/commit/c2ba2010026d06f400c70ed57f4b89ebdc118a1b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 1.1.0
+
 # @qiwi/semrel-common [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.0.2...@qiwi/semrel-common@1.1.0) (2021-03-22)
 
 
