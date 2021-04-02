@@ -24,6 +24,7 @@ import {
   gitRemoteAdd,
   gitRemoteSetHead,
   gitShowCommitted,
+  gitSetUser,
   gitStatus,
   gitTag,
 } from '../../../main/ts'
@@ -197,6 +198,15 @@ describe('git-utils', () => {
       ],
       ['output'],
     ],
+    [
+      gitSetUser,
+      { cwd, name: 'Foo Bar', email: 'foo@bar.com' },
+      [
+        ['git', ['config', '--add', 'user.name', 'Foo Bar'], { cwd }],
+        ['git', ['config', '--add', 'user.email', 'foo@bar.com'], { cwd }],
+      ],
+      'output'
+    ]
   ]
 
   cases.forEach(([fn, ctx, argsOfArgs, result]) => {
