@@ -1,3 +1,18 @@
+# @qiwi/semrel-testing-suite [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.3.0...@qiwi/semrel-testing-suite@1.4.0) (2021-04-02)
+
+
+### Features
+
+* **metabranch:** inherit git user env for commits ([f37852e](https://github.com/qiwi/semantic-release-toolkit/commit/f37852e93cbd2edbcef8a74a7caa24c81fbc013b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 1.3.0
+
 # @qiwi/semrel-testing-suite [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.2.0...@qiwi/semrel-testing-suite@1.3.0) (2021-04-02)
 
 
