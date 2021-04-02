@@ -5,6 +5,7 @@ import {
   gitInit,
   gitInitOrigin,
   gitPush,
+  gitSetUser,
 } from '@qiwi/semrel-testing-suite'
 import execa from 'execa'
 import fs from 'fs'
@@ -16,11 +17,13 @@ import { perform, push, TActionOptions } from '../../main/ts'
 const fixtures = path.resolve(__dirname, '../fixtures')
 
 describe('actions', () => {
+  const user = { name: 'Foo Bar', email: 'foo@bar.com' }
   const initTempRepo = (
     fixture = `${fixtures}/basicPackage/`,
   ): { cwd: string; repo: string } => {
     const sync = true
     const cwd = gitInit({ sync })
+    gitSetUser({ cwd, ...user, sync })
     copyDirectory(fixture, cwd)
     gitCommitAll({ cwd, message: 'feat: initial commit', sync })
     const repo = gitInitOrigin({ cwd, sync })
@@ -53,6 +56,7 @@ describe('actions', () => {
         repo,
         cwd,
         debug: console.log as Debugger,
+        user,
       }
 
       await perform('fetch', opts)
@@ -78,6 +82,7 @@ describe('actions', () => {
         to: 'baz',
         repo,
         debug: console.log as Debugger,
+        user,
       }
 
       const commitId = await perform('push', opts)
@@ -108,6 +113,7 @@ describe('actions', () => {
         to: 'scope',
         repo,
         debug,
+        user,
       }
       const opts1 = {
         cwd,
@@ -116,6 +122,7 @@ describe('actions', () => {
         to: 'scope',
         repo,
         debug,
+        user,
       }
       const opts2 = {
         cwd,
@@ -124,6 +131,7 @@ describe('actions', () => {
         to: 'scope',
         repo,
         debug,
+        user,
       }
 
       const pushedCommits = await Promise.all([

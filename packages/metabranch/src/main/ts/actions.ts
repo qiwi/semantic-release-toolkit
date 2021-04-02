@@ -6,7 +6,7 @@ import {
   gitInit,
   gitPushRebase,
   gitRemoteAdd,
-  gitRemoteSetHead,
+  gitRemoteSetHead, gitSetUser,
   gitShowCommitted,
   gitStatus,
 } from '@qiwi/semrel-common'
@@ -21,14 +21,17 @@ import {
   TActionOptions,
   TActionOptionsNormalized,
   TActionType,
+  TUserInfo,
 } from './interface'
 
 export const prepareTempRepo = async (
   cwd: string,
   repo: string,
   branch: string,
+  { email, name }: TUserInfo
 ): Promise<string> => {
   await gitInit({ cwd })
+  await gitSetUser({ cwd, name, email })
   await gitRemoteAdd({ cwd, url: repo, remote: 'origin' })
 
   try {
@@ -51,6 +54,7 @@ export const normalizeOptions = ({
   temp = tempy.directory(),
   repo,
   debug,
+  user,
 }: TActionOptions): TActionOptionsNormalized => ({
   branch,
   from,
@@ -60,6 +64,7 @@ export const normalizeOptions = ({
   temp,
   repo,
   debug,
+  user,
 })
 
 type TSyncOptions = {
@@ -112,9 +117,9 @@ const synchronize = async ({
 }
 
 export const fetch = async (opts: TActionOptions): Promise<void> => {
-  const { branch, from, to, cwd, temp, repo, debug } = normalizeOptions(opts)
+  const { branch, from, to, cwd, temp, repo, debug, user } = normalizeOptions(opts)
 
-  await prepareTempRepo(temp, repo, branch)
+  await prepareTempRepo(temp, repo, branch, user)
 
   await synchronize({ from, to, baseFrom: temp, baseTo: cwd, debug })
 }
@@ -129,9 +134,10 @@ export const push = async (opts: TActionOptions): Promise<string> => {
     repo,
     message,
     debug,
+    user,
   } = normalizeOptions(opts)
 
-  await prepareTempRepo(temp, repo, branch)
+  await prepareTempRepo(temp, repo, branch, user)
 
   await synchronize({ from, to, baseFrom: cwd, baseTo: temp, debug })
 
