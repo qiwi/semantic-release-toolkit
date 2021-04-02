@@ -10,6 +10,7 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes && lerna run clean",
     "lint": "lerna run lint --parallel --stream --no-prefix",
+    "lint:fix": "lerna run lint:fix",
     "test": "npm-run-all -p -l lint test:unit test:depcheck test:depaudit",
     "test:unit": "jest --detectOpenHandles --forceExit --runInBand",
     "test:report": "yarn test && yarn coveralls:push",
