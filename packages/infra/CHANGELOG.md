@@ -1,3 +1,10 @@
+# @qiwi/semrel-infra [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.0.5...@qiwi/semrel-infra@1.1.0) (2021-04-02)
+
+
+### Features
+
+* use random plugin name as default ([b1718b4](https://github.com/qiwi/semantic-release-toolkit/commit/b1718b43ef028eba9a7b9fb87989c4706d62f807))
+
 ## @qiwi/semrel-infra [1.0.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.0.4...@qiwi/semrel-infra@1.0.5) (2021-03-11)
 
 
