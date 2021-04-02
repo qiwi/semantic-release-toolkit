@@ -1,7 +1,4 @@
-import {
-  cleanPath,
-  gitCreateFakeRepo,
-} from '@qiwi/semrel-testing-suite'
+import { cleanPath, gitCreateFakeRepo } from '@qiwi/semrel-testing-suite'
 import { resolve } from 'path'
 import resolveFrom from 'resolve-from'
 import semanticRelease from 'semantic-release'
@@ -50,6 +47,8 @@ describe('plugin', () => {
     ...process.env,
     TRAVIS_PULL_REQUEST_BRANCH: 'master',
     TRAVIS_BRANCH: 'master',
+    GITHUB_REF: 'master',
+    GITHUB_BASE_REF: 'master',
   }
 
   it('plugin is compatible with semrel', async () => {
@@ -88,8 +87,8 @@ describe('plugin', () => {
       debug: expect.any(Function),
       user: {
         name: 'semantic-release-bot',
-        email: 'semantic-release-bot@martynus.net'
-      }
+        email: 'semantic-release-bot@martynus.net',
+      },
     })
   }, 15000)
 

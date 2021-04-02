@@ -6,7 +6,8 @@ import {
   gitInit,
   gitPushRebase,
   gitRemoteAdd,
-  gitRemoteSetHead, gitSetUser,
+  gitRemoteSetHead,
+  gitSetUser,
   gitShowCommitted,
   gitStatus,
 } from '@qiwi/semrel-common'
@@ -28,7 +29,7 @@ export const prepareTempRepo = async (
   cwd: string,
   repo: string,
   branch: string,
-  { email, name }: TUserInfo
+  { email, name }: TUserInfo,
 ): Promise<string> => {
   await gitInit({ cwd })
   await gitSetUser({ cwd, name, email })
@@ -117,7 +118,9 @@ const synchronize = async ({
 }
 
 export const fetch = async (opts: TActionOptions): Promise<void> => {
-  const { branch, from, to, cwd, temp, repo, debug, user } = normalizeOptions(opts)
+  const { branch, from, to, cwd, temp, repo, debug, user } = normalizeOptions(
+    opts,
+  )
 
   await prepareTempRepo(temp, repo, branch, user)
 

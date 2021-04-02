@@ -1,10 +1,6 @@
 import {
   cleanPath,
-  copyDirectory,
-  gitCommitAll,
-  gitInit,
-  gitInitOrigin,
-  gitPush,
+  gitCreateFakeRepo,
 } from '@qiwi/semrel-testing-suite'
 import { resolve } from 'path'
 import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
@@ -20,15 +16,17 @@ describe('integration', () => {
       return 'patch'
     }
   })
-  const sync = true
   const pluginName = 'some-plugin'
   const plugin = createPlugin({ handler, name: pluginName })
-  const cwd = gitInit({ sync })
-
-  copyDirectory(`${fixtures}/yarnWorkspaces/`, cwd)
-  gitCommitAll({ cwd, message: 'feat: Initial release', sync })
-  gitInitOrigin({ cwd, sync })
-  gitPush({ cwd, sync })
+  const { cwd } = gitCreateFakeRepo({
+    sync: true,
+    commits: [
+      {
+        message: 'feat: initial commit',
+        from: `${fixtures}/yarnWorkspaces/`,
+      },
+    ],
+  })
 
   beforeAll(() => {
     jest.mock(pluginName, () => plugin, { virtual: true })
