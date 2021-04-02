@@ -43,6 +43,8 @@ jobs:
           # If a wildcard pattern is used, the path hierarchy will be preserved after the first wildcard pattern.
           # https://github.com/actions/upload-artifact#upload-using-multiple-paths-and-exclusions
           path: |
+            !packages/*/node_modules
+            !packages/*/src
             packages
             lerna.json
 
@@ -66,15 +68,17 @@ jobs:
         run: |
           yarn
           yarn bootstrap
+
       - name: Unit test only
         run: yarn test:unit
-#      - name: Push coverage
-#        if: github.ref == 'refs/heads/master'
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: target
-#          retention-days: 1
-#          path: coverage
+
+      - name: Push coverage
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v2
+        with:
+          name: target
+          retention-days: 1
+          path: coverage
 
   test_pr:
     if: github.event_name == 'pull_request'
