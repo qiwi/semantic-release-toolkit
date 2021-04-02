@@ -22,7 +22,7 @@ export const plugin = createPlugin({
 
     const user = {
       name: context.env.GIT_AUTHOR_NAME || context.env.GIT_COMMITTER_NAME,
-      email: context.env.GIT_AUTHOR_EMAIL || context.env.GIT_COMMITTER_EMAIL
+      email: context.env.GIT_AUTHOR_EMAIL || context.env.GIT_COMMITTER_EMAIL,
     }
     const { branch, from, to, message, action } = stepOptions as TPluginOptions
     const actionOptions = {

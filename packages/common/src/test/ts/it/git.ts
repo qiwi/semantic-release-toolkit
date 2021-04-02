@@ -9,6 +9,7 @@ import {
   gitExec,
   gitInit,
   gitRoot,
+  gitSetUser,
 } from '../../../main/ts'
 
 const root = path.resolve(__dirname, '../../../../../../')
@@ -99,6 +100,7 @@ describe('git-utils', () => {
   describe('gitCheckout()', () => {
     it('checkout -b creates a branch', async () => {
       const cwd = await gitInit({ cwd: tempy.directory() })
+      await gitSetUser({ cwd, name: 'Foo Bar', email: 'foo@bar.com' })
 
       await fs.writeFile(path.resolve(cwd, 'test.txt'), 'test', {
         encoding: 'utf-8',

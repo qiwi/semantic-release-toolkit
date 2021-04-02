@@ -8,7 +8,7 @@ export type TBaseActionOptions = {
 }
 
 export type TUserInfo = {
-  name: string,
+  name: string
   email: string
 }
 
@@ -16,7 +16,7 @@ export type TActionOptionsNormalized = TBaseActionOptions & {
   debug: Debugger
   repo: string
   cwd: string
-  temp: string,
+  temp: string
   user: TUserInfo
 }
 
