@@ -1,3 +1,13 @@
+## @qiwi/semrel-common [1.4.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.4.0...@qiwi/semrel-common@1.4.1) (2021-04-04)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 1.1.1
+
 # @qiwi/semrel-common [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.3.0...@qiwi/semrel-common@1.4.0) (2021-04-02)
 
 
