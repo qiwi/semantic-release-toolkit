@@ -1,5 +1,18 @@
 # @qiwi/semrel-metabranch
-[Semrel](https://github.com/semantic-release/semantic-release) plugin for two-way data sync with remote branch. 
+[Semrel](https://github.com/semantic-release/semantic-release) plugin for two-way data sync with any remote branch on any release step. 
+
+
+| Step               | Description |
+|--------------------|-------------|
+| `verifyConditions` | Performs actions as declared in step options. |
+| `analyzeCommits`   | As prev. |
+| `verifyRelease`    | ... |
+| `generateNotes`    | ... |
+| `prepare`          | ... |
+| `publish`          | ... |
+| `addChannel`       | ... |
+| `success`          | ... |
+| `fail`             | ... |
 
 ## Install
 ```shell script
@@ -7,8 +20,9 @@ yarn add @qiwi/semrel-metabranch -D
 ```
 
 ## Usage
-**.release.rc**
+As a part of plugin declaration:
 ```json
+// .release.rc
 {
   "plugins": [[
     "@qiwi/semrel-multibranch",
@@ -23,6 +37,7 @@ yarn add @qiwi/semrel-metabranch -D
   ]]
 }
 ```
+Action declared in release step:
 ```json
 {
   "publish": [[
@@ -38,17 +53,28 @@ yarn add @qiwi/semrel-metabranch -D
 }
 ```
 
-| Step               | Description |
-|--------------------|-------------|
-| `verifyConditions` | Performs actions as declared in step options. |
-| `analyzeCommits`   | As prev. |
-| `verifyRelease`    | ... |
-| `generateNotes`    | ... |
-| `prepare`          | ... |
-| `publish`          | ... |
-| `addChannel`       | ... |
-| `success`          | ... |
-| `fail`             | ... |
+### GitHub Pages docs pushing example
+```js
+module.exports = {
+  debug: true,
+  branch: 'master',
+  plugins: [
+    [
+      '@qiwi/semrel-metabranch',
+      {
+        publish: {
+          action: 'push',
+          branch: 'gh-pages',
+          from: './docs',
+          to: '.',
+          message: 'update docs ${nextRelease.gitTag}'
+        }
+      }
+    ],
+    ...
+  ]
+}
+```
 
 ### Configuration
 ##### Environment variables
