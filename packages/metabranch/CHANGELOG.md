@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.6.1...@qiwi/semrel-metabranch@1.6.2) (2021-04-04)
+
+
+### Performance Improvements
+
+* up deps ([4a191d3](https://github.com/qiwi/semantic-release-toolkit/commit/4a191d3faf2f4d67bd2022724cdfee6a03dcc168))
+
 ## [1.6.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.6.0...@qiwi/semrel-metabranch@1.6.1) (2021-04-02)
 
 
