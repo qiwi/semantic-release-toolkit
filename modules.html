@@ -2712,43 +2712,7 @@ img {
 			<a href="#qiwisemrel-metabranch" id="qiwisemrel-metabranch" style="color: inherit; text-decoration: none;">
 				<h1>@qiwi/semrel-metabranch</h1>
 			</a>
-			<p><a href="https://github.com/semantic-release/semantic-release">Semrel</a> plugin for two-way data sync with remote branch. </p>
-			<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-				<h2>Install</h2>
-			</a>
-			<pre><code class="language-shell"><span style="color: #000000">yarn add @qiwi/semrel-metabranch -D</span>
-</code></pre>
-			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-				<h2>Usage</h2>
-			</a>
-			<p><strong>.release.rc</strong></p>
-			<pre><code class="language-json"><span style="color: #000000">{</span>
-<span style="color: #000000">  </span><span style="color: #0451A5">&quot;plugins&quot;</span><span style="color: #000000">: [[</span>
-<span style="color: #000000">    </span><span style="color: #A31515">&quot;@qiwi/semrel-multibranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">    {</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;verify&quot;</span><span style="color: #000000">: {</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;action&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;fetch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;branch&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;metabranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;from&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;to&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;bar&quot;</span>
-<span style="color: #000000">      }</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  ]]</span>
-<span style="color: #000000">}</span>
-</code></pre>
-			<pre><code class="language-json"><span style="color: #000000">{</span>
-<span style="color: #000000">  </span><span style="color: #0451A5">&quot;publish&quot;</span><span style="color: #000000">: [[</span>
-<span style="color: #000000">    </span><span style="color: #A31515">&quot;@qiwi/semrel-multibranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">    {</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;action&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;push&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;branch&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;metabranch&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;from&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;foo/**/*.txt&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;to&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;bar&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">      </span><span style="color: #0451A5">&quot;message&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;commit message&quot;</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  ]]</span>
-<span style="color: #000000">}</span>
-</code></pre>
+			<p><a href="https://github.com/semantic-release/semantic-release">Semrel</a> plugin for two-way data sync with any remote branch on any release step. </p>
 			<table>
 				<thead>
 					<tr>
@@ -2793,6 +2757,67 @@ img {
 						<td>...</td>
 					</tr>
 			</tbody></table>
+			<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+				<h2>Install</h2>
+			</a>
+			<pre><code class="language-shell"><span style="color: #000000">yarn add @qiwi/semrel-metabranch -D</span>
+</code></pre>
+			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+				<h2>Usage</h2>
+			</a>
+			<p>As a part of plugin declaration:</p>
+			<pre><code class="language-json"><span style="color: #008000">// .release.rc</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;plugins&quot;</span><span style="color: #000000">: [[</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;@qiwi/semrel-multibranch&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;verify&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;action&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;fetch&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;branch&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;metabranch&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;from&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;to&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;bar&quot;</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  ]]</span>
+<span style="color: #000000">}</span>
+</code></pre>
+			<p>Action declared in release step:</p>
+			<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;publish&quot;</span><span style="color: #000000">: [[</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;@qiwi/semrel-multibranch&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;action&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;push&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;branch&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;metabranch&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;from&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;foo/**/*.txt&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;to&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;bar&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;message&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;commit message&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  ]]</span>
+<span style="color: #000000">}</span>
+</code></pre>
+			<a href="#github-pages-docs-pushing-example" id="github-pages-docs-pushing-example" style="color: inherit; text-decoration: none;">
+				<h3>GitHub Pages docs pushing example</h3>
+			</a>
+			<pre><code class="language-js"><span style="color: #267F99">module</span><span style="color: #000000">.</span><span style="color: #267F99">exports</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">debug:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">branch:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;master&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">plugins:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">    [</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;@qiwi/semrel-metabranch&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">publish:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">          </span><span style="color: #001080">action:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;push&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">branch:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gh-pages&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">from:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./docs&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">to:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;.&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;update docs ${nextRelease.gitTag}&#039;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">    ...</span>
+<span style="color: #000000">  ]</span>
+<span style="color: #000000">}</span>
+</code></pre>
 			<a href="#configuration" id="configuration" style="color: inherit; text-decoration: none;">
 				<h3>Configuration</h3>
 			</a>
