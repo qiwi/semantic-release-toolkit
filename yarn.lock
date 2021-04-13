@@ -1537,10 +1537,10 @@
     pkg-dir "^5.0.0"
     tslib "^2.1.0"
 
-"@qiwi/multi-semantic-release@~3.13.2":
-  version "3.13.2"
-  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.13.2.tgz#d07d7954bbfbb1b90c2268bb8d09b7f3dfa3cef4"
-  integrity sha512-2+PPfyf1RQcqRHMQ6pfgJRPNL6mowfATaJmfajhkAFFp9O8SFijDqnXlqY5qaOIj8ji79bC/J/QQhBGWx5PJpw==
+"@qiwi/multi-semantic-release@~3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.14.0.tgz#602f530129e65bbcf1df97f54ad68e6dc83a6ecd"
+  integrity sha512-6khDvm+GpJ8Dy4sTFY16ubEH7yq7kRk3uLw/Ea2bANuDnxB5/Dvb9cicUMMua4AdONkO3GmrhUhcJaFtnPyE2g==
   dependencies:
     blork "^9.3.0"
     cosmiconfig "^7.0.0"
