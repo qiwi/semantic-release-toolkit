@@ -1,23 +1,18 @@
 {
-  "name": "@qiwi/semrel-plugin-creator",
-  "version": "1.7.3",
+  "name": "@qiwi/semrel-bumper",
+  "version": "0.0.0",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
-  "description": "Semrel plugin creator",
-  "type": "module",
-  "exports": {
-    "import": "./target/exports/es6.mjs",
-    "require": "./target/exports/es5.cjs"
-  },
-  "main": "target/es6",
+  "description": "Semrel assets to resolve cross-packages version bumping",
+  "keywords": [],
+  "main": "target/es5/index.js",
   "source": "target/ts/index.ts",
-  "types": "typings/index.d.ts",
+  "types": "target/es5/index.d.ts",
   "typescript": {
     "definition": "target/es5/index.d.ts"
   },
-  "keywords": [],
   "files": [
     "README.md",
     "CHANGELOG.md",
@@ -31,33 +26,33 @@
     "lint:fix": "yarn lint --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
-    "test:unit": "jest --config=jest.config.js --runInBand",
-    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@antongolub/esm --ignore-patterns typings,flow-typed/*",
-    "build": "npm-run-all -p -l build:es5 build:es6 build:exports build:ts build:libdef docs",
+    "test:unit": "jest --runInBand",
+    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra --ignore-patterns typings,flow-typed/*",
+    "build": "npm-run-all -p -l build:es5 build:es6 build:ts build:libdef docs",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
     "build:ts": "cpy src/main/ts/ target/ts/",
-    "build:exports": "cpy src/main/exports/ target/exports/",
     "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@antongolub/esm": "^1.0.0",
-    "tslib": "^2.1.0",
+    "@types/execa": "^2.0.0",
     "@types/semantic-release": "^17.2.0",
     "@types/node": "^14.14.37",
-    "@types/lodash-es": "^4.17.4",
-    "lodash-es": "^4.17.21",
-    "debug": "^4.3.1"
+    "@qiwi/semrel-common": "1.4.1",
+    "@qiwi/semrel-plugin-creator": "1.7.3",
+    "tslib": "^2.1.0",
+    "execa": "^5.0.0",
+    "tempy": "^1.0.1",
+    "globby": "^11.0.3",
+    "fs-extra": "^9.1.0"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.1.1",
     "@qiwi/semrel-testing-suite": "1.4.2",
-    "semantic-release": "^17.4.2",
-    "resolve-from": "^5.0.0",
-    "@types/execa": "^2.0.0"
+    "semantic-release": "^17.4.2"
   },
   "peerDependencies": {},
   "optionalDependencies": {},
