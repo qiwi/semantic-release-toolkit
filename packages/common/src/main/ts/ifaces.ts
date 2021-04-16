@@ -1,5 +1,7 @@
 import { Extends } from '@qiwi/substrate'
 
+export type TReleaseType = 'patch' | 'minor' | 'major'
+
 export interface ISyncSensitive {
   sync?: boolean
 }

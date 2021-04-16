@@ -1,5 +1,5 @@
 # @qiwi/semrel-common
-Common semrel utils: config reader, git-client, etc.
+Common semrel parts: interfaces, config reader, git-client, etc.
 
 ## Install
 ```shell script
