@@ -1,0 +1,10 @@
+{
+  "name": "pkg-monorepo",
+  "version": "0.0.0",
+  "description": "",
+  "workspaces": [
+    "packages/*",
+    "more-packages/*"
+  ],
+  "private": true
+}

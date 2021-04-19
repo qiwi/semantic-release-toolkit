@@ -5,7 +5,7 @@ export const DEFAULT_BUMPER_CONFIG: TBumperConfig = {
   deps: [{
     type: 'all',
     include: '*',
-    releaseRule: {
+    release: {
       major: 'patch',
       minor: 'patch',
       patch: 'patch'
