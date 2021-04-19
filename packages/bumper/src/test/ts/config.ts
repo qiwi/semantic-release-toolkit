@@ -2,6 +2,7 @@ import { resolve } from 'path'
 
 import {
   readPackagesNamesFromGlobs,
+  resolveBumperRules,
   resolvePackageNames,
 } from '../../main/ts'
 
@@ -40,6 +41,12 @@ describe('bumper/config', () => {
         'pkg-bar',
         'pkg-foo',
       ])
+    })
+  })
+
+  describe('resolveBumperRules()', () => {
+    fit('turns bumper config into bumper rules', () => {
+      expect(resolveBumperRules()).toBe(undefined)
     })
   })
 })
