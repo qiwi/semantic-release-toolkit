@@ -39,15 +39,15 @@
   },
   "dependencies": {
     "debug": "^4.3.1",
-    "tslib": "^2.1.0",
-    "@types/node": "^14.14.37",
+    "tslib": "^2.2.0",
+    "@types/node": "^15.0.1",
     "tempy": "^1.0.1",
     "execa": "^5.0.0",
     "nanoid": "^3.1.22",
     "minimist": "^1.2.5",
     "@types/semantic-release": "^17.2.0",
     "@antongolub/git-root": "^1.5.3",
-    "@qiwi/substrate": "^1.20.6",
+    "@qiwi/substrate": "^1.20.7",
     "file-url": "^3.0.0",
     "lodash": "^4.17.21"
   },
