@@ -37,3 +37,12 @@ export type TBumperDeclaration = {
 export type TBumperConfig = TBumperDeclaration | TBumperDeclaration[]
 
 export type TBumperDirectives = Record<TPackageName, Record<TPackageName, Record<TReleaseType, TReleaseType>>>
+
+export type IBumperDepPatchset = {
+  name: TPackageName
+  type: TDependencyType
+  prevVersion: string
+  nextVersion: string
+  hasChanged: boolean
+  strategy: TBumperStrategy
+}
