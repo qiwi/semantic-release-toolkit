@@ -9,6 +9,7 @@ export const DEFAULT_BUMPER_CONFIG: TBumperConfig = {
       major: 'patch',
       minor: 'patch',
       patch: 'patch'
-    }
+    },
+    strategy: 'override'
   }]
 }

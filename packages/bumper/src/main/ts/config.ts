@@ -1,18 +1,22 @@
-import { readFileSync as read } from 'fs'
-
 import { sync as globby } from 'globby'
 
 import {
-  TBumperConfig, TBumperRules, TDependencyType, TDependencyTypeNormalized,
-  TPackageName, TReleaseDirective, TReleaseRuleMap, TReleaseType
+  TBumperConfig, TBumperDirectives, TBumperRules, TDependencyType, TDependencyTypeNormalized,
+  TPackageName, TReleaseDirective, TReleaseRuleMap, TReleaseType,
+  IPackageDeps, IPackage
 } from './interface'
 
-const asArray = <T>(value: T): T extends any[] ? T : T[] => (Array.isArray(value) ? value: [value]) as T extends any[] ? T : T[]
+import {
+  asArray,
+  readJson
+} from './utils'
 
+export const readPackagesFromGlobs = (globs: string[], cwd: string): IPackage[] =>
+  globby(globs.map(p => p.replace(/\/package\.json$/, '') + '/package.json'), { cwd, absolute: true, onlyFiles: true })
+    .map(readJson)
 
 export const readPackagesNamesFromGlobs = (globs: string[], cwd: string): string[] =>
-  globby(globs.map(p => p.replace(/\/package\.json$/, '') + '/package.json'), { cwd, absolute: true, onlyFiles: true })
-    .map(file => JSON.parse(read(file, { encoding: 'utf8' })).name)
+  readPackagesFromGlobs(globs, cwd).map(({ name }) => name)
 
 export const resolvePackageNames = (targets: TPackageName | TPackageName[], cwd: string): TPackageName[] => {
   const globlikePattern = /[!*]/gi
@@ -111,4 +115,61 @@ export const resolveBumperRules = (bumperConfig: TBumperConfig, cwd: string): TB
   })
 
   return rules
+}
+
+// const releaseTypeSeverityOrder: TReleaseType[] = ['patch', 'minor', 'major']
+// const depTypeMapping = {
+//   dependencies: 'prod',
+//   devDependencies: 'dev',
+//   peerDependencies: 'peer',
+//   optionalDependencies: 'optional'
+// }
+
+
+const depTypeMapping: Record<TDependencyTypeNormalized, keyof IPackage> = {
+  prod: 'dependencies',
+  dev: 'devDependencies',
+  peer: 'peerDependencies',
+  optional: 'optionalDependencies'
+}
+
+export const resolveBumperDirective = (bumperRules: TBumperRules, pkg: IPackage, name: TPackageName, depType: TDependencyTypeNormalized, releaseType: TReleaseType): TReleaseType | undefined=>
+  (pkg[depTypeMapping[depType]] as IPackageDeps)?.[name] ? bumperRules?.[pkg.name]?.[name]?.[depType]?.[releaseType] : undefined
+
+export const resolveBumperDirectives = (bumperConfig: TBumperConfig, workspaces: string | string[], cwd: string): TBumperDirectives => {
+  const bumperRules = resolveBumperRules(bumperConfig, cwd)
+  const packages = readPackagesFromGlobs(asArray(workspaces), cwd)
+  const directives: TBumperDirectives = {}
+  const extract = (pkg: IPackage, _name: TPackageName, depType: TDependencyTypeNormalized, releaseType: TReleaseType): TReleaseType | undefined =>
+    (pkg[depTypeMapping[depType]] as IPackageDeps)?.[_name] ? bumperRules?.[pkg.name]?.[_name]?.[depType]?.[releaseType] : undefined
+
+
+  packages.forEach((pkg) => {
+
+    directives[pkg.name] = {}
+
+
+    packages.forEach(({name: _name}) => {
+
+      const patchRules = [
+        extract(pkg, _name, 'prod', 'patch')
+      ]
+
+      console.log(patchRules)
+
+    })
+
+  })
+
+  // console.log('!!!directives = ', directives)
+
+
+
+  return directives
+}
+
+export const getBumperDirective = (bumperDirectives: TBumperDirectives): TReleaseType | undefined => {
+  if (bumperDirectives) {
+    return 'patch'
+  }
 }

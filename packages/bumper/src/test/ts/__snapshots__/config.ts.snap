@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bumper/config resolveBumperRules() turns bumper config into bumper rules 1`] = `
+Object {
+  "pkg-bar": Object {
+    "pkg-bar": Object {
+      "prod": Object {
+        "major": "patch",
+        "minor": "patch",
+        "patch": "patch",
+      },
+    },
+    "pkg-foo": Object {
+      "prod": Object {
+        "major": "patch",
+        "minor": "patch",
+        "patch": "patch",
+      },
+    },
+  },
+  "pkg-baz": Object {
+    "pkg-bar": Object {
+      "dev": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+      "peer": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+    },
+    "pkg-foo": Object {
+      "dev": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+      "peer": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+    },
+  },
+  "pkg-foo": Object {
+    "pkg-bar": Object {
+      "prod": Object {
+        "major": "patch",
+        "minor": "patch",
+        "patch": "patch",
+      },
+    },
+    "pkg-foo": Object {
+      "prod": Object {
+        "major": "patch",
+        "minor": "patch",
+        "patch": "patch",
+      },
+    },
+  },
+  "pkg-qux": Object {
+    "pkg-bar": Object {
+      "dev": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+      "peer": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+    },
+    "pkg-foo": Object {
+      "dev": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+      "peer": Object {
+        "major": "major",
+        "minor": "minor",
+        "patch": "patch",
+      },
+    },
+  },
+}
+`;

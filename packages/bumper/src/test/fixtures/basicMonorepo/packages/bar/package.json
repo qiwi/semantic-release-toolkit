@@ -1,5 +1,8 @@
 {
 	"name": "pkg-bar",
 	"version": "1.0.0",
-	"private": true
+	"private": true,
+	"dependencies": {
+		"pkg-foo": "*"
+	}
 }
