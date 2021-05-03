@@ -52,7 +52,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "@qiwi/semrel-infra": "1.1.1"
   },
   "peerDependencies": {},
