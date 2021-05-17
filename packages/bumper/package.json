@@ -38,21 +38,13 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@types/execa": "^2.0.0",
     "@types/semantic-release": "^17.2.0",
     "@types/node": "^15.0.1",
-    "@qiwi/semrel-common": "1.4.1",
-    "@qiwi/semrel-plugin-creator": "1.7.3",
     "tslib": "^2.2.0",
-    "execa": "^5.0.0",
-    "tempy": "^1.0.1",
-    "globby": "^11.0.3",
-    "fs-extra": "^9.1.0"
+    "globby": "^11.0.3"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "1.1.1",
-    "@qiwi/semrel-testing-suite": "1.4.2",
-    "semantic-release": "^17.4.2"
+    "@qiwi/semrel-infra": "1.1.1"
   },
   "peerDependencies": {},
   "optionalDependencies": {},

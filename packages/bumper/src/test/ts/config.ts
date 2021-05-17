@@ -2,9 +2,9 @@ import { resolve } from 'path'
 
 import {
   readPackagesNamesFromGlobs,
-  resolveBumperRules,
+  resolveBumperDirectives,   resolveBumperRules,
   resolvePackageNames,
-  resolveBumperDirectives, TBumperConfig,
+TBumperConfig,
 } from '../../main/ts'
 
 const fixtures = resolve(__dirname, '../fixtures')
@@ -94,7 +94,12 @@ describe('bumper/config', () => {
         }
       ]
 
-      expect(resolveBumperDirectives(bumperConfig, ['packages/*', 'more-packages/*'], cwd)).toEqual({})
+      expect(resolveBumperDirectives(bumperConfig, ['packages/*', 'more-packages/*'], cwd)).toEqual({
+        'pkg-bar': {},
+        'pkg-baz': {},
+        'pkg-foo': {},
+        'pkg-qux': {}
+      })
     })
   })
 })

@@ -1,11 +1,9 @@
 import { sync as globby } from 'globby'
 
 import {
-  TBumperConfig, TBumperDirectives, TBumperRules, TDependencyType, TDependencyTypeNormalized,
-  TPackageName, TReleaseDirective, TReleaseRuleMap, TReleaseType,
-  IPackageDeps, IPackage
-} from './interface'
-
+IPackage,
+  IPackageDeps,   TBumperConfig, TBumperDirectives, TBumperRules, TDependencyType, TDependencyTypeNormalized,
+  TPackageName, TReleaseDirective, TReleaseRuleMap, TReleaseType} from './interface'
 import {
   asArray,
   readJson
