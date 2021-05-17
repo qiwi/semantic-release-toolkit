@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.6.2...@qiwi/semrel-metabranch@1.6.3) (2021-05-17)
+
+
+### Bug Fixes
+
+* **deps:** up deps, fix vulns ([c718296](https://github.com/qiwi/semantic-release-toolkit/commit/c718296c9ba2b582e046ef561813771481d10897))
+
 ## [1.6.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.6.1...@qiwi/semrel-metabranch@1.6.2) (2021-04-04)
 
 
