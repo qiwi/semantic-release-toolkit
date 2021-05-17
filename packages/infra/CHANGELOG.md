@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [1.1.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.1.1...@qiwi/semrel-infra@1.1.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* **deps:** up deps, fix vulns ([c718296](https://github.com/qiwi/semantic-release-toolkit/commit/c718296c9ba2b582e046ef561813771481d10897))
+
 ## @qiwi/semrel-infra [1.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.1.0...@qiwi/semrel-infra@1.1.1) (2021-04-04)
 
 
