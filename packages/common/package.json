@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-common",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "fs-extra": "^10.0.0",
-    "@qiwi/semrel-infra": "1.1.1"
+    "@qiwi/semrel-infra": "1.1.2"
   },
   "peerDependencies": {},
   "optionalDependencies": {},
