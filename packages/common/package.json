@@ -35,6 +35,7 @@
     "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
+    "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
