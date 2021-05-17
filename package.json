@@ -17,7 +17,7 @@
     "test:concurrent": "lerna run test --stream --no-prefix && yarn coverage:merge",
     "test:depcheck": "lerna run test:depcheck --parallel --stream --no-prefix",
     "test:depaudit": "yarn audit --level=moderate; [[ $? -ge 4 ]] && exit 1 || exit 0",
-    "test:depauditfix": "npx yarn-audit-fix --audit-level=moderate",
+    "test:depauditfix": "npm_config_yes=true npx yarn-audit-fix --audit-level=moderate",
     "prebuild": "tsc -b",
     "build": "lerna run build --stream --parallel",
     "coverage:merge": "node scripts/js/coverage-merge.js",
