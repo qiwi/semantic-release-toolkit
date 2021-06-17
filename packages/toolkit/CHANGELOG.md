@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [2.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.0...@qiwi/semrel-toolkit@2.0.1) (2021-06-17)
+
+
+### Bug Fixes
+
+* **toolkit:** fix bin re-export ([3b1891c](https://github.com/qiwi/semantic-release-toolkit/commit/3b1891c1317cb46723f5f2de2a23f9eeda96d3ad))
+
 # @qiwi/semrel-toolkit [2.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.20...@qiwi/semrel-toolkit@2.0.0) (2021-06-17)
 
 
