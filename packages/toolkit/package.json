@@ -12,8 +12,8 @@
     "CHANGELOG.md"
   ],
   "bin": {
-    "semrel": "./sh/semrel.sh",
-    "multi-semrel": "./sh/msr.sh"
+    "semrel": "./semrel.js",
+    "multi-semrel": "./msr.js"
   },
   "scripts": {
     "semantic-release": "semantic-release",
