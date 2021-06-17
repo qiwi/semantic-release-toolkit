@@ -12,10 +12,13 @@
     "CHANGELOG.md"
   ],
   "bin": {
-    "semrel": "./node_modules/semantic-release/bin/semantic-release.js",
-    "multi-semrel": "./node_modules/@qiwi/multi-semantic-release/bin/cli.js"
+    "semrel": "./sh/semrel.sh",
+    "multi-semrel": "./sh/msr.sh"
   },
-  "scripts": {},
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "multi-semantic-release": "multi-semantic-release"
+  },
   "dependencies": {
     "@qiwi/multi-semantic-release": "~3.14.2",
     "semantic-release": "~17.4.4",
