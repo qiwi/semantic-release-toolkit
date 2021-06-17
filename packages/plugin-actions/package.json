@@ -38,7 +38,7 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.0",
     "@qiwi/semrel-plugin-creator": "1.7.4"
   },
   "devDependencies": {
