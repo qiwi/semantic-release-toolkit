@@ -1,3 +1,19 @@
+## @qiwi/semrel-actions [1.0.12](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.11...@qiwi/semrel-actions@1.0.12) (2021-06-17)
+
+
+### Bug Fixes
+
+* **package:** update deps, fix vuls ([c94e353](https://github.com/qiwi/semantic-release-toolkit/commit/c94e353bfa1ca228325f97aaba3ffa5e433d3139))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 1.7.5
+* **@qiwi/semrel-infra:** upgraded to 1.1.3
+
 ## @qiwi/semrel-actions [1.0.11](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.10...@qiwi/semrel-actions@1.0.11) (2021-05-17)
 
 
