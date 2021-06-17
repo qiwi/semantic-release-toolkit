@@ -1,3 +1,26 @@
+# @qiwi/semrel-toolkit [2.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.20...@qiwi/semrel-toolkit@2.0.0) (2021-06-17)
+
+
+### Bug Fixes
+
+* **package:** update deps, fix vuls ([c94e353](https://github.com/qiwi/semantic-release-toolkit/commit/c94e353bfa1ca228325f97aaba3ffa5e433d3139))
+* **toolkit:** add compatibility with npm v7 ([6eca8da](https://github.com/qiwi/semantic-release-toolkit/commit/6eca8da279343cbb721f67beb0026388de7e2308)), closes [#69](https://github.com/qiwi/semantic-release-toolkit/issues/69)
+
+
+### BREAKING CHANGES
+
+* **toolkit:** the fix is so weird that could break everything
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.7
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.4.7
+* **@qiwi/semrel-preset:** upgraded to 1.2.6
+
 ## @qiwi/semrel-toolkit [1.3.20](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@1.3.19...@qiwi/semrel-toolkit@1.3.20) (2021-05-17)
 
 
