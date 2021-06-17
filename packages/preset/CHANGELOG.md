@@ -1,3 +1,18 @@
+## @qiwi/semrel-preset [1.2.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.2.5...@qiwi/semrel-preset@1.2.6) (2021-06-17)
+
+
+### Bug Fixes
+
+* **package:** update deps, fix vuls ([c94e353](https://github.com/qiwi/semantic-release-toolkit/commit/c94e353bfa1ca228325f97aaba3ffa5e433d3139))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-metabranch:** upgraded to 1.6.4
+
 ## @qiwi/semrel-preset [1.2.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.2.4...@qiwi/semrel-preset@1.2.5) (2021-05-17)
 
 
