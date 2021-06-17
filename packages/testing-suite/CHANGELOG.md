@@ -1,3 +1,19 @@
+## @qiwi/semrel-testing-suite [1.4.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.4.3...@qiwi/semrel-testing-suite@1.4.4) (2021-06-17)
+
+
+### Bug Fixes
+
+* **package:** update deps, fix vuls ([c94e353](https://github.com/qiwi/semantic-release-toolkit/commit/c94e353bfa1ca228325f97aaba3ffa5e433d3139))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 1.4.3
+* **@qiwi/semrel-infra:** upgraded to 1.1.3
+
 ## @qiwi/semrel-testing-suite [1.4.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.4.2...@qiwi/semrel-testing-suite@1.4.3) (2021-05-17)
 
 
