@@ -1,3 +1,5 @@
+## [1.6.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.6.4...@qiwi/semrel-metabranch@1.6.5) (2021-06-18)
+
 ## [1.6.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@1.6.3...@qiwi/semrel-metabranch@1.6.4) (2021-06-17)
 
 
