@@ -1,3 +1,18 @@
+# @qiwi/semrel-preset [1.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.2.6...@qiwi/semrel-preset@1.3.0) (2021-06-18)
+
+
+### Features
+
+* **preset:** add @semantic-release/exec to bunch ([88a5e35](https://github.com/qiwi/semantic-release-toolkit/commit/88a5e35bd55540ee4fdd4cb79aa763399130d3b1))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-metabranch:** upgraded to 1.6.5
+
 ## @qiwi/semrel-preset [1.2.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.2.5...@qiwi/semrel-preset@1.2.6) (2021-06-17)
 
 
