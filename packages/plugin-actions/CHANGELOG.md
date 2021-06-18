@@ -1,3 +1,13 @@
+## @qiwi/semrel-actions [1.0.13](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.12...@qiwi/semrel-actions@1.0.13) (2021-06-18)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 1.7.6
+
 ## @qiwi/semrel-actions [1.0.12](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.11...@qiwi/semrel-actions@1.0.12) (2021-06-17)
 
 
