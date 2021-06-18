@@ -1,3 +1,20 @@
+## @qiwi/semrel-toolkit [2.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.1...@qiwi/semrel-toolkit@2.0.2) (2021-06-18)
+
+
+### Bug Fixes
+
+* **deps:** downgrade file-url to v3 ([5d1b12b](https://github.com/qiwi/semantic-release-toolkit/commit/5d1b12bd63e708a8667068535f57170702a20348)), closes [#71](https://github.com/qiwi/semantic-release-toolkit/issues/71)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.8
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.4.8
+* **@qiwi/semrel-preset:** upgraded to 1.3.0
+
 ## @qiwi/semrel-toolkit [2.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.0...@qiwi/semrel-toolkit@2.0.1) (2021-06-17)
 
 
