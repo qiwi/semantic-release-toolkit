@@ -1,3 +1,11 @@
+## @qiwi/semrel-common [1.4.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.4.3...@qiwi/semrel-common@1.4.4) (2021-06-18)
+
+
+### Bug Fixes
+
+* **deps:** downgrade file-url to v3 ([5d1b12b](https://github.com/qiwi/semantic-release-toolkit/commit/5d1b12bd63e708a8667068535f57170702a20348)), closes [#71](https://github.com/qiwi/semantic-release-toolkit/issues/71)
+* **deps:** update dependency file-url to v4 ([f4d744f](https://github.com/qiwi/semantic-release-toolkit/commit/f4d744f017bc6a12e110fc66b5033850db3c0552))
+
 ## @qiwi/semrel-common [1.4.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@1.4.2...@qiwi/semrel-common@1.4.3) (2021-06-17)
 
 
