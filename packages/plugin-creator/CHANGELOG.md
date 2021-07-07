@@ -1,3 +1,19 @@
+## @qiwi/semrel-plugin-creator [1.7.7](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.7.6...@qiwi/semrel-plugin-creator@1.7.7) (2021-07-07)
+
+
+### Bug Fixes
+
+* update deps, fix vuls ([d73d0fe](https://github.com/qiwi/semantic-release-toolkit/commit/d73d0fe28af8cdfbd3d7dd19ead37ceeb39ceaa3))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 1.1.4
+* **@qiwi/semrel-testing-suite:** upgraded to 1.4.6
+
 ## @qiwi/semrel-plugin-creator [1.7.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.7.5...@qiwi/semrel-plugin-creator@1.7.6) (2021-06-18)
 
 
