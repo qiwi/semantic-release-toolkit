@@ -27,7 +27,7 @@
     "postupdate": "yarn && yarn bootstrap && yarn test:depauditfix && yarn clean && yarn build && yarn test"
   },
   "devDependencies": {
-    "coveralls": "^3.1.0",
+    "coveralls": "^3.1.1",
     "find-git-root": "^1.0.4",
     "lerna": "^4.0.0"
   },

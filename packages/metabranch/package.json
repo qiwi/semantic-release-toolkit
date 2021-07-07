@@ -39,8 +39,8 @@
   },
   "dependencies": {
     "@types/execa": "^2.0.0",
-    "@types/semantic-release": "^17.2.0",
-    "@types/node": "^15.12.2",
+    "@types/semantic-release": "^17.2.1",
+    "@types/node": "^16.0.0",
     "@qiwi/semrel-common": "1.4.4",
     "@qiwi/semrel-plugin-creator": "1.7.6",
     "tslib": "^2.3.0",
