@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@antongolub/esm@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@antongolub/esm/-/esm-1.0.0.tgz#a9def42293e39841906f94db927057749a4f5880"
-  integrity sha512-MjRwS+mH3//dTJMweU6VlTs4NoouqABBWRixtKw2sW8LGi235qIpa1L/RVef4OY0b9260aQg9eSaMHSgP5Mnqw==
-
 "@antongolub/git-root@^1.5.6":
   version "1.5.6"
   resolved "https://registry.yarnpkg.com/@antongolub/git-root/-/git-root-1.5.6.tgz#7aa11140fe6b0dd583ace3724ef3e4619984d036"
@@ -1937,6 +1932,11 @@
     detect-indent "^6.0.0"
     glob "^7.1.6"
     mkdirp "^1.0.4"
+
+"@qiwi/esm@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/esm/-/esm-1.0.0.tgz#4c66b74e2a4953ea852b61ead240cca3dd6f9e59"
+  integrity sha512-XSCLSKW/g6Ztkbh90KJ5yWsFlwQiMP4yFF9RHrIONJymAkxxNqV81r3nnjFnBVPICWLY12qBd2O8ytVZeXwN7A==
 
 "@qiwi/libdefkit@^3.0.0":
   version "3.0.0"

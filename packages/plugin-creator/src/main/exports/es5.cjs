@@ -1,15 +1,15 @@
-require = require('@antongolub/esm')(module, {
+require = require('@qiwi/esm')(module, {
   mode: 'all',
   cjs: {
-    "cache":false,
-    "esModule":true,
-    "extensions":true,
-    "namedExports":true
+    cache:false,
+    esModule:true,
+    extensions:true,
+    namedExports:true
   },
   force: false,
   cache: false,
   await: false,
-  "sourceMap": false,
+  sourceMap: false,
 })
 
 module.exports = require('../es5')
