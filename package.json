@@ -38,6 +38,6 @@
   "resolutions": {
     "*/**/path-parse": "^1.0.7",
     "*/**/find-up": "^5.0.0",
-    "*/**/normalize-url": "^7.0.0"
+    "*/**/normalize-url": "^6.1.0"
   }
 }
