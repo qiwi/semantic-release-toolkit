@@ -1,3 +1,15 @@
+## @qiwi/semrel-toolkit [2.0.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.4...@qiwi/semrel-toolkit@2.0.5) (2021-08-25)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.10
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.4.10
+* **@qiwi/semrel-preset:** upgraded to 1.3.2
+
 ## @qiwi/semrel-toolkit [2.0.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.3...@qiwi/semrel-toolkit@2.0.4) (2021-07-08)
 
 
