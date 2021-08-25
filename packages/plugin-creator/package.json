@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-plugin-creator",
-  "version": "1.7.7",
+  "version": "1.7.8",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -53,8 +53,8 @@
     "debug": "^4.3.2"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "1.1.4",
-    "@qiwi/semrel-testing-suite": "1.4.6",
+    "@qiwi/semrel-infra": "1.1.5",
+    "@qiwi/semrel-testing-suite": "1.4.7",
     "semantic-release": "^17.4.6",
     "resolve-from": "^5.0.0",
     "@types/execa": "^2.0.0"
