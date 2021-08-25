@@ -1,3 +1,5 @@
+## @qiwi/semrel-infra [1.1.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.1.4...@qiwi/semrel-infra@1.1.5) (2021-08-25)
+
 ## @qiwi/semrel-infra [1.1.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.1.3...@qiwi/semrel-infra@1.1.4) (2021-07-07)
 
 
