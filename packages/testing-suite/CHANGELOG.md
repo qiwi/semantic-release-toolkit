@@ -1,3 +1,14 @@
+## @qiwi/semrel-testing-suite [1.4.7](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.4.6...@qiwi/semrel-testing-suite@1.4.7) (2021-08-25)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 1.4.6
+* **@qiwi/semrel-infra:** upgraded to 1.1.5
+
 ## @qiwi/semrel-testing-suite [1.4.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@1.4.5...@qiwi/semrel-testing-suite@1.4.6) (2021-07-07)
 
 
