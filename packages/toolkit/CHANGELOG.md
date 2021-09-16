@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [2.0.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.5...@qiwi/semrel-toolkit@2.0.6) (2021-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @qiwi/multi-semantic-release to ~3.16.0 ([7f44326](https://github.com/qiwi/semantic-release-toolkit/commit/7f44326ca61771e58ff1044660a9dc83b20c7712))
+
 ## @qiwi/semrel-toolkit [2.0.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.4...@qiwi/semrel-toolkit@2.0.5) (2021-08-25)
 
 
