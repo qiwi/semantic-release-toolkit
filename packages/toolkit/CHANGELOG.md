@@ -1,3 +1,25 @@
+# @qiwi/semrel-toolkit [3.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.6...@qiwi/semrel-toolkit@3.0.0) (2021-09-27)
+
+
+### Performance Improvements
+
+* update deps ([17a7685](https://github.com/qiwi/semantic-release-toolkit/commit/17a76851ee9e64af7c63d89fbad188df8b70bcd2))
+
+
+### BREAKING CHANGES
+
+* require semrel >=18, require Node.js >= 14.17
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.11
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.4.11
+* **@qiwi/semrel-preset:** upgraded to 2.0.0
+
 ## @qiwi/semrel-toolkit [2.0.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.5...@qiwi/semrel-toolkit@2.0.6) (2021-09-16)
 
 
