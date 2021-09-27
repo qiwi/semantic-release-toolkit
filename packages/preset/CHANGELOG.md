@@ -1,3 +1,23 @@
+# @qiwi/semrel-preset [2.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.3.2...@qiwi/semrel-preset@2.0.0) (2021-09-27)
+
+
+### Performance Improvements
+
+* update deps ([17a7685](https://github.com/qiwi/semantic-release-toolkit/commit/17a76851ee9e64af7c63d89fbad188df8b70bcd2))
+
+
+### BREAKING CHANGES
+
+* require semrel >=18, require Node.js >= 14.17
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-metabranch:** upgraded to 2.0.0
+
 ## @qiwi/semrel-preset [1.3.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@1.3.1...@qiwi/semrel-preset@1.3.2) (2021-08-25)
 
 
