@@ -46,16 +46,16 @@
   "dependencies": {
     "@qiwi/esm": "^1.0.0",
     "tslib": "^2.3.1",
-    "@types/semantic-release": "^17.2.1",
-    "@types/node": "^16.7.1",
-    "@types/lodash-es": "^4.17.4",
+    "@types/semantic-release": "^17.2.2",
+    "@types/node": "^16.10.1",
+    "@types/lodash-es": "^4.17.5",
     "lodash-es": "^4.17.21",
     "debug": "^4.3.2"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "1.1.5",
     "@qiwi/semrel-testing-suite": "1.4.7",
-    "semantic-release": "^17.4.6",
+    "semantic-release": "^18.0.0",
     "resolve-from": "^5.0.0",
     "@types/execa": "^2.0.0"
   },
