@@ -11,7 +11,7 @@ export interface IGitCommon extends ISyncSensitive {
 
 export type TGitResult<
   S extends boolean | undefined,
-  V extends any = string
+  V = string
 > = SyncGuard<V, S>
 
 export interface TGitExecContext extends IGitCommon {
