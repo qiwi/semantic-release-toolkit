@@ -1,3 +1,10 @@
+# @qiwi/semrel-infra [2.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@2.0.0...@qiwi/semrel-infra@2.1.0) (2021-10-28)
+
+
+### Features
+
+* **preset:** update semrel-gh-pages plugin ([b78f0c6](https://github.com/qiwi/semantic-release-toolkit/commit/b78f0c6365563dbb5f95b342bd045be576dc51b7))
+
 # @qiwi/semrel-infra [2.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@1.1.5...@qiwi/semrel-infra@2.0.0) (2021-09-27)
 
 
