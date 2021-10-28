@@ -1,3 +1,24 @@
+# @qiwi/semrel-plugin-creator [2.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.0.0...@qiwi/semrel-plugin-creator@2.1.0) (2021-10-28)
+
+
+### Bug Fixes
+
+* fix build:ts script ([28e22bc](https://github.com/qiwi/semantic-release-toolkit/commit/28e22bc79449f51cbb5eedd09f5d91614b0caaeb))
+
+
+### Features
+
+* **preset:** update semrel-gh-pages plugin ([b78f0c6](https://github.com/qiwi/semantic-release-toolkit/commit/b78f0c6365563dbb5f95b342bd045be576dc51b7))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 2.1.0
+* **@qiwi/semrel-testing-suite:** upgraded to 2.1.0
+
 # @qiwi/semrel-plugin-creator [2.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@1.7.8...@qiwi/semrel-plugin-creator@2.0.0) (2021-09-27)
 
 
