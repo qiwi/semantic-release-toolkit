@@ -24,18 +24,20 @@
     "coveralls:push": "cat ./coverage/lcov.info | coveralls || echo 'coveralls push failed :(' && exit 0",
     "uglify": "lerna run uglify --stream --parallel",
     "release": "DEBUG='semantic-release:metabranch' multi-semantic-release",
-    "postupdate": "yarn && yarn bootstrap && yarn test:depauditfix && yarn clean && yarn build && yarn test"
+    "postupdate": "yarn clean && yarn && yarn bootstrap && yarn test:depauditfix && yarn build && yarn test"
   },
   "devDependencies": {
     "coveralls": "^3.1.1",
     "find-git-root": "^1.0.4",
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "ts-jest": "^27.0.7"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
   },
   "resolutions": {
+    "*/**/ansi-regex": "^5.0.1",
     "*/**/path-parse": "^1.0.7",
     "*/**/find-up": "^5.0.0",
     "*/**/normalize-url": "^6.1.0"

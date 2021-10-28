@@ -21,7 +21,7 @@ export const exec = <C extends ICallable[]>(
 ): ReturnType<C[Prev<GetLength<C>>]> =>
   callbacks.reduce((prev, cb) => effect(prev, cb), {} as any) // as SyncGuard<ReturnType<C[Prev<GetLength<C>>]>, S>
 
-export const effect = <V extends any, C extends ICallable>(
+export const effect = <V, C extends ICallable>(
   value: V,
   cb: C,
 ): ReturnType<C> =>
