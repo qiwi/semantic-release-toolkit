@@ -1,3 +1,19 @@
+## @qiwi/semrel-actions [1.0.17](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.16...@qiwi/semrel-actions@1.0.17) (2021-10-28)
+
+
+### Bug Fixes
+
+* fix build:ts script ([28e22bc](https://github.com/qiwi/semantic-release-toolkit/commit/28e22bc79449f51cbb5eedd09f5d91614b0caaeb))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 2.1.0
+* **@qiwi/semrel-infra:** upgraded to 2.1.0
+
 ## @qiwi/semrel-actions [1.0.16](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.15...@qiwi/semrel-actions@1.0.16) (2021-09-27)
 
 
