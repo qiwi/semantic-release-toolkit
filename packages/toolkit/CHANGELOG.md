@@ -1,3 +1,20 @@
+# @qiwi/semrel-toolkit [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.0.0...@qiwi/semrel-toolkit@3.1.0) (2021-10-28)
+
+
+### Features
+
+* **preset:** update semrel-gh-pages plugin ([b78f0c6](https://github.com/qiwi/semantic-release-toolkit/commit/b78f0c6365563dbb5f95b342bd045be576dc51b7))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.12
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.4.12
+* **@qiwi/semrel-preset:** upgraded to 2.1.0
+
 # @qiwi/semrel-toolkit [3.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@2.0.6...@qiwi/semrel-toolkit@3.0.0) (2021-09-27)
 
 
