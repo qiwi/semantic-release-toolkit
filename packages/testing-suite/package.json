@@ -47,7 +47,7 @@
     "@qiwi/substrate": "^1.20.10"
   },
   "devDependencies": {
-    "@types/node": "^16.10.1",
+    "@types/node": "^16.11.6",
     "@qiwi/semrel-infra": "2.0.0"
   },
   "peerDependencies": {},

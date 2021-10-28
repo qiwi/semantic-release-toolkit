@@ -40,7 +40,7 @@
   "dependencies": {
     "@types/execa": "^2.0.0",
     "@types/semantic-release": "^17.2.2",
-    "@types/node": "^16.10.1",
+    "@types/node": "^16.11.6",
     "@qiwi/semrel-common": "2.0.0",
     "@qiwi/semrel-plugin-creator": "2.0.0",
     "tslib": "^2.3.1",
