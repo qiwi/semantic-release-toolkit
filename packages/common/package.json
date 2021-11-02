@@ -36,7 +36,7 @@
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
     "build:ts": "cpy ./ ../../../target/ts/ --parents --dot --cwd=./src/main/ts/",
-    "build:libdef": "libdefkit --tsconfig=tsconfig.esnext.json --tsconfig=tsconfig.es6.json",
+    "build:libdef": "libdefkit --tsconfig=tsconfig.esnext.json --tsconfig=tsconfig.es6.json --entry=@qiwi/semrel-common/target/es6",
     "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --dirnameVar=false --ext=.mjs",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
