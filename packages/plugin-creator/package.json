@@ -13,9 +13,9 @@
   },
   "main": "target/es6",
   "source": "target/ts/index.ts",
-  "types": "target/es5/index.d.ts",
+  "types": "typings/index.d.ts",
   "typescript": {
-    "definition": "target/es5/index.d.ts"
+    "definition": "typings/index.d.ts"
   },
   "keywords": [],
   "files": [
@@ -33,12 +33,14 @@
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
     "test:unit": "jest --config=jest.config.js --runInBand",
     "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/esm,@qiwi/semrel-plugin-creator --ignore-patterns typings,flow-typed/*",
-    "build": "npm-run-all -p -l build:es5 build:es6 build:exports build:ts build:libdef docs",
+    "build": "npm-run-all -p -l build:es5 build:es6 build:exports build:ts build:esnext build:libdef docs && yarn build:esmfix",
+    "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
     "build:ts": "cpy ./ ../../../target/ts/ --parents --dot --cwd=./src/main/ts/",
+    "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --dirnameVar=false --ext=.mjs",
     "build:exports": "cpy src/main/exports/ target/exports/",
-    "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
+    "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json --tsconfig=tsconfig.esnext.json",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
     "postupdate": "yarn && yarn build && yarn test"

@@ -12,4 +12,4 @@ require = require('@qiwi/esm')(module, {
   sourceMap: false,
 })
 
-module.exports = require('../es5')
+module.exports = require('../es5/index.js')

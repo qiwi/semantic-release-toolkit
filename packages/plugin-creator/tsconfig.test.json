@@ -1,5 +1,12 @@
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "esModuleInterop": false
+  },
   "include": [
     "src/**/*"
   ],

@@ -13,13 +13,13 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
 
-    "moduleResolution": "node",
+    "target": "es6",
     "module": "es6",
+    "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es6",
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
