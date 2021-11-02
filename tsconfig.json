@@ -3,6 +3,7 @@
     "outDir": "temp/prebuild",
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
+    "importHelpers": true,
     "declaration": true
   },
   "references": [

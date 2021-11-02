@@ -1,8 +1,19 @@
-import { ICallable } from '@qiwi/substrate'
-import execa from 'execa'
-import tempy from 'tempy'
+// https://github.com/facebook/jest/pull/11818/files#diff-7a98537bdfc98f8a0321f1e556bc226e1eb013e30c266962a788c77df4289a61R181
+const fakeExec = (..._args: any[]) => ({ stdout: 'output' }) // eslint-disable-line
+const execaAsync = jest.fn(() => Promise.resolve(fakeExec()))
+const execaSync = jest.fn(fakeExec)
+// @ts-ignore
+execaAsync.sync = execaSync
+jest.unstable_mockModule('execa', () => ({
+  __esModule: true,
+  default: execaAsync
+}))
 
-import {
+import { ICallable } from '@qiwi/substrate'
+import tempy from 'tempy'
+import { jest } from '@jest/globals'
+
+const {
   gitAdd,
   gitAddAll,
   gitBranch,
@@ -27,25 +38,10 @@ import {
   gitShowCommitted,
   gitStatus,
   gitTag,
-} from '../../../main/ts'
-
-jest.mock('execa')
+} = await import('../../../main/ts')
 
 describe('git-utils', () => {
-  const fakeExec = (..._args: any[]) => ({ stdout: 'output' }) // eslint-disable-line
-  const execaAsync = jest.fn(fakeExec)
-  const execaSync = jest.fn(fakeExec)
-
-  beforeAll(() => {
-    // @ts-ignore
-    execa.mockImplementation(async (...args: any[]) => execaAsync(...args))
-
-    // @ts-ignore
-    execa.sync.mockImplementation(execaSync)
-  })
-
   afterAll(jest.restoreAllMocks)
-
   afterEach(jest.clearAllMocks)
 
   const cwd = tempy.directory()

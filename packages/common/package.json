@@ -7,11 +7,15 @@
   },
   "description": "Semrel common utils",
   "keywords": [],
-  "main": "target/es5/index.js",
+  "type": "module",
+  "module": "./target/es6/index.mjs",
+  "exports": {
+    "import": "./target/es6/index.mjs"
+  },
   "source": "target/ts/index.ts",
-  "types": "target/es5/index.d.ts",
+  "types": "target/es6/index.d.ts",
   "typescript": {
-    "definition": "target/es5/index.d.ts"
+    "definition": "target/es6/index.d.ts"
   },
   "files": [
     "README.md",
@@ -26,13 +30,14 @@
     "lint:fix": "yarn lint --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
-    "test:unit": "jest --runInBand",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand",
     "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,semantic-release --ignore-patterns typings,flow-typed/*",
-    "build": "npm-run-all -p -l build:es5 build:es6 build:ts build:libdef docs",
-    "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
+    "build": "npm-run-all -p -l build:esnext build:es6 build:ts build:libdef docs && yarn build:esmfix",
+    "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
     "build:ts": "cpy ./ ../../../target/ts/ --parents --dot --cwd=./src/main/ts/",
-    "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
+    "build:libdef": "libdefkit --tsconfig=tsconfig.esnext.json --tsconfig=tsconfig.es6.json",
+    "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --dirnameVar=false --ext=.mjs",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
     "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
@@ -42,15 +47,15 @@
     "debug": "^4.3.2",
     "tslib": "^2.3.1",
     "@types/node": "^16.11.6",
-    "tempy": "^1.0.1",
+    "tempy": "^2.0.0",
     "execa": "^5.1.1",
     "nanoid": "^3.1.30",
     "minimist": "^1.2.5",
     "@types/semantic-release": "^17.2.2",
     "@antongolub/git-root": "^1.5.6",
     "@qiwi/substrate": "^1.20.10",
-    "file-url": "^3.0.0",
-    "lodash": "^4.17.21"
+    "file-url": "^4.0.0",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "fs-extra": "^10.0.0",

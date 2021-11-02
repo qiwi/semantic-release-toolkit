@@ -1,4 +1,5 @@
 import { tpl } from '../../../main/ts'
+import { jest } from '@jest/globals'
 
 describe('tpl', () => {
   const error = jest.fn((...vars: any[]) => { console.log(vars) })
