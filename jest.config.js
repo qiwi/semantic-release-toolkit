@@ -17,11 +17,13 @@ module.exports = {
   testFailureExitCode: 1,
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.jsx?$': '@swissquote/crafty-preset-jest/src/esm-transformer'
   },
-  transformIgnorePatterns: [
-    '<rootDir>/../../node_modules/(?!read-pkg-up8/.*)',
-    '<rootDir>/node_modules/(?!read-pkg-up8/.*)'
-  ],
+  extensionsToTreatAsEsm: ['.ts', '.esm', '.esm.js'],
+  globals: {
+    'ts-jest': {
+      useESM: true,
+      tsconfig: '<rootDir>/tsconfig.test.json',
+    },
+  },
   projects: projects.map(name => `<rootDir>/packages/${name}/jest.config.js`),
 }

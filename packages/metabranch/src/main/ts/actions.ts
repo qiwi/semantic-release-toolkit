@@ -13,7 +13,7 @@ import {
 } from '@qiwi/semrel-common'
 import { Debugger } from '@qiwi/semrel-plugin-creator'
 import fs from 'fs-extra'
-import globby from 'globby'
+import { globby } from 'globby'
 import path from 'path'
 
 import { TActionOptionsNormalized, TActionType, TUserInfo } from './interface'

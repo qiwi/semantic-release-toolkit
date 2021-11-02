@@ -1,5 +1,5 @@
 import { IAnyMap } from '@qiwi/substrate'
-import { template as compile } from 'lodash'
+import { template as compile } from 'lodash-es'
 import { Context } from 'semantic-release'
 
 export const tpl = (template: string, context: IAnyMap, logger: Context['logger']): string => {

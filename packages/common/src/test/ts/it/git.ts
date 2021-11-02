@@ -11,7 +11,11 @@ import {
   gitRoot,
   gitSetUser,
 } from '../../../main/ts'
+import { dirname } from 'node:path'
+import { fileURLToPath } from 'url'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const root = path.resolve(__dirname, '../../../../../../')
 
 describe('git-utils', () => {
