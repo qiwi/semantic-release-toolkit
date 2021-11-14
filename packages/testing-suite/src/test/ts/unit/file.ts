@@ -1,9 +1,12 @@
-import { readFileSync } from 'fs'
-import { resolve } from 'path'
+import { readFileSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import tempy from 'tempy'
 
 import { cleanPath, createTestingFiles, isDirectory } from '../../../main/ts'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fixtures = resolve(__dirname, '../../fixtures')
 
 describe('cleanPath()', () => {

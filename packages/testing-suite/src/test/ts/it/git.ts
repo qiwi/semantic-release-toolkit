@@ -1,5 +1,6 @@
 import execa from 'execa'
-import { resolve } from 'path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import {
   copyDirectory,
@@ -14,6 +15,8 @@ import {
   gitTag,
 } from '../../../main/ts'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fixtures = resolve(__dirname, '../../fixtures')
 
 describe('gitInitOrigin()', () => {

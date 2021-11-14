@@ -9,13 +9,11 @@
   "keywords": [],
   "type": "module",
   "module": "./target/es6/index.mjs",
-  "exports": {
-    "import": "./target/es6/index.mjs"
-  },
+  "exports": "./target/es6/index.mjs",
   "source": "target/ts/index.ts",
-  "types": "target/es6/index.d.ts",
+  "types": "typings/index.d.ts",
   "typescript": {
-    "definition": "target/es6/index.d.ts"
+    "definition": "typings/index.d.ts"
   },
   "files": [
     "README.md",
@@ -37,10 +35,9 @@
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
     "build:ts": "cpy ./ ../../../target/ts/ --parents --dot --cwd=./src/main/ts/",
     "build:libdef": "libdefkit --tsconfig=tsconfig.esnext.json --tsconfig=tsconfig.es6.json --entry=@qiwi/semrel-common/target/es6",
-    "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --dirnameVar=false --ext=.mjs",
+    "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --ext=.mjs",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",
-    "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {

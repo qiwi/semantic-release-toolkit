@@ -1,7 +1,7 @@
-import { foo } from '../../../main/ts'
+import { gitClone } from '../../../main/ts'
 
 describe('export', () => {
-  it('`foo` defined', () => {
-    expect(foo).toBe('bar')
+  it('`gitClone` is defined', () => {
+    expect(gitClone).toEqual(expect.any(Function))
   })
 })

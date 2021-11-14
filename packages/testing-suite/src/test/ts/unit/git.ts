@@ -1,5 +1,6 @@
 import execa from 'execa'
-import { resolve } from 'path'
+import { resolve, dirname } from 'node:path'
+import {fileURLToPath} from 'node:url'
 
 import {
   gitClone,
@@ -8,6 +9,8 @@ import {
   gitPushFakeCommits,
 } from '../../../main/ts'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fixtures = resolve(__dirname, '../../fixtures')
 const sync = true
 

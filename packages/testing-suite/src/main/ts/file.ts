@@ -1,8 +1,10 @@
-import { existsSync, lstatSync, writeFileSync } from 'fs'
-import { ensureFileSync } from 'fs-extra'
-import { isAbsolute, join, normalize } from 'path'
+import fse from 'fs-extra'
+import { existsSync, lstatSync, writeFileSync } from 'node:fs'
+import { isAbsolute, join, normalize } from 'node:path'
 
-export { copySync as copyDirectory } from 'fs-extra'
+const { ensureFileSync, copySync: copyDirectory } = fse
+
+export { copyDirectory }
 
 // Is given path a directory?
 export const isDirectory = (path: string): boolean => {
