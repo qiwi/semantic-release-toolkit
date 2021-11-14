@@ -6,14 +6,17 @@
     "access": "public"
   },
   "description": "Semrel plugin creator",
-  "type": "module",
   "exports": {
-    "import": "./target/exports/es6.mjs",
-    "require": "./target/exports/es5.cjs"
+    ".": {
+      "module": "./target/exports/es6.mjs",
+      "import": "./target/exports/es6.mjs",
+      "require": "./target/exports/es5.cjs"
+    }
   },
-  "main": "target/es6",
-  "source": "target/ts/index.ts",
-  "types": "typings/index.d.ts",
+  "_main": "./target/exports/es5.cjs",
+  "module": "./target/exports/es6.mjs",
+  "source": "./target/ts/index.ts",
+  "types": "./typings/index.d.ts",
   "typescript": {
     "definition": "typings/index.d.ts"
   },
@@ -31,8 +34,8 @@
     "lint:fix": "yarn lint --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
-    "test:unit": "jest --config=jest.config.js --runInBand",
-    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/esm,@qiwi/semrel-plugin-creator --ignore-patterns typings,flow-typed/*",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.mjs --runInBand",
+    "test:depcheck": "depcheck --ignores @jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/esm,@qiwi/semrel-plugin-creator --ignore-patterns typings,flow-typed/*",
     "build": "npm-run-all -p -l build:es5 build:es6 build:exports build:ts build:esnext build:libdef docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",

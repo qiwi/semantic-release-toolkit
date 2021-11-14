@@ -1,13 +1,17 @@
+import { jest } from '@jest/globals'
 import {
   cleanPath,
   gitCreateFakeRepo,
 } from '@qiwi/semrel-testing-suite'
-import { resolve } from 'path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
 import semanticRelease from 'semantic-release'
 
 import { createPlugin } from '../../main/ts'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fixtures = resolve(__dirname, '../fixtures')
 
 describe('integration', () => {

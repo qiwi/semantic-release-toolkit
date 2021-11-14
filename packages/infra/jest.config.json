@@ -11,8 +11,8 @@
   ],
   "testMatch": [
     "<rootDir>/src/test/js/**/*.js",
-    "<rootDir>/src/test/cjs/**/*.js",
-    "<rootDir>/src/test/mjs/**/*.js",
+    "<rootDir>/src/test/cjs/**/*.(c)?js",
+    "<rootDir>/src/test/mjs/**/*.(m)?js",
     "<rootDir>/src/test/ts/**/*.ts"
   ],
   "testPathIgnorePatterns": [
