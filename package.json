@@ -24,6 +24,7 @@
     "coveralls:push": "cat ./coverage/lcov.info | coveralls || echo 'coveralls push failed :(' && exit 0",
     "uglify": "lerna run uglify --stream --parallel",
     "release": "DEBUG='semantic-release:metabranch' multi-semantic-release",
+    "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
     "postupdate": "yarn clean && yarn && yarn bootstrap && yarn test:depauditfix && yarn build && yarn test"
   },
   "devDependencies": {

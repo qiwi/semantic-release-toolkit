@@ -3,9 +3,9 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "importHelpers": false,
-    "noEmitHelpers": false,
-    "esModuleInterop": false
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*"
