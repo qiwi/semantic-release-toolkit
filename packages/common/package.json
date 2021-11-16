@@ -29,7 +29,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
     "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand",
-    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,semantic-release --ignore-patterns typings,flow-typed/*",
+    "test:depcheck": "depcheck --ignores @jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,semantic-release --ignore-patterns typings,flow-typed/*",
     "build": "npm-run-all -p -l build:esnext build:es6 build:ts build:libdef docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",

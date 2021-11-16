@@ -25,5 +25,5 @@ module.exports = {
       tsconfig: '<rootDir>/tsconfig.test.json',
     },
   },
-  projects: projects.map(name => `<rootDir>/packages/${name}/jest.config.js`),
+  projects: projects.map(name => `<rootDir>/packages/${name}/`),
 }

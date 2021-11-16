@@ -19,7 +19,7 @@
     "/node_modules/"
   ],
   "moduleNameMapper": {
-    "tslib": "<rootDir>/../infra/tslib.js"
+    "_tslib": "<rootDir>/../infra/tslib.js"
   },
   "moduleFileExtensions": [
     "ts",

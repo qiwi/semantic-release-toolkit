@@ -1,6 +1,8 @@
 import fs from 'fs-extra'
+import { dirname } from 'node:path'
 import path from 'path'
 import tempy from 'tempy'
+import { fileURLToPath } from 'url'
 
 import {
   gitCheckout,
@@ -11,8 +13,6 @@ import {
   gitRoot,
   gitSetUser,
 } from '../../../main/ts'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)

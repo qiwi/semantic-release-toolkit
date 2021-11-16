@@ -24,6 +24,7 @@ const {
   __classPrivateFieldGet,
   __classPrivateFieldSet,
 } = require('tslib/tslib.js');
+
 module.exports = {
   __extends,
   __assign,
