@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "references": [
+    { "path": "./packages/common/tsconfig.esnext.json" },
+    { "path": "./packages/plugin-creator/tsconfig.esnext.json" },
+    { "path": "./packages/plugin-actions/tsconfig.es6.json" },
+    { "path": "./packages/metabranch/tsconfig.esnext.json" },
+    { "path": "./packages/testing-suite/tsconfig.esnext.json" },
+  ]
+}
