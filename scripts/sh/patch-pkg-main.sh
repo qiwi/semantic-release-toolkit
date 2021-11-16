@@ -4,10 +4,10 @@ if [ $# -eq 1 ]; then
   for p in $packages;
   do jq 'if (.main) then ._main = .main | del(.main) else . end' $p | sponge $p;
   done;
-  echo "package.json main disabled";
+  echo "package.json main disabled: https://github.com/facebook/jest/pull/11961";
 else
   for p in $packages;
   do jq 'if (._main) then .main = ._main | del(._main) else . end' $p | sponge $p;
   done;
-  echo "package.json main restored";
+  echo "package.json main restored: https://github.com/facebook/jest/pull/11961";
 fi
