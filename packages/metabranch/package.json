@@ -17,7 +17,6 @@
   "module": "./target/exports/es6.mjs",
   "source": "./target/ts/index.ts",
   "types": "./target/es6/index.d.ts",
-
   "files": [
     "README.md",
     "CHANGELOG.md",
