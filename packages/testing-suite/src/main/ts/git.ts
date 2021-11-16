@@ -164,7 +164,7 @@ export const gitCreateFakeRepo = <T extends IGitFakeRepo>({
     () => gitConfigAdd({ cwd, sync, key: 'commit.gpgsign', value: false }),
     () => gitSetUser({ sync, cwd, name: 'Foo Bar', email: 'foo@bar.com' }),
     () => gitInitRemote({ sync }),
-    (url) => {
+    (url: string) => {
       res.url = url
     },
     () => gitRemoteAdd({ sync, cwd, url: res.url }),
@@ -186,7 +186,7 @@ export const gitClone = <T extends IGitClone>({
 }: T): TGitResult<T['sync']> =>
   exec(
     () => gitRoot(cwd, sync),
-    (parentGitDir) => {
+    (parentGitDir: string) => {
       if (parentGitDir) {
         throw new Error(
           `${cwd} belongs to repo ${parentGitDir as string} already`,

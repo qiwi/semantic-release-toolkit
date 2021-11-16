@@ -6,12 +6,8 @@
     "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
   },
   "references": [
-    {
-      "path": "../testing-suite"
-    },
-    {
-      "path": "../plugin-creator"
-    }
+    { "path": "../testing-suite" },
+    { "path": "../plugin-creator" }
   ],
   "include": [
     "src/main/**/*"

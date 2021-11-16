@@ -16,10 +16,8 @@
   },
   "module": "./target/exports/es6.mjs",
   "source": "./target/ts/index.ts",
-  "types": "./typings/index.d.ts",
-  "typescript": {
-    "definition": "typings/index.d.ts"
-  },
+  "types": "./target/es6/index.d.ts",
+
   "files": [
     "README.md",
     "CHANGELOG.md",
@@ -49,8 +47,8 @@
   },
   "dependencies": {
     "@types/execa": "^2.0.0",
-    "@types/semantic-release": "^17.2.2",
-    "@types/node": "^16.11.6",
+    "@types/semantic-release": "^17.2.3",
+    "@types/node": "^16.11.7",
     "@qiwi/semrel-common": "2.1.0",
     "@qiwi/semrel-plugin-creator": "2.1.0",
     "tslib": "^2.3.1",
@@ -79,5 +77,5 @@
   },
   "homepage": "https://github.com/qiwi/semantic-release-toolkit/#readme",
   "prettier": "prettier-config-qiwi",
-  "_main": "./target/exports/es5.cjs"
+  "main": "./target/exports/es5.cjs"
 }

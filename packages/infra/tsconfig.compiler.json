@@ -13,8 +13,8 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
 
-    "target": "es6",
-    "module": "es6",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,

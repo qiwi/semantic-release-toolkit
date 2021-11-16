@@ -3,8 +3,7 @@
   "compilerOptions": {
     "rootDir": "./src/main/ts/",
     "baseUrl": "./src/main/ts/",
-    "outDir": "target/es6",
-    "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
+    "tsBuildInfoFile": "./buildcache/.tsbuildinfo",
   },
   "references": [],
   "include": [

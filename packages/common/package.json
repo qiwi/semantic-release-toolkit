@@ -11,10 +11,7 @@
   "module": "./target/es6/index.mjs",
   "exports": "./target/es6/index.mjs",
   "source": "target/ts/index.ts",
-  "types": "typings/index.d.ts",
-  "typescript": {
-    "definition": "typings/index.d.ts"
-  },
+  "types": "./target/es6/index.d.ts",
   "files": [
     "README.md",
     "CHANGELOG.md",
@@ -43,14 +40,14 @@
   "dependencies": {
     "debug": "^4.3.2",
     "tslib": "^2.3.1",
-    "@types/node": "^16.11.6",
+    "@types/node": "^16.11.7",
     "tempy": "^2.0.0",
     "execa": "^5.1.1",
     "nanoid": "^3.1.30",
     "minimist": "^1.2.5",
-    "@types/semantic-release": "^17.2.2",
+    "@types/semantic-release": "^17.2.3",
     "@antongolub/git-root": "^1.5.6",
-    "@qiwi/substrate": "^1.20.10",
+    "@qiwi/substrate": "^1.20.11",
     "file-url": "^4.0.0",
     "lodash-es": "^4.17.21"
   },

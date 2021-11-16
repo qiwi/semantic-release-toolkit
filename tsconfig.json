@@ -3,15 +3,20 @@
     "outDir": "temp/prebuild",
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
-    "importHelpers": true,
-    "noEmitHelpers": false,
-    "declaration": true
+    "importHelpers": false,
+    "noEmitHelpers": true,
+    "declaration": true,
+    "module": "ESNext",
+    "moduleResolution": "Node"
   },
+  "include": [
+    "./packages/*/src/main/**/*"
+  ],
   "references": [
-    { "path": "./packages/common/tsconfig.es5.json" },
-    { "path": "./packages/plugin-creator/tsconfig.es5.json" },
-    { "path": "./packages/plugin-actions/tsconfig.es5.json" },
-    { "path": "./packages/metabranch/tsconfig.es5.json" },
-    { "path": "./packages/testing-suite/tsconfig.es5.json" },
+    { "path": "./packages/common/tsconfig.es6.json" },
+    { "path": "./packages/plugin-creator/tsconfig.es6.json" },
+    { "path": "./packages/plugin-actions/tsconfig.es6.json" },
+    { "path": "./packages/metabranch/tsconfig.es6.json" },
+    { "path": "./packages/testing-suite/tsconfig.es6.json" },
   ]
 }
