@@ -1,4 +1,4 @@
-import config from '../../main/js'
+const config = require('../../main/js')
 
 describe('@qiwi/semrel-config-monorepo', () => {
   it('is not empty', () => {
