@@ -3,10 +3,7 @@
   "compilerOptions": {
     "rootDir": "./src/main/ts/",
     "baseUrl": "./src/main/ts/",
-    "target": "es5",
-    "outDir": "target/es5",
-    "tsBuildInfoFile": "./buildcache/.tsbuildinfo",
-    "esModuleInterop": true
+    "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
   },
   "references": [
     {

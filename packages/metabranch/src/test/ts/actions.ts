@@ -1,12 +1,15 @@
 import { Debugger } from '@qiwi/semrel-plugin-creator'
 import { gitCreateFakeRepo } from '@qiwi/semrel-testing-suite'
 import execa from 'execa'
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path, { dirname} from 'node:path'
+import { fileURLToPath } from 'node:url'
 import tempy from 'tempy'
 
 import { perform, push, TActionOptionsNormalized } from '../../main/ts'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fixtures = path.resolve(__dirname, '../fixtures')
 
 describe('actions', () => {
