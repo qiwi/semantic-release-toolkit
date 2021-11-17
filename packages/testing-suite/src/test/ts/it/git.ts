@@ -1,4 +1,4 @@
-import execa from 'execa'
+import { execaSync } from 'execa'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -34,7 +34,7 @@ describe('gitInitOrigin()', () => {
     expect(url).toEqual(expect.any(String))
     expect(commitId).toEqual(expect.any(String))
     expect(
-      execa.sync('git', ['remote', 'show', 'origin'], { cwd }).stdout,
+      execaSync('git', ['remote', 'show', 'origin'], { cwd }).stdout,
     ).toMatch(/Remote branch:\n\s+release\s+tracked/)
     // ).toMatch(/master\s+tracked\n\s+release\s+tracked/)
   })

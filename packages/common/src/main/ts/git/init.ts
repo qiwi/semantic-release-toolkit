@@ -109,15 +109,15 @@ export const gitInitOrigin = <T extends IGitInitOrigin>({
   const url = gitInitRemote()
 
   // Set origin on local repo.
-  execa.sync('git', ['remote', 'add', 'origin', url], { cwd })
+  execaSync('git', ['remote', 'add', 'origin', url], { cwd })
 
   // Set up a release branch. Return to master afterwards.
   if (releaseBranch) {
-    execa.sync('git', ['checkout', '-b', releaseBranch], { cwd })
-    execa.sync('git', ['checkout', 'master'], { cwd })
+    execaSync('git', ['checkout', '-b', releaseBranch], { cwd })
+    execaSync('git', ['checkout', 'master'], { cwd })
   }
 
-  execa.sync('git', ['push', '--all', 'origin'], { cwd })
+  execaSync('git', ['push', '--all', 'origin'], { cwd })
 
   // Return URL for remote.
   return url
