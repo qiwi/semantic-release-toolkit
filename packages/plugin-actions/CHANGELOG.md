@@ -1,3 +1,19 @@
+## @qiwi/semrel-actions [1.0.18](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.17...@qiwi/semrel-actions@1.0.18) (2021-11-17)
+
+
+### Bug Fixes
+
+* up deps to fix internal esm-cjs interop ([830ac9d](https://github.com/qiwi/semantic-release-toolkit/commit/830ac9dc86c5bad940628c07d2155524a42be71f))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 2.2.0
+* **@qiwi/semrel-infra:** upgraded to 3.0.0
+
 ## @qiwi/semrel-actions [1.0.17](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.0.16...@qiwi/semrel-actions@1.0.17) (2021-10-28)
 
 
