@@ -42,7 +42,7 @@
   "resolutions": {
     "*/**/ansi-regex": "^5.0.1",
     "*/**/path-parse": "^1.0.7",
-    "*/**/find-up": "^5.0.0",
+    "*/**/find-up": "^6.0.0",
     "*/**/normalize-url": "^6.1.0"
   }
 }
