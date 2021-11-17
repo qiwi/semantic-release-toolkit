@@ -1780,10 +1780,10 @@
     pkg-dir "^5.0.0"
     tslib "^2.3.0"
 
-"@qiwi/multi-semantic-release@~3.16.0":
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.16.0.tgz#5c6fa3281eca22fbce31b3a1a11114288980de1f"
-  integrity sha512-Xsr1VOY/uzswHBq0HnU3Q9proAbmeCwEcH6m0e5cWPHG7uqnwhjElOF7ZGGhzxQnKMacwH+CcEztdXJG1sw3uQ==
+"@qiwi/multi-semantic-release@~3.17.0":
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.17.0.tgz#371a60d52440443d083606ee51431c8d84a9c2e4"
+  integrity sha512-TpdjKNghU6BdvjdwCormwWXN7lp2DKLYd+WIoVjTn+mNeZHhd6lLWr0cQI1bd2RR7dQZlZXjwvkt9mu1v9Q5kA==
   dependencies:
     "@manypkg/get-packages" "^1.1.1"
     blork "^9.3.0"
