@@ -1,3 +1,24 @@
+# @qiwi/semrel-plugin-creator [2.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.1.0...@qiwi/semrel-plugin-creator@2.2.0) (2021-11-17)
+
+
+### Bug Fixes
+
+* up deps to fix internal esm-cjs interop ([830ac9d](https://github.com/qiwi/semantic-release-toolkit/commit/830ac9dc86c5bad940628c07d2155524a42be71f))
+
+
+### Features
+
+* add esnext bundle ([d18b30c](https://github.com/qiwi/semantic-release-toolkit/commit/d18b30cff360536b76e403a6a658c2bf75ca5e43))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 3.0.0
+* **@qiwi/semrel-testing-suite:** upgraded to 3.0.0
+
 # @qiwi/semrel-plugin-creator [2.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.0.0...@qiwi/semrel-plugin-creator@2.1.0) (2021-10-28)
 
 
