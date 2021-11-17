@@ -18,9 +18,6 @@
   "testPathIgnorePatterns": [
     "/node_modules/"
   ],
-  "moduleNameMapper": {
-    "_tslib": "<rootDir>/../infra/tslib.js"
-  },
   "moduleFileExtensions": [
     "ts",
     "tsx",
