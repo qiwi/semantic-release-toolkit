@@ -45,7 +45,7 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@qiwi/esm": "^1.0.0",
+    "@qiwi/esm": "^1.1.1",
     "tslib": "^2.3.1",
     "@types/semantic-release": "^17.2.3",
     "@types/node": "^16.11.7",

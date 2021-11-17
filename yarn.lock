@@ -1757,10 +1757,10 @@
     glob "^7.1.6"
     mkdirp "^1.0.4"
 
-"@qiwi/esm@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@qiwi/esm/-/esm-1.0.0.tgz#4c66b74e2a4953ea852b61ead240cca3dd6f9e59"
-  integrity sha512-XSCLSKW/g6Ztkbh90KJ5yWsFlwQiMP4yFF9RHrIONJymAkxxNqV81r3nnjFnBVPICWLY12qBd2O8ytVZeXwN7A==
+"@qiwi/esm@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@qiwi/esm/-/esm-1.1.1.tgz#f78e5536b777dec8a06126b6c649f1184c278b23"
+  integrity sha512-cZDfNUXwhtI80CvKkp5w4TxMXrYatkZ6eJ1RynO9xmr9OpiNVFRMTirbETNL09CbhyhTcBEl2FUO93gos9EeeQ==
 
 "@qiwi/libdefkit@^3.1.1":
   version "3.1.1"
@@ -1780,10 +1780,10 @@
     pkg-dir "^5.0.0"
     tslib "^2.3.0"
 
-"@qiwi/multi-semantic-release@~3.16.0":
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.16.0.tgz#5c6fa3281eca22fbce31b3a1a11114288980de1f"
-  integrity sha512-Xsr1VOY/uzswHBq0HnU3Q9proAbmeCwEcH6m0e5cWPHG7uqnwhjElOF7ZGGhzxQnKMacwH+CcEztdXJG1sw3uQ==
+"@qiwi/multi-semantic-release@~3.17.0":
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/multi-semantic-release/-/multi-semantic-release-3.17.0.tgz#371a60d52440443d083606ee51431c8d84a9c2e4"
+  integrity sha512-TpdjKNghU6BdvjdwCormwWXN7lp2DKLYd+WIoVjTn+mNeZHhd6lLWr0cQI1bd2RR7dQZlZXjwvkt9mu1v9Q5kA==
   dependencies:
     "@manypkg/get-packages" "^1.1.1"
     blork "^9.3.0"
