@@ -1,3 +1,20 @@
+## @qiwi/semrel-toolkit [3.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.1.0...@qiwi/semrel-toolkit@3.1.1) (2021-11-17)
+
+
+### Bug Fixes
+
+* up deps to fix internal esm-cjs interop ([830ac9d](https://github.com/qiwi/semantic-release-toolkit/commit/830ac9dc86c5bad940628c07d2155524a42be71f))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.13
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.4.13
+* **@qiwi/semrel-preset:** upgraded to 3.0.0
+
 # @qiwi/semrel-toolkit [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.0.0...@qiwi/semrel-toolkit@3.1.0) (2021-10-28)
 
 
