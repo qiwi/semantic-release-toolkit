@@ -43,7 +43,7 @@
     "tslib": "^2.3.1",
     "@types/node": "^16.11.7",
     "tempy": "^2.0.0",
-    "execa": "^5.1.1",
+    "execa": "^6.0.0",
     "nanoid": "^3.1.30",
     "minimist": "^1.2.5",
     "@types/semantic-release": "^17.2.3",

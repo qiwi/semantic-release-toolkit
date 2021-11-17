@@ -4,13 +4,13 @@ import { ICallable } from '@qiwi/substrate'
 import tempy from 'tempy'
 
 const fakeExec = (..._args: any[]) => ({ stdout: 'output' }) // eslint-disable-line
-const execaAsync = jest.fn(() => Promise.resolve(fakeExec()))
+const execa = jest.fn(() => Promise.resolve(fakeExec()))
 const execaSync = jest.fn(fakeExec)
-// @ts-ignore
-execaAsync.sync = execaSync
+
 jest.unstable_mockModule('execa', () => ({
   __esModule: true,
-  default: execaAsync
+  execa,
+  execaSync
 }))
 
 const {
@@ -211,7 +211,7 @@ describe('git-utils', () => {
       expect(fn({ ...ctx, sync: true })).toEqual(result)
 
       argsOfArgs.forEach((args) => {
-        expect(execaAsync).toHaveBeenCalledWith(...args)
+        expect(execa).toHaveBeenCalledWith(...args)
         expect(execaSync).toHaveBeenCalledWith(...args)
       })
     })

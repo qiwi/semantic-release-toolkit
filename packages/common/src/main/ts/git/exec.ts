@@ -1,5 +1,5 @@
 import debug, { Debugger } from 'debug'
-import execa from 'execa'
+import { execa, execaSync, SyncOptions } from 'execa'
 import { nanoid } from 'nanoid'
 
 import { ISyncSensitive, SyncGuard } from '../ifaces'
@@ -26,7 +26,7 @@ export const gitExec = <T extends TGitExecContext>(
   const debug = opts.debug || defaultDebug
   const { cwd, args = [], sync } = opts
 
-  const execaArgs: [string, readonly string[], execa.SyncOptions] = [
+  const execaArgs: [string, readonly string[], SyncOptions] = [
     'git',
     args as string[],
     { cwd },
@@ -40,7 +40,7 @@ export const gitExec = <T extends TGitExecContext>(
   log(execaArgs)
 
   if (sync === true) {
-    return (log(execa.sync(...execaArgs).stdout) as unknown) as TGitResult<
+    return (log(execaSync(...execaArgs).stdout) as unknown) as TGitResult<
       T['sync']
     >
   }

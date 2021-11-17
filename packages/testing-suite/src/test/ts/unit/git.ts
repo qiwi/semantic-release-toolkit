@@ -1,4 +1,4 @@
-import execa from 'execa'
+import { execaSync } from 'execa'
 import { dirname,resolve } from 'node:path'
 import {fileURLToPath} from 'node:url'
 
@@ -30,14 +30,14 @@ describe('testing suite', () => {
       })
       expect(cwd).toEqual(expect.any(String))
       expect(
-        execa.sync('git', ['rev-parse', 'HEAD'], { cwd: cwd }).stdout,
+        execaSync('git', ['rev-parse', 'HEAD'], { cwd: cwd }).stdout,
       ).toEqual(commits[0])
 
       const _cwd = gitClone({ sync, url })
 
-      execa.sync('git', ['fetch', '--all'], { cwd: _cwd })
+      execaSync('git', ['fetch', '--all'], { cwd: _cwd })
       expect(
-        execa.sync('git', ['rev-parse', 'remotes/origin/foo'], { cwd: _cwd })
+        execaSync('git', ['rev-parse', 'remotes/origin/foo'], { cwd: _cwd })
           .stdout,
       ).toEqual(commits[0])
       expect(gitGetTags({ cwd, hash: commits[0], sync })).toEqual(['foobar'])
@@ -66,15 +66,14 @@ describe('testing suite', () => {
       })
 
       const _cwd = gitClone({ sync, url })
-      const _commits = execa
-        .sync('git', ['log', '-10', '--format=format:%H'], {
+      const _commits = execaSync('git', ['log', '-10', '--format=format:%H'], {
           cwd: _cwd,
         })
         .stdout.split('\n')
 
       expect(commits).toEqual(_commits.reverse())
       expect(
-        execa.sync('git', ['rev-parse', 'remotes/origin/master'], {
+        execaSync('git', ['rev-parse', 'remotes/origin/master'], {
           cwd: _cwd,
         }).stdout,
       ).toEqual(commits[1])
