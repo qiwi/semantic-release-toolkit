@@ -1,3 +1,13 @@
+## @qiwi/semrel-config-monorepo [1.5.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.5.0...@qiwi/semrel-config-monorepo@1.5.1) (2021-11-18)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 3.1.1
+
 # @qiwi/semrel-config-monorepo [1.5.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.4.13...@qiwi/semrel-config-monorepo@1.5.0) (2021-11-18)
 
 
