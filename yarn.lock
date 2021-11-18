@@ -2125,10 +2125,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@semrel-extra/npm@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@semrel-extra/npm/-/npm-1.1.0.tgz#0fdae01fe9f55eefe87366b32d930f482495dec3"
-  integrity sha512-wyGJCliyr+XOJ5MXeehnux0VtTtnLY+Sy8o2fs6fig4lHNfL4jeIKxUYeaDUwgSPfTdRlS21wE9TbyGB6+F4sQ==
+"@semrel-extra/npm@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@semrel-extra/npm/-/npm-1.2.0.tgz#3993aecbff68f4397f4923a3e4de7e795c88acbc"
+  integrity sha512-l5hBMofOUuAfytK3ILEldRO5bdX4dJOfO8aaYyUqON+EcFlKMke7bPWGJjB/bqi1FGTEfESfAsn8zXsVp+G7Zg==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
