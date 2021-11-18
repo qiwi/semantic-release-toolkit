@@ -1,3 +1,10 @@
+## @qiwi/semrel-preset [3.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@3.1.0...@qiwi/semrel-preset@3.1.1) (2021-11-18)
+
+
+### Bug Fixes
+
+* **config-monorepo:** update @semrel-extra/npm to v1.2.0 ([7fa6a75](https://github.com/qiwi/semantic-release-toolkit/commit/7fa6a75430acae37a5ebd5c5b2ae697674498fbe))
+
 # @qiwi/semrel-preset [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-preset@3.0.0...@qiwi/semrel-preset@3.1.0) (2021-11-18)
 
 
