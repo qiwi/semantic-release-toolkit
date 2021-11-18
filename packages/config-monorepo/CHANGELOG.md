@@ -1,3 +1,18 @@
+# @qiwi/semrel-config-monorepo [1.5.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.4.13...@qiwi/semrel-config-monorepo@1.5.0) (2021-11-18)
+
+
+### Features
+
+* **config-monorepo:** migrate to semrel-extra/npm plugin ([6fcf65c](https://github.com/qiwi/semantic-release-toolkit/commit/6fcf65c88fef2a8f0cce765d90865a3d8bfa5070))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 3.1.0
+
 ## @qiwi/semrel-config-monorepo [1.4.13](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.4.12...@qiwi/semrel-config-monorepo@1.4.13) (2021-11-17)
 
 
