@@ -41,7 +41,7 @@
   "dependencies": {
     "debug": "^4.3.2",
     "tslib": "^2.3.1",
-    "@types/node": "^16.11.7",
+    "@types/node": "^16.11.8",
     "tempy": "^2.0.0",
     "execa": "^6.0.0",
     "nanoid": "^3.1.30",
