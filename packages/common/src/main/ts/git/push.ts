@@ -10,6 +10,10 @@ export interface IGitPush extends IGitCommon {
   remote?: string
 }
 
+export interface IGitPushRebase extends IGitPush {
+  depth?: number
+}
+
 export const gitPush = <T extends IGitPush>({
   cwd,
   sync,
@@ -49,19 +53,20 @@ export const gitPushRebase = <T extends IGitPush>({
     T['sync']
   >
 
-export const gitPushRebaseAsync = async <T extends IGitPush>({
+export const gitPushRebaseAsync = async <T extends IGitPushRebase>({
   cwd,
   sync,
   branch,
   remote = 'origin',
   refspec,
+  depth,
 }: T): Promise<string> => {
   let retries = 5
 
   while (retries > 0) {
     try {
       try {
-        await gitFetch({ cwd, sync, branch, remote })
+        await gitFetch({ cwd, sync, branch, remote, depth })
         await gitRebaseToRemote({ cwd, sync, branch, remote })
       } catch (e) {
         console.warn('rebase failed', e)
@@ -77,19 +82,20 @@ export const gitPushRebaseAsync = async <T extends IGitPush>({
   throw new Error('`gitPushRebase` failed')
 }
 
-export const gitPushRebaseSync = <T extends IGitPush>({
+export const gitPushRebaseSync = <T extends IGitPushRebase>({
   cwd,
   sync,
   branch,
   remote = 'origin',
   refspec,
+  depth,
 }: T): string => {
   let retries = 5
 
   while (retries > 0) {
     try {
       try {
-        gitFetch({ cwd, sync, branch, remote })
+        gitFetch({ cwd, sync, branch, remote, depth })
         gitRebaseToRemote({ cwd, sync, branch, remote })
       } catch (e) {
         console.warn('rebase failed', e)

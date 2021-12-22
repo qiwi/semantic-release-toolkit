@@ -1,8 +1,10 @@
+import { formatFlags } from '../flags'
 import { gitExec, IGitCommon, TGitResult } from './exec'
 
 export interface IGitFetch extends IGitCommon {
   remote?: string
   branch?: string
+  depth?: number
 }
 
 export const gitFetchAll = <T extends IGitFetch>({
@@ -20,11 +22,15 @@ export const gitFetch = <T extends IGitFetch>({
   remote = 'origin',
   branch,
   sync,
-}: T): TGitResult<T['sync']> =>
-  branch
+  depth,
+}: T): TGitResult<T['sync']> => {
+  const flags = formatFlags({ depth })
+
+  return branch
     ? gitExec({
-        cwd,
-        sync: sync as T['sync'],
-        args: ['fetch', remote, branch],
-      })
-    : gitFetchAll({ cwd, sync: sync as T['sync'] })
+      cwd,
+      sync: sync as T['sync'],
+      args: ['fetch', ...flags, remote, branch],
+    })
+    : gitFetchAll({cwd, sync: sync as T['sync']})
+}
