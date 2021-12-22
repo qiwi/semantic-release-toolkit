@@ -1,3 +1,11 @@
+# @qiwi/semrel-common [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.0.0...@qiwi/semrel-common@3.1.0) (2021-12-22)
+
+
+### Features
+
+* **common:** git exec returns stderr if stdout is empty (gerrit case) ([7cb4478](https://github.com/qiwi/semantic-release-toolkit/commit/7cb447853bc847a3ca480edc7c7f42d73c8d3940))
+* **common:** provide custom refspec for gitPush ([f9cb0f2](https://github.com/qiwi/semantic-release-toolkit/commit/f9cb0f2683c91696fc183551640a859ca5003956))
+
 # @qiwi/semrel-common [3.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@2.1.0...@qiwi/semrel-common@3.0.0) (2021-11-17)
 
 
