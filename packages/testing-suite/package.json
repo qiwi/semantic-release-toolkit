@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-testing-suite",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -47,7 +47,7 @@
     "fs-extra": "^10.0.0",
     "tempy": "^2.0.0",
     "execa": "^6.0.0",
-    "@qiwi/semrel-common": "3.0.0",
+    "@qiwi/semrel-common": "3.1.0",
     "@antongolub/git-root": "^1.5.6",
     "@qiwi/substrate": "^1.20.11"
   },
