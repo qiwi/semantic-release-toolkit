@@ -21,14 +21,14 @@
   "dependencies": {
     "@qiwi/semrel-metabranch": "3.0.1",
     "@qiwi/semantic-release-gh-pages-plugin": "^5.2.0",
-    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.2",
     "@semantic-release/npm": "^8.0.3",
     "@semrel-extra/npm": "^1.2.0",
-    "@semantic-release/release-notes-generator": "^10.0.2",
-    "@semantic-release/exec": "^6.0.2"
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@semantic-release/exec": "^6.0.3"
   },
   "devDependencies": {},
   "peerDependencies": {},

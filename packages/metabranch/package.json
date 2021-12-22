@@ -47,7 +47,7 @@
   "dependencies": {
     "@types/execa": "^2.0.0",
     "@types/semantic-release": "^17.2.3",
-    "@types/node": "^16.11.8",
+    "@types/node": "^17.0.2",
     "@qiwi/semrel-common": "3.1.0",
     "@qiwi/semrel-plugin-creator": "2.2.1",
     "tslib": "^2.3.1",
@@ -60,7 +60,7 @@
   "devDependencies": {
     "@qiwi/semrel-infra": "3.0.0",
     "@qiwi/semrel-testing-suite": "3.0.1",
-    "semantic-release": "^18.0.0",
+    "semantic-release": "^18.0.1",
     "resolve-from": "^5.0.0"
   },
   "peerDependencies": {},
