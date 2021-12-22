@@ -6,6 +6,7 @@ import { gitRebaseToRemote } from './rebase'
 
 export interface IGitPush extends IGitCommon {
   branch?: string
+  refspec?: string
   remote?: string
 }
 
@@ -14,13 +15,14 @@ export const gitPush = <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
+  refspec = `HEAD:refs/heads/${branch || 'master'}`,
 }: T): TGitResult<T['sync']> => {
   // check(cwd, 'cwd: absolute')
   // check(remote, 'remote: string')
   // check(branch, 'branch: lower')
 
   const args = branch
-    ? ['push', '--tags', remote, `HEAD:refs/heads/${branch}`]
+    ? ['push', '--tags', remote, refspec]
     : ['push', '--all', '--follow-tags', remote]
 
   return exec(
@@ -39,10 +41,11 @@ export const gitPushRebase = <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
+  refspec,
 }: T): TGitResult<T['sync']> =>
   (sync
-    ? gitPushRebaseSync({ cwd, sync, branch, remote })
-    : gitPushRebaseAsync({ cwd, sync, branch, remote })) as TGitResult<
+    ? gitPushRebaseSync({ cwd, sync, branch, remote, refspec})
+    : gitPushRebaseAsync({ cwd, sync, branch, remote, refspec })) as TGitResult<
     T['sync']
   >
 
@@ -51,6 +54,7 @@ export const gitPushRebaseAsync = async <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
+  refspec,
 }: T): Promise<string> => {
   let retries = 5
 
@@ -63,7 +67,7 @@ export const gitPushRebaseAsync = async <T extends IGitPush>({
         console.warn('rebase failed', e)
       }
 
-      return await gitPush({ cwd, sync, branch, remote })
+      return await gitPush({ cwd, sync, branch, remote, refspec })
     } catch (e) {
       retries -= 1
       console.warn('push failed', 'retries left', retries, e)
@@ -78,6 +82,7 @@ export const gitPushRebaseSync = <T extends IGitPush>({
   sync,
   branch,
   remote = 'origin',
+  refspec,
 }: T): string => {
   let retries = 5
 
@@ -90,7 +95,7 @@ export const gitPushRebaseSync = <T extends IGitPush>({
         console.warn('rebase failed', e)
       }
 
-      return (gitPush({ cwd, sync, branch, remote }) as unknown) as string
+      return (gitPush({ cwd, sync, branch, remote, refspec }) as unknown) as string
     } catch (e) {
       retries -= 1
       console.warn('push failed', 'retries left', retries, e)
