@@ -40,12 +40,13 @@ export const gitExec = <T extends TGitExecContext>(
   log(execaArgs)
 
   if (sync === true) {
-    return (log(execaSync(...execaArgs).stdout) as unknown) as TGitResult<
+    const res = execaSync(...execaArgs)
+    return (log(res.stdout || res.stderr) as unknown) as TGitResult<
       T['sync']
     >
   }
 
-  return (execa(...execaArgs).then(({ stdout }) =>
-    log(stdout.toString()),
+  return (execa(...execaArgs).then(({ stdout , stderr}) =>
+    log(stdout.toString() || stderr.toString()),
   ) as unknown) as TGitResult<T['sync']>
 }
