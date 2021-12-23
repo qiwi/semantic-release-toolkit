@@ -1,3 +1,10 @@
+# @qiwi/semrel-common [3.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.1.0...@qiwi/semrel-common@3.2.0) (2021-12-23)
+
+
+### Features
+
+* **common:** provide depth option for gitFetch ([07a8b6c](https://github.com/qiwi/semantic-release-toolkit/commit/07a8b6c687a28233e39dcf46a68b5a5360abb0e1))
+
 # @qiwi/semrel-common [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.0.0...@qiwi/semrel-common@3.1.0) (2021-12-22)
 
 
