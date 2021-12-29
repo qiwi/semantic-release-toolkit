@@ -1,3 +1,18 @@
+## @qiwi/semrel-plugin-creator [2.2.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.2.2...@qiwi/semrel-plugin-creator@2.2.3) (2021-12-29)
+
+
+### Bug Fixes
+
+* fix globs on windows via @qiwi/multi-semantic-release update ([c4d9278](https://github.com/qiwi/semantic-release-toolkit/commit/c4d927884208c1190ed746c823a97c1257da8a7b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-testing-suite:** upgraded to 3.0.3
+
 ## @qiwi/semrel-plugin-creator [2.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.2.1...@qiwi/semrel-plugin-creator@2.2.2) (2021-12-23)
 
 
