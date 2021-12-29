@@ -1,3 +1,20 @@
+## @qiwi/semrel-toolkit [3.1.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.1.5...@qiwi/semrel-toolkit@3.1.6) (2021-12-29)
+
+
+### Bug Fixes
+
+* fix globs on windows via @qiwi/multi-semantic-release update ([c4d9278](https://github.com/qiwi/semantic-release-toolkit/commit/c4d927884208c1190ed746c823a97c1257da8a7b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.18
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.5.4
+* **@qiwi/semrel-preset:** upgraded to 3.1.4
+
 ## @qiwi/semrel-toolkit [3.1.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.1.4...@qiwi/semrel-toolkit@3.1.5) (2021-12-23)
 
 
