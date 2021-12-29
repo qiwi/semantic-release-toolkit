@@ -20,7 +20,7 @@
     "multi-semantic-release": "multi-semantic-release"
   },
   "dependencies": {
-    "@qiwi/multi-semantic-release": "~3.17.0",
+    "@qiwi/multi-semantic-release": "~3.17.1",
     "semantic-release": "~18.0.1",
     "@qiwi/semrel-config": "1.3.17",
     "@qiwi/semrel-config-monorepo": "1.5.3",
