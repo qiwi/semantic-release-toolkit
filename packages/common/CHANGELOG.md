@@ -1,3 +1,10 @@
+## @qiwi/semrel-common [3.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.0...@qiwi/semrel-common@3.2.1) (2021-12-29)
+
+
+### Bug Fixes
+
+* fix globs on windows via @qiwi/multi-semantic-release update ([c4d9278](https://github.com/qiwi/semantic-release-toolkit/commit/c4d927884208c1190ed746c823a97c1257da8a7b))
+
 # @qiwi/semrel-common [3.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.1.0...@qiwi/semrel-common@3.2.0) (2021-12-23)
 
 
