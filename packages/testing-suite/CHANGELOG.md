@@ -1,3 +1,18 @@
+## @qiwi/semrel-testing-suite [3.0.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@3.0.2...@qiwi/semrel-testing-suite@3.0.3) (2021-12-29)
+
+
+### Bug Fixes
+
+* fix globs on windows via @qiwi/multi-semantic-release update ([c4d9278](https://github.com/qiwi/semantic-release-toolkit/commit/c4d927884208c1190ed746c823a97c1257da8a7b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 3.2.1
+
 ## @qiwi/semrel-testing-suite [3.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@3.0.1...@qiwi/semrel-testing-suite@3.0.2) (2021-12-23)
 
 
