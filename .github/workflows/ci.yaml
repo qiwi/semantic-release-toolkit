@@ -30,10 +30,10 @@ jobs:
         with:
           node-version: 16
       - name: Install deps
-        run: |
-          yarn --ignore-engines
-          yarn bootstrap
-      - run: yarn build
+        run: yarn --ignore-engines
+
+      - name: Build
+        run: yarn build
 
       - name: Save target (artifact)
         uses: actions/upload-artifact@v2
@@ -68,7 +68,6 @@ jobs:
         run: |
           sudo apt-get install moreutils
           yarn --ignore-engines
-          yarn bootstrap
 
       - name: Unit test only
         run: yarn test:unit
@@ -106,7 +105,6 @@ jobs:
         run: |
           sudo apt-get install moreutils
           yarn --ignore-engines
-          yarn bootstrap
       - name: Unit test only
         if: matrix.node-version != '16' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
@@ -142,9 +140,7 @@ jobs:
             ${{github.workspace}}/coverage/*.lcov:lcov
 
       - name: Install deps
-        run: |
-          yarn --ignore-engines
-          yarn bootstrap
+        run: yarn --ignore-engines
 
       - name: Multi-semantic-release
         env:

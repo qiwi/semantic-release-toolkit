@@ -7,42 +7,33 @@
   ],
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean --yes && lerna run clean",
-    "lint": "lerna run lint --parallel --stream --no-prefix",
-    "lint:fix": "lerna run lint:fix",
+    "clean": "yarn workspaces foreach -p run  clean",
+    "lint": "yarn workspaces foreach -p run lint",
+    "lint:fix": "yarn workspaces foreach -tp run lint:fix",
     "jest:pre": "sh ./scripts/sh/patch-pkg-main.sh true",
     "jest:post": "sh ./scripts/sh/patch-pkg-main.sh",
     "test": "npm-run-all -p -l lint test:unit test:depcheck test:depaudit",
     "test:unit": "yarn jest:pre && NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand && yarn jest:post",
     "test:report": "yarn test && yarn coveralls:push",
-    "test:concurrent": "lerna run test --stream --no-prefix && yarn coverage:merge",
-    "test:depcheck": "lerna run test:depcheck --parallel --stream --no-prefix",
-    "test:depaudit": "yarn audit --level=moderate --groups=dependencies; [[ $? -ge 4 ]] && exit 1 || exit 0",
+    "test:concurrent": "yarn workspaces foreach -tp run && yarn coverage:merge",
+    "test:depcheck": "yarn workspaces foreach -tp run test:depcheck ",
+    "test:depaudit": "yarn npm audit --level=moderate --groups=dependencies; [[ $? -ge 4 ]] && exit 1 || exit 0",
     "test:depauditfix": "npm_config_yes=true npx yarn-audit-fix --audit-level=moderate",
     "prebuild": "tsc -b",
-    "build": "lerna run build --stream --parallel",
+    "build": "yarn workspaces foreach -tp run build",
     "coverage:merge": "node scripts/js/coverage-merge.js",
-    "coveralls:push": "cat ./coverage/lcov.info | coveralls || echo 'coveralls push failed :(' && exit 0",
-    "uglify": "lerna run uglify --stream --parallel",
+    "coveralls:push": "cat ./coverage/lcov.info | npm_config_yes=true npx coveralls || echo 'coveralls push failed :(' && exit 0",
     "release": "DEBUG='semantic-release:metabranch' multi-semantic-release",
     "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
-    "postupdate": "yarn clean && yarn && yarn bootstrap && yarn test:depauditfix && yarn build && yarn test"
+    "postupdate": "yarn && yarn test:depauditfix && yarn build && yarn test"
   },
   "devDependencies": {
-    "coveralls": "^3.1.1",
     "find-git-root": "^1.0.4",
-    "lerna": "^4.0.0",
-    "ts-jest": "^27.1.2"
+    "ts-jest": "^27.1.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
   },
-  "resolutions": {
-    "*/**/ansi-regex": "^5.0.1",
-    "*/**/path-parse": "^1.0.7",
-    "*/**/find-up": "^5.0.0",
-    "*/**/normalize-url": "^6.1.0"
-  }
+  "packageManager": "yarn@3.1.1"
 }

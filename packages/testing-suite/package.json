@@ -1,7 +1,6 @@
 {
   "name": "@qiwi/semrel-testing-suite",
   "version": "3.0.3",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -31,7 +30,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
     "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand",
-    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra --ignore-patterns typings,flow-typed/*",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra' --ignore-patterns 'typings,flow-typed/*'",
     "build": "npm-run-all -p -l build:esnext build:es6 build:ts build:libdef docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
@@ -43,20 +42,18 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "tslib": "^2.3.1",
+    "@antongolub/git-root": "^1.5.6",
+    "@qiwi/semrel-common": "3.2.1",
+    "@qiwi/substrate": "^1.20.11",
+    "execa": "^6.1.0",
     "fs-extra": "^10.0.0",
     "tempy": "^2.0.0",
-    "execa": "^6.0.0",
-    "@qiwi/semrel-common": "3.2.1",
-    "@antongolub/git-root": "^1.5.6",
-    "@qiwi/substrate": "^1.20.11"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.5",
-    "@qiwi/semrel-infra": "3.0.0"
+    "@qiwi/semrel-infra": "3.0.0",
+    "@types/node": "^17.0.18"
   },
-  "peerDependencies": {},
-  "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"

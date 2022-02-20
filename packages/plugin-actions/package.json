@@ -1,7 +1,6 @@
 {
   "name": "@qiwi/semrel-actions",
   "version": "1.0.21",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -27,7 +26,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "echo 'WIP' && exit 0 || npm-run-all -p -l lint test:unit test:depcheck",
     "test:unit": "jest --runInBand",
-    "test:depcheck": "depcheck --ignores @types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra --ignore-patterns typings,flow-typed/*",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra' --ignore-patterns 'typings,flow-typed/*'",
     "build": "npm-run-all -p -l build:es5 build:es6 build:ts build:libdef docs",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
@@ -38,14 +37,12 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "tslib": "^2.3.1",
-    "@qiwi/semrel-plugin-creator": "2.2.3"
+    "@qiwi/semrel-plugin-creator": "2.2.3",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.0.0"
   },
-  "peerDependencies": {},
-  "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
