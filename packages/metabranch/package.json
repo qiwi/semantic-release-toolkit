@@ -1,7 +1,6 @@
 {
   "name": "@qiwi/semrel-metabranch",
   "version": "3.0.3",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -31,7 +30,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "npm-run-all -p -l lint test:unit test:depcheck",
     "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand",
-    "test:depcheck": "depcheck --ignores @qiwi/esm,@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra --ignore-patterns typings,flow-typed/*",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@qiwi/esm,@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra' --ignore-patterns 'typings,flow-typed/*'",
     "build": "npm-run-all -p -l build:es5 build:es6 build:exports build:ts build:esnext build:libdef docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
@@ -45,26 +44,24 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@types/execa": "^2.0.0",
-    "@types/semantic-release": "^17.2.3",
-    "@types/node": "^17.0.5",
+    "@qiwi/esm": "^1.1.1",
     "@qiwi/semrel-common": "3.2.1",
     "@qiwi/semrel-plugin-creator": "2.2.3",
-    "tslib": "^2.3.1",
-    "execa": "^6.0.0",
-    "tempy": "^2.0.0",
-    "globby": "^12.0.2",
+    "@types/execa": "^2.0.0",
+    "@types/node": "^17.0.18",
+    "@types/semantic-release": "^17.2.3",
+    "execa": "^6.1.0",
     "fs-extra": "^10.0.0",
-    "@qiwi/esm": "^1.1.1"
+    "globby": "^13.1.1",
+    "tempy": "^2.0.0",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.0.0",
     "@qiwi/semrel-testing-suite": "3.0.3",
-    "semantic-release": "^18.0.1",
-    "resolve-from": "^5.0.0"
+    "resolve-from": "^5.0.0",
+    "semantic-release": "^19.0.2"
   },
-  "peerDependencies": {},
-  "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
