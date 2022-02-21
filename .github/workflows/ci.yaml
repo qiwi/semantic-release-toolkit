@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 16
       - name: Install deps
-        run: yarn --ignore-engines
+        run: yarn
 
       - name: Build
         run: yarn build
@@ -67,7 +67,7 @@ jobs:
       - name: Install deps
         run: |
           sudo apt-get install moreutils
-          yarn --ignore-engines
+          yarn
 
       - name: Unit test only
         run: yarn test:unit
@@ -104,7 +104,7 @@ jobs:
       - name: Install deps
         run: |
           sudo apt-get install moreutils
-          yarn --ignore-engines
+          yarn
       - name: Unit test only
         if: matrix.node-version != '16' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
@@ -140,7 +140,7 @@ jobs:
             ${{github.workspace}}/coverage/*.lcov:lcov
 
       - name: Install deps
-        run: yarn --ignore-engines
+        run: yarn
 
       - name: Multi-semantic-release
         env:
