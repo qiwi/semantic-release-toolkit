@@ -46,7 +46,7 @@ jobs:
             !packages/*/node_modules
             !packages/*/src
             packages
-            lerna.json
+            renovate.json
 
   test_push:
     needs: build
