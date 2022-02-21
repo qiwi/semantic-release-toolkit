@@ -10,13 +10,13 @@
     "postupdate": "yarn"
   },
   "bin": {
+    "concurrently": "../../node_modules/.bin/concurrently",
     "cpy": "../../node_modules/.bin/cpy",
     "depcheck": "../../node_modules/.bin/depcheck",
     "eslint": "../../node_modules/.bin/eslint",
     "jest": "../../node_modules/.bin/jest",
     "libdefkit": "../../node_modules/.bin/libdefkit",
     "mkdirp": "../../node_modules/.bin/mkdirp",
-    "npm-run-all": "../../node_modules/.bin/npm-run-all",
     "rimraf": "../../node_modules/.bin/rimraf",
     "tsc-esm-fix": "../../node_modules/.bin/tsc-esm-fix",
     "typedoc": "../../node_modules/.bin/typedoc"
@@ -24,9 +24,9 @@
   "devDependencies": {
     "@jest/globals": "^27.5.1",
     "@qiwi/libdefkit": "^4.0.5",
-    "@qiwi/npm-run-all": "^4.1.7",
     "@swissquote/crafty-preset-jest": "^1.18.1",
     "@types/jest": "^27.4.0",
+    "concurrently": "^7.0.0",
     "cpy-cli": "^3.1.1",
     "depcheck": "^1.4.3",
     "eslint": "^8.9.0",
