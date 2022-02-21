@@ -13,7 +13,7 @@
     "jest:pre": "sh ./scripts/sh/patch-pkg-main.sh true",
     "jest:post": "sh ./scripts/sh/patch-pkg-main.sh",
     "test": "npm-run-all -p -l lint test:unit test:depcheck test:depaudit",
-    "test:unit": "yarn jest:pre && NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand && yarn jest:post",
+    "test:unit": "yarn jest:pre && NODE_OPTIONS=--experimental-vm-modules ./node_modules/.bin/jest --detectOpenHandles --forceExit --runInBand && yarn jest:post",
     "test:report": "yarn test && yarn coveralls:push",
     "test:concurrent": "yarn workspaces foreach -tp run && yarn coverage:merge",
     "test:depcheck": "yarn workspaces foreach -tp run test:depcheck ",
