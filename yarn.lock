@@ -1566,6 +1566,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo"
   dependencies:
+    "@qiwi/semrel-infra": 3.0.0
     "@qiwi/semrel-preset": 3.1.4
   languageName: unknown
   linkType: soft
@@ -1574,6 +1575,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config@workspace:packages/config"
   dependencies:
+    "@qiwi/semrel-infra": 3.0.0
     "@qiwi/semrel-preset": 3.1.4
   languageName: unknown
   linkType: soft

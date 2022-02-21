@@ -25,6 +25,9 @@
   "dependencies": {
     "@qiwi/semrel-preset": "3.1.4"
   },
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
