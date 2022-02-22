@@ -30,7 +30,9 @@ jobs:
         with:
           node-version: 16
       - name: Install deps
-        run: yarn
+        run: |
+          yarn
+          node -e "console.log('npm version:', require('./node_modules/semantic-release/node_modules/execa').sync('npm', ['-v'], {preferLocal: true}).stdout)"
 
       - name: Build
         run: yarn build
