@@ -1,3 +1,18 @@
+## @qiwi/semrel-testing-suite [3.0.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@3.0.3...@qiwi/semrel-testing-suite@3.0.4) (2022-02-22)
+
+
+### Bug Fixes
+
+* pin npm ([de604dd](https://github.com/qiwi/semantic-release-toolkit/commit/de604dddb9c3d968fc7a878b0f473a3d06e9f750))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 3.2.2
+
 ## @qiwi/semrel-testing-suite [3.0.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-testing-suite@3.0.2...@qiwi/semrel-testing-suite@3.0.3) (2021-12-29)
 
 
