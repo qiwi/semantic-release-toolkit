@@ -1,3 +1,26 @@
+# @qiwi/semrel-toolkit [3.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.1.6...@qiwi/semrel-toolkit@3.2.0) (2022-02-22)
+
+
+### Bug Fixes
+
+* pin npm ([de604dd](https://github.com/qiwi/semantic-release-toolkit/commit/de604dddb9c3d968fc7a878b0f473a3d06e9f750))
+* pin npm to v8.4.1 ([f64aeff](https://github.com/qiwi/semantic-release-toolkit/commit/f64aeffa7f3d97dabb2958ca8fe87aa010744dae))
+
+
+### Features
+
+* update msr to v4, update yarn to v3.2.0 ([caf8c4e](https://github.com/qiwi/semantic-release-toolkit/commit/caf8c4e8be13db7f579eacecbff8d4b82bbeabbe))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.19
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.5.5
+* **@qiwi/semrel-preset:** upgraded to 3.1.5
+
 ## @qiwi/semrel-toolkit [3.1.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.1.5...@qiwi/semrel-toolkit@3.1.6) (2021-12-29)
 
 
