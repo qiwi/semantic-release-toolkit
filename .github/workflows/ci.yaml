@@ -30,9 +30,7 @@ jobs:
         with:
           node-version: 16
       - name: Install deps
-        run: |
-          yarn
-          node -e "console.log('npm version:', require('./node_modules/semantic-release/node_modules/execa').sync('npm', ['-v'], {preferLocal: true}).stdout)"
+        run: yarn
 
       - name: Build
         run: yarn build
@@ -142,7 +140,11 @@ jobs:
             ${{github.workspace}}/coverage/*.lcov:lcov
 
       - name: Install deps
-        run: yarn
+        run: |
+          echo "Downgrade npm to v8.4.1: https://github.com/npm/cli/issues/4404"
+          npm i -g npm@8.4.1
+          npm -v
+          yarn
 
       - name: Multi-semantic-release
         env:
