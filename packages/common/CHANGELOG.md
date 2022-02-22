@@ -1,3 +1,10 @@
+## @qiwi/semrel-common [3.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.1...@qiwi/semrel-common@3.2.2) (2022-02-22)
+
+
+### Bug Fixes
+
+* pin npm ([de604dd](https://github.com/qiwi/semantic-release-toolkit/commit/de604dddb9c3d968fc7a878b0f473a3d06e9f750))
+
 ## @qiwi/semrel-common [3.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.0...@qiwi/semrel-common@3.2.1) (2021-12-29)
 
 
