@@ -28,7 +28,7 @@
     "semantic-release": "~19.0.2"
   },
   "peerDependencies": {
-    "npm": "8.4.1"
+    "npm": "8.5.1"
   },
   "repository": {
     "type": "git",
