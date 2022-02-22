@@ -1458,9 +1458,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:~4.0.0":
-  version: 4.0.0
-  resolution: "@qiwi/multi-semantic-release@npm:4.0.0"
+"@qiwi/multi-semantic-release@npm:~4.0.1":
+  version: 4.0.1
+  resolution: "@qiwi/multi-semantic-release@npm:4.0.1"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     blork: ^9.3.0
@@ -1482,7 +1482,7 @@ __metadata:
     tempy: ^1.0.1
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: b7911072a9f3b4e8909462c0b1cb619c078a516be95a3027383d03652565145e77b60b0e9529768730286091a22d98d31ce2e485d256e8f04f98a1c999eb1a24
+  checksum: 315a8089d9fba9a88708def896be5673668dd23e8ebb2065e61ae1309ce27accb829384c7cde30b3e69142e9dac137743c25143a448d720ae7ac09d7e9b49105
   languageName: node
   linkType: hard
 
@@ -1685,11 +1685,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
-    "@qiwi/multi-semantic-release": ~4.0.0
+    "@qiwi/multi-semantic-release": ~4.0.1
     "@qiwi/semrel-config": 1.3.18
     "@qiwi/semrel-config-monorepo": 1.5.4
     "@qiwi/semrel-preset": 3.1.4
     semantic-release: ~19.0.2
+  peerDependencies:
+    npm: 8.4.1
   bin:
     multi-semrel: ./msr.js
     semrel: ./semrel.js
@@ -8752,9 +8754,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm@npm:^8.3.0":
-  version: 8.5.1
-  resolution: "npm@npm:8.5.1"
+"npm@npm:8.4.1":
+  version: 8.4.1
+  resolution: "npm@npm:8.4.1"
   dependencies:
     "@isaacs/string-locale-compare": "*"
     "@npmcli/arborist": "*"
@@ -8830,7 +8832,7 @@ __metadata:
   bin:
     npm: bin/npm-cli.js
     npx: bin/npx-cli.js
-  checksum: 1d3d7f05184703de096289edeae06cc3b630b504fceced032c0bd96f8ae000384f92c818fc69c6f68a36b8c4987fb03a98f69ad06c463e7e34a5ac392bd78c5c
+  checksum: 2cc1efa7483fef7c600ab0e087db2b6c9af8b311eeaa7ba97fe51020f90854c040cde9b2cb7c8dc77c99e530bea5ded52ce2a2115b748b1be89540dc9a5ca6f5
   languageName: node
   linkType: hard
 

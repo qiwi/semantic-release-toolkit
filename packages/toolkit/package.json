@@ -8,7 +8,9 @@
   "keywords": [],
   "files": [
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "msr.js",
+    "semrel.js"
   ],
   "bin": {
     "multi-semrel": "./msr.js",
@@ -19,11 +21,14 @@
     "multi-semantic-release": "multi-semantic-release"
   },
   "dependencies": {
-    "@qiwi/multi-semantic-release": "~4.0.0",
+    "@qiwi/multi-semantic-release": "~4.0.1",
     "@qiwi/semrel-config": "1.3.18",
     "@qiwi/semrel-config-monorepo": "1.5.4",
     "@qiwi/semrel-preset": "3.1.4",
     "semantic-release": "~19.0.2"
+  },
+  "peerDependencies": {
+    "npm": "8.4.1"
   },
   "repository": {
     "type": "git",
