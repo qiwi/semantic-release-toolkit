@@ -35,7 +35,7 @@
     "npm/chalk": "^4.1.2"
   },
   "peerDependencies": {
-    "npm": "8.4.1"
+    "npm": "8.5.2"
   },
   "repository": {
     "type": "git",
