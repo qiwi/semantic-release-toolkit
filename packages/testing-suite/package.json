@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.0.0",
-    "@types/node": "^17.0.19"
+    "@types/node": "^17.0.21"
   },
   "repository": {
     "type": "git",

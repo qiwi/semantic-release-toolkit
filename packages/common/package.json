@@ -40,7 +40,7 @@
   "dependencies": {
     "@antongolub/git-root": "^1.5.6",
     "@qiwi/substrate": "^1.20.11",
-    "@types/node": "^17.0.19",
+    "@types/node": "^17.0.21",
     "@types/semantic-release": "^17.2.3",
     "debug": "^4.3.3",
     "execa": "^6.1.0",

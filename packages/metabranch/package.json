@@ -48,7 +48,7 @@
     "@qiwi/semrel-common": "3.2.2",
     "@qiwi/semrel-plugin-creator": "2.2.4",
     "@types/execa": "^2.0.0",
-    "@types/node": "^17.0.19",
+    "@types/node": "^17.0.21",
     "@types/semantic-release": "^17.2.3",
     "execa": "^6.1.0",
     "fs-extra": "^10.0.1",
