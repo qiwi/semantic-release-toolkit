@@ -1397,9 +1397,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:~4.0.2":
-  version: 4.0.2
-  resolution: "@qiwi/multi-semantic-release@npm:4.0.2"
+"@qiwi/multi-semantic-release@npm:~4.0.3":
+  version: 4.0.3
+  resolution: "@qiwi/multi-semantic-release@npm:4.0.3"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     blork: ^9.3.0
@@ -1423,7 +1423,7 @@ __metadata:
     npm: 8.4.1
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: 863a7949eb2c4d533ff6e84326babf912a81aed16a89c2204796dd1b1362917d124267116d469c735f3a4f6413e411e13cd46a9f1fea99f75258e7d5c8c8a83b
+  checksum: 5befd90a333ee1e3cd5e818a894faca59be1157f7e96edce6f29e5d9ef70c2b10866b509916d832873f6ab5bc06a374c72f50721979ca28a16f03dd5b83dbc22
   languageName: node
   linkType: hard
 
@@ -1520,7 +1520,7 @@ __metadata:
     prettier-config-qiwi: ^1.6.0
     rimraf: ^3.0.2
     snazzy: ^9.0.0
-    terser: ^5.11.0
+    terser: ^5.12.0
     ts-jest: ^27.1.3
     tsc-esm-fix: ^2.7.7
     typedoc: ^0.22.12
@@ -1628,7 +1628,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
-    "@qiwi/multi-semantic-release": ~4.0.2
+    "@qiwi/multi-semantic-release": ~4.0.3
     "@qiwi/semrel-config": 1.3.19
     "@qiwi/semrel-config-monorepo": 1.5.5
     "@qiwi/semrel-preset": 3.1.5
@@ -10196,7 +10196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:^5.11.0":
+"terser@npm:^5.12.0":
   version: 5.12.0
   resolution: "terser@npm:5.12.0"
   dependencies:
