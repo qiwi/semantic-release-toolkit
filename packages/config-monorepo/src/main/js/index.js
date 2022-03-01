@@ -25,6 +25,12 @@ module.exports = {
       }
     ],
     [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install && git add ../../yarn.lock"
+      }
+    ],
+    [
       '@semantic-release/git',
       {
         message: 'chore(release): ${nextRelease.gitTag} [skip ci]\n\n${nextRelease.notes}'
