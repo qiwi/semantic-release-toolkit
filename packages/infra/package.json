@@ -27,7 +27,7 @@
     "@swissquote/crafty-preset-jest": "^1.18.1",
     "@types/jest": "^27.4.0",
     "concurrently": "^7.0.0",
-    "cpy-cli": "^3.1.1",
+    "cpy-cli": "^4.0.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
