@@ -30,7 +30,7 @@
     "build": "concurrently yarn:build:es5 yarn:build:es6 yarn:build:ts yarn:build:libdef yarn:docs",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
-    "build:ts": "cpy ./ ../../../target/ts/ --parents --dot --cwd=./src/main/ts/",
+    "build:ts": "cpy ./ ../../../target/ts/ --dot --cwd=./src/main/ts/",
     "build:libdef": "libdefkit --tsconfig=tsconfig.es5.json --tsconfig=tsconfig.es6.json",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
     "uglify": "for f in $(find target -name '*.js'); do short=${f%.js}; terser -c -m -o $short.js -- $f; done",

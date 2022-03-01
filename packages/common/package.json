@@ -30,7 +30,7 @@
     "build": "concurrently yarn:build:esnext yarn:build:es6 yarn:build:ts yarn:build:libdef yarn:docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
-    "build:ts": "cpy ./ ../../../target/ts/ --parents --dot --cwd=./src/main/ts/",
+    "build:ts": "cpy ./ ../../../target/ts/ --dot --cwd=./src/main/ts/",
     "build:libdef": "libdefkit --tsconfig=tsconfig.esnext.json --tsconfig=tsconfig.es6.json --entry=@qiwi/semrel-common/target/es6",
     "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --ext=.js",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
