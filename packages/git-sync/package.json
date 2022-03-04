@@ -1,0 +1,54 @@
+{
+  "name": "@qiwi/git-sync",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Git fetch/push helper",
+  "keywords": [],
+  "type": "module",
+  "exports": "./target/es6/index.js",
+  "module": "./target/es6/index.js",
+  "source": "./target/es6/index.js",
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "target"
+  ],
+  "scripts": {
+    "clean": "rimraf target typings flow-typed buildcache coverage docs",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "concurrently yarn:lint yarn:test:unit yarn:test:depcheck",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra' --ignore-patterns 'typings,flow-typed/*'",
+    "build": "concurrently yarn:build:es6",
+    "build:es6": "cpy ./src/main/js/ ./target/es6/ --flat",
+    "postupdate": "yarn && yarn build && yarn test"
+  },
+  "dependencies": {
+    "@qiwi/semrel-metabranch": "^3.0.4",
+    "debug": "^4.3.3",
+    "execa": "^6.1.0",
+    "hosted-git-info": "^4.1.0"
+  },
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.0.0",
+    "@qiwi/semrel-testing-suite": "3.0.4",
+    "@types/execa": "^2.0.0",
+    "@types/node": "^17.0.21",
+    "resolve-from": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
+  },
+  "author": "Anton Golub <mailbox@antongolub.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiwi/semantic-release-toolkit/issues"
+  },
+  "homepage": "https://github.com/qiwi/semantic-release-toolkit/#readme",
+  "prettier": "prettier-config-qiwi"
+}

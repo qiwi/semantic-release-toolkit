@@ -1566,7 +1566,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/semrel-metabranch@3.0.4, @qiwi/semrel-metabranch@workspace:packages/metabranch":
+"@qiwi/semrel-metabranch-cli@workspace:packages/metabranch-cli":
+  version: 0.0.0-use.local
+  resolution: "@qiwi/semrel-metabranch-cli@workspace:packages/metabranch-cli"
+  dependencies:
+    "@qiwi/semrel-infra": 3.0.0
+    "@qiwi/semrel-metabranch": ^3.0.4
+    "@qiwi/semrel-testing-suite": 3.0.4
+    "@types/execa": ^2.0.0
+    "@types/node": ^17.0.21
+    debug: ^4.3.3
+    execa: ^6.1.0
+    hosted-git-info: ^4.1.0
+    resolve-from: ^5.0.0
+  languageName: unknown
+  linkType: soft
+
+"@qiwi/semrel-metabranch@3.0.4, @qiwi/semrel-metabranch@^3.0.4, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
