@@ -1,3 +1,13 @@
+## @qiwi/semrel-common [3.2.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.2...@qiwi/semrel-common@3.2.3) (2022-03-04)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 3.0.1
+
 ## @qiwi/semrel-common [3.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.1...@qiwi/semrel-common@3.2.2) (2022-02-22)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-common",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "publishConfig": {
     "access": "public"
   },
@@ -52,7 +52,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.0",
+    "@qiwi/semrel-infra": "3.0.1",
     "fs-extra": "^10.0.1"
   },
   "repository": {

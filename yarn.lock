@@ -1461,12 +1461,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-common@3.2.2, @qiwi/semrel-common@workspace:packages/common":
+"@qiwi/semrel-common@npm:3.2.2":
+  version: 3.2.2
+  resolution: "@qiwi/semrel-common@npm:3.2.2"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/substrate": ^1.20.11
+    "@types/node": ^17.0.19
+    "@types/semantic-release": ^17.2.3
+    debug: ^4.3.3
+    execa: ^6.1.0
+    file-url: ^4.0.0
+    lodash-es: ^4.17.21
+    minimist: ^1.2.5
+    nanoid: ^3.3.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: f6503cfff843a3946097fe2d890350c0e230b6e72b553d976dde6d42f526b865ff2c02d7c54569c435554c9615ae245c97f66a74bce299f2abd78001960b5f1e
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
     "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-infra": 3.0.0
+    "@qiwi/semrel-infra": 3.0.1
     "@qiwi/substrate": ^1.20.11
     "@types/node": ^17.0.21
     "@types/semantic-release": ^17.2.3
@@ -1500,14 +1520,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@qiwi/semrel-infra@npm:3.0.0"
-  checksum: 821aa0bb9f89392c688cd9f7dbd47b870f7566442ef6472a4f62784bb0450c24cd430071cd9beb6fab0e07299f5d673dbe757ebed448e0e5e599d13625b547b9
-  languageName: node
-  linkType: hard
-
-"@qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@3.0.1, @qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:
@@ -1545,6 +1558,13 @@ __metadata:
     typedoc: ../../node_modules/.bin/typedoc
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-infra@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@qiwi/semrel-infra@npm:3.0.0"
+  checksum: 821aa0bb9f89392c688cd9f7dbd47b870f7566442ef6472a4f62784bb0450c24cd430071cd9beb6fab0e07299f5d673dbe757ebed448e0e5e599d13625b547b9
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-metabranch@3.0.4, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
@@ -2122,7 +2142,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^17.0.21":
+"@types/node@npm:*, @types/node@npm:^17.0.19, @types/node@npm:^17.0.21":
   version: 17.0.21
   resolution: "@types/node@npm:17.0.21"
   checksum: 89dcd2fe82f21d3634266f8384e9c865cf8af49685639fbdbd799bdd1040480fb1e8eeda2d3b9fce41edbe704d2a4be9f427118c4ae872e8d9bb7cbeb3c41a94
