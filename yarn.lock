@@ -1500,7 +1500,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@3.0.0, @qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@qiwi/semrel-infra@npm:3.0.0"
+  checksum: 821aa0bb9f89392c688cd9f7dbd47b870f7566442ef6472a4f62784bb0450c24cd430071cd9beb6fab0e07299f5d673dbe757ebed448e0e5e599d13625b547b9
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:

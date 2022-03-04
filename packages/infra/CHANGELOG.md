@@ -1,3 +1,11 @@
+## @qiwi/semrel-infra [3.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.0...@qiwi/semrel-infra@3.0.1) (2022-03-04)
+
+
+### Bug Fixes
+
+* update @qiwi/multi-semantic-release to v5 ([7014efe](https://github.com/qiwi/semantic-release-toolkit/commit/7014efebd794901c3bacd5cd97a77c28a730da67))
+* update msr to v4.0.3 ([3e34387](https://github.com/qiwi/semantic-release-toolkit/commit/3e343873a5d0456bff8ad4e89f85fa4d3246df95))
+
 # @qiwi/semrel-infra [3.0.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@2.1.0...@qiwi/semrel-infra@3.0.0) (2021-11-17)
 
 
