@@ -17,7 +17,9 @@
     "jest": "../../node_modules/.bin/jest",
     "libdefkit": "../../node_modules/.bin/libdefkit",
     "mkdirp": "../../node_modules/.bin/mkdirp",
+    "prettier": "../../node_modules/.bin/prettier",
     "rimraf": "../../node_modules/.bin/rimraf",
+    "snazzy": "../../node_modules/.bin/snazzy",
     "tsc-esm-fix": "../../node_modules/.bin/tsc-esm-fix",
     "typedoc": "../../node_modules/.bin/typedoc"
   },
