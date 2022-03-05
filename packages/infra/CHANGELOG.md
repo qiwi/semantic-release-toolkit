@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [3.0.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.2...@qiwi/semrel-infra@3.0.3) (2022-03-05)
+
+
+### Bug Fixes
+
+* up jest to 28.0.0-alpha.6 ([a0f2a1f](https://github.com/qiwi/semantic-release-toolkit/commit/a0f2a1f098df197a01374d329f082b5137896eb9))
+
 ## @qiwi/semrel-infra [3.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.1...@qiwi/semrel-infra@3.0.2) (2022-03-05)
 
 

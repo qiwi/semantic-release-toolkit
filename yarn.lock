@@ -1516,7 +1516,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@3.0.2, @qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@qiwi/semrel-infra@npm:3.0.2"
+  bin:
+    concurrently: node_modules/.bin/concurrently
+    cpy: node_modules/.bin/cpy
+    depcheck: node_modules/.bin/depcheck
+    eslint: node_modules/.bin/eslint
+    jest: node_modules/.bin/jest
+    libdefkit: node_modules/.bin/libdefkit
+    mkdirp: node_modules/.bin/mkdirp
+    prettier: node_modules/.bin/prettier
+    rimraf: node_modules/.bin/rimraf
+    snazzy: node_modules/.bin/snazzy
+    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
+    typedoc: node_modules/.bin/typedoc
+  checksum: c24b7d18ddb0bb38603d3cd4e4efe10ab2b6f1217665ed5006da5f837e49ee54df6b938ceca5e702e4de14688505cd400039abb273a4d5d41da9156e7da7a161
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:
