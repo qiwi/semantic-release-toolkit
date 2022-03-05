@@ -53,7 +53,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.0",
+    "@qiwi/semrel-infra": "3.0.1",
     "@qiwi/semrel-testing-suite": "3.0.4",
     "@types/execa": "^2.0.0",
     "resolve-from": "^5.0.0",
