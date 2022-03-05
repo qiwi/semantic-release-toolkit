@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [3.0.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.3...@qiwi/semrel-infra@3.0.4) (2022-03-05)
+
+
+### Bug Fixes
+
+* **infra:** export terser bin ([de43a41](https://github.com/qiwi/semantic-release-toolkit/commit/de43a41801c75859cd08390f6079ecad13502903))
+
 ## @qiwi/semrel-infra [3.0.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.2...@qiwi/semrel-infra@3.0.3) (2022-03-05)
 
 
