@@ -1552,6 +1552,7 @@ __metadata:
     prettier: ../../node_modules/.bin/prettier
     rimraf: ../../node_modules/.bin/rimraf
     snazzy: ../../node_modules/.bin/snazzy
+    terser: ../../node_modules/.bin/terser
     tsc-esm-fix: ../../node_modules/.bin/tsc-esm-fix
     typedoc: ../../node_modules/.bin/typedoc
   languageName: unknown
