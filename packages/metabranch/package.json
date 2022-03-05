@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@qiwi/esm": "^1.1.1",
-    "@qiwi/semrel-common": "3.2.5",
+    "@qiwi/semrel-common": "3.2.6",
     "@qiwi/semrel-plugin-creator": "2.2.4",
     "@types/execa": "^2.0.0",
     "@types/node": "^17.0.21",
@@ -57,7 +57,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.3",
+    "@qiwi/semrel-infra": "3.0.4",
     "@qiwi/semrel-testing-suite": "3.0.4",
     "resolve-from": "^5.0.0",
     "semantic-release": "^19.0.2"

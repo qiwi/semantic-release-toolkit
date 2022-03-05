@@ -1380,7 +1380,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/git-sync@workspace:packages/git-sync"
   dependencies:
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/semrel-metabranch": ^3.0.4
     "@qiwi/semrel-testing-suite": 3.0.4
     "@types/execa": ^2.0.0
@@ -1471,33 +1471,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-actions@workspace:packages/plugin-actions"
   dependencies:
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/semrel-plugin-creator": 2.2.4
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-common@npm:3.2.5":
-  version: 3.2.5
-  resolution: "@qiwi/semrel-common@npm:3.2.5"
-  dependencies:
-    "@antongolub/git-root": ^1.5.6
-    "@qiwi/substrate": ^1.20.11
-    "@types/node": ^17.0.21
-    "@types/semantic-release": ^17.2.3
-    debug: ^4.3.3
-    execa: ^6.1.0
-    file-url: ^4.0.0
-    lodash-es: ^4.17.21
-    minimist: ^1.2.5
-    nanoid: ^3.3.1
-    tempy: ^2.0.0
-    tslib: ^2.3.1
-  checksum: 0d910a6c53b03cb1b82d6e4f16629a0364e8908b68eb66c31fb5b00ae600082e6b7429f32f3e9110268b5df59d8fe82f4693f796a59531917ea6a64379903a8f
-  languageName: node
-  linkType: hard
-
-"@qiwi/semrel-common@workspace:packages/common":
+"@qiwi/semrel-common@3.2.6, @qiwi/semrel-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
@@ -1522,7 +1502,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo"
   dependencies:
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/semrel-preset": 3.1.5
   languageName: unknown
   linkType: soft
@@ -1531,7 +1511,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config@workspace:packages/config"
   dependencies:
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/semrel-preset": 3.1.5
   languageName: unknown
   linkType: soft
@@ -1578,33 +1558,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@npm:3.0.3":
-  version: 3.0.3
-  resolution: "@qiwi/semrel-infra@npm:3.0.3"
-  bin:
-    concurrently: node_modules/.bin/concurrently
-    cpy: node_modules/.bin/cpy
-    depcheck: node_modules/.bin/depcheck
-    eslint: node_modules/.bin/eslint
-    jest: node_modules/.bin/jest
-    libdefkit: node_modules/.bin/libdefkit
-    mkdirp: node_modules/.bin/mkdirp
-    prettier: node_modules/.bin/prettier
-    rimraf: node_modules/.bin/rimraf
-    snazzy: node_modules/.bin/snazzy
-    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
-    typedoc: node_modules/.bin/typedoc
-  checksum: fa0c47b143a6e7716fe7a7a58ed9e0796a3f5377b884937f5fa7b9a666bc2babb0690c75ed153a9fb02a6a477a01bb8b0aae74ad4c0776552588ccf23d468dc5
-  languageName: node
-  linkType: hard
-
 "@qiwi/semrel-metabranch@3.0.4, @qiwi/semrel-metabranch@^3.0.4, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
     "@qiwi/esm": ^1.1.1
-    "@qiwi/semrel-common": 3.2.5
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-common": 3.2.6
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/semrel-plugin-creator": 2.2.4
     "@qiwi/semrel-testing-suite": 3.0.4
     "@types/execa": ^2.0.0
@@ -1625,7 +1585,7 @@ __metadata:
   resolution: "@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator"
   dependencies:
     "@qiwi/esm": ^1.1.1
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/semrel-testing-suite": 3.0.4
     "@types/execa": ^2.0.0
     "@types/lodash-es": ^4.17.6
@@ -1661,8 +1621,8 @@ __metadata:
   resolution: "@qiwi/semrel-testing-suite@workspace:packages/testing-suite"
   dependencies:
     "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": 3.2.5
-    "@qiwi/semrel-infra": 3.0.3
+    "@qiwi/semrel-common": 3.2.6
+    "@qiwi/semrel-infra": 3.0.4
     "@qiwi/substrate": ^1.20.11
     "@types/node": ^17.0.21
     execa: ^6.1.0
