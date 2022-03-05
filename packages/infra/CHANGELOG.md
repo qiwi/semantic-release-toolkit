@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [3.0.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.1...@qiwi/semrel-infra@3.0.2) (2022-03-05)
+
+
+### Bug Fixes
+
+* **infra:** reexport prettier bin ([8c008f7](https://github.com/qiwi/semantic-release-toolkit/commit/8c008f7a4cab03b297738b0db7dca56d90a55a58))
+
 ## @qiwi/semrel-infra [3.0.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.0...@qiwi/semrel-infra@3.0.1) (2022-03-04)
 
 
