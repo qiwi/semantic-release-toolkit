@@ -34,7 +34,7 @@
     "hosted-git-info": "^4.1.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.2",
+    "@qiwi/semrel-infra": "3.0.3",
     "@qiwi/semrel-testing-suite": "3.0.4",
     "@types/execa": "^2.0.0",
     "@types/node": "^17.0.21",
