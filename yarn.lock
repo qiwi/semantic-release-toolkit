@@ -1499,13 +1499,33 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-common@3.2.7, @qiwi/semrel-common@workspace:packages/common":
+"@qiwi/semrel-common@npm:3.2.7":
+  version: 3.2.7
+  resolution: "@qiwi/semrel-common@npm:3.2.7"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/substrate": ^1.20.11
+    "@types/node": ^17.0.21
+    "@types/semantic-release": ^17.2.3
+    debug: ^4.3.3
+    execa: ^6.1.0
+    file-url: ^4.0.0
+    lodash-es: ^4.17.21
+    minimist: ^1.2.5
+    nanoid: ^3.3.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: 9974fd1a42c2f948e6322ada468e779173e05e5a30d85bef30538a2578c87c7ccfa54ff8528a07f5ed7b0028222eceb92bb98290e163442f0dcb6117710bb6c0
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
     "@antongolub/git-root": ^1.5.6
     "@qiwi/git-utils": 1.0.0
-    "@qiwi/semrel-infra": 3.0.8
+    "@qiwi/semrel-infra": 3.1.0
     "@qiwi/substrate": ^1.20.11
     "@types/node": ^17.0.21
     "@types/semantic-release": ^17.2.3

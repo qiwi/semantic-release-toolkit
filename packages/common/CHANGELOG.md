@@ -1,3 +1,19 @@
+# @qiwi/semrel-common [3.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.7...@qiwi/semrel-common@3.3.0) (2022-03-06)
+
+
+### Features
+
+* introduce @qiwi/git-utils package ([e5d68f8](https://github.com/qiwi/semantic-release-toolkit/commit/e5d68f864fecd8f7be5ce97a533bda1ce6568096)), closes [#120](https://github.com/qiwi/semantic-release-toolkit/issues/120)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/git-utils:** upgraded to 1.0.0
+* **@qiwi/semrel-infra:** upgraded to 3.1.0
+
 ## @qiwi/semrel-common [3.2.7](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.6...@qiwi/semrel-common@3.2.7) (2022-03-06)
 
 
