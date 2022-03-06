@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-infra",
-  "version": "3.0.4",
+  "version": "3.0.8",
   "publishConfig": {
     "access": "public"
   },
