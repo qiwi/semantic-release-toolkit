@@ -1,3 +1,10 @@
+# @qiwi/semrel-infra [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.8...@qiwi/semrel-infra@3.1.0) (2022-03-06)
+
+
+### Features
+
+* introduce @qiwi/git-utils package ([e5d68f8](https://github.com/qiwi/semantic-release-toolkit/commit/e5d68f864fecd8f7be5ce97a533bda1ce6568096)), closes [#120](https://github.com/qiwi/semantic-release-toolkit/issues/120)
+
 ## @qiwi/semrel-infra [3.0.8](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.7...@qiwi/semrel-infra@3.0.8) (2022-03-06)
 
 
