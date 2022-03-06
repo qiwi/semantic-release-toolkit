@@ -10,9 +10,8 @@ jobs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
+
       - id: ci-skip-step
         uses: mstachniuk/ci-skip@v1
 
@@ -23,9 +22,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -36,7 +34,7 @@ jobs:
         run: yarn build
 
       - name: Save target (artifact)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: target
           retention-days: 1
@@ -54,11 +52,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v3
+
       - name: Restore target
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: target
       - uses: actions/setup-node@v3
@@ -74,7 +71,7 @@ jobs:
 
       - name: Push coverage
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: target
           retention-days: 1
@@ -91,11 +88,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v3
+
       - name: Restore target
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: target
       - uses: actions/setup-node@v3
@@ -120,11 +116,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Restore target
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: target
       - uses: actions/setup-node@v3
