@@ -1480,27 +1480,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-common@npm:3.2.6":
-  version: 3.2.6
-  resolution: "@qiwi/semrel-common@npm:3.2.6"
-  dependencies:
-    "@antongolub/git-root": ^1.5.6
-    "@qiwi/substrate": ^1.20.11
-    "@types/node": ^17.0.21
-    "@types/semantic-release": ^17.2.3
-    debug: ^4.3.3
-    execa: ^6.1.0
-    file-url: ^4.0.0
-    lodash-es: ^4.17.21
-    minimist: ^1.2.5
-    nanoid: ^3.3.1
-    tempy: ^2.0.0
-    tslib: ^2.3.1
-  checksum: 6071daab1231a52b601790c3e89380d293deb1323bd24440e28c9c8207f6daf4c38f18a9e42611c76412789e61c0ccece57073d4c272f47292b9b53c91774211
-  languageName: node
-  linkType: hard
-
-"@qiwi/semrel-common@workspace:packages/common":
+"@qiwi/semrel-common@3.2.7, @qiwi/semrel-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
@@ -1520,6 +1500,46 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-common@npm:3.2.2":
+  version: 3.2.2
+  resolution: "@qiwi/semrel-common@npm:3.2.2"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/substrate": ^1.20.11
+    "@types/node": ^17.0.19
+    "@types/semantic-release": ^17.2.3
+    debug: ^4.3.3
+    execa: ^6.1.0
+    file-url: ^4.0.0
+    lodash-es: ^4.17.21
+    minimist: ^1.2.5
+    nanoid: ^3.3.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: f6503cfff843a3946097fe2d890350c0e230b6e72b553d976dde6d42f526b865ff2c02d7c54569c435554c9615ae245c97f66a74bce299f2abd78001960b5f1e
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-common@npm:3.2.6":
+  version: 3.2.6
+  resolution: "@qiwi/semrel-common@npm:3.2.6"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/substrate": ^1.20.11
+    "@types/node": ^17.0.21
+    "@types/semantic-release": ^17.2.3
+    debug: ^4.3.3
+    execa: ^6.1.0
+    file-url: ^4.0.0
+    lodash-es: ^4.17.21
+    minimist: ^1.2.5
+    nanoid: ^3.3.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: 6071daab1231a52b601790c3e89380d293deb1323bd24440e28c9c8207f6daf4c38f18a9e42611c76412789e61c0ccece57073d4c272f47292b9b53c91774211
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-config-monorepo@1.5.5, @qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
   version: 0.0.0-use.local
@@ -1660,13 +1680,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-testing-suite@3.0.4, @qiwi/semrel-testing-suite@workspace:packages/testing-suite":
+"@qiwi/semrel-testing-suite@npm:3.0.4":
+  version: 3.0.4
+  resolution: "@qiwi/semrel-testing-suite@npm:3.0.4"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/semrel-common": 3.2.2
+    "@qiwi/substrate": ^1.20.11
+    execa: ^6.1.0
+    fs-extra: ^10.0.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: e7d75b78f0982dbc9e517c46ab8dac6f24eaec8fc6f3928ae38c6f11fe99fa2ba7d049ecedcdcdbe0ad49f9adcbe3f579b664184e21ed85f18eed1da9e748b2d
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-testing-suite@workspace:packages/testing-suite":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-testing-suite@workspace:packages/testing-suite"
   dependencies:
     "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": 3.2.6
-    "@qiwi/semrel-infra": 3.0.4
+    "@qiwi/semrel-common": 3.2.7
+    "@qiwi/semrel-infra": 3.0.8
     "@qiwi/substrate": ^1.20.11
     "@types/node": ^17.0.21
     execa: ^6.1.0
@@ -2188,7 +2223,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^17.0.21":
+"@types/node@npm:*, @types/node@npm:^17.0.19, @types/node@npm:^17.0.21":
   version: 17.0.21
   resolution: "@types/node@npm:17.0.21"
   checksum: 89dcd2fe82f21d3634266f8384e9c865cf8af49685639fbdbd799bdd1040480fb1e8eeda2d3b9fce41edbe704d2a4be9f427118c4ae872e8d9bb7cbeb3c41a94
