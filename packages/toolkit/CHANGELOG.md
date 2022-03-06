@@ -1,3 +1,24 @@
+## @qiwi/semrel-toolkit [3.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.2.0...@qiwi/semrel-toolkit@3.2.1) (2022-03-06)
+
+
+### Bug Fixes
+
+* **infra:** reexport prettier bin ([8c008f7](https://github.com/qiwi/semantic-release-toolkit/commit/8c008f7a4cab03b297738b0db7dca56d90a55a58))
+* up jest to 28.0.0-alpha.6 ([a0f2a1f](https://github.com/qiwi/semantic-release-toolkit/commit/a0f2a1f098df197a01374d329f082b5137896eb9))
+* update @qiwi/multi-semantic-release to v5 ([7014efe](https://github.com/qiwi/semantic-release-toolkit/commit/7014efebd794901c3bacd5cd97a77c28a730da67))
+* update @qiwi/multi-semantic-release to v6 ([262481e](https://github.com/qiwi/semantic-release-toolkit/commit/262481eedeef79bf2d79c3cd9d74b43646ef9933))
+* update msr to v4.0.3 ([3e34387](https://github.com/qiwi/semantic-release-toolkit/commit/3e343873a5d0456bff8ad4e89f85fa4d3246df95))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-config:** upgraded to 1.3.20
+* **@qiwi/semrel-config-monorepo:** upgraded to 1.6.0
+* **@qiwi/semrel-preset:** upgraded to 3.1.6
+
 # @qiwi/semrel-toolkit [3.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.1.6...@qiwi/semrel-toolkit@3.2.0) (2022-02-22)
 
 
