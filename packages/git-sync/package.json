@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/git-sync",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -28,14 +28,14 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@qiwi/semrel-metabranch": "^3.0.5",
+    "@qiwi/semrel-metabranch": "3.0.6",
     "debug": "^4.3.3",
     "execa": "^6.1.0",
     "hosted-git-info": "^4.1.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.8",
-    "@qiwi/semrel-testing-suite": "3.0.5",
+    "@qiwi/semrel-infra": "3.1.0",
+    "@qiwi/semrel-testing-suite": "3.0.6",
     "@types/execa": "^2.0.0",
     "@types/node": "^17.0.21",
     "resolve-from": "^5.0.0"

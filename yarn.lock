@@ -1381,9 +1381,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/git-sync@workspace:packages/git-sync"
   dependencies:
-    "@qiwi/semrel-infra": 3.0.8
-    "@qiwi/semrel-metabranch": ^3.0.5
-    "@qiwi/semrel-testing-suite": 3.0.5
+    "@qiwi/semrel-infra": 3.1.0
+    "@qiwi/semrel-metabranch": 3.0.6
+    "@qiwi/semrel-testing-suite": 3.0.6
     "@types/execa": ^2.0.0
     "@types/node": ^17.0.21
     debug: ^4.3.3
@@ -1622,15 +1622,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/semrel-metabranch@3.0.5, @qiwi/semrel-metabranch@^3.0.5, @qiwi/semrel-metabranch@workspace:packages/metabranch":
+"@qiwi/semrel-metabranch@3.0.6, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
     "@qiwi/esm": ^1.1.1
-    "@qiwi/semrel-common": 3.2.7
-    "@qiwi/semrel-infra": 3.0.8
-    "@qiwi/semrel-plugin-creator": 2.2.5
-    "@qiwi/semrel-testing-suite": 3.0.5
+    "@qiwi/semrel-common": 3.3.0
+    "@qiwi/semrel-infra": 3.1.0
+    "@qiwi/semrel-plugin-creator": 2.2.6
+    "@qiwi/semrel-testing-suite": 3.0.6
     "@types/execa": ^2.0.0
     "@types/node": ^17.0.21
     "@types/semantic-release": ^17.2.3
@@ -1643,6 +1643,25 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-metabranch@npm:3.0.5":
+  version: 3.0.5
+  resolution: "@qiwi/semrel-metabranch@npm:3.0.5"
+  dependencies:
+    "@qiwi/esm": ^1.1.1
+    "@qiwi/semrel-common": 3.2.7
+    "@qiwi/semrel-plugin-creator": 2.2.5
+    "@types/execa": ^2.0.0
+    "@types/node": ^17.0.21
+    "@types/semantic-release": ^17.2.3
+    execa: ^6.1.0
+    fs-extra: ^10.0.1
+    globby: ^13.1.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: 48f201dfea8958421726b2632b7728584ac69f892571ad3df507aa72962b19eb19106bbfb30aacdd6ced7a276d85829485b1c3936eb7a152aa059e897d371041
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-plugin-creator@2.2.6, @qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
   version: 0.0.0-use.local
@@ -1710,21 +1729,6 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
-
-"@qiwi/semrel-testing-suite@npm:3.0.5":
-  version: 3.0.5
-  resolution: "@qiwi/semrel-testing-suite@npm:3.0.5"
-  dependencies:
-    "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": 3.2.7
-    "@qiwi/substrate": ^1.20.11
-    execa: ^6.1.0
-    fs-extra: ^10.0.1
-    tempy: ^2.0.0
-    tslib: ^2.3.1
-  checksum: 94e2b388a5560d52b56c73077ae678a6be74499b725089ed4927a29d779d6a6719b469aaf2fecdf3815196f3ea67e2fbb03b10c6e78ec5a6ffec5f7f869e37de
-  languageName: node
-  linkType: hard
 
 "@qiwi/semrel-toolkit-monorepo@workspace:.":
   version: 0.0.0-use.local
