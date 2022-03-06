@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-config-monorepo",
-  "version": "1.5.5",
+  "version": "1.6.0",
   "publishConfig": {
     "access": "public"
   },
@@ -23,10 +23,10 @@
     "format": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
-    "@qiwi/semrel-preset": "3.1.5"
+    "@qiwi/semrel-preset": "3.1.6"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.4"
+    "@qiwi/semrel-infra": "3.0.8"
   },
   "repository": {
     "type": "git",

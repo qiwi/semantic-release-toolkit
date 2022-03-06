@@ -1521,12 +1521,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/semrel-config-monorepo@1.5.5, @qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
+"@qiwi/semrel-config-monorepo@npm:1.5.5":
+  version: 1.5.5
+  resolution: "@qiwi/semrel-config-monorepo@npm:1.5.5"
+  dependencies:
+    "@qiwi/semrel-preset": 3.1.5
+  checksum: 864480a843b069ae947a395988e0524937009d955474c08b2aab7c6c6a36137896f0cef8a92324167ac76b14bbc59e820c699a61c5e2c1cefaf4434bf351e9f1
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo"
   dependencies:
-    "@qiwi/semrel-infra": 3.0.4
-    "@qiwi/semrel-preset": 3.1.5
+    "@qiwi/semrel-infra": 3.0.8
+    "@qiwi/semrel-preset": 3.1.6
   languageName: unknown
   linkType: soft
 
@@ -1589,27 +1598,6 @@ __metadata:
     typedoc: ./../../node_modules/.bin/typedoc
   languageName: unknown
   linkType: soft
-
-"@qiwi/semrel-infra@npm:3.0.4":
-  version: 3.0.4
-  resolution: "@qiwi/semrel-infra@npm:3.0.4"
-  bin:
-    concurrently: node_modules/.bin/concurrently
-    cpy: node_modules/.bin/cpy
-    depcheck: node_modules/.bin/depcheck
-    eslint: node_modules/.bin/eslint
-    jest: node_modules/.bin/jest
-    libdefkit: node_modules/.bin/libdefkit
-    mkdirp: node_modules/.bin/mkdirp
-    prettier: node_modules/.bin/prettier
-    rimraf: node_modules/.bin/rimraf
-    snazzy: node_modules/.bin/snazzy
-    terser: node_modules/.bin/terser
-    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
-    typedoc: node_modules/.bin/typedoc
-  checksum: b0c825ea266a3b9f549cd75156420e08300d58d964ca03d69edf13fbe23d155e510eed33eef4af6ba43a102bff4b8b51dc3bbde8647fb7133aa5d5d40b4d6d3c
-  languageName: node
-  linkType: hard
 
 "@qiwi/semrel-metabranch@3.0.5, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local

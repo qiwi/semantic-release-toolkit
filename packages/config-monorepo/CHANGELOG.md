@@ -1,3 +1,29 @@
+# @qiwi/semrel-config-monorepo [1.6.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.5.5...@qiwi/semrel-config-monorepo@1.6.0) (2022-03-06)
+
+
+### Bug Fixes
+
+* **config-monorepo:** fix yarn publish ([686e566](https://github.com/qiwi/semantic-release-toolkit/commit/686e56669c373d9f91333a2da2457ad901d07265))
+* **config-monorepo:** reorder plugins ([801b04c](https://github.com/qiwi/semantic-release-toolkit/commit/801b04c9d7cccbd412b44d4af40117a6b36d6a39))
+* **config-monorepo:** reorder plugins ([e9d383e](https://github.com/qiwi/semantic-release-toolkit/commit/e9d383e873651d0fd4ab104b9ec90f38697b0377))
+* **config-monorepo:** reorder plugins to let npm prepare place .npmrc ([b918876](https://github.com/qiwi/semantic-release-toolkit/commit/b9188762ae13ec4995197d8e2ecc35896ff97dac))
+* tech release ([038c1ce](https://github.com/qiwi/semantic-release-toolkit/commit/038c1ce06e94a4fed3b8979bc01275b1eae5f148))
+* update msr to v4.0.3 ([3e34387](https://github.com/qiwi/semantic-release-toolkit/commit/3e343873a5d0456bff8ad4e89f85fa4d3246df95))
+
+
+### Features
+
+* **config-monorepo:** update and attach yarn.lock to git commits ([ce576d0](https://github.com/qiwi/semantic-release-toolkit/commit/ce576d094929d7d0c2f1639e953e19cf462973e3))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 3.1.6
+* **@qiwi/semrel-infra:** upgraded to 3.0.8
+
 ## @qiwi/semrel-config-monorepo [1.5.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.5.4...@qiwi/semrel-config-monorepo@1.5.5) (2022-02-22)
 
 
