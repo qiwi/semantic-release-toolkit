@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [3.0.7](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.6...@qiwi/semrel-infra@3.0.7) (2022-03-06)
+
+
+### Bug Fixes
+
+* **config-monorepo:** reorder plugins to let npm prepare place .npmrc ([b918876](https://github.com/qiwi/semantic-release-toolkit/commit/b9188762ae13ec4995197d8e2ecc35896ff97dac))
+
 ## @qiwi/semrel-infra [3.0.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.5...@qiwi/semrel-infra@3.0.6) (2022-03-06)
 
 
