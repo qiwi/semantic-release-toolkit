@@ -1,3 +1,16 @@
+## @qiwi/semrel-metabranch [3.0.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@3.0.4...@qiwi/semrel-metabranch@3.0.5) (2022-03-06)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 3.2.7
+* **@qiwi/semrel-plugin-creator:** upgraded to 2.2.5
+* **@qiwi/semrel-infra:** upgraded to 3.0.8
+* **@qiwi/semrel-testing-suite:** upgraded to 3.0.5
+
 ## [3.0.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@3.0.3...@qiwi/semrel-metabranch@3.0.4) (2022-02-22)
 
 
