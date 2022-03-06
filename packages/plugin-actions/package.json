@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-actions",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "publishConfig": {
     "access": "public"
   },
@@ -37,11 +37,11 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@qiwi/semrel-plugin-creator": "2.2.5",
+    "@qiwi/semrel-plugin-creator": "2.2.6",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.8"
+    "@qiwi/semrel-infra": "3.1.0"
   },
   "repository": {
     "type": "git",
