@@ -1433,9 +1433,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:~6.0.0":
-  version: 6.0.0
-  resolution: "@qiwi/multi-semantic-release@npm:6.0.0"
+"@qiwi/multi-semantic-release@npm:~6.0.1":
+  version: 6.0.1
+  resolution: "@qiwi/multi-semantic-release@npm:6.0.1"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     "@semrel-extra/topo": ^1.3.0
@@ -1461,7 +1461,7 @@ __metadata:
     npm: 8.4.1
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: c7f0390cfb47e65921e7b947545e7b8f66e6ae80c9a69c6fc1835f64e1a2ece7188081d13653a0bc6c32a75795a5c4daef78bf2e2b7a839ec21c0c44350bd981
+  checksum: 3c529a1f69a4465920b3f0f09ad78d092ad01184c4bc57e13458da145a908b3406761e6b89d7f853ad96af0376990a858acc1276c9b2a26794500e4f97ad7b7d
   languageName: node
   linkType: hard
 
@@ -1668,7 +1668,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
-    "@qiwi/multi-semantic-release": ~6.0.0
+    "@qiwi/multi-semantic-release": ~6.0.1
     "@qiwi/semrel-config": 1.3.21
     "@qiwi/semrel-config-monorepo": 1.6.1
     "@qiwi/semrel-preset": 3.1.7
