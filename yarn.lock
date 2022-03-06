@@ -1413,33 +1413,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:~5.0.3":
-  version: 5.0.3
-  resolution: "@qiwi/multi-semantic-release@npm:5.0.3"
+"@qiwi/multi-semantic-release@npm:~6.0.0":
+  version: 6.0.0
+  resolution: "@qiwi/multi-semantic-release@npm:6.0.0"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
+    "@semrel-extra/topo": ^1.3.0
     blork: ^9.3.0
     cosmiconfig: ^7.0.1
     debug: ^4.3.3
-    detect-indent: ^6.1.0
-    detect-newline: ^3.1.0
-    execa: ^5.1.1
+    detect-indent: ^7.0.0
+    detect-newline: ^4.0.0
+    execa: ^6.1.0
     get-stream: ^6.0.1
     git-log-parser: ^1.2.0
-    globby: 11.0.4
+    globby: 13.1.1
     lodash: ^4.17.21
-    meow: ^9.0.0
+    lodash-es: ^4.17.21
+    meow: ^10.1.2
     promise-events: ^0.2.4
     semantic-release: ^19.0.2
     semver: ^7.3.5
     signale: ^1.4.0
     stream-buffers: ^3.0.2
-    tempy: ^1.0.1
+    tempy: ^2.0.0
   peerDependencies:
     npm: 8.4.1
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: ffa76ba09f0b24ab82ecb8425cc1467c2a1b6dde855f83ee485c35992278965a53937101e26096f0698b60e78d7e66b512f78410762e2cc1b6f3103f1523e7d5
+  checksum: c7f0390cfb47e65921e7b947545e7b8f66e6ae80c9a69c6fc1835f64e1a2ece7188081d13653a0bc6c32a75795a5c4daef78bf2e2b7a839ec21c0c44350bd981
   languageName: node
   linkType: hard
 
@@ -1668,7 +1670,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
-    "@qiwi/multi-semantic-release": ~5.0.3
+    "@qiwi/multi-semantic-release": ~6.0.0
     "@qiwi/semrel-config": 1.3.19
     "@qiwi/semrel-config-monorepo": 1.5.5
     "@qiwi/semrel-preset": 3.1.5
@@ -1878,6 +1880,18 @@ __metadata:
   version: 1.2.0
   resolution: "@semrel-extra/npm@npm:1.2.0"
   checksum: ce899b2976323833695c1adba88bcc0698042a6234e0ce0742a081db23bc444215d6703d949c975beb796dad9112762b0c65d289aa6f7e0a872301fda0a9d4dd
+  languageName: node
+  linkType: hard
+
+"@semrel-extra/topo@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@semrel-extra/topo@npm:1.3.0"
+  dependencies:
+    "@types/toposort": ^2.0.3
+    fast-glob: ^3.2.7
+    toposort: ^2.0.2
+    tslib: ^2.3.1
+  checksum: 34b46f0b321966ca55a618d6bd8d29764740ed5db97f510c9f3dea2c46524705d130091a132259ab22f14cac25cfdc30d3a9cab37f217cc60c8ebf60f387afb4
   languageName: node
   linkType: hard
 
@@ -2238,6 +2252,13 @@ __metadata:
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 205fdbe3326b7046d7eaf5e494d8084f2659086a266f3f9cf00bccc549c8e36e407f88168ad4383c8b07099957ad669f75f2532ed4bc70be2b037330f7bae019
+  languageName: node
+  linkType: hard
+
+"@types/toposort@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@types/toposort@npm:2.0.3"
+  checksum: 018a372a899fd417d67ed85cb98bd3f15915020b865257b9e795e443bcfa0df79c6c44693ba88cbdd9e54ca872cecb91bf46764ec03c5b63968b2234804d14d2
   languageName: node
   linkType: hard
 
@@ -3777,7 +3798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decamelize@npm:^1.1.0, decamelize@npm:^1.2.0":
+"decamelize@npm:^1.1.0":
   version: 1.2.0
   resolution: "decamelize@npm:1.2.0"
   checksum: ad8c51a7e7e0720c70ec2eeb1163b66da03e7616d7b98c9ef43cce2416395e84c1e9548dd94f5f6ffecfee9f8b94251fc57121a8b021f2ff2469b2bae247b8aa
@@ -3935,17 +3956,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-indent@npm:^6.0.0, detect-indent@npm:^6.1.0":
+"detect-indent@npm:^6.0.0":
   version: 6.1.0
   resolution: "detect-indent@npm:6.1.0"
   checksum: ab953a73c72dbd4e8fc68e4ed4bfd92c97eb6c43734af3900add963fd3a9316f3bc0578b018b24198d4c31a358571eff5f0656e81a1f3b9ad5c547d58b2d093d
   languageName: node
   linkType: hard
 
-"detect-newline@npm:^3.0.0, detect-newline@npm:^3.1.0":
+"detect-indent@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "detect-indent@npm:7.0.0"
+  checksum: 71da5b82e5343662b7c3ff348d23674f7f1fc91500615018bf6ef4ccd57a5a35f285287c25179ce0603c39a36782dd5bce5f888bb72efb98ff699646dbad9008
+  languageName: node
+  linkType: hard
+
+"detect-newline@npm:^3.0.0":
   version: 3.1.0
   resolution: "detect-newline@npm:3.1.0"
   checksum: ae6cd429c41ad01b164c59ea36f264a2c479598e61cba7c99da24175a7ab80ddf066420f2bec9a1c57a6bead411b4655ff15ad7d281c000a89791f48cbe939e7
+  languageName: node
+  linkType: hard
+
+"detect-newline@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "detect-newline@npm:4.0.0"
+  checksum: 52767347c70f485b2d1db6493dde57b8c3c1f249e24bad7eb7424cc1129200aa7e671902ede18bc94a8b69e10dec91456aab4c7e2478559d9eedb31ef3847f36
   languageName: node
   linkType: hard
 
@@ -4661,7 +4696,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
   dependencies:
@@ -5169,17 +5204,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:11.0.4":
-  version: 11.0.4
-  resolution: "globby@npm:11.0.4"
+"globby@npm:13.1.1, globby@npm:^13.0.0, globby@npm:^13.1.1":
+  version: 13.1.1
+  resolution: "globby@npm:13.1.1"
   dependencies:
-    array-union: ^2.1.0
     dir-glob: ^3.0.1
-    fast-glob: ^3.1.1
-    ignore: ^5.1.4
-    merge2: ^1.3.0
-    slash: ^3.0.0
-  checksum: d3e02d5e459e02ffa578b45f040381c33e3c0538ed99b958f0809230c423337999867d7b0dbf752ce93c46157d3bbf154d3fff988a93ccaeb627df8e1841775b
+    fast-glob: ^3.2.11
+    ignore: ^5.2.0
+    merge2: ^1.4.1
+    slash: ^4.0.0
+  checksum: e6c43409c6c31b374fbd1c01a8c1811de52336928be9c697e472d2a89a156c9cbf1fb33863755c0447b4db16485858aa57f16628d66a6b7c7131669c9fbe76cd
   languageName: node
   linkType: hard
 
@@ -5194,19 +5228,6 @@ __metadata:
     merge2: ^1.4.1
     slash: ^3.0.0
   checksum: b4be8885e0cfa018fc783792942d53926c35c50b3aefd3fdcfb9d22c627639dc26bd2327a40a0b74b074100ce95bb7187bfeae2f236856aa3de183af7a02aea6
-  languageName: node
-  linkType: hard
-
-"globby@npm:^13.0.0, globby@npm:^13.1.1":
-  version: 13.1.1
-  resolution: "globby@npm:13.1.1"
-  dependencies:
-    dir-glob: ^3.0.1
-    fast-glob: ^3.2.11
-    ignore: ^5.2.0
-    merge2: ^1.4.1
-    slash: ^4.0.0
-  checksum: e6c43409c6c31b374fbd1c01a8c1811de52336928be9c697e472d2a89a156c9cbf1fb33863755c0447b4db16485858aa57f16628d66a6b7c7131669c9fbe76cd
   languageName: node
   linkType: hard
 
@@ -5464,7 +5485,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:^5.1.1, ignore@npm:^5.1.4, ignore@npm:^5.1.8, ignore@npm:^5.2.0":
+"ignore@npm:^5.1.1, ignore@npm:^5.1.8, ignore@npm:^5.2.0":
   version: 5.2.0
   resolution: "ignore@npm:5.2.0"
   checksum: 6b1f926792d614f64c6c83da3a1f9c83f6196c2839aa41e1e32dd7b8d174cef2e329d75caabb62cb61ce9dc432f75e67d07d122a037312db7caa73166a1bdb77
@@ -7557,26 +7578,6 @@ __metadata:
     type-fest: ^0.18.0
     yargs-parser: ^20.2.3
   checksum: bc23bf1b4423ef6a821dff9734406bce4b91ea257e7f10a8b7f896f45b59649f07adc0926e2917eacd8cf1df9e4cd89c77623cf63dfd0f8bf54de07a32ee5a85
-  languageName: node
-  linkType: hard
-
-"meow@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "meow@npm:9.0.0"
-  dependencies:
-    "@types/minimist": ^1.2.0
-    camelcase-keys: ^6.2.2
-    decamelize: ^1.2.0
-    decamelize-keys: ^1.1.0
-    hard-rejection: ^2.1.0
-    minimist-options: 4.1.0
-    normalize-package-data: ^3.0.0
-    read-pkg-up: ^7.0.1
-    redent: ^3.0.0
-    trim-newlines: ^3.0.0
-    type-fest: ^0.18.0
-    yargs-parser: ^20.2.3
-  checksum: 99799c47247f4daeee178e3124f6ef6f84bde2ba3f37652865d5d8f8b8adcf9eedfc551dd043e2455cd8206545fd848e269c0c5ab6b594680a0ad4d3617c9639
   languageName: node
   linkType: hard
 
@@ -10156,7 +10157,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tempy@npm:^1.0.0, tempy@npm:^1.0.1":
+"tempy@npm:^1.0.0":
   version: 1.0.1
   resolution: "tempy@npm:1.0.1"
   dependencies:
@@ -10310,6 +10311,13 @@ __metadata:
   dependencies:
     is-number: ^7.0.0
   checksum: f76fa01b3d5be85db6a2a143e24df9f60dd047d151062d0ba3df62953f2f697b16fe5dad9b0ac6191c7efc7b1d9dcaa4b768174b7b29da89d4428e64bc0a20ed
+  languageName: node
+  linkType: hard
+
+"toposort@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "toposort@npm:2.0.2"
+  checksum: d64c74b570391c9432873f48e231b439ee56bc49f7cb9780b505cfdf5cb832f808d0bae072515d93834dd6bceca5bb34448b5b4b408335e4d4716eaf68195dcb
   languageName: node
   linkType: hard
 
