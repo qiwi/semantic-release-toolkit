@@ -1,12 +1,13 @@
 const projects = [
+  'common',
   'config',
   'config-monorepo',
+  'git-utils',
+  'metabranch',
   'preset',
   'plugin-creator',
   'plugin-actions',
-  'testing-suite',
-  'common',
-  'metabranch'
+  'testing-suite'
 ]
 
 module.exports = {

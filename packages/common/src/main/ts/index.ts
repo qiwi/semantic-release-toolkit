@@ -1,3 +1,2 @@
-export * from './git'
-export * from './misc'
+export * from '@qiwi/git-utils'
 export * from './tpl'

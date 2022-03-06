@@ -28,14 +28,14 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@qiwi/semrel-metabranch": "^3.0.4",
+    "@qiwi/semrel-metabranch": "^3.0.5",
     "debug": "^4.3.3",
     "execa": "^6.1.0",
     "hosted-git-info": "^4.1.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.0.4",
-    "@qiwi/semrel-testing-suite": "3.0.4",
+    "@qiwi/semrel-infra": "3.0.8",
+    "@qiwi/semrel-testing-suite": "3.0.5",
     "@types/execa": "^2.0.0",
     "@types/node": "^17.0.21",
     "resolve-from": "^5.0.0"
