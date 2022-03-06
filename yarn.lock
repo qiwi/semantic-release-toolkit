@@ -1697,12 +1697,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/semrel-preset@3.1.6, @qiwi/semrel-preset@workspace:packages/preset":
+"@qiwi/semrel-preset@npm:3.1.6":
+  version: 3.1.6
+  resolution: "@qiwi/semrel-preset@npm:3.1.6"
+  dependencies:
+    "@qiwi/semantic-release-gh-pages-plugin": ^5.2.0
+    "@qiwi/semrel-metabranch": 3.0.5
+    "@semantic-release/changelog": ^6.0.1
+    "@semantic-release/commit-analyzer": ^9.0.2
+    "@semantic-release/exec": ^6.0.3
+    "@semantic-release/git": ^10.0.1
+    "@semantic-release/github": ^8.0.2
+    "@semantic-release/npm": ^9.0.1
+    "@semantic-release/release-notes-generator": ^10.0.3
+    "@semrel-extra/npm": ^1.2.0
+  checksum: 959eecf5ef9acc1bb905fa2220808df5d226fb25487d34a383a956a09c41ef13b160ad41e6a48e54c628bf1fe3f2dcc29efa0f063917509052fd69fea516e55d
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-preset@workspace:packages/preset":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-preset@workspace:packages/preset"
   dependencies:
     "@qiwi/semantic-release-gh-pages-plugin": ^5.2.0
-    "@qiwi/semrel-metabranch": 3.0.5
+    "@qiwi/semrel-metabranch": 3.0.6
     "@semantic-release/changelog": ^6.0.1
     "@semantic-release/commit-analyzer": ^9.0.2
     "@semantic-release/exec": ^6.0.3
