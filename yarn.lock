@@ -1644,13 +1644,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-plugin-creator@2.2.5, @qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
+"@qiwi/semrel-plugin-creator@npm:2.2.5":
+  version: 2.2.5
+  resolution: "@qiwi/semrel-plugin-creator@npm:2.2.5"
+  dependencies:
+    "@qiwi/esm": ^1.1.1
+    "@types/lodash-es": ^4.17.6
+    "@types/node": ^17.0.21
+    "@types/semantic-release": ^17.2.3
+    debug: ^4.3.3
+    lodash-es: ^4.17.21
+    tslib: ^2.3.1
+  checksum: 0e10b03ccd011774afce4766d12941f9e4e34a4845b8da96bf9198892508cfcbfbac6b780ed14055917a2a01675c98cf88651d6a8ab2b0f320b3016ebe5840a2
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator"
   dependencies:
     "@qiwi/esm": ^1.1.1
-    "@qiwi/semrel-infra": 3.0.8
-    "@qiwi/semrel-testing-suite": 3.0.5
+    "@qiwi/semrel-infra": 3.1.0
+    "@qiwi/semrel-testing-suite": 3.0.6
     "@types/execa": ^2.0.0
     "@types/lodash-es": ^4.17.6
     "@types/node": ^17.0.21
@@ -1680,22 +1695,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-testing-suite@npm:3.0.5":
-  version: 3.0.5
-  resolution: "@qiwi/semrel-testing-suite@npm:3.0.5"
-  dependencies:
-    "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": 3.2.7
-    "@qiwi/substrate": ^1.20.11
-    execa: ^6.1.0
-    fs-extra: ^10.0.1
-    tempy: ^2.0.0
-    tslib: ^2.3.1
-  checksum: 94e2b388a5560d52b56c73077ae678a6be74499b725089ed4927a29d779d6a6719b469aaf2fecdf3815196f3ea67e2fbb03b10c6e78ec5a6ffec5f7f869e37de
-  languageName: node
-  linkType: hard
-
-"@qiwi/semrel-testing-suite@workspace:packages/testing-suite":
+"@qiwi/semrel-testing-suite@3.0.6, @qiwi/semrel-testing-suite@workspace:packages/testing-suite":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-testing-suite@workspace:packages/testing-suite"
   dependencies:
@@ -1710,6 +1710,21 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-testing-suite@npm:3.0.5":
+  version: 3.0.5
+  resolution: "@qiwi/semrel-testing-suite@npm:3.0.5"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/semrel-common": 3.2.7
+    "@qiwi/substrate": ^1.20.11
+    execa: ^6.1.0
+    fs-extra: ^10.0.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: 94e2b388a5560d52b56c73077ae678a6be74499b725089ed4927a29d779d6a6719b469aaf2fecdf3815196f3ea67e2fbb03b10c6e78ec5a6ffec5f7f869e37de
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-toolkit-monorepo@workspace:.":
   version: 0.0.0-use.local
