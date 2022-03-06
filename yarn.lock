@@ -1398,7 +1398,7 @@ __metadata:
   resolution: "@qiwi/git-utils@workspace:packages/git-utils"
   dependencies:
     "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-infra": 3.0.8
+    "@qiwi/semrel-infra": 3.1.0
     "@qiwi/substrate": ^1.20.11
     "@types/node": ^17.0.21
     debug: ^4.3.3
@@ -1539,7 +1539,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@3.0.8, @qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@3.1.0, @qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:
@@ -1580,6 +1580,27 @@ __metadata:
     typedoc: ./../../node_modules/.bin/typedoc
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-infra@npm:3.0.8":
+  version: 3.0.8
+  resolution: "@qiwi/semrel-infra@npm:3.0.8"
+  bin:
+    concurrently: node_modules/.bin/concurrently
+    cpy: node_modules/.bin/cpy
+    depcheck: node_modules/.bin/depcheck
+    eslint: node_modules/.bin/eslint
+    jest: node_modules/.bin/jest
+    libdefkit: node_modules/.bin/libdefkit
+    mkdirp: node_modules/.bin/mkdirp
+    prettier: node_modules/.bin/prettier
+    rimraf: node_modules/.bin/rimraf
+    snazzy: node_modules/.bin/snazzy
+    terser: node_modules/.bin/terser
+    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
+    typedoc: node_modules/.bin/typedoc
+  checksum: 9d333dbb655d50bc182accc29891583bb78a9c818c92521f6dbcafdfef4f8ad5d086bccf5d2cc3abe25bf98acf9923c3e32dc026b69d5b29bae4743aa78ab417
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-metabranch@3.0.5, @qiwi/semrel-metabranch@^3.0.5, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
