@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [3.2.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.2.3...@qiwi/semrel-toolkit@3.2.4) (2022-03-06)
+
+
+### Bug Fixes
+
+* **toolkit:** fix msr invoke ([540bb63](https://github.com/qiwi/semantic-release-toolkit/commit/540bb63b55b5527d7770af1a67991b6f0820e4dc))
+
 ## @qiwi/semrel-toolkit [3.2.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.2.2...@qiwi/semrel-toolkit@3.2.3) (2022-03-06)
 
 
