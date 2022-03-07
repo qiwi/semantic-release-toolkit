@@ -1674,7 +1674,7 @@ __metadata:
     "@qiwi/semrel-preset": 3.1.7
     semantic-release: ~19.0.2
   peerDependencies:
-    npm: 8.4.1
+    npm: 8.5.3
   bin:
     multi-semrel: ./msr.js
     semrel: ./semrel.js
