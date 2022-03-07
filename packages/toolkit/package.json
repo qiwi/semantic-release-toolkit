@@ -16,10 +16,6 @@
     "multi-semrel": "./msr.js",
     "semrel": "./semrel.js"
   },
-  "scripts": {
-    "semantic-release": "semantic-release",
-    "multi-semantic-release": "multi-semantic-release"
-  },
   "dependencies": {
     "@qiwi/multi-semantic-release": "~6.0.2",
     "@qiwi/semrel-config": "1.3.21",

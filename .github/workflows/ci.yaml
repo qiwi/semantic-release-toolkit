@@ -137,6 +137,7 @@ jobs:
 
       - name: Install deps
         run: |
+          npm i -g npm@latest
           npm -v
           yarn -v
           yarn
