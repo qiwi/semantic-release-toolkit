@@ -137,9 +137,8 @@ jobs:
 
       - name: Install deps
         run: |
-          echo "Downgrade npm to v8.4.1: https://github.com/npm/cli/issues/4404"
-          npm i -g npm@8.4.1
           npm -v
+          yarn -v
           yarn
 
       - name: Multi-semantic-release

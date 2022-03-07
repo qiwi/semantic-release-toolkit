@@ -1433,9 +1433,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:~6.0.1":
-  version: 6.0.1
-  resolution: "@qiwi/multi-semantic-release@npm:6.0.1"
+"@qiwi/multi-semantic-release@npm:~6.0.2":
+  version: 6.0.2
+  resolution: "@qiwi/multi-semantic-release@npm:6.0.2"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     "@semrel-extra/topo": ^1.3.0
@@ -1457,11 +1457,9 @@ __metadata:
     signale: ^1.4.0
     stream-buffers: ^3.0.2
     tempy: ^2.0.0
-  peerDependencies:
-    npm: 8.4.1
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: 3c529a1f69a4465920b3f0f09ad78d092ad01184c4bc57e13458da145a908b3406761e6b89d7f853ad96af0376990a858acc1276c9b2a26794500e4f97ad7b7d
+  checksum: 6a3116913c3bd739f6e178890aa40b0cb6246425236878e166943f1673340ace4c611e15846a377f7c67b7cf00bcea72d838d8d60bce6704ca6bb35f8aeb6702
   languageName: node
   linkType: hard
 
@@ -1668,13 +1666,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
-    "@qiwi/multi-semantic-release": ~6.0.1
+    "@qiwi/multi-semantic-release": ~6.0.2
     "@qiwi/semrel-config": 1.3.21
     "@qiwi/semrel-config-monorepo": 1.6.1
     "@qiwi/semrel-preset": 3.1.7
     semantic-release: ~19.0.2
-  peerDependencies:
-    npm: 8.4.1
   bin:
     multi-semrel: ./msr.js
     semrel: ./semrel.js
