@@ -1,3 +1,10 @@
+## @qiwi/semrel-toolkit [3.2.5](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.2.4...@qiwi/semrel-toolkit@3.2.5) (2022-03-07)
+
+
+### Bug Fixes
+
+* **toolkit:** rm npm from peer deps ([9dfee94](https://github.com/qiwi/semantic-release-toolkit/commit/9dfee94b6a8ed8ad5b7207e5fe38993ede7253f8))
+
 ## @qiwi/semrel-toolkit [3.2.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-toolkit@3.2.3...@qiwi/semrel-toolkit@3.2.4) (2022-03-06)
 
 
