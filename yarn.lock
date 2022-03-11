@@ -1546,7 +1546,7 @@ __metadata:
     "@swissquote/crafty-preset-jest": ^1.18.4
     "@types/jest": ^27.4.1
     concurrently: ^7.0.0
-    cpy-cli: ^4.0.0
+    cpy-cli: ^4.1.0
     depcheck: ^1.4.3
     eslint: ^8.10.0
     eslint-config-prettier: ^8.5.0
@@ -1559,7 +1559,7 @@ __metadata:
     snazzy: ^9.0.0
     terser: ^5.12.0
     ts-jest: ^27.1.3
-    tsc-esm-fix: ^2.7.7
+    tsc-esm-fix: ^2.7.8
     typedoc: ^0.22.13
     typescript: ^4.6.2
   bin:
@@ -3651,15 +3651,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cpy-cli@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "cpy-cli@npm:4.0.0"
+"cpy-cli@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "cpy-cli@npm:4.1.0"
   dependencies:
     cpy: ^9.0.0
     meow: ^10.1.2
   bin:
     cpy: cli.js
-  checksum: ed2a6d5b9bf50584da497e0c11ebbd11bc1f6b409f379cabc1e7ada00086a4e1fdc3cad4ad50ce677cb9eb0b2f51f5a0ef9aa283e4ca46e6c05054ffbd3c3a37
+  checksum: ae6f8474bacd888e5a1471a1257108a019f7d2b0c6862eeb40d4d09a5cde99d5112f16a4e6d635952ad6a5da15c0f373ade23d113cf02772fb2216638b8115d3
   languageName: node
   linkType: hard
 
@@ -5209,7 +5209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:13.1.1, globby@npm:^13.0.0, globby@npm:^13.1.1":
+"globby@npm:13.1.1, globby@npm:^13.1.1":
   version: 13.1.1
   resolution: "globby@npm:13.1.1"
   dependencies:
@@ -10433,19 +10433,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsc-esm-fix@npm:^2.7.7":
-  version: 2.7.7
-  resolution: "tsc-esm-fix@npm:2.7.7"
+"tsc-esm-fix@npm:^2.7.8":
+  version: 2.7.8
+  resolution: "tsc-esm-fix@npm:2.7.8"
   dependencies:
     "@types/fs-extra": ^9.0.13
-    fs-extra: ^10.0.0
-    globby: ^13.0.0
+    fs-extra: ^10.0.1
+    globby: ^13.1.1
     json5: ^2.2.0
     meow: ^10.1.2
     tslib: ^2.3.1
   bin:
-    tsc-esm-fix: ./target/es6/cli.mjs
-  checksum: 6523da09b878579d02c20315f012b88051ac89a0466f4a42b9ba54b9050024edf9abdb89084aa0acdfe9eedf156dae064e2a9c073b3d475056c0f0b99819b1c7
+    tsc-esm-fix: target/es6/cli.mjs
+  checksum: 3fa3922c55416316c29061bb0d8b41072d73ffa5be74a3fb741d31415dfdf47b3bd80dcd7a74b3af83619e8480da92b19d6bae06880a567ffb595a20a3da6c8c
   languageName: node
   linkType: hard
 

@@ -9,7 +9,7 @@ import {
   gitCommitAll,
   gitGetTagHash,
   gitGetTags,
-  gitInitOrigin,
+  // gitInitOrigin,
   gitInitTestingRepo,
   gitPush,
   gitTag,
@@ -29,13 +29,13 @@ describe('gitInitOrigin()', () => {
       message: 'feat: initial commit',
       sync,
     })
-    const url = gitInitOrigin({ cwd, branch: 'release', sync })
+    // const url = gitInitOrigin({ cwd, branch: 'release', sync })
+    // expect(url).toEqual(expect.any(String))
 
-    expect(url).toEqual(expect.any(String))
     expect(commitId).toEqual(expect.any(String))
     expect(
       execaSync('git', ['remote', 'show', 'origin'], { cwd }).stdout,
-    ).toMatch(/Remote branch:\n\s+release\s+tracked/)
+    ).toMatch(/Remote branch:\n\s+master\s+tracked/)
     // ).toMatch(/master\s+tracked\n\s+release\s+tracked/)
   })
 })
@@ -62,7 +62,6 @@ describe('gitPush()', () => {
     const cwd = gitInitTestingRepo({ sync })
     copyDirectory(`${fixtures}/basicPackage/`, cwd)
     gitCommitAll({ cwd, message: 'feat: initial commit', sync })
-    gitInitOrigin({ cwd, sync }) // TODO insert to gitInitTestingRepo
 
     expect(() => gitPush({ cwd, sync })).not.toThrowError()
   })
@@ -83,7 +82,6 @@ describe('gitTag()', () => {
 
     gitTag({ cwd, tag: tag1, hash: commitId, sync })
     gitTag({ cwd, tag: tag2, hash: commitId, sync })
-    gitInitOrigin({ cwd, sync })
     gitPush({ cwd, sync })
 
     const tagHash = gitGetTagHash({ cwd, tag: tag1, sync })

@@ -133,7 +133,7 @@ describe('git-utils', () => {
     [
       gitCommit,
       { cwd, message: 'foo' },
-      [['git', ['commit', '--message', 'foo', '--no-gpg-sign'], { cwd }]],
+      [['git', ['commit', '--message', 'foo', '--no-gpg-sign', '--allow-empty'], { cwd }]],
       'output',
     ],
     [
@@ -142,7 +142,7 @@ describe('git-utils', () => {
       [
         [
           'git',
-          ['commit', '--all', '--message', 'foo', '--no-gpg-sign'],
+          ['commit', '--all', '--message', 'foo', '--no-gpg-sign', '--allow-empty'],
           { cwd },
         ],
       ],

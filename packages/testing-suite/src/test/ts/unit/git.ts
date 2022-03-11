@@ -30,7 +30,7 @@ describe('testing suite', () => {
       })
       expect(cwd).toEqual(expect.any(String))
       expect(
-        execaSync('git', ['rev-parse', 'HEAD'], { cwd: cwd }).stdout,
+        execaSync('git', ['rev-parse', 'HEAD'], { cwd }).stdout,
       ).toEqual(commits[0])
 
       const _cwd = gitClone({ sync, url })
