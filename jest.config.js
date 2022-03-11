@@ -1,3 +1,4 @@
+const PROJECT = process.env.JEST_PROJECT
 const projects = [
   'common',
   'config',
@@ -16,5 +17,5 @@ module.exports = {
     '<rootDir>/**/src/main/**/*.(j|t)s'
   ],
   testFailureExitCode: 1,
-  projects: projects.map(name => `<rootDir>/packages/${name}/`),
+  projects: (PROJECT ? [PROJECT] : projects).map(name => `<rootDir>/packages/${name}/`),
 }

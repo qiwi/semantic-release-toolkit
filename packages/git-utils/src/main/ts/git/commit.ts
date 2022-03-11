@@ -30,7 +30,7 @@ export const gitCommit = <T extends IGitCommit>({
       gitExec({
         cwd,
         sync,
-        args: ['commit', ...flags, '--no-gpg-sign'],
+        args: ['commit', ...flags, '--no-gpg-sign', '--allow-empty'],
       }),
     () => gitGetHead({ cwd, sync: sync as T['sync'] }),
   )

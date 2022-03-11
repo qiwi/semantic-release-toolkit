@@ -8,6 +8,7 @@ import {
   gitConfigAdd,
   gitExec,
   gitInit,
+  gitInitOrigin,
   gitInitRemote,
   gitPush,
   gitRemoteAdd,
@@ -24,8 +25,16 @@ import { copyDirectory } from './file'
 
 export * from '@qiwi/semrel-common'
 
+export type TGitCommitDigest = {
+  message: string
+  from?: string
+  tag?: string
+  branch?: string
+}
+
 export interface IGitInitTestingRepo extends IGitInit {
   branch?: string
+  commits?: TGitCommitDigest[]
 }
 
 /**
@@ -38,6 +47,7 @@ export interface IGitInitTestingRepo extends IGitInit {
 export const gitInitTestingRepo = <T extends IGitInitTestingRepo>({
   branch = 'master',
   sync,
+  commits,
 }: T): TGitResult<T['sync']> => {
   const cwd = tempy.directory()
 
@@ -53,6 +63,9 @@ export const gitInitTestingRepo = <T extends IGitInitTestingRepo>({
       }),
     // Disable GPG signing for commits.
     () => gitConfigAdd({ cwd, sync, key: 'commit.gpgsign', value: false }),
+    () => gitCreateFakeCommits({ sync, cwd, commits }),
+    () => gitInitOrigin({ cwd, sync }),
+    // () => gitPush({ cwd, sync }),
     () => format(sync as T['sync'], cwd),
   )
 }
@@ -80,13 +93,6 @@ export const gitCommitAll = <T extends IGitCommit>({
   )
 }
 
-export type TGitCommitDigest = {
-  message: string
-  from: string
-  tag?: string
-  branch?: string
-}
-
 export interface IGitFakeRepo extends IGitInit {
   commits: TGitCommitDigest[]
 }
@@ -103,11 +109,11 @@ export type TGitFakeRepoDigest = TGitFakeCommitsDigest & {
 export interface IGitPushFakeCommits {
   cwd: string
   sync?: boolean
-  commits: TGitCommitDigest[]
+  commits?: TGitCommitDigest[]
 }
 
-export const gitPushFakeCommits = <T extends IGitPushFakeCommits>({
-  commits,
+export const gitCreateFakeCommits = <T extends IGitPushFakeCommits>({
+  commits = [{ message: 'empty commit' }],
   sync,
   cwd,
 }: T): TGitResult<T['sync'], TGitFakeCommitsDigest> => {
@@ -123,7 +129,7 @@ export const gitPushFakeCommits = <T extends IGitPushFakeCommits>({
       ) => {
         cb.push(
           () => gitCheckout({ cwd, sync, branch, b: true }),
-          () => copyDirectory(from, cwd),
+          () => from && copyDirectory(from, cwd),
           () =>
             gitCommitAll({
               cwd,
@@ -143,8 +149,26 @@ export const gitPushFakeCommits = <T extends IGitPushFakeCommits>({
       },
       [],
     ),
-    () => commits.length > 0 && gitPush({ cwd, sync }),
     () => format(sync as T['sync'], res),
+  )
+}
+
+export const gitPushFakeCommits = <T extends IGitPushFakeCommits>({
+  commits,
+  sync,
+  cwd,
+}: T): TGitResult<T['sync'], TGitFakeCommitsDigest> => {
+  let _res: TGitFakeCommitsDigest
+
+  return exec(
+    () => gitCreateFakeCommits({ cwd, sync, commits }),
+    (res) => {
+      _res = res
+      if (res.commits.length > 0) {
+        return gitPush({ cwd, sync })
+      }
+    },
+    () => format(sync as T['sync'], _res),
   )
 }
 
