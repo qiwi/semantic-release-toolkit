@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "clean": "rimraf target typings flow-typed buildcache coverage docs",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "yarn lint --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "test": "concurrently yarn:lint yarn:test:unit yarn:test:depcheck",
