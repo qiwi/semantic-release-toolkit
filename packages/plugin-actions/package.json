@@ -26,7 +26,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "echo 'WIP' && exit 0 || concurrently yarn:lint yarn:test:unit yarn:test:depcheck",
     "test:unit": "jest --runInBand",
-    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra' --ignore-patterns 'typings,flow-typed/*'",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/semrel-common' --ignore-patterns 'typings,flow-typed/*'",
     "build": "concurrently yarn:build:es5 yarn:build:es6 yarn:build:ts yarn:build:libdef yarn:docs",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",

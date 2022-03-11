@@ -10,7 +10,7 @@ import {
   gitSetUser,
   gitShowCommitted,
   gitStatus,
-} from '@qiwi/semrel-common'
+} from '@qiwi/git-utils'
 import { Debugger } from '@qiwi/semrel-plugin-creator'
 import fs from 'fs-extra'
 import { globby } from 'globby'

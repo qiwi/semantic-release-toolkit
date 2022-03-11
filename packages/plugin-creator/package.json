@@ -30,7 +30,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "concurrently yarn:lint yarn:test:unit yarn:test:depcheck",
     "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.mjs --runInBand",
-    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@qiwi/esm,@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/semrel-plugin-creator' --ignore-patterns 'typings,flow-typed/*'",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@qiwi/esm,@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/semrel-common,@qiwi/semrel-plugin-creator' --ignore-patterns 'typings,flow-typed/*'",
     "build": "concurrently yarn:build:es5 yarn:build:es6 yarn:build:exports yarn:build:ts yarn:build:esnext yarn:build:libdef yarn:docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es5": "mkdirp target/es5 && tsc -p tsconfig.es5.json",

@@ -17,13 +17,13 @@ import {
   IGitCommit,
   IGitInit,
   TGitResult,
-} from '@qiwi/semrel-common'
+} from '@qiwi/git-utils'
 import { ICallable } from '@qiwi/substrate'
 import tempy from 'tempy'
 
 import { copyDirectory } from './file'
 
-export * from '@qiwi/semrel-common'
+export * from '@qiwi/git-utils'
 
 export type TGitCommitDigest = {
   message: string

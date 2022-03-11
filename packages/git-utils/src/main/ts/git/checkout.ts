@@ -1,4 +1,5 @@
-import { formatFlags } from '../flags'
+import { formatFlags } from '@qiwi/semrel-common'
+
 import { gitExec, IGitCommon, TGitResult } from './exec'
 
 export interface IGitCheckout extends IGitCommon {
