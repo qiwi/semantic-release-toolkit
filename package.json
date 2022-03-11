@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "clean": "yarn workspaces foreach -p run  clean",
-    "lint": "yarn workspaces foreach -p run lint",
+    "lint": "yarn workspaces foreach -tp run lint",
     "lint:fix": "yarn workspaces foreach -tp run lint:fix",
     "jest:pre": "sh ./scripts/sh/patch-pkg-main.sh true",
     "jest:post": "sh ./scripts/sh/patch-pkg-main.sh",

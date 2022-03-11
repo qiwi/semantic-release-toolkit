@@ -15,9 +15,23 @@ jobs:
       - id: ci-skip-step
         uses: mstachniuk/ci-skip@v1
 
+  lint:
+    name: lint
+    needs: init
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install deps
+        run: yarn
+      - name: Lint
+        run: yarn run lint
+
   build:
     name: build
-    needs: init
+    needs: lint
     if: ${{ needs.init.outputs.skip == 'false' }}
     runs-on: ubuntu-20.04
     steps:
