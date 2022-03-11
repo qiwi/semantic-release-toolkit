@@ -1,9 +1,9 @@
-import { gitStatus } from '../../../main/ts'
+import {formatFlags, parseFlags, tpl} from '../../../main/ts'
 
 describe('index', () => {
   it('properly exports its inners', () => {
-    const gitMethods = [gitStatus]
+    const utils = [formatFlags, parseFlags, tpl]
 
-    gitMethods.forEach((method) => expect(method).toEqual(expect.any(Function)))
+    utils.forEach((method) => expect(method).toEqual(expect.any(Function)))
   })
 })

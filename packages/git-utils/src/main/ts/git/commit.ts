@@ -1,4 +1,5 @@
-import { formatFlags } from '../flags'
+import { formatFlags } from '@qiwi/semrel-common'
+
 import { exec } from '../misc'
 import { gitGetHead } from './etc'
 import { gitExec, IGitCommon, TGitResult } from './exec'

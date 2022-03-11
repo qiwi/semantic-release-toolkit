@@ -26,7 +26,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "test": "concurrently yarn:lint yarn:test:unit yarn:test:depcheck",
     "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --forceExit --runInBand",
-    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores '@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,semantic-release' --ignore-patterns 'typings,flow-typed/*'",
+    "test:depcheck": "npm_config_yes=true npx -p depcheck -p @babel/parser@7.16.4 depcheck --ignores='@jest/globals,@types/*,tslib,eslint-*,prettier-*,@qiwi/semrel-infra,@qiwi/semrel-common,semantic-release' --ignore-patterns='typings,flow-typed/*'",
     "build": "concurrently yarn:build:esnext yarn:build:es6 yarn:build:ts yarn:build:libdef yarn:docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
@@ -38,23 +38,15 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@antongolub/git-root": "^1.5.6",
-    "@qiwi/git-utils": "1.0.0",
     "@qiwi/substrate": "^1.20.11",
     "@types/node": "^17.0.21",
     "@types/semantic-release": "^17.2.3",
-    "debug": "^4.3.3",
-    "execa": "^6.1.0",
-    "file-url": "^4.0.0",
     "lodash-es": "^4.17.21",
     "minimist": "^1.2.5",
-    "nanoid": "^3.3.1",
-    "tempy": "^2.0.0",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.1.0",
-    "fs-extra": "^10.0.1"
+    "@qiwi/semrel-infra": "3.1.0"
   },
   "repository": {
     "type": "git",

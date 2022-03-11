@@ -1,8 +1,8 @@
 import { gitRoot } from '@antongolub/git-root'
+import { formatFlags } from '@qiwi/semrel-common'
 import fileUrl from 'file-url'
 import tempy from 'tempy'
 
-import { formatFlags } from '../flags'
 import { exec, format } from '../misc'
 import { gitCheckout } from './checkout'
 import { gitExec, TGitResult } from './exec'
