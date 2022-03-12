@@ -1,3 +1,10 @@
+# @qiwi/semrel-infra [3.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.1.0...@qiwi/semrel-infra@3.2.0) (2022-03-12)
+
+
+### Features
+
+* **git-utils:** allow empty commits, add gitInitOrigin stage to gitInitTestingRepo flow ([7d0b972](https://github.com/qiwi/semantic-release-toolkit/commit/7d0b97273d3d23278160edc293c969b06fcf5284))
+
 # @qiwi/semrel-infra [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.0.8...@qiwi/semrel-infra@3.1.0) (2022-03-06)
 
 
