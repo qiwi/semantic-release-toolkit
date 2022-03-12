@@ -1,3 +1,19 @@
+# @qiwi/semrel-common [3.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.3.0...@qiwi/semrel-common@3.4.0) (2022-03-12)
+
+
+### Features
+
+* exclude git-utils from common assets ([7cd7eab](https://github.com/qiwi/semantic-release-toolkit/commit/7cd7eabe167dae403eafb6c2d27b5829f2a3181b))
+* **git-utils:** allow empty commits, add gitInitOrigin stage to gitInitTestingRepo flow ([7d0b972](https://github.com/qiwi/semantic-release-toolkit/commit/7d0b97273d3d23278160edc293c969b06fcf5284))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 3.2.0
+
 # @qiwi/semrel-common [3.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-common@3.2.7...@qiwi/semrel-common@3.3.0) (2022-03-06)
 
 
