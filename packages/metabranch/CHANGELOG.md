@@ -1,3 +1,22 @@
+# @qiwi/semrel-metabranch [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@3.0.6...@qiwi/semrel-metabranch@3.1.0) (2022-03-12)
+
+
+### Features
+
+* exclude git-utils from common assets ([7cd7eab](https://github.com/qiwi/semantic-release-toolkit/commit/7cd7eabe167dae403eafb6c2d27b5829f2a3181b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/git-utils:** upgraded to 1.1.0
+* **@qiwi/semrel-common:** upgraded to 3.4.0
+* **@qiwi/semrel-plugin-creator:** upgraded to 2.3.0
+* **@qiwi/semrel-infra:** upgraded to 3.2.0
+* **@qiwi/semrel-testing-suite:** upgraded to 3.1.0
+
 ## @qiwi/semrel-metabranch [3.0.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@3.0.5...@qiwi/semrel-metabranch@3.0.6) (2022-03-06)
 
 
