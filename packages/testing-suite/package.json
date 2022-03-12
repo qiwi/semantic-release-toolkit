@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-testing-suite",
-  "version": "3.0.6",
+  "version": "3.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "@antongolub/git-root": "^1.5.6",
-    "@qiwi/git-utils": "^1.0.0",
-    "@qiwi/semrel-common": "3.3.0",
+    "@qiwi/git-utils": "1.1.0",
+    "@qiwi/semrel-common": "3.4.0",
     "@qiwi/substrate": "^1.20.11",
     "execa": "^6.1.0",
     "fs-extra": "^10.0.1",
@@ -52,7 +52,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.1.0",
+    "@qiwi/semrel-infra": "3.2.0",
     "@types/node": "^17.0.21"
   },
   "repository": {
