@@ -1,3 +1,19 @@
+# @qiwi/semrel-plugin-creator [2.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.2.6...@qiwi/semrel-plugin-creator@2.3.0) (2022-03-12)
+
+
+### Features
+
+* exclude git-utils from common assets ([7cd7eab](https://github.com/qiwi/semantic-release-toolkit/commit/7cd7eabe167dae403eafb6c2d27b5829f2a3181b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 3.2.0
+* **@qiwi/semrel-testing-suite:** upgraded to 3.1.0
+
 ## @qiwi/semrel-plugin-creator [2.2.6](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.2.5...@qiwi/semrel-plugin-creator@2.2.6) (2022-03-06)
 
 
