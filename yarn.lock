@@ -1510,8 +1510,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-actions@workspace:packages/plugin-actions"
   dependencies:
-    "@qiwi/semrel-infra": 3.1.0
-    "@qiwi/semrel-plugin-creator": 2.2.6
+    "@qiwi/semrel-infra": 3.2.0
+    "@qiwi/semrel-plugin-creator": 2.3.0
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -1655,22 +1655,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-plugin-creator@npm:2.2.6":
-  version: 2.2.6
-  resolution: "@qiwi/semrel-plugin-creator@npm:2.2.6"
-  dependencies:
-    "@qiwi/esm": ^1.1.1
-    "@types/lodash-es": ^4.17.6
-    "@types/node": ^17.0.21
-    "@types/semantic-release": ^17.2.3
-    debug: ^4.3.3
-    lodash-es: ^4.17.21
-    tslib: ^2.3.1
-  checksum: 109a615139a920574fe0431482b8877058f59ae250fdbc7b0cb0b6d4f7540f9746c7bfddcb669857d31b319ddc89c3f55625ea6f234d9f23ea86acae54023bc9
-  languageName: node
-  linkType: hard
-
-"@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
+"@qiwi/semrel-plugin-creator@2.3.0, @qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator"
   dependencies:
@@ -1688,6 +1673,21 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-plugin-creator@npm:2.2.6":
+  version: 2.2.6
+  resolution: "@qiwi/semrel-plugin-creator@npm:2.2.6"
+  dependencies:
+    "@qiwi/esm": ^1.1.1
+    "@types/lodash-es": ^4.17.6
+    "@types/node": ^17.0.21
+    "@types/semantic-release": ^17.2.3
+    debug: ^4.3.3
+    lodash-es: ^4.17.21
+    tslib: ^2.3.1
+  checksum: 109a615139a920574fe0431482b8877058f59ae250fdbc7b0cb0b6d4f7540f9746c7bfddcb669857d31b319ddc89c3f55625ea6f234d9f23ea86acae54023bc9
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-preset@3.1.7, @qiwi/semrel-preset@workspace:packages/preset":
   version: 0.0.0-use.local
