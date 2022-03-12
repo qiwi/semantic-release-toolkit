@@ -1393,13 +1393,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/git-utils@1.0.0, @qiwi/git-utils@^1.0.0, @qiwi/git-utils@workspace:packages/git-utils":
+"@qiwi/git-utils@^1.0.0, @qiwi/git-utils@workspace:packages/git-utils":
   version: 0.0.0-use.local
   resolution: "@qiwi/git-utils@workspace:packages/git-utils"
   dependencies:
     "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": ^3.3.0
-    "@qiwi/semrel-infra": 3.1.0
+    "@qiwi/semrel-common": 3.4.0
+    "@qiwi/semrel-infra": 3.2.0
     "@qiwi/substrate": ^1.20.11
     "@types/node": ^17.0.21
     debug: ^4.3.3
@@ -1412,6 +1412,24 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
+
+"@qiwi/git-utils@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@qiwi/git-utils@npm:1.0.0"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/substrate": ^1.20.11
+    "@types/node": ^17.0.21
+    debug: ^4.3.3
+    execa: ^6.1.0
+    file-url: ^4.0.0
+    minimist: ^1.2.5
+    nanoid: ^3.3.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: 03c1e2cf58357f2b13899704b47f166c6c6bd1a2c46a744c211bb9d5a419973e3910a23e3bb8ec258c8002353136d42f0356bedd9cc9915b111dbd142e9521d7
+  languageName: node
+  linkType: hard
 
 "@qiwi/libdefkit@npm:^4.0.5":
   version: 4.0.5
@@ -1498,7 +1516,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-common@^3.3.0, @qiwi/semrel-common@workspace:packages/common":
+"@qiwi/semrel-common@3.4.0, @qiwi/semrel-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
