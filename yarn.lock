@@ -1381,9 +1381,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/git-sync@workspace:packages/git-sync"
   dependencies:
-    "@qiwi/semrel-infra": 3.1.0
-    "@qiwi/semrel-metabranch": 3.0.6
-    "@qiwi/semrel-testing-suite": 3.0.6
+    "@qiwi/semrel-infra": 3.2.0
+    "@qiwi/semrel-metabranch": 3.1.0
+    "@qiwi/semrel-testing-suite": 3.1.0
     "@types/execa": ^2.0.0
     "@types/node": ^17.0.21
     debug: ^4.3.3
@@ -1393,7 +1393,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/git-utils@1.1.0, @qiwi/git-utils@^1.0.0, @qiwi/git-utils@workspace:packages/git-utils":
+"@qiwi/git-utils@1.1.0, @qiwi/git-utils@workspace:packages/git-utils":
   version: 0.0.0-use.local
   resolution: "@qiwi/git-utils@workspace:packages/git-utils"
   dependencies:
@@ -1632,16 +1632,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/semrel-metabranch@3.0.6, @qiwi/semrel-metabranch@workspace:packages/metabranch":
+"@qiwi/semrel-metabranch@3.1.0, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
     "@qiwi/esm": ^1.1.1
-    "@qiwi/git-utils": ^1.0.0
-    "@qiwi/semrel-common": 3.3.0
-    "@qiwi/semrel-infra": 3.1.0
-    "@qiwi/semrel-plugin-creator": 2.2.6
-    "@qiwi/semrel-testing-suite": 3.0.6
+    "@qiwi/git-utils": 1.1.0
+    "@qiwi/semrel-common": 3.4.0
+    "@qiwi/semrel-infra": 3.2.0
+    "@qiwi/semrel-plugin-creator": 2.3.0
+    "@qiwi/semrel-testing-suite": 3.1.0
     "@types/execa": ^2.0.0
     "@types/node": ^17.0.21
     "@types/semantic-release": ^17.2.3
@@ -1654,6 +1654,25 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-metabranch@npm:3.0.6":
+  version: 3.0.6
+  resolution: "@qiwi/semrel-metabranch@npm:3.0.6"
+  dependencies:
+    "@qiwi/esm": ^1.1.1
+    "@qiwi/semrel-common": 3.3.0
+    "@qiwi/semrel-plugin-creator": 2.2.6
+    "@types/execa": ^2.0.0
+    "@types/node": ^17.0.21
+    "@types/semantic-release": ^17.2.3
+    execa: ^6.1.0
+    fs-extra: ^10.0.1
+    globby: ^13.1.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: 5c3248d830ccc47f239c7061a4e5ceeb6c5f36243aa3bf35b3a5a33527e994e51701d08e47328017b5da97dd4cd755ef419b73b1a987a898b62e9a132922d1e7
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-plugin-creator@2.3.0, @qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
   version: 0.0.0-use.local
@@ -1722,21 +1741,6 @@ __metadata:
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
-
-"@qiwi/semrel-testing-suite@npm:3.0.6":
-  version: 3.0.6
-  resolution: "@qiwi/semrel-testing-suite@npm:3.0.6"
-  dependencies:
-    "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": 3.3.0
-    "@qiwi/substrate": ^1.20.11
-    execa: ^6.1.0
-    fs-extra: ^10.0.1
-    tempy: ^2.0.0
-    tslib: ^2.3.1
-  checksum: 36f572d185769e7a762eb6ac5ac3899874ab3184ec1e3e23800b26913d437213a2217cce4b09ef181e7ddfcba87017ed06c24161b5119a9ceef72ecf3f16fc9f
-  languageName: node
-  linkType: hard
 
 "@qiwi/semrel-toolkit-monorepo@workspace:.":
   version: 0.0.0-use.local
