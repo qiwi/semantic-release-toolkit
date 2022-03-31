@@ -1434,15 +1434,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/multi-semantic-release@npm:~6.0.2":
-  version: 6.0.2
-  resolution: "@qiwi/multi-semantic-release@npm:6.0.2"
+"@qiwi/multi-semantic-release@npm:~6.1.0":
+  version: 6.1.0
+  resolution: "@qiwi/multi-semantic-release@npm:6.1.0"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     "@semrel-extra/topo": ^1.3.0
     blork: ^9.3.0
     cosmiconfig: ^7.0.1
-    debug: ^4.3.3
+    debug: ^4.3.4
     detect-indent: ^7.0.0
     detect-newline: ^4.0.0
     execa: ^6.1.0
@@ -1460,7 +1460,7 @@ __metadata:
     tempy: ^2.0.0
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: 6a3116913c3bd739f6e178890aa40b0cb6246425236878e166943f1673340ace4c611e15846a377f7c67b7cf00bcea72d838d8d60bce6704ca6bb35f8aeb6702
+  checksum: d023c67e44954ae06f14ec0093ef63140399e765afdf20142223e50cc1846f2c0d4bb93a043a61a2fc8e7bc413586764e54aee879181428e419f301c0b2743d7
   languageName: node
   linkType: hard
 
@@ -1661,7 +1661,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
-    "@qiwi/multi-semantic-release": ~6.0.2
+    "@qiwi/multi-semantic-release": ~6.1.0
     "@qiwi/semrel-config": 1.3.22
     "@qiwi/semrel-config-monorepo": 1.6.2
     "@qiwi/semrel-preset": 3.1.8
@@ -3776,6 +3776,18 @@ __metadata:
   dependencies:
     ms: ^2.1.1
   checksum: b3d8c5940799914d30314b7c3304a43305fd0715581a919dacb8b3176d024a782062368405b47491516d2091d6462d4d11f2f4974a405048094f8bfebfa3071c
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.3.4":
+  version: 4.3.4
+  resolution: "debug@npm:4.3.4"
+  dependencies:
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 3dbad3f94ea64f34431a9cbf0bafb61853eda57bff2880036153438f50fb5a84f27683ba0d8e5426bf41a8c6ff03879488120cf5b3a761e77953169c0600a708
   languageName: node
   linkType: hard
 
