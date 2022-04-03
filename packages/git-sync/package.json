@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@qiwi/semrel-metabranch": "3.1.0",
-    "debug": "^4.3.3",
+    "debug": "^4.3.4",
     "execa": "^6.1.0",
     "hosted-git-info": "^4.1.0"
   },
@@ -39,7 +39,7 @@
     "@qiwi/semrel-infra": "3.2.0",
     "@qiwi/semrel-testing-suite": "3.1.0",
     "@types/execa": "^2.0.0",
-    "@types/node": "^17.0.21",
+    "@types/node": "^17.0.23",
     "resolve-from": "^5.0.0"
   },
   "repository": {
