@@ -1,3 +1,10 @@
+## @qiwi/git-sync [1.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-sync@1.2.0...@qiwi/git-sync@1.2.1) (2022-04-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency hosted-git-info to v5 ([#122](https://github.com/qiwi/semantic-release-toolkit/issues/122)) ([82afc3d](https://github.com/qiwi/semantic-release-toolkit/commit/82afc3d46ca5cccfe4c98a21af9182593c6afad8))
+
 # @qiwi/git-sync [1.2.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-sync@1.1.0...@qiwi/git-sync@1.2.0) (2022-03-12)
 
 
