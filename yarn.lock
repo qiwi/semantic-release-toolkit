@@ -1411,7 +1411,7 @@ __metadata:
     "@types/node": ^17.0.23
     debug: ^4.3.4
     execa: ^6.1.0
-    hosted-git-info: ^4.1.0
+    hosted-git-info: ^5.0.0
     resolve-from: ^5.0.0
   languageName: unknown
   linkType: soft
@@ -5359,7 +5359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hosted-git-info@npm:^4.0.0, hosted-git-info@npm:^4.0.1, hosted-git-info@npm:^4.1.0":
+"hosted-git-info@npm:^4.0.0, hosted-git-info@npm:^4.0.1":
   version: 4.1.0
   resolution: "hosted-git-info@npm:4.1.0"
   dependencies:
