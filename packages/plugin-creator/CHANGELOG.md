@@ -1,3 +1,19 @@
+## @qiwi/semrel-plugin-creator [2.3.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.3.0...@qiwi/semrel-plugin-creator@2.3.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* update msr ([ee7c860](https://github.com/qiwi/semantic-release-toolkit/commit/ee7c860edbcb8f423e82bd13a4e5df27d2cb6edc))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-infra:** upgraded to 3.2.1
+* **@qiwi/semrel-testing-suite:** upgraded to 3.1.1
+
 # @qiwi/semrel-plugin-creator [2.3.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-plugin-creator@2.2.6...@qiwi/semrel-plugin-creator@2.3.0) (2022-03-12)
 
 
