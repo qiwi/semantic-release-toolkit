@@ -1414,13 +1414,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/git-utils@1.1.0, @qiwi/git-utils@workspace:packages/git-utils":
+"@qiwi/git-utils@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@qiwi/git-utils@npm:1.1.0"
+  dependencies:
+    "@antongolub/git-root": ^1.5.6
+    "@qiwi/semrel-common": 3.4.0
+    "@qiwi/substrate": ^1.20.11
+    "@types/node": ^17.0.21
+    debug: ^4.3.3
+    execa: ^6.1.0
+    file-url: ^4.0.0
+    minimist: ^1.2.5
+    nanoid: ^3.3.1
+    tempy: ^2.0.0
+    tslib: ^2.3.1
+  checksum: b141770aedcee1f1189b26a3420c8ec1401b746dc0441e2d1a59dc368a7f921b3684ba475710862f4fe3b915636b22e137da782023b075eaa0d3ddd6081f0272
+  languageName: node
+  linkType: hard
+
+"@qiwi/git-utils@workspace:packages/git-utils":
   version: 0.0.0-use.local
   resolution: "@qiwi/git-utils@workspace:packages/git-utils"
   dependencies:
     "@antongolub/git-root": ^1.5.6
-    "@qiwi/semrel-common": 3.4.0
-    "@qiwi/semrel-infra": 3.2.0
+    "@qiwi/semrel-common": 3.4.1
+    "@qiwi/semrel-infra": 3.2.1
     "@qiwi/substrate": ^1.20.12
     "@types/node": ^17.0.23
     debug: ^4.3.4
@@ -1518,6 +1537,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@qiwi/semrel-common@3.4.1, @qiwi/semrel-common@workspace:packages/common":
+  version: 0.0.0-use.local
+  resolution: "@qiwi/semrel-common@workspace:packages/common"
+  dependencies:
+    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/substrate": ^1.20.12
+    "@types/node": ^17.0.23
+    "@types/semantic-release": ^17.2.3
+    lodash-es: ^4.17.21
+    minimist: ^1.2.6
+    tslib: ^2.3.1
+  languageName: unknown
+  linkType: soft
+
 "@qiwi/semrel-common@npm:3.4.0":
   version: 3.4.0
   resolution: "@qiwi/semrel-common@npm:3.4.0"
@@ -1531,20 +1564,6 @@ __metadata:
   checksum: 3115f1b814baad3dc811cbf5ca88d165b3090e7b1e0dae57a24c43c2fa23770d7a18c201a11c33075a20a47f2054e447042145132fabcdb03ca5bbd3dbee15d9
   languageName: node
   linkType: hard
-
-"@qiwi/semrel-common@workspace:packages/common":
-  version: 0.0.0-use.local
-  resolution: "@qiwi/semrel-common@workspace:packages/common"
-  dependencies:
-    "@qiwi/semrel-infra": 3.2.1
-    "@qiwi/substrate": ^1.20.12
-    "@types/node": ^17.0.23
-    "@types/semantic-release": ^17.2.3
-    lodash-es: ^4.17.21
-    minimist: ^1.2.6
-    tslib: ^2.3.1
-  languageName: unknown
-  linkType: soft
 
 "@qiwi/semrel-config-monorepo@1.6.2, @qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
   version: 0.0.0-use.local
@@ -3788,7 +3807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.2.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.2.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:

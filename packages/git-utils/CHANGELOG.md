@@ -1,3 +1,14 @@
+## @qiwi/git-utils [1.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-utils@1.1.0...@qiwi/git-utils@1.1.1) (2022-04-09)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 3.4.1
+* **@qiwi/semrel-infra:** upgraded to 3.2.1
+
 # @qiwi/git-utils [1.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-utils@1.0.0...@qiwi/git-utils@1.1.0) (2022-03-12)
 
 
