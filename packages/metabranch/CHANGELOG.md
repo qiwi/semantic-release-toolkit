@@ -1,3 +1,22 @@
+## @qiwi/semrel-metabranch [3.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@3.1.0...@qiwi/semrel-metabranch@3.1.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* update msr ([ee7c860](https://github.com/qiwi/semantic-release-toolkit/commit/ee7c860edbcb8f423e82bd13a4e5df27d2cb6edc))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/git-utils:** upgraded to 1.1.1
+* **@qiwi/semrel-common:** upgraded to 3.4.1
+* **@qiwi/semrel-plugin-creator:** upgraded to 2.3.1
+* **@qiwi/semrel-infra:** upgraded to 3.2.1
+* **@qiwi/semrel-testing-suite:** upgraded to 3.1.1
+
 # @qiwi/semrel-metabranch [3.1.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-metabranch@3.0.6...@qiwi/semrel-metabranch@3.1.0) (2022-03-12)
 
 
