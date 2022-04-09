@@ -1,3 +1,20 @@
+## @qiwi/git-sync [1.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-sync@1.2.1...@qiwi/git-sync@1.2.2) (2022-04-09)
+
+
+### Bug Fixes
+
+* update msr ([ee7c860](https://github.com/qiwi/semantic-release-toolkit/commit/ee7c860edbcb8f423e82bd13a4e5df27d2cb6edc))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-metabranch:** upgraded to 3.1.1
+* **@qiwi/semrel-infra:** upgraded to 3.2.1
+* **@qiwi/semrel-testing-suite:** upgraded to 3.1.1
+
 ## @qiwi/git-sync [1.2.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-sync@1.2.0...@qiwi/git-sync@1.2.1) (2022-04-04)
 
 
