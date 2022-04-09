@@ -48,7 +48,6 @@
     "@qiwi/git-utils": "1.1.0",
     "@qiwi/semrel-common": "3.4.0",
     "@qiwi/semrel-plugin-creator": "2.3.0",
-    "@types/execa": "^2.0.0",
     "@types/node": "^17.0.23",
     "@types/semantic-release": "^17.2.3",
     "execa": "^6.1.0",
