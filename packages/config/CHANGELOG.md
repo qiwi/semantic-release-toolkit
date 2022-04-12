@@ -1,3 +1,10 @@
+# @qiwi/semrel-config [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.3.23...@qiwi/semrel-config@1.4.0) (2022-04-12)
+
+
+### Features
+
+* replace @qiwi/semantic-release-gh-pages-plugin with @qiwi/semrel-metabranch ([ca7bd1c](https://github.com/qiwi/semantic-release-toolkit/commit/ca7bd1c22b2483e5d0d6902c017bbef0b726d354))
+
 ## @qiwi/semrel-config [1.3.23](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.3.22...@qiwi/semrel-config@1.3.23) (2022-04-09)
 
 
