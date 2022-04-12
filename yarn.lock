@@ -1541,7 +1541,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-config@1.3.23, @qiwi/semrel-config@workspace:packages/config":
+"@qiwi/semrel-config@1.4.0, @qiwi/semrel-config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config@workspace:packages/config"
   dependencies:
@@ -1573,7 +1573,7 @@ __metadata:
     terser: ^5.12.1
     ts-jest: ^27.1.4
     tsc-esm-fix: ^2.12.4
-    typedoc: ^0.22.14
+    typedoc: ^0.22.15
     typescript: ^4.6.3
   bin:
     concurrently: ./../../node_modules/.bin/concurrently
@@ -1680,7 +1680,7 @@ __metadata:
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
     "@qiwi/multi-semantic-release": ~6.1.1
-    "@qiwi/semrel-config": 1.3.23
+    "@qiwi/semrel-config": 1.4.0
     "@qiwi/semrel-config-monorepo": 1.6.3
     "@qiwi/semrel-preset": 3.1.9
     semantic-release: ~19.0.2
@@ -10627,9 +10627,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.22.14":
-  version: 0.22.14
-  resolution: "typedoc@npm:0.22.14"
+"typedoc@npm:^0.22.15":
+  version: 0.22.15
+  resolution: "typedoc@npm:0.22.15"
   dependencies:
     glob: ^7.2.0
     lunr: ^2.3.9
@@ -10640,7 +10640,7 @@ __metadata:
     typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x
   bin:
     typedoc: bin/typedoc
-  checksum: 7375eeb4a5873408b0b4cda4ebbf52bbded4afa444b9caeee3a572f39f491e0563fed40322c83ac24c027a340691cde0cf9e24fdbed2c151a3977fdcbee13ff4
+  checksum: 3f5f1cb9288bf811f42df59750c7062a026a23257b38dfe227515a30007a28e3d8139187949fcd19300fd6b2ef76bcdc4cf54549100bff3e000e61bb19958fb2
   languageName: node
   linkType: hard
 
