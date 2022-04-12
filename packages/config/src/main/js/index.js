@@ -16,7 +16,18 @@ module.exports = {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    '@qiwi/semantic-release-gh-pages-plugin',
+    [
+      '@qiwi/semrel-metabranch',
+      {
+        publish: {
+          action: 'push',
+          branch: 'gh-pages',
+          from: './docs',
+          to: './',
+          message: 'update docs ${nextRelease.gitTag}',
+        }
+      }
+    ],
     '@semantic-release/npm',
     '@semantic-release/github',
     '@semantic-release/git'
