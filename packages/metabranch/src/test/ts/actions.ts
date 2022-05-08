@@ -4,7 +4,7 @@ import { execa } from 'execa'
 import fs from 'node:fs'
 import path, { dirname} from 'node:path'
 import { fileURLToPath } from 'node:url'
-import tempy from 'tempy'
+import { temporaryDirectory } from 'tempy'
 
 import { perform, push, TActionOptionsNormalized } from '../../main/ts'
 
@@ -26,7 +26,7 @@ describe('actions', () => {
 
   describe('fetch()', () => {
     it('clones files from remote to target dir', async () => {
-      const cwd = tempy.directory()
+      const cwd = temporaryDirectory()
       const to = 'foo/bar/baz'
       const { url: repo } = gitCreateFakeRepo({
         sync: true,
@@ -43,7 +43,7 @@ describe('actions', () => {
         to,
         repo,
         cwd,
-        temp: tempy.directory(),
+        temp: temporaryDirectory(),
         debug: console.log as Debugger,
         user,
         message: 'update meta',
@@ -75,7 +75,7 @@ describe('actions', () => {
       })
       const opts = {
         cwd,
-        temp: tempy.directory(),
+        temp: temporaryDirectory(),
         branch: 'metabranch',
         from: ['bar', 'unknown'],
         to: 'baz',
@@ -117,7 +117,7 @@ describe('actions', () => {
       const message = 'update meta'
       const opts0 = {
         cwd,
-        temp: tempy.directory(),
+        temp: temporaryDirectory(),
         branch: 'metabranch',
         from: 'bar',
         to: 'scope',
@@ -128,7 +128,7 @@ describe('actions', () => {
       }
       const opts1 = {
         cwd,
-        temp: tempy.directory(),
+        temp: temporaryDirectory(),
         branch: 'metabranch',
         from: 'foo',
         to: 'scope',
@@ -139,7 +139,7 @@ describe('actions', () => {
       }
       const opts2 = {
         cwd,
-        temp: tempy.directory(),
+        temp: temporaryDirectory(),
         branch: 'metabranch',
         from: 'baz',
         to: 'scope',

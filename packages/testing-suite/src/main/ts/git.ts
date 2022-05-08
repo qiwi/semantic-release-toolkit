@@ -19,7 +19,7 @@ import {
   TGitResult,
 } from '@qiwi/git-utils'
 import { ICallable } from '@qiwi/substrate'
-import tempy from 'tempy'
+import { temporaryDirectory } from 'tempy'
 
 import { copyDirectory } from './file'
 
@@ -49,7 +49,7 @@ export const gitInitTestingRepo = <T extends IGitInitTestingRepo>({
   sync,
   commits,
 }: T): TGitResult<T['sync']> => {
-  const cwd = tempy.directory()
+  const cwd = temporaryDirectory()
 
   return exec(
     () => gitInit({ sync, cwd }),
@@ -176,7 +176,7 @@ export const gitCreateFakeRepo = <T extends IGitFakeRepo>({
   sync,
   commits,
 }: T): TGitResult<T['sync'], TGitFakeRepoDigest> => {
-  const cwd = tempy.directory()
+  const cwd = temporaryDirectory()
   const res: TGitFakeRepoDigest = {
     cwd,
     url: '',
@@ -204,7 +204,7 @@ export interface IGitClone {
 }
 
 export const gitClone = <T extends IGitClone>({
-  cwd = tempy.directory(),
+  cwd = temporaryDirectory(),
   sync,
   url,
 }: T): TGitResult<T['sync']> =>

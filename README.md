@@ -18,7 +18,7 @@
 | [@qiwi/semrel-testing-suite](./packages/testing-suite)   | Testing helpers to verify release flow<br/>**experimental**                                                                                                                           | [![npm](https://img.shields.io/npm/v/@qiwi/semrel-testing-suite/latest.svg?label=&color=fc3)](https://www.npmjs.com/package/@qiwi/semrel-testing-suite)     |
 | [@qiwi/semrel-metabranch](./packages/metabranch)         | Plugin for two-way data sync with remote branch<br/>**experimental**                                                                                                                  | [![npm](https://img.shields.io/npm/v/@qiwi/semrel-metabranch/latest.svg?label=&color=fc3)](https://www.npmjs.com/package/@qiwi/semrel-metabranch)           |
 
-### Coming soon
+### Coming ~~soon~~ someday
 | Package               | Description                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------------|
 | @qiwi/semrel-actions  | Configurable custom actions/side-effects provider                                             |

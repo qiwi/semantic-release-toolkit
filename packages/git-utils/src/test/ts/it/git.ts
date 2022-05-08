@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import { dirname } from 'node:path'
 import path from 'path'
-import tempy from 'tempy'
+import { temporaryDirectory, rootTemporaryDirectory } from 'tempy'
 import { fileURLToPath } from 'url'
 
 import {
@@ -27,8 +27,8 @@ describe('git-utils', () => {
     // https://git-scm.com/docs/gitrepository-layout
     describe('gitdir ref', () => {
       it('handles `gitdir: ref` and returns target path if exists', async () => {
-        const temp0 = tempy.directory()
-        const temp1 = tempy.directory()
+        const temp0 = temporaryDirectory()
+        const temp1 = temporaryDirectory()
         const data = `gitdir: ${temp1}.git `
 
         await fs.outputFile(path.join(temp0, '.git'), data, {
@@ -39,7 +39,7 @@ describe('git-utils', () => {
       })
 
       it('returns undefined if `gitdir: ref` is unreachable', async () => {
-        const temp = tempy.directory()
+        const temp = temporaryDirectory()
         const data = `gitdir: /foo/bar/baz.git `
 
         await fs.outputFile(path.join(temp, '.git'), data, { encoding: 'utf8' })
@@ -48,7 +48,7 @@ describe('git-utils', () => {
       })
 
       it('returns undefined if `gitdir: ref` is invalid', async () => {
-        const temp = tempy.directory()
+        const temp = temporaryDirectory()
         const data = `gitdir: broken-ref-format`
 
         await fs.outputFile(path.join(temp, '.git'), data, { encoding: 'utf8' })
@@ -58,7 +58,7 @@ describe('git-utils', () => {
     })
 
     it('returns undefined if `.git` is not found', async () => {
-      expect(await gitRoot(tempy.root)).toBeUndefined()
+      expect(await gitRoot(rootTemporaryDirectory)).toBeUndefined()
     })
   })
 
@@ -87,7 +87,7 @@ describe('git-utils', () => {
     })
 
     it('inits repo in specified dir', async () => {
-      const cwd = tempy.directory()
+      const cwd = temporaryDirectory()
       const _cwd = await gitInit({ cwd })
 
       expect(cwd).toBe(_cwd)
@@ -103,7 +103,7 @@ describe('git-utils', () => {
 
   describe('gitCheckout()', () => {
     it('checkout -b creates a branch', async () => {
-      const cwd = await gitInit({ cwd: tempy.directory() })
+      const cwd = await gitInit({ cwd: temporaryDirectory() })
       await gitSetUser({ cwd, name: 'Foo Bar', email: 'foo@bar.com' })
 
       await fs.writeFile(path.resolve(cwd, 'test.txt'), 'test', {

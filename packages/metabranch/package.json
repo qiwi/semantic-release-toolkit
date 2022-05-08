@@ -48,13 +48,13 @@
     "@qiwi/git-utils": "1.1.1",
     "@qiwi/semrel-common": "3.4.1",
     "@qiwi/semrel-plugin-creator": "2.3.1",
-    "@types/node": "^17.0.23",
+    "@types/node": "^17.0.31",
     "@types/semantic-release": "^17.2.3",
     "execa": "^6.1.0",
-    "fs-extra": "^10.0.1",
+    "fs-extra": "^10.1.0",
     "globby": "^13.1.1",
-    "tempy": "^2.0.0",
-    "tslib": "^2.3.1"
+    "tempy": "^3.0.0",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.2.1",

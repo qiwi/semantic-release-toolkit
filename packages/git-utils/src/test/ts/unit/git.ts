@@ -1,7 +1,7 @@
 // https://github.com/facebook/jest/pull/11818/files#diff-7a98537bdfc98f8a0321f1e556bc226e1eb013e30c266962a788c77df4289a61R181
 import { jest } from '@jest/globals'
 import { ICallable } from '@qiwi/substrate'
-import tempy from 'tempy'
+import { temporaryDirectory } from 'tempy'
 
 const fakeExec = (..._args: any[]) => ({ stdout: 'output' }) // eslint-disable-line
 const execa = jest.fn(() => Promise.resolve(fakeExec()))
@@ -44,7 +44,7 @@ describe('git-utils', () => {
   afterAll(jest.restoreAllMocks)
   afterEach(jest.clearAllMocks)
 
-  const cwd = tempy.directory()
+  const cwd = temporaryDirectory()
   const cases: [ICallable, Record<any, any>, any[][], any?][] = [
     [gitInit, { cwd }, [['git', ['init'], { cwd }]], cwd],
     [
