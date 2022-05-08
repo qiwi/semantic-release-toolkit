@@ -10,9 +10,9 @@
     "clean": "yarn workspaces foreach -p run  clean",
     "lint": "yarn workspaces foreach -tp run lint",
     "lint:fix": "yarn workspaces foreach -tp run lint:fix",
+    "test": "./node_modules/.bin/concurrently yarn:lint yarn:test:unit yarn:test:depcheck yarn:test:depaudit",
     "jest:pre": "sh ./scripts/sh/patch-pkg-main.sh true",
     "jest:post": "sh ./scripts/sh/patch-pkg-main.sh",
-    "test": "./node_modules/.bin/concurrently yarn:lint yarn:test:unit yarn:test:depcheck yarn:test:depaudit",
     "test:unit": "yarn jest:pre && NODE_OPTIONS=--experimental-vm-modules ./node_modules/.bin/jest --detectOpenHandles --forceExit --runInBand && yarn jest:post",
     "test:report": "yarn test && yarn coveralls:push",
     "test:concurrent": "yarn workspaces foreach -tp run && yarn coverage:merge",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "find-git-root": "^1.0.4",
-    "ts-jest": "^27.1.4"
+    "ts-jest": "^28.0.2"
   },
   "resolutions": {
     "npm/chalk": "^4.1.2"

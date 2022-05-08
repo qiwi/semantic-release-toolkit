@@ -1,4 +1,4 @@
-import tempy from 'tempy'
+import { temporaryDirectory } from 'tempy'
 
 import { TActionOptions, TActionOptionsNormalized } from './interface'
 
@@ -20,7 +20,7 @@ export const normalizeOptions = ({
   to = defaults.to,
   message = defaults.message,
   cwd = process.cwd(),
-  temp = tempy.directory(),
+  temp = temporaryDirectory(),
   repo,
   debug,
   user,

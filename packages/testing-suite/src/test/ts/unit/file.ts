@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import tempy from 'tempy'
+import { temporaryDirectory } from 'tempy'
 
 import { cleanPath, createTestingFiles, isDirectory } from '../../../main/ts'
 
@@ -46,7 +46,7 @@ describe('isDirectory()', () => {
 
 describe('createTestingFiles', () => {
   it('populates cwd with specified subfolders with `test.txt`', () => {
-    const cwd = tempy.directory()
+    const cwd = temporaryDirectory()
     const folters = ['foo', 'bar']
 
     createTestingFiles(cwd, folters)

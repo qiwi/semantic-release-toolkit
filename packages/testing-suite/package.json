@@ -8,9 +8,7 @@
   "keywords": [],
   "type": "module",
   "module": "./target/es6/index.mjs",
-  "exports": {
-    "import": "./target/es6/index.mjs"
-  },
+  "exports": "./target/es6/index.mjs",
   "source": "./target/ts/index.ts",
   "types": "./target/es6/index.d.ts",
   "typescript": {
@@ -34,7 +32,7 @@
     "build": "concurrently yarn:build:esnext yarn:build:es6 yarn:build:ts yarn:build:libdef yarn:docs && yarn build:esmfix",
     "build:esnext": "mkdirp target/esnext && tsc -p tsconfig.esnext.json",
     "build:es6": "mkdirp target/es6 && tsc -p tsconfig.es6.json",
-    "build:ts": "cpy ./ ../../../target/ts/ --dot --cwd=./src/main/ts/",
+    "build:ts": "cpy ./ ../../../target/ts/ --dot --cwd=./src/main/ts/ --flat",
     "build:libdef": "libdefkit --tsconfig=tsconfig.esnext.json --tsconfig=tsconfig.es6.json --entry=@qiwi/semrel-testing-suite/target/es6",
     "build:esmfix": "yarn tsc-esm-fix --target=target/es6 --target=target/esnext --ext=.mjs",
     "docs": "typedoc --options ./typedoc.json ./src/main/ts",
@@ -47,13 +45,13 @@
     "@qiwi/semrel-common": "3.4.1",
     "@qiwi/substrate": "^1.20.12",
     "execa": "^6.1.0",
-    "fs-extra": "^10.0.1",
-    "tempy": "^2.0.0",
-    "tslib": "^2.3.1"
+    "fs-extra": "^10.1.0",
+    "tempy": "^3.0.0",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.2.1",
-    "@types/node": "^17.0.23"
+    "@types/node": "^17.0.31"
   },
   "repository": {
     "type": "git",

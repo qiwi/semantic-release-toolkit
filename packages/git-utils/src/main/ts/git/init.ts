@@ -1,7 +1,7 @@
 import { gitRoot } from '@antongolub/git-root'
 import { formatFlags } from '@qiwi/semrel-common'
 import fileUrl from 'file-url'
-import tempy from 'tempy'
+import { temporaryDirectory } from 'tempy'
 
 import { exec, format } from '../misc'
 import { gitCheckout } from './checkout'
@@ -23,7 +23,7 @@ export interface IGitInitOrigin extends IGitInit {
 export { gitRoot }
 
 export const gitInit = <T extends IGitInit>({
-  cwd = tempy.directory(),
+  cwd = temporaryDirectory(),
   sync,
   bare,
 }: T): TGitResult<T['sync']> =>
@@ -54,7 +54,7 @@ export const gitInit = <T extends IGitInit>({
  * @return {Promise<string>} Promise that resolves to string URL of the of the remote origin.
  */
 export const gitInitRemote = <T extends IGitInit>({
-  cwd = tempy.directory(),
+  cwd = temporaryDirectory(),
   sync,
 }: T): TGitResult<T['sync']> =>
   exec(
