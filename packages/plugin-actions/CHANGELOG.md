@@ -1,3 +1,18 @@
+## @qiwi/semrel-actions [1.1.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.1.1...@qiwi/semrel-actions@1.1.2) (2022-05-09)
+
+
+### Performance Improvements
+
+* update msr to v6.2.0 ([04700e6](https://github.com/qiwi/semantic-release-toolkit/commit/04700e68b547ae82910dcf51d39813a3b84c6b0d))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-plugin-creator:** upgraded to 2.3.2
+
 ## @qiwi/semrel-actions [1.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-actions@1.1.0...@qiwi/semrel-actions@1.1.1) (2022-04-09)
 
 
