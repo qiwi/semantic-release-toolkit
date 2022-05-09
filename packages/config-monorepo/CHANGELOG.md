@@ -1,3 +1,23 @@
+## @qiwi/semrel-config-monorepo [1.6.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.6.3...@qiwi/semrel-config-monorepo@1.6.4) (2022-05-09)
+
+
+### Bug Fixes
+
+* fix yarn.lock update ([50fd0b4](https://github.com/qiwi/semantic-release-toolkit/commit/50fd0b44b1cc889a971c5ca76fd8f1192002682a))
+
+
+### Performance Improvements
+
+* deps revision ([7974aab](https://github.com/qiwi/semantic-release-toolkit/commit/7974aab6ad056e840061ba03218e14cf81a2fd07))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 3.1.10
+
 ## @qiwi/semrel-config-monorepo [1.6.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config-monorepo@1.6.2...@qiwi/semrel-config-monorepo@1.6.3) (2022-04-09)
 
 

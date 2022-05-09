@@ -1576,12 +1576,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-config-monorepo@npm:1.6.3, @qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
+"@qiwi/semrel-config-monorepo@npm:1.6.3":
+  version: 1.6.3
+  resolution: "@qiwi/semrel-config-monorepo@npm:1.6.3"
+  dependencies:
+    "@qiwi/semrel-preset": "npm:3.1.9"
+  checksum: a59e524338b03008051c6f52cab53fb7476c28ba2902dc2dcf3687e041d18ff8a536066d502c462971b083c7aa6286aaaed01b98607a451986f2ed2f4f08f108
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo"
   dependencies:
     "@qiwi/semrel-infra": "npm:3.2.2"
-    "@qiwi/semrel-preset": "npm:3.1.9"
+    "@qiwi/semrel-preset": "npm:3.1.10"
   peerDependencies:
     semantic-release: "*"
   languageName: unknown
