@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-metabranch",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "publishConfig": {
     "access": "public"
   },
@@ -47,7 +47,7 @@
     "@qiwi/esm": "^1.1.1",
     "@qiwi/git-utils": "1.1.2",
     "@qiwi/semrel-common": "3.4.2",
-    "@qiwi/semrel-plugin-creator": "2.3.1",
+    "@qiwi/semrel-plugin-creator": "2.3.2",
     "@types/node": "^17.0.31",
     "@types/semantic-release": "^17.2.3",
     "execa": "^6.1.0",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.2.2",
-    "@qiwi/semrel-testing-suite": "3.1.1",
+    "@qiwi/semrel-testing-suite": "3.1.2",
     "resolve-from": "^5.0.0",
     "semantic-release": "^19.0.2"
   },
