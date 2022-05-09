@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/semrel-config",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "publishConfig": {
     "access": "public"
   },
@@ -23,7 +23,7 @@
     "format": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
-    "@qiwi/semrel-preset": "3.1.9"
+    "@qiwi/semrel-preset": "3.1.10"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "3.2.2"

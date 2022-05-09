@@ -1,3 +1,18 @@
+## @qiwi/semrel-config [1.4.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.4.0...@qiwi/semrel-config@1.4.1) (2022-05-09)
+
+
+### Performance Improvements
+
+* deps revision ([7974aab](https://github.com/qiwi/semantic-release-toolkit/commit/7974aab6ad056e840061ba03218e14cf81a2fd07))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-preset:** upgraded to 3.1.10
+
 # @qiwi/semrel-config [1.4.0](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.3.23...@qiwi/semrel-config@1.4.0) (2022-04-12)
 
 

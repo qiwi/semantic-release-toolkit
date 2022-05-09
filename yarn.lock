@@ -1587,12 +1587,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-config@npm:1.4.0, @qiwi/semrel-config@workspace:packages/config":
+"@qiwi/semrel-config@npm:1.4.0":
+  version: 1.4.0
+  resolution: "@qiwi/semrel-config@npm:1.4.0"
+  dependencies:
+    "@qiwi/semrel-preset": "npm:3.1.9"
+  checksum: b4e464005d5a931596831f28487318a0a0fbe8d2ddb10d18c9be6be107ed99f19b8fb962a0a3a3f6945ad41eeefeeed2d10973e997e2e3aad1efab8ed12fe787
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config@workspace:packages/config"
   dependencies:
     "@qiwi/semrel-infra": "npm:3.2.2"
-    "@qiwi/semrel-preset": "npm:3.1.9"
+    "@qiwi/semrel-preset": "npm:3.1.10"
   peerDependencies:
     semantic-release: "*"
   languageName: unknown
@@ -1714,25 +1723,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-preset@npm:3.1.9":
-  version: 3.1.9
-  resolution: "@qiwi/semrel-preset@npm:3.1.9"
-  dependencies:
-    "@qiwi/semantic-release-gh-pages-plugin": "npm:^5.2.0"
-    "@qiwi/semrel-metabranch": "npm:3.1.1"
-    "@semantic-release/changelog": "npm:^6.0.1"
-    "@semantic-release/commit-analyzer": "npm:^9.0.2"
-    "@semantic-release/exec": "npm:^6.0.3"
-    "@semantic-release/git": "npm:^10.0.1"
-    "@semantic-release/github": "npm:^8.0.4"
-    "@semantic-release/npm": "npm:^9.0.1"
-    "@semantic-release/release-notes-generator": "npm:^10.0.3"
-    "@semrel-extra/npm": "npm:^1.2.0"
-  checksum: 272f2d1b8e989225bd4c84238d849663c5491c67217ae1307e46de10ef362510ca763f599c979627cbee7eedf7c3f8652a7c27f0fba43802a0dab668d1922b40
-  languageName: node
-  linkType: hard
-
-"@qiwi/semrel-preset@workspace:packages/preset":
+"@qiwi/semrel-preset@npm:3.1.10, @qiwi/semrel-preset@workspace:packages/preset":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-preset@workspace:packages/preset"
   dependencies:
@@ -1750,6 +1741,24 @@ __metadata:
     semantic-release: "*"
   languageName: unknown
   linkType: soft
+
+"@qiwi/semrel-preset@npm:3.1.9":
+  version: 3.1.9
+  resolution: "@qiwi/semrel-preset@npm:3.1.9"
+  dependencies:
+    "@qiwi/semantic-release-gh-pages-plugin": "npm:^5.2.0"
+    "@qiwi/semrel-metabranch": "npm:3.1.1"
+    "@semantic-release/changelog": "npm:^6.0.1"
+    "@semantic-release/commit-analyzer": "npm:^9.0.2"
+    "@semantic-release/exec": "npm:^6.0.3"
+    "@semantic-release/git": "npm:^10.0.1"
+    "@semantic-release/github": "npm:^8.0.4"
+    "@semantic-release/npm": "npm:^9.0.1"
+    "@semantic-release/release-notes-generator": "npm:^10.0.3"
+    "@semrel-extra/npm": "npm:^1.2.0"
+  checksum: 272f2d1b8e989225bd4c84238d849663c5491c67217ae1307e46de10ef362510ca763f599c979627cbee7eedf7c3f8652a7c27f0fba43802a0dab668d1922b40
+  languageName: node
+  linkType: hard
 
 "@qiwi/semrel-testing-suite@npm:3.1.2, @qiwi/semrel-testing-suite@workspace:packages/testing-suite":
   version: 0.0.0-use.local
