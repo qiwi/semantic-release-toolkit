@@ -1,3 +1,19 @@
+## @qiwi/git-sync [1.2.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-sync@1.2.2...@qiwi/git-sync@1.2.3) (2022-05-09)
+
+
+### Performance Improvements
+
+* update msr to v6.2.0 ([04700e6](https://github.com/qiwi/semantic-release-toolkit/commit/04700e68b547ae82910dcf51d39813a3b84c6b0d))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-metabranch:** upgraded to 3.1.2
+* **@qiwi/semrel-testing-suite:** upgraded to 3.1.2
+
 ## @qiwi/git-sync [1.2.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-sync@1.2.1...@qiwi/git-sync@1.2.2) (2022-04-09)
 
 

@@ -1418,8 +1418,8 @@ __metadata:
   resolution: "@qiwi/git-sync@workspace:packages/git-sync"
   dependencies:
     "@qiwi/semrel-infra": "npm:3.2.2"
-    "@qiwi/semrel-metabranch": "npm:3.1.1"
-    "@qiwi/semrel-testing-suite": "npm:3.1.1"
+    "@qiwi/semrel-metabranch": "npm:3.1.2"
+    "@qiwi/semrel-testing-suite": "npm:3.1.2"
     "@types/node": "npm:^17.0.31"
     debug: "npm:^4.3.4"
     execa: "npm:^6.1.0"
@@ -1640,7 +1640,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-metabranch@npm:3.1.1, @qiwi/semrel-metabranch@workspace:packages/metabranch":
+"@qiwi/semrel-metabranch@npm:3.1.1":
+  version: 3.1.1
+  resolution: "@qiwi/semrel-metabranch@npm:3.1.1"
+  dependencies:
+    "@qiwi/esm": "npm:^1.1.1"
+    "@qiwi/git-utils": "npm:1.1.1"
+    "@qiwi/semrel-common": "npm:3.4.1"
+    "@qiwi/semrel-plugin-creator": "npm:2.3.1"
+    "@types/node": "npm:^17.0.23"
+    "@types/semantic-release": "npm:^17.2.3"
+    execa: "npm:^6.1.0"
+    fs-extra: "npm:^10.0.1"
+    globby: "npm:^13.1.1"
+    tempy: "npm:^2.0.0"
+    tslib: "npm:^2.3.1"
+  checksum: d74b85b9541b145088d10e25f09191f2ad41e51f8a72f4c0d338d280646f519fefb413fd3cf024643997642d0478f390a72d8d3df81bcff40e218430d0bbb3a5
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-metabranch@npm:3.1.2, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
@@ -1648,8 +1667,8 @@ __metadata:
     "@qiwi/git-utils": "npm:1.1.2"
     "@qiwi/semrel-common": "npm:3.4.2"
     "@qiwi/semrel-infra": "npm:3.2.2"
-    "@qiwi/semrel-plugin-creator": "npm:2.3.1"
-    "@qiwi/semrel-testing-suite": "npm:3.1.1"
+    "@qiwi/semrel-plugin-creator": "npm:2.3.2"
+    "@qiwi/semrel-testing-suite": "npm:3.1.2"
     "@types/node": "npm:^17.0.31"
     "@types/semantic-release": "npm:^17.2.3"
     execa: "npm:^6.1.0"
@@ -1713,22 +1732,6 @@ __metadata:
     semantic-release: "*"
   languageName: unknown
   linkType: soft
-
-"@qiwi/semrel-testing-suite@npm:3.1.1":
-  version: 3.1.1
-  resolution: "@qiwi/semrel-testing-suite@npm:3.1.1"
-  dependencies:
-    "@antongolub/git-root": "npm:^1.5.6"
-    "@qiwi/git-utils": "npm:1.1.1"
-    "@qiwi/semrel-common": "npm:3.4.1"
-    "@qiwi/substrate": "npm:^1.20.12"
-    execa: "npm:^6.1.0"
-    fs-extra: "npm:^10.0.1"
-    tempy: "npm:^2.0.0"
-    tslib: "npm:^2.3.1"
-  checksum: 455cd632d8ba1461f653dfa517b580f8efb823a605284e0b3560e93586b5326bd071edcd0e861c83b86b8edb7837d35380c8a1e2178f8fd0bc9e4896616fc317
-  languageName: node
-  linkType: hard
 
 "@qiwi/semrel-testing-suite@npm:3.1.2, @qiwi/semrel-testing-suite@workspace:packages/testing-suite":
   version: 0.0.0-use.local
