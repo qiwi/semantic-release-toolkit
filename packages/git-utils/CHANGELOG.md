@@ -1,3 +1,19 @@
+## @qiwi/git-utils [1.1.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-utils@1.1.1...@qiwi/git-utils@1.1.2) (2022-05-09)
+
+
+### Performance Improvements
+
+* deps revision ([7974aab](https://github.com/qiwi/semantic-release-toolkit/commit/7974aab6ad056e840061ba03218e14cf81a2fd07))
+* update msr to v6.2.0 ([04700e6](https://github.com/qiwi/semantic-release-toolkit/commit/04700e68b547ae82910dcf51d39813a3b84c6b0d))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/semrel-common:** upgraded to 3.4.2
+
 ## @qiwi/git-utils [1.1.1](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/git-utils@1.1.0...@qiwi/git-utils@1.1.1) (2022-04-09)
 
 

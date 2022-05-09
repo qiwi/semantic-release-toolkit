@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/git-utils",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "publishConfig": {
     "access": "public"
   },
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@antongolub/git-root": "^1.5.6",
-    "@qiwi/semrel-common": "3.4.1",
+    "@qiwi/semrel-common": "3.4.2",
     "@qiwi/substrate": "^1.20.12",
     "@types/node": "^17.0.31",
     "debug": "^4.3.4",
