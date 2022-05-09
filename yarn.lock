@@ -1630,6 +1630,8 @@ __metadata:
   dependencies:
     "@qiwi/semrel-infra": 3.2.1
     "@qiwi/semrel-preset": 3.1.9
+  peerDependencies:
+    semantic-release: "*"
   languageName: unknown
   linkType: soft
 
@@ -1639,6 +1641,8 @@ __metadata:
   dependencies:
     "@qiwi/semrel-infra": 3.2.1
     "@qiwi/semrel-preset": 3.1.9
+  peerDependencies:
+    semantic-release: "*"
   languageName: unknown
   linkType: soft
 
@@ -1655,7 +1659,7 @@ __metadata:
     depcheck: ^1.4.3
     eslint: ^8.15.0
     eslint-config-prettier: ^8.5.0
-    eslint-config-qiwi: ^1.17.0
+    eslint-config-qiwi: ^1.17.1
     jest: ^28.1.0
     mkdirp: ^1.0.4
     prettier: ^2.6.2
@@ -1738,6 +1742,8 @@ __metadata:
     "@semantic-release/npm": ^9.0.1
     "@semantic-release/release-notes-generator": ^10.0.3
     "@semrel-extra/npm": ^1.2.2
+  peerDependencies:
+    semantic-release: "*"
   languageName: unknown
   linkType: soft
 
@@ -1763,7 +1769,6 @@ __metadata:
   resolution: "@qiwi/semrel-toolkit-monorepo@workspace:."
   dependencies:
     find-git-root: ^1.0.4
-    ts-jest: ^28.0.2
   languageName: unknown
   linkType: soft
 
@@ -4389,9 +4394,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-qiwi@npm:^1.17.0":
-  version: 1.17.0
-  resolution: "eslint-config-qiwi@npm:1.17.0"
+"eslint-config-qiwi@npm:^1.17.1":
+  version: 1.17.1
+  resolution: "eslint-config-qiwi@npm:1.17.1"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.22.0
     "@typescript-eslint/parser": ^5.22.0
@@ -4406,8 +4411,9 @@ __metadata:
     eslint-plugin-simple-import-sort: ^7.0.0
     eslint-plugin-sonarjs: ^0.13.0
     eslint-plugin-unicorn: ^42.0.0
-    typescript: "*"
-  checksum: 4d82891597ba23103ed618fbb176da64bac2580dc178f670caf75c77510aa5645dec1c9dbe4b1915f457a7c4d81297b8540423ad66ca7006ea0036399b48f5a9
+  peerDependencies:
+    eslint: "*"
+  checksum: bfec8e7064249de36071c8c2c260aaad5d1edc5c9c4e0e7cbdc0507cc63dedddd0f3cfb679f6b0743e02dea4155c6f954d74b6f2e6f75b8904578f8bfb4007ae
   languageName: node
   linkType: hard
 
@@ -10883,16 +10889,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:*":
-  version: 4.6.3
-  resolution: "typescript@npm:4.6.3"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
-  languageName: node
-  linkType: hard
-
 "typescript@npm:^4.6.4":
   version: 4.6.4
   resolution: "typescript@npm:4.6.4"
@@ -10910,16 +10906,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 89ecb8436bb48ef5594d49289f5f89103071716b6e4844278f4fb3362856e31203e187a9c76d205c3f0b674d221a058fd28310dbcbcf5d95e9a57229bb5203f1
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@*#~builtin<compat/typescript>":
-  version: 4.6.3
-  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 6bf45caf847062420592e711bc9c28bf5f9a9a7fa8245343b81493e4ededae33f1774009d1234d911422d1646a2c839f44e1a23ecb111b40a60ac2ea4c1482a8
   languageName: node
   linkType: hard
 

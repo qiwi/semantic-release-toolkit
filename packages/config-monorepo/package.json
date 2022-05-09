@@ -28,6 +28,9 @@
   "devDependencies": {
     "@qiwi/semrel-infra": "3.2.1"
   },
+  "peerDependencies": {
+    "semantic-release": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"
