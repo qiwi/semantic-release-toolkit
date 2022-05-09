@@ -29,6 +29,9 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@semrel-extra/npm": "^1.2.2"
   },
+  "peerDependencies": {
+    "semantic-release": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/semantic-release-toolkit.git"

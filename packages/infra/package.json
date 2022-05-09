@@ -37,7 +37,7 @@
     "depcheck": "^1.4.3",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-qiwi": "^1.17.0",
+    "eslint-config-qiwi": "^1.17.1",
     "jest": "^28.1.0",
     "mkdirp": "^1.0.4",
     "prettier": "^2.6.2",
