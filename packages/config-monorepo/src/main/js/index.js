@@ -19,7 +19,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install && git add ../../yarn.lock',
+        prepareCmd: 'CI=true YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install && git add ../../yarn.lock',
       }
     ],
     '@semrel-extra/npm',

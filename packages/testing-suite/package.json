@@ -41,8 +41,8 @@
   },
   "dependencies": {
     "@antongolub/git-root": "^1.5.6",
-    "@qiwi/git-utils": "1.1.1",
-    "@qiwi/semrel-common": "3.4.1",
+    "@qiwi/git-utils": "1.1.2",
+    "@qiwi/semrel-common": "3.4.2",
     "@qiwi/substrate": "^1.20.12",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",

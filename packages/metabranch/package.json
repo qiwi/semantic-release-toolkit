@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@qiwi/esm": "^1.1.1",
-    "@qiwi/git-utils": "1.1.1",
-    "@qiwi/semrel-common": "3.4.1",
+    "@qiwi/git-utils": "1.1.2",
+    "@qiwi/semrel-common": "3.4.2",
     "@qiwi/semrel-plugin-creator": "2.3.1",
     "@types/node": "^17.0.31",
     "@types/semantic-release": "^17.2.3",
