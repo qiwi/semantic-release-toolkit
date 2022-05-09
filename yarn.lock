@@ -1497,7 +1497,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/git-sync@workspace:packages/git-sync"
   dependencies:
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/semrel-metabranch": 3.1.1
     "@qiwi/semrel-testing-suite": 3.1.1
     "@types/node": ^17.0.31
@@ -1514,7 +1514,7 @@ __metadata:
   dependencies:
     "@antongolub/git-root": ^1.5.6
     "@qiwi/semrel-common": 3.4.1
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/substrate": ^1.20.12
     "@types/node": ^17.0.31
     debug: ^4.3.4
@@ -1604,7 +1604,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-actions@workspace:packages/plugin-actions"
   dependencies:
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/semrel-plugin-creator": 2.3.1
     tslib: ^2.4.0
   languageName: unknown
@@ -1614,7 +1614,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/substrate": ^1.20.12
     "@types/node": ^17.0.31
     "@types/semantic-release": ^17.2.3
@@ -1628,7 +1628,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo"
   dependencies:
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/semrel-preset": 3.1.9
   peerDependencies:
     semantic-release: "*"
@@ -1639,14 +1639,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config@workspace:packages/config"
   dependencies:
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/semrel-preset": 3.1.9
   peerDependencies:
     semantic-release: "*"
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@3.2.1, @qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@3.2.2, @qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:
@@ -1663,7 +1663,7 @@ __metadata:
     jest: ^28.1.0
     mkdirp: ^1.0.4
     prettier: ^2.6.2
-    prettier-config-qiwi: ^1.7.0
+    prettier-config-qiwi: ^1.7.1
     rimraf: ^3.0.2
     snazzy: ^9.0.0
     terser: ^5.13.1
@@ -1695,7 +1695,7 @@ __metadata:
     "@qiwi/esm": ^1.1.1
     "@qiwi/git-utils": 1.1.1
     "@qiwi/semrel-common": 3.4.1
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/semrel-plugin-creator": 2.3.1
     "@qiwi/semrel-testing-suite": 3.1.1
     "@types/node": ^17.0.31
@@ -1715,7 +1715,7 @@ __metadata:
   resolution: "@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator"
   dependencies:
     "@qiwi/esm": ^1.1.1
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/semrel-testing-suite": 3.1.1
     "@types/lodash-es": ^4.17.6
     "@types/node": ^17.0.31
@@ -1754,7 +1754,7 @@ __metadata:
     "@antongolub/git-root": ^1.5.6
     "@qiwi/git-utils": 1.1.1
     "@qiwi/semrel-common": 3.4.1
-    "@qiwi/semrel-infra": 3.2.1
+    "@qiwi/semrel-infra": 3.2.2
     "@qiwi/substrate": ^1.20.12
     "@types/node": ^17.0.31
     execa: ^6.1.0
@@ -9046,10 +9046,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-config-qiwi@npm:^1.7.0":
-  version: 1.7.0
-  resolution: "prettier-config-qiwi@npm:1.7.0"
-  checksum: 1f7d354b0c2bf9a6fcb0d3e7dd847ac71ec9b95b7d025fe532e35876ffe8f835da295da5e528fe8c9d297e5a02113f63237bfb562baab4c471cd901190e6494f
+"prettier-config-qiwi@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "prettier-config-qiwi@npm:1.7.1"
+  checksum: f86fa1621ed3a0d25b1138a290fcf6248dc4b5d4e73e4ee51674f6c39242940af9efe237fb38917521b6a07bf01ca16a73f8d5423df7f5c965f7aa1a942b249a
   languageName: node
   linkType: hard
 

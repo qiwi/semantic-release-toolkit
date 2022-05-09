@@ -50,7 +50,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.2.1",
+    "@qiwi/semrel-infra": "3.2.2",
     "fs-extra": "^10.1.0"
   },
   "repository": {
