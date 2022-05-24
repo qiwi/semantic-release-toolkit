@@ -17,7 +17,7 @@
     "semrel": "./semrel.js"
   },
   "dependencies": {
-    "@qiwi/multi-semantic-release": "~6.3.0",
+    "@qiwi/multi-semantic-release": "~6.4.0",
     "@qiwi/semrel-config": "1.4.1",
     "@qiwi/semrel-config-monorepo": "1.6.4",
     "@qiwi/semrel-preset": "3.1.10",

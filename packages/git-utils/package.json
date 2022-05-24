@@ -38,10 +38,10 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@antongolub/git-root": "^1.5.6",
+    "@antongolub/git-root": "^1.5.7",
     "@qiwi/semrel-common": "3.4.2",
-    "@qiwi/substrate": "^1.20.12",
-    "@types/node": "^17.0.31",
+    "@qiwi/substrate": "^1.20.14",
+    "@types/node": "^17.0.35",
     "debug": "^4.3.4",
     "execa": "^6.1.0",
     "file-url": "^4.0.0",
