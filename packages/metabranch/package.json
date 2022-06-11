@@ -60,7 +60,7 @@
     "@qiwi/semrel-infra": "3.2.2",
     "@qiwi/semrel-testing-suite": "3.1.2",
     "resolve-from": "^5.0.0",
-    "semantic-release": "^19.0.2"
+    "semantic-release": "^19.0.3"
   },
   "repository": {
     "type": "git",
