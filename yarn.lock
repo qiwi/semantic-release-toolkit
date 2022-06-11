@@ -1441,7 +1441,7 @@ __metadata:
     execa: "npm:^6.1.0"
     file-url: "npm:^4.0.0"
     fs-extra: "npm:^10.1.0"
-    nanoid: "npm:^3.3.4"
+    nanoid: "npm:^4.0.0"
     tempy: "npm:^3.0.0"
     tslib: "npm:^2.4.0"
   languageName: unknown
@@ -7922,6 +7922,15 @@ __metadata:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 53d605377c76614170df4b5a8d3fa21f13c7077453a77e2393a9fe3df5722022f6b94a671f406b51f81e9c937a6928555c1589e3c46a0d9d29f31872d1362246
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "nanoid@npm:4.0.0"
+  bin:
+    nanoid: bin/nanoid.js
+  checksum: b6263a2a2425999b5aecabd18b25442ae4ef13048b2809ff173e0b0066f376b6fb2605d423763d1d26512cb095e71beee3d8b927f984603e05e169e171d8f6f0
   languageName: node
   linkType: hard
 
