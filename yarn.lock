@@ -1573,7 +1573,7 @@ __metadata:
     "@jest/globals": "npm:^28.1.0"
     "@qiwi/libdefkit": "npm:^4.0.7"
     "@swissquote/crafty-preset-jest": "npm:^1.19.1"
-    "@types/jest": "npm:^27.5.0"
+    "@types/jest": "npm:^28.0.0"
     concurrently: "npm:^7.1.0"
     cpy-cli: "npm:^4.1.0"
     depcheck: "npm:^1.4.3"
@@ -2106,13 +2106,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^27.5.0":
-  version: 27.5.0
-  resolution: "@types/jest@npm:27.5.0"
+"@types/jest@npm:^28.0.0":
+  version: 28.1.1
+  resolution: "@types/jest@npm:28.1.1"
   dependencies:
     jest-matcher-utils: "npm:^27.0.0"
     pretty-format: "npm:^27.0.0"
-  checksum: 206caafdb869b1e9ec25d984e5996fcd115459f82869dcdab40bb4a8091a301631860c659cc1fa025bb4c24bedd2216efce6c623d98e16e71a4ace0cd659ecf9
+  checksum: f6b9625a7669dc53164a805f0b788bc2cf9f3ab35e38d2d445b4b642127e0f2d54c50ada2370409caf088001f98ceaf1571bac62cf3c13551e0a65ecd175c0c2
   languageName: node
   linkType: hard
 
