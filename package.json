@@ -25,7 +25,7 @@
     "coveralls:push": "cat ./coverage/lcov.info | npm_config_yes=true npx coveralls || echo 'coveralls push failed :(' && exit 0",
     "release": "DEBUG='semantic-release:metabranch' node packages/toolkit/msr.js",
     "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
-    "postupdate": "yarn && yarn test:depauditfix && yarn build && yarn test"
+    "postupdate": "yarn && yarn build && yarn test"
   },
   "devDependencies": {
     "find-git-root": "^1.0.4"

@@ -38,7 +38,7 @@
   "devDependencies": {
     "@qiwi/semrel-infra": "3.2.2",
     "@qiwi/semrel-testing-suite": "3.1.2",
-    "@types/node": "^17.0.35",
+    "@types/node": "^18.0.0",
     "resolve-from": "^5.0.0"
   },
   "repository": {
