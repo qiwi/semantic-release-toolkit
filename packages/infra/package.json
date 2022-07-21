@@ -44,7 +44,7 @@
     "prettier-config-qiwi": "^1.7.2",
     "rimraf": "^3.0.2",
     "snazzy": "^9.0.0",
-    "terser": "^5.14.1",
+    "terser": "^5.14.2",
     "ts-jest": "^28.0.5",
     "tsc-esm-fix": "^2.18.0",
     "typedoc": "^0.23.4",
