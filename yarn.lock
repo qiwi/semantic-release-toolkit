@@ -1638,7 +1638,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@npm:3.2.2, @qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@npm:3.2.2":
+  version: 3.2.2
+  resolution: "@qiwi/semrel-infra@npm:3.2.2"
+  bin:
+    concurrently: node_modules/.bin/concurrently
+    cpy: node_modules/.bin/cpy
+    depcheck: node_modules/.bin/depcheck
+    eslint: node_modules/.bin/eslint
+    jest: node_modules/.bin/jest
+    libdefkit: node_modules/.bin/libdefkit
+    mkdirp: node_modules/.bin/mkdirp
+    prettier: node_modules/.bin/prettier
+    rimraf: node_modules/.bin/rimraf
+    snazzy: node_modules/.bin/snazzy
+    terser: node_modules/.bin/terser
+    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
+    typedoc: node_modules/.bin/typedoc
+  checksum: 81b9ee9b987becbd0f764b84eb2c88c84b6ab9d83d001f527480fa1e92b970c465d0548f50025ab2274eaa291b8a662faa468908c4c0cc0013f99f146d80d0cf
+  languageName: node
+  linkType: hard
+
+"@qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:
@@ -10937,7 +10958,7 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^4.7.4#optional!builtin<compat/typescript>":
   version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#optional!builtin<compat/typescript>::version=4.7.4&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#optional!builtin<compat/typescript>::version=4.7.4&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -10947,7 +10968,7 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A~4.4.4#optional!builtin<compat/typescript>":
   version: 4.4.4
-  resolution: "typescript@patch:typescript@npm%3A4.4.4#optional!builtin<compat/typescript>::version=4.4.4&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#optional!builtin<compat/typescript>::version=4.4.4&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
