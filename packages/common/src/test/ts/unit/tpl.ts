@@ -4,7 +4,7 @@ import { tpl } from '../../../main/ts'
 
 describe('tpl', () => {
   const error = jest.fn((...vars: any[]) => { console.log(vars) })
-  const logger = {
+  const logger: any = {
     log (msg: string, ...vars: any[]) { console.log(vars || msg) },
     error
   }

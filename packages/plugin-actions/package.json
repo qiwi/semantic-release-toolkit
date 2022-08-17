@@ -41,7 +41,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.2.2"
+    "@qiwi/semrel-infra": "3.2.3"
   },
   "repository": {
     "type": "git",

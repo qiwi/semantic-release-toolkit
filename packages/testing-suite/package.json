@@ -50,8 +50,8 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.2.2",
-    "@types/node": "^18.0.0"
+    "@qiwi/semrel-infra": "3.2.3",
+    "@types/node": "^18.7.6"
   },
   "repository": {
     "type": "git",

@@ -62,6 +62,7 @@ describe('createPlugin()', () => {
     const plugin = createPlugin({ handler, name: pluginName })
     const pluginConfig = {}
     const branches = ['master']
+    const logger: any = console
     const branch: TBranch = {
       tags: [],
       type: 'release',
@@ -74,7 +75,7 @@ describe('createPlugin()', () => {
       cwd: process.cwd(),
       branch,
       branches,
-      logger: console,
+      logger,
       env: {},
       options: {
         branch,
@@ -148,6 +149,7 @@ describe('createPlugin()', () => {
     it('`require` option asserts that all plugin steps have been called', () => {
       const plugin = createPlugin({ require: ['verifyConditions', 'prepare'] })
       const pluginConfig = {}
+      const logger: any = console
       const context: TSemrelContext = {
         cwd: process.cwd(),
         branch: {
@@ -159,7 +161,7 @@ describe('createPlugin()', () => {
           main: true,
         },
         branches: ['master'],
-        logger: console,
+        logger,
         env: {},
       }
       const verifyConditions = plugin.verifyConditions as TPluginMethod
@@ -189,6 +191,7 @@ describe('createPlugin()', () => {
       const pluginConfig = {}
       const verifyConditions = plugin.verifyConditions as TPluginMethod
       const analyzeCommits = plugin.analyzeCommits as TPluginMethod<string>
+      const logger: any = console
       const context1: TSemrelContext = {
         cwd: process.cwd(),
         branch: {
@@ -200,7 +203,7 @@ describe('createPlugin()', () => {
           main: true,
         },
         branches: ['master'],
-        logger: console,
+        logger,
         env: {},
       }
       const context2: TSemrelContext = {
@@ -214,7 +217,7 @@ describe('createPlugin()', () => {
           main: true,
         },
         branches: ['master'],
-        logger: console,
+        logger,
         env: {},
       }
 

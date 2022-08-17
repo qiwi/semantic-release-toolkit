@@ -39,14 +39,14 @@
   },
   "dependencies": {
     "@qiwi/substrate": "^1.20.14",
-    "@types/node": "^18.0.0",
-    "@types/semantic-release": "^17.2.3",
+    "@types/node": "^18.7.6",
+    "@types/semantic-release": "^17.2.4",
     "lodash-es": "^4.17.21",
     "minimist": "^1.2.6",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.2.2"
+    "@qiwi/semrel-infra": "3.2.3"
   },
   "repository": {
     "type": "git",
