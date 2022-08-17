@@ -1,3 +1,10 @@
+## @qiwi/semrel-infra [3.2.4](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.2.3...@qiwi/semrel-infra@3.2.4) (2022-08-17)
+
+
+### Performance Improvements
+
+* up deps ([1251d95](https://github.com/qiwi/semantic-release-toolkit/commit/1251d95234203e977e927af3819cb846a98b4544))
+
 ## @qiwi/semrel-infra [3.2.3](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-infra@3.2.2...@qiwi/semrel-infra@3.2.3) (2022-07-02)
 
 
