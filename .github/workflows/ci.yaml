@@ -152,7 +152,6 @@ jobs:
       - name: Install deps
         # https://github.com/npm/cli/issues/4600
         run: |
-          npm i -g npm@8.10.0
           npm -v
           yarn -v
           yarn
