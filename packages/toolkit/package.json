@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "@qiwi/multi-semantic-release": "~6.5.1",
-    "@qiwi/semrel-config": "1.4.1",
-    "@qiwi/semrel-config-monorepo": "1.6.4",
-    "@qiwi/semrel-preset": "3.1.10",
+    "@qiwi/semrel-config": "workspace:*",
+    "@qiwi/semrel-config-monorepo": "workspace:*",
+    "@qiwi/semrel-preset": "workspace:*",
     "semantic-release": "~19.0.3"
   },
   "repository": {

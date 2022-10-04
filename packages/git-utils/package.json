@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@antongolub/git-root": "^1.5.7",
-    "@qiwi/semrel-common": "3.4.2",
+    "@qiwi/semrel-common": "workspace:*",
     "@qiwi/substrate": "^1.20.14",
     "@types/node": "^18.7.6",
     "debug": "^4.3.4",
@@ -50,7 +50,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@qiwi/semrel-infra": "3.2.3",
+    "@qiwi/semrel-infra": "workspace:*",
     "fs-extra": "^10.1.0"
   },
   "repository": {
