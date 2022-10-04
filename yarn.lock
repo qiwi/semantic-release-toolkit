@@ -1466,9 +1466,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/git-sync@workspace:packages/git-sync"
   dependencies:
-    "@qiwi/semrel-infra": "npm:3.2.3"
-    "@qiwi/semrel-metabranch": "npm:3.1.2"
-    "@qiwi/semrel-testing-suite": "npm:3.1.2"
+    "@qiwi/semrel-infra": "workspace:*"
+    "@qiwi/semrel-metabranch": "workspace:*"
+    "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/node": "npm:^18.7.6"
     debug: "npm:^4.3.4"
     execa: "npm:^6.1.0"
@@ -1482,8 +1482,8 @@ __metadata:
   resolution: "@qiwi/git-utils@workspace:packages/git-utils"
   dependencies:
     "@antongolub/git-root": "npm:^1.5.7"
-    "@qiwi/semrel-common": "npm:3.4.2"
-    "@qiwi/semrel-infra": "npm:3.2.3"
+    "@qiwi/semrel-common": "workspace:*"
+    "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.14"
     "@types/node": "npm:^18.7.6"
     debug: "npm:^4.3.4"
@@ -1574,17 +1574,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-actions@workspace:packages/plugin-actions"
   dependencies:
-    "@qiwi/semrel-infra": "npm:3.2.3"
-    "@qiwi/semrel-plugin-creator": "npm:2.3.2"
+    "@qiwi/semrel-infra": "workspace:*"
+    "@qiwi/semrel-plugin-creator": "workspace:*"
     tslib: "npm:^2.4.0"
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-common@npm:3.4.2, @qiwi/semrel-common@workspace:packages/common":
+"@qiwi/semrel-common@workspace:*, @qiwi/semrel-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
-    "@qiwi/semrel-infra": "npm:3.2.3"
+    "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.14"
     "@types/node": "npm:^18.7.6"
     "@types/semantic-release": "npm:^17.2.4"
@@ -1594,29 +1594,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-config-monorepo@npm:1.6.4, @qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
+"@qiwi/semrel-config-monorepo@workspace:*, @qiwi/semrel-config-monorepo@workspace:packages/config-monorepo":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config-monorepo@workspace:packages/config-monorepo"
   dependencies:
-    "@qiwi/semrel-infra": "npm:3.2.3"
-    "@qiwi/semrel-preset": "npm:3.1.10"
+    "@qiwi/semrel-infra": "workspace:*"
+    "@qiwi/semrel-preset": "workspace:*"
   peerDependencies:
     semantic-release: "*"
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-config@npm:1.4.1, @qiwi/semrel-config@workspace:packages/config":
+"@qiwi/semrel-config@workspace:*, @qiwi/semrel-config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-config@workspace:packages/config"
   dependencies:
-    "@qiwi/semrel-infra": "npm:3.2.3"
-    "@qiwi/semrel-preset": "npm:3.1.10"
+    "@qiwi/semrel-infra": "workspace:*"
+    "@qiwi/semrel-preset": "workspace:*"
   peerDependencies:
     semantic-release: "*"
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-infra@npm:3.2.3, @qiwi/semrel-infra@workspace:packages/infra":
+"@qiwi/semrel-infra@workspace:*, @qiwi/semrel-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-infra@workspace:packages/infra"
   dependencies:
@@ -1658,16 +1658,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-metabranch@npm:3.1.2, @qiwi/semrel-metabranch@workspace:packages/metabranch":
+"@qiwi/semrel-metabranch@workspace:*, @qiwi/semrel-metabranch@workspace:packages/metabranch":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
     "@qiwi/esm": "npm:^1.1.8"
     "@qiwi/git-utils": "npm:1.1.2"
-    "@qiwi/semrel-common": "npm:3.4.2"
-    "@qiwi/semrel-infra": "npm:3.2.3"
-    "@qiwi/semrel-plugin-creator": "npm:2.3.2"
-    "@qiwi/semrel-testing-suite": "npm:3.1.2"
+    "@qiwi/semrel-common": "workspace:*"
+    "@qiwi/semrel-infra": "workspace:*"
+    "@qiwi/semrel-plugin-creator": "workspace:*"
+    "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/node": "npm:^18.7.6"
     "@types/semantic-release": "npm:^17.2.4"
     execa: "npm:^6.1.0"
@@ -1680,13 +1680,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-plugin-creator@npm:2.3.2, @qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
+"@qiwi/semrel-plugin-creator@workspace:*, @qiwi/semrel-plugin-creator@workspace:packages/plugin-creator":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-plugin-creator@workspace:packages/plugin-creator"
   dependencies:
     "@qiwi/esm": "npm:^1.1.8"
-    "@qiwi/semrel-infra": "npm:3.2.3"
-    "@qiwi/semrel-testing-suite": "npm:3.1.2"
+    "@qiwi/semrel-infra": "workspace:*"
+    "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/lodash-es": "npm:^4.17.6"
     "@types/node": "npm:^18.7.6"
     "@types/semantic-release": "npm:^17.2.4"
@@ -1698,12 +1698,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-preset@npm:3.1.10, @qiwi/semrel-preset@workspace:packages/preset":
+"@qiwi/semrel-preset@workspace:*, @qiwi/semrel-preset@workspace:packages/preset":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-preset@workspace:packages/preset"
   dependencies:
     "@qiwi/semantic-release-gh-pages-plugin": "npm:^5.2.3"
-    "@qiwi/semrel-metabranch": "npm:3.1.2"
+    "@qiwi/semrel-metabranch": "workspace:*"
     "@semantic-release/changelog": "npm:^6.0.1"
     "@semantic-release/commit-analyzer": "npm:^9.0.2"
     "@semantic-release/exec": "npm:^6.0.3"
@@ -1717,14 +1717,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/semrel-testing-suite@npm:3.1.2, @qiwi/semrel-testing-suite@workspace:packages/testing-suite":
+"@qiwi/semrel-testing-suite@workspace:*, @qiwi/semrel-testing-suite@workspace:packages/testing-suite":
   version: 0.0.0-use.local
   resolution: "@qiwi/semrel-testing-suite@workspace:packages/testing-suite"
   dependencies:
     "@antongolub/git-root": "npm:^1.5.7"
     "@qiwi/git-utils": "npm:1.1.2"
-    "@qiwi/semrel-common": "npm:3.4.2"
-    "@qiwi/semrel-infra": "npm:3.2.3"
+    "@qiwi/semrel-common": "workspace:*"
+    "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.14"
     "@types/node": "npm:^18.7.6"
     execa: "npm:^6.1.0"
@@ -1747,9 +1747,9 @@ __metadata:
   resolution: "@qiwi/semrel-toolkit@workspace:packages/toolkit"
   dependencies:
     "@qiwi/multi-semantic-release": "npm:~6.5.1"
-    "@qiwi/semrel-config": "npm:1.4.1"
-    "@qiwi/semrel-config-monorepo": "npm:1.6.4"
-    "@qiwi/semrel-preset": "npm:3.1.10"
+    "@qiwi/semrel-config": "workspace:*"
+    "@qiwi/semrel-config-monorepo": "workspace:*"
+    "@qiwi/semrel-preset": "workspace:*"
     semantic-release: "npm:~19.0.3"
   bin:
     multi-semrel: ./msr.js
