@@ -156,7 +156,7 @@ jobs:
           yarn -v
           yarn
 
-      - name: Multi-semantic-release
+      - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER: 'qiwibot'
