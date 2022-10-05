@@ -23,7 +23,7 @@
     "build": "yarn workspaces foreach -tp run build",
     "coverage:merge": "node scripts/js/coverage-merge.js",
     "coveralls:push": "cat ./coverage/lcov.info | npm_config_yes=true npx coveralls || echo 'coveralls push failed :(' && exit 0",
-    "release": "DEBUG='semantic-release:metabranch' node packages/toolkit/msr.js",
+    "release": "npm_config_yes=true npx zx-bulk-release",
     "updeps": "npm_config_yes=true npx npm-upgrade-monorepo",
     "postupdate": "yarn && yarn build && yarn test"
   },
