@@ -1,0 +1,10 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/semrel-plugin-creator",
+  "hash": "ba952e7c26f04048a3aa34eda13aace935821f6a",
+  "version": "2.3.3",
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.2.4",
+    "@qiwi/semrel-testing-suite": "3.1.3"
+  }
+}
