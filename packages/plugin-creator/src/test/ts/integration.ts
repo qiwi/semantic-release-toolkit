@@ -1,10 +1,11 @@
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import { jest } from '@jest/globals'
 import {
   cleanPath,
   gitCreateFakeRepo,
 } from '@qiwi/semrel-testing-suite'
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import resolveFrom, { silent as resolveFromSilent } from 'resolve-from'
 import semanticRelease from 'semantic-release'
 

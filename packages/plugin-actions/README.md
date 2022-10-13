@@ -8,7 +8,7 @@ but keep the benefits of stateful operations like changelog appending, docs publ
 ## Usage area
 * Shared build state
 * Cross-release semaphore
-* Build meta publishing: coverage, buildstamp
+* Build meta publishing: coverage, buildstamp 
 
 ## Status
 🚧 WIP 🚧
