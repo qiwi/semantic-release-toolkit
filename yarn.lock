@@ -1477,7 +1477,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/git-utils@npm:1.1.2, @qiwi/git-utils@workspace:packages/git-utils":
+"@qiwi/git-utils@npm:1.1.2, @qiwi/git-utils@workspace:*, @qiwi/git-utils@workspace:packages/git-utils":
   version: 0.0.0-use.local
   resolution: "@qiwi/git-utils@workspace:packages/git-utils"
   dependencies:
@@ -1663,7 +1663,7 @@ __metadata:
   resolution: "@qiwi/semrel-metabranch@workspace:packages/metabranch"
   dependencies:
     "@qiwi/esm": "npm:^1.1.8"
-    "@qiwi/git-utils": "npm:1.1.2"
+    "@qiwi/git-utils": "workspace:*"
     "@qiwi/semrel-common": "workspace:*"
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/semrel-plugin-creator": "workspace:*"
