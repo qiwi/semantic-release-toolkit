@@ -1,5 +1,5 @@
 # @qiwi/semrel
-[![Build Status](https://travis-ci.com/qiwi/semantic-release-toolkit.svg?branch=master)](https://travis-ci.com/qiwi/semantic-release-toolkit)
+[![CI](https://github.com/qiwi/semantic-release-toolkit/actions/workflows/ci.yaml/badge.svg)](https://github.com/qiwi/semantic-release-toolkit/actions/workflows/ci.yaml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/202e9bc2e0d5ed528ed0/maintainability)](https://codeclimate.com/github/qiwi/semantic-release-toolkit/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/202e9bc2e0d5ed528ed0/test_coverage)](https://codeclimate.com/github/qiwi/semantic-release-toolkit/test_coverage)
 
