@@ -1,9 +1,10 @@
-import { Debugger } from '@qiwi/semrel-plugin-creator'
-import { gitCreateFakeRepo } from '@qiwi/semrel-testing-suite'
-import { execa } from 'execa'
 import fs from 'node:fs'
 import path, { dirname} from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+import { Debugger } from '@qiwi/semrel-plugin-creator'
+import { gitCreateFakeRepo } from '@qiwi/semrel-testing-suite'
+import { execa } from 'execa'
 import { temporaryDirectory } from 'tempy'
 
 import { perform, push, TActionOptionsNormalized } from '../../main/ts'

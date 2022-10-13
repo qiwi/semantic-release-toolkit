@@ -41,9 +41,9 @@
   },
   "dependencies": {
     "@antongolub/git-root": "^1.5.7",
-    "@qiwi/git-utils": "1.1.2",
+    "@qiwi/git-utils": "workspace:*",
     "@qiwi/semrel-common": "workspace:*",
-    "@qiwi/substrate": "^1.20.14",
+    "@qiwi/substrate": "^1.20.15",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
     "tempy": "^3.0.0",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "workspace:*",
-    "@types/node": "^18.7.6"
+    "@types/node": "^18.8.5"
   },
   "repository": {
     "type": "git",

@@ -21,7 +21,7 @@
     "@qiwi/semrel-config": "workspace:*",
     "@qiwi/semrel-config-monorepo": "workspace:*",
     "@qiwi/semrel-preset": "workspace:*",
-    "semantic-release": "~19.0.3"
+    "semantic-release": "~19.0.5"
   },
   "repository": {
     "type": "git",

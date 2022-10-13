@@ -1,6 +1,7 @@
-import fse from 'fs-extra'
 import { existsSync, lstatSync, writeFileSync } from 'node:fs'
 import { isAbsolute, join, normalize } from 'node:path'
+
+import fse from 'fs-extra'
 
 const { ensureFileSync, copySync: copyDirectory } = fse
 
