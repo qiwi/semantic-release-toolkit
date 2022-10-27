@@ -1,0 +1,13 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/semrel-testing-suite",
+  "hash": "565fafd93a057a360241a2adfd4d33020d57361a",
+  "version": "3.2.0",
+  "dependencies": {
+    "@qiwi/git-utils": "1.2.0",
+    "@qiwi/semrel-common": "3.5.0"
+  },
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.3.0"
+  }
+}
