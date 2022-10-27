@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@qiwi/substrate": "^1.20.15",
-    "@types/node": "^18.8.5",
+    "@types/node": "^18.11.7",
     "@types/semantic-release": "^17.2.4",
     "lodash-es": "^4.17.21",
     "minimist": "^1.2.7",

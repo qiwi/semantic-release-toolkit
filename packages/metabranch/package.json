@@ -48,7 +48,7 @@
     "@qiwi/git-utils": "workspace:*",
     "@qiwi/semrel-common": "workspace:*",
     "@qiwi/semrel-plugin-creator": "workspace:*",
-    "@types/node": "^18.8.5",
+    "@types/node": "^18.11.7",
     "@types/semantic-release": "^17.2.4",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",

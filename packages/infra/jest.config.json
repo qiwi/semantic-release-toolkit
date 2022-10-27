@@ -1,7 +1,10 @@
 {
   "testEnvironment": "node",
   "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": ["ts-jest", {
+      "useESM": true,
+      "tsconfig": "<rootDir>/tsconfig.test.json"
+    }]
   },
   "extensionsToTreatAsEsm": [".ts", ".esm", ".esm.js"],
   "transformIgnorePatterns": [],
@@ -28,11 +31,5 @@
     "mjs",
     "cjs"
   ],
-  "preset": "ts-jest",
-  "globals": {
-    "ts-jest": {
-      "useESM": true,
-      "tsconfig": "<rootDir>/tsconfig.test.json"
-    }
-  }
+  "preset": "ts-jest"
 }

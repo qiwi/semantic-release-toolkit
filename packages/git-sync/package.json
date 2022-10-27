@@ -33,12 +33,12 @@
     "@qiwi/semrel-metabranch": "workspace:*",
     "debug": "^4.3.4",
     "execa": "^6.1.0",
-    "hosted-git-info": "^5.1.0"
+    "hosted-git-info": "^5.2.0"
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "workspace:*",
     "@qiwi/semrel-testing-suite": "workspace:*",
-    "@types/node": "^18.8.5",
+    "@types/node": "^18.11.7",
     "resolve-from": "^5.0.0"
   },
   "repository": {
