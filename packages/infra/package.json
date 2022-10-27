@@ -10,8 +10,6 @@
     "postupdate": "yarn"
   },
   "type": "module",
-  "source": "./index.js",
-  "exports": "./index.js",
   "bin": {
     "concurrently": "./../../node_modules/.bin/concurrently",
     "cpy": "./../../node_modules/.bin/cpy",
