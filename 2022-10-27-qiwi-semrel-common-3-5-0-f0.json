@@ -1,0 +1,9 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/semrel-common",
+  "hash": "565fafd93a057a360241a2adfd4d33020d57361a",
+  "version": "3.5.0",
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.3.0"
+  }
+}
