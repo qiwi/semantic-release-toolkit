@@ -1801,7 +1801,7 @@ __metadata:
     terser: "npm:^5.15.1"
     ts-jest: "npm:^29.0.3"
     tsc-esm-fix: "npm:^2.20.5"
-    typedoc: "npm:^0.23.18"
+    typedoc: "npm:^0.23.19"
     typescript: "npm:^4.8.4"
   bin:
     concurrently: ./../../node_modules/.bin/concurrently
@@ -11084,9 +11084,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.23.18":
-  version: 0.23.18
-  resolution: "typedoc@npm:0.23.18"
+"typedoc@npm:^0.23.19":
+  version: 0.23.19
+  resolution: "typedoc@npm:0.23.19"
   dependencies:
     lunr: "npm:^2.3.9"
     marked: "npm:^4.0.19"
@@ -11096,7 +11096,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x
   bin:
     typedoc: bin/typedoc
-  checksum: a75c943bef9975c3052f3b85f4b5a3c94634a996ee2c7bb09b5c84161c8208224832e48c79eea1703ae7fd7ce5cbcecea785dd5e57117240465cd987a7564d58
+  checksum: c9e4041685b993f932ff0a206260441d8c6900a1c0aec66fd115e33699ad9da93cd93a4097e8e2c6509cd16a8a05d5a7786808004e12fd3a9a99fc94af29dbf5
   languageName: node
   linkType: hard
 
