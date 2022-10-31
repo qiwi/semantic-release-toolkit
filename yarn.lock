@@ -1634,7 +1634,7 @@ __metadata:
     "@types/node": "npm:^18.11.7"
     debug: "npm:^4.3.4"
     execa: "npm:^6.1.0"
-    hosted-git-info: "npm:^5.2.0"
+    hosted-git-info: "npm:^6.0.0"
     resolve-from: "npm:^5.0.0"
   languageName: unknown
   linkType: soft
@@ -5767,12 +5767,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hosted-git-info@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "hosted-git-info@npm:5.2.0"
+"hosted-git-info@npm:^6.0.0":
+  version: 6.1.1
+  resolution: "hosted-git-info@npm:6.1.1"
   dependencies:
     lru-cache: "npm:^7.5.1"
-  checksum: 5dce4a32e50db9efee4c086979fc1da6901c7eca6fe851ab049c068e74f3233a27dad8adfe8bc1ba1fcd25bebc0462e57b449c8e5168ef76aea94a5ca0bdfafc
+  checksum: bf0532d09895323968c41184d7068c25b0ccb95b1b7bc3ffb9f95c46163e86e003bedd5df711739b215d872825eaeead75a6d25f1b92f4403c0b6132d22e9311
   languageName: node
   linkType: hard
 
