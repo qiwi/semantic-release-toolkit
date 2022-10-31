@@ -1,0 +1,12 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/git-utils",
+  "hash": "d4bff87f3ec9371de5587f481b99deae1159f9ff",
+  "version": "1.2.1",
+  "dependencies": {
+    "@qiwi/semrel-common": "3.5.1"
+  },
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.3.1"
+  }
+}
