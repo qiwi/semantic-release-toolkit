@@ -1,0 +1,11 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/semrel-toolkit",
+  "hash": "4f8c95c2f0bf9ec0ce24980ad96f6788e5b4e0be",
+  "version": "3.2.12",
+  "dependencies": {
+    "@qiwi/semrel-config": "1.4.2",
+    "@qiwi/semrel-config-monorepo": "1.6.5",
+    "@qiwi/semrel-preset": "3.1.11"
+  }
+}
