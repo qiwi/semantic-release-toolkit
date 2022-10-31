@@ -1,0 +1,9 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/semrel-preset",
+  "hash": "4f8c95c2f0bf9ec0ce24980ad96f6788e5b4e0be",
+  "version": "3.1.11",
+  "dependencies": {
+    "@qiwi/semrel-metabranch": "3.1.3"
+  }
+}
