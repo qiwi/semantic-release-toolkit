@@ -1,0 +1,12 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/semrel-config-monorepo",
+  "hash": "4f8c95c2f0bf9ec0ce24980ad96f6788e5b4e0be",
+  "version": "1.6.5",
+  "dependencies": {
+    "@qiwi/semrel-preset": "3.1.11"
+  },
+  "devDependencies": {
+    "@qiwi/semrel-infra": "3.3.1"
+  }
+}
