@@ -31,7 +31,7 @@
     "find-git-root": "^1.0.4"
   },
   "resolutions": {
-    "npm/chalk": "^4.1.2"
+    "npm/chalk": "^5.0.0"
   },
   "repository": {
     "type": "git",
