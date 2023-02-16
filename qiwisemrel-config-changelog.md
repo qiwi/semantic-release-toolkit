@@ -1,3 +1,8 @@
+## [@qiwi/semrel-config@1.4.3](https://github.com/qiwi/semantic-release-toolkit/compare/2022.10.31-qiwi.semrel-config.1.4.2-f0...2023.2.16-qiwi.semrel-config.1.4.3-f0) (2023-02-16)
+
+### Fixes & improvements
+* fix: rollback default config [347c9cc](https://github.com/qiwi/semantic-release-toolkit/commit/347c9ccd91003c74c4faee3cbe41934a236c3e9e)
+
 ## [@qiwi/semrel-config@1.4.2](https://github.com/qiwi/semantic-release-toolkit/compare/@qiwi/semrel-config@1.4.1...2022.10.31-qiwi.semrel-config.1.4.2-f0) (2022-10-31)
 
 ### Fixes & improvements
@@ -10,5 +15,3 @@
 ### Dependencies
 * perf: @qiwi/semrel-preset updated to 3.1.11
 * perf: @qiwi/semrel-infra updated to 3.3.1
-
-
