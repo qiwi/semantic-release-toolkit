@@ -1985,7 +1985,7 @@ __metadata:
     mkdirp: "npm:^1.0.4"
     prettier: "npm:^2.7.1"
     prettier-config-qiwi: "npm:^2.0.0"
-    rimraf: "npm:^3.0.2"
+    rimraf: "npm:^4.0.0"
     snazzy: "npm:^9.0.0"
     terser: "npm:^5.15.1"
     ts-jest: "npm:^29.0.3"
@@ -10178,6 +10178,15 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: b786c9ad52df9fbcd9c7120e105f3150b83b39dd87d9235a93b0c7e806575e1e68936504ff64563dbe67b3f8bbbc00bdfff586157d402ee8990e7143456511c0
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^4.0.0":
+  version: 4.1.2
+  resolution: "rimraf@npm:4.1.2"
+  bin:
+    rimraf: dist/cjs/src/bin.js
+  checksum: dee884aa7e6230e35193e93fda180ae8289bc4a75feca10fa5961db776f1a80caa3a5c3bab6e982af3bd1e95145155ab32562e5e6638eb80fca49e50375e1d87
   languageName: node
   linkType: hard
 
