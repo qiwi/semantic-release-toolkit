@@ -25,7 +25,7 @@ As a part of plugin declaration:
 // .release.rc
 {
   "plugins": [[
-    "@qiwi/semrel-multibranch",
+    "@qiwi/semrel-metabranch",
     {
       "verify": {
         "action": "fetch",
@@ -41,7 +41,7 @@ Action declared in release step:
 ```json
 {
   "publish": [[
-    "@qiwi/semrel-multibranch",
+    "@qiwi/semrel-metabranch",
     {
       "action": "push",
       "branch": "metabranch",
