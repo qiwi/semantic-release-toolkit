@@ -1822,7 +1822,7 @@ __metadata:
     "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/node": "npm:^18.11.7"
     debug: "npm:^4.3.4"
-    execa: "npm:^6.1.0"
+    execa: "npm:^7.0.0"
     hosted-git-info: "npm:^5.2.0"
     resolve-from: "npm:^5.0.0"
   languageName: unknown
@@ -1838,7 +1838,7 @@ __metadata:
     "@qiwi/substrate": "npm:^1.20.15"
     "@types/node": "npm:^18.11.7"
     debug: "npm:^4.3.4"
-    execa: "npm:^6.1.0"
+    execa: "npm:^7.0.0"
     file-url: "npm:^4.0.0"
     fs-extra: "npm:^10.1.0"
     nanoid: "npm:^4.0.0"
@@ -2021,7 +2021,7 @@ __metadata:
     "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/node": "npm:^18.11.7"
     "@types/semantic-release": "npm:^17.2.4"
-    execa: "npm:^6.1.0"
+    execa: "npm:^7.0.0"
     fs-extra: "npm:^10.1.0"
     globby: "npm:^13.1.2"
     resolve-from: "npm:^5.0.0"
@@ -2078,7 +2078,7 @@ __metadata:
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.15"
     "@types/node": "npm:^18.11.7"
-    execa: "npm:^6.1.0"
+    execa: "npm:^7.0.0"
     fs-extra: "npm:^10.1.0"
     tempy: "npm:^3.0.0"
     tslib: "npm:^2.4.0"
@@ -5230,6 +5230,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"execa@npm:^7.0.0":
+  version: 7.2.0
+  resolution: "execa@npm:7.2.0"
+  dependencies:
+    cross-spawn: "npm:^7.0.3"
+    get-stream: "npm:^6.0.1"
+    human-signals: "npm:^4.3.0"
+    is-stream: "npm:^3.0.0"
+    merge-stream: "npm:^2.0.0"
+    npm-run-path: "npm:^5.1.0"
+    onetime: "npm:^6.0.0"
+    signal-exit: "npm:^3.0.7"
+    strip-final-newline: "npm:^3.0.0"
+  checksum: 9a3716a61ed367b5eb956f4fbe42b003465bf193db0ece7f842cc39b4b6ce373e29e52165568f88595939928c4bc41cf86e4102cd0ef33b34ac146ab80009b4a
+  languageName: node
+  linkType: hard
+
 "exit@npm:^0.1.2":
   version: 0.1.2
   resolution: "exit@npm:0.1.2"
@@ -6090,6 +6107,13 @@ __metadata:
   version: 3.0.1
   resolution: "human-signals@npm:3.0.1"
   checksum: 00cff8f78516e925bef0d0bc65dfbf8bfad876ef3dc1aeec98f2ba845b56e9a58972a9e002323ef7e6de08b2a2fc0cb9a27ddadf7fae608b2828d241d6ae32b3
+  languageName: node
+  linkType: hard
+
+"human-signals@npm:^4.3.0":
+  version: 4.3.1
+  resolution: "human-signals@npm:4.3.1"
+  checksum: 516afaf3bce1d9ddcc81cfb453c7e7684ae4767f7cff807287195d1f328eea3ccc8cfb63fd4b78de7e3850bcc4587701df767f36f6af353285fe20aa8433b697
   languageName: node
   linkType: hard
 

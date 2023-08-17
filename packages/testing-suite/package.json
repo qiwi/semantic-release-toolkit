@@ -44,7 +44,7 @@
     "@qiwi/git-utils": "workspace:*",
     "@qiwi/semrel-common": "workspace:*",
     "@qiwi/substrate": "^1.20.15",
-    "execa": "^6.1.0",
+    "execa": "^7.0.0",
     "fs-extra": "^10.1.0",
     "tempy": "^3.0.0",
     "tslib": "^2.4.0"

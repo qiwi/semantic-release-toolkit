@@ -32,7 +32,7 @@
   "dependencies": {
     "@qiwi/semrel-metabranch": "workspace:*",
     "debug": "^4.3.4",
-    "execa": "^6.1.0",
+    "execa": "^7.0.0",
     "hosted-git-info": "^5.2.0"
   },
   "devDependencies": {
