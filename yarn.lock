@@ -1947,7 +1947,7 @@ __metadata:
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.15"
     "@types/node": "npm:^18.11.7"
-    "@types/semantic-release": "npm:^17.2.4"
+    "@types/semantic-release": "npm:^20.0.0"
     lodash-es: "npm:^4.17.21"
     minimist: "npm:^1.2.7"
     tslib: "npm:^2.4.0"
@@ -2029,7 +2029,7 @@ __metadata:
     "@qiwi/semrel-plugin-creator": "workspace:*"
     "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/node": "npm:^18.11.7"
-    "@types/semantic-release": "npm:^17.2.4"
+    "@types/semantic-release": "npm:^20.0.0"
     execa: "npm:^6.1.0"
     fs-extra: "npm:^10.1.0"
     globby: "npm:^13.1.2"
@@ -2049,7 +2049,7 @@ __metadata:
     "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/lodash-es": "npm:^4.17.6"
     "@types/node": "npm:^18.11.7"
-    "@types/semantic-release": "npm:^17.2.4"
+    "@types/semantic-release": "npm:^20.0.0"
     debug: "npm:^4.3.4"
     lodash-es: "npm:^4.17.21"
     resolve-from: "npm:^5.0.0"
@@ -2741,12 +2741,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semantic-release@npm:^17.2.3, @types/semantic-release@npm:^17.2.4":
+"@types/semantic-release@npm:^17.2.3":
   version: 17.2.4
   resolution: "@types/semantic-release@npm:17.2.4"
   dependencies:
     "@types/node": "npm:*"
   checksum: 41c52d82c8b5dbce70d434a8ca7b1bc7e1eef38a5f597303fc99f0e9d3c1121e184b05f345c1ef967f0f027691076512309d9ffcc9bea577443726be5de9910a
+  languageName: node
+  linkType: hard
+
+"@types/semantic-release@npm:^20.0.0":
+  version: 20.0.6
+  resolution: "@types/semantic-release@npm:20.0.6"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 2c48b2749e666d84e9a1dc083626fbd03b2460e7c247221f3c1652698b82ce1a84a228b4fa916ddf1640eafa9dbf27e48742cc2a724179afee061391f363680a
   languageName: node
   linkType: hard
 
