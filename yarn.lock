@@ -1844,7 +1844,7 @@ __metadata:
     "@antongolub/git-root": "npm:^1.5.7"
     "@qiwi/semrel-common": "workspace:*"
     "@qiwi/semrel-infra": "workspace:*"
-    "@qiwi/substrate": "npm:^1.20.15"
+    "@qiwi/substrate": "npm:^2.0.0"
     "@types/node": "npm:^18.11.7"
     debug: "npm:^4.3.4"
     execa: "npm:^6.1.0"
@@ -1945,7 +1945,7 @@ __metadata:
   resolution: "@qiwi/semrel-common@workspace:packages/common"
   dependencies:
     "@qiwi/semrel-infra": "workspace:*"
-    "@qiwi/substrate": "npm:^1.20.15"
+    "@qiwi/substrate": "npm:^2.0.0"
     "@types/node": "npm:^18.11.7"
     "@types/semantic-release": "npm:^17.2.4"
     lodash-es: "npm:^4.17.21"
@@ -2085,7 +2085,7 @@ __metadata:
     "@qiwi/git-utils": "workspace:*"
     "@qiwi/semrel-common": "workspace:*"
     "@qiwi/semrel-infra": "workspace:*"
-    "@qiwi/substrate": "npm:^1.20.15"
+    "@qiwi/substrate": "npm:^2.0.0"
     "@types/node": "npm:^18.11.7"
     execa: "npm:^6.1.0"
     fs-extra: "npm:^10.1.0"
@@ -2126,22 +2126,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/substrate-abstract@npm:1.20.9":
-  version: 1.20.9
-  resolution: "@qiwi/substrate-abstract@npm:1.20.9"
+"@qiwi/substrate-abstract@npm:2.1.0":
+  version: 2.1.0
+  resolution: "@qiwi/substrate-abstract@npm:2.1.0"
   dependencies:
-    "@qiwi/substrate-types": "npm:1.55.0"
-  checksum: 2fca2fa20fd562ea5a0d6bb6a38c02844c45f2d6ba5191e0e25bc0302a704359dd2be27fc1f82de8d5babfdac30c9909635f46e27ef06e99b0e580795c641987
-  languageName: node
-  linkType: hard
-
-"@qiwi/substrate-std@npm:1.3.10":
-  version: 1.3.10
-  resolution: "@qiwi/substrate-std@npm:1.3.10"
-  dependencies:
-    "@qiwi/substrate-types": "npm:1.55.0"
-    tslib: "npm:^2.4.0"
-  checksum: 65827d0f4467423485111dca626c094e3861d3bbd6741921ba65b643ef19f04fb3be047d44b459c77daaa9f9caf8fd28238efc0740b7ecd7209d223017e6c625
+    "@qiwi/substrate-types": "npm:2.1.0"
+  checksum: 1168de7e38f15b13185f11c4e31328cc0300e512256f41d2cb49dd4c04113b4a311dfe2b27276d7ea2fe25113ec9bea81f1266ebcd41541f4268020ae4eed18c
   languageName: node
   linkType: hard
 
@@ -2155,6 +2145,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@qiwi/substrate-std@npm:2.1.0":
+  version: 2.1.0
+  resolution: "@qiwi/substrate-std@npm:2.1.0"
+  dependencies:
+    "@qiwi/substrate-types": "npm:2.1.0"
+    tslib: "npm:^2.6.2"
+  checksum: bf90871d6431d0951596ff6fae12ebf520b4bc45ec5b37f70c200a2c815c9217cdd14a41de10962b103ef69449a308f2acf603b33465c3714f6dde8940a58613
+  languageName: node
+  linkType: hard
+
 "@qiwi/substrate-types@npm:1.54.0":
   version: 1.54.0
   resolution: "@qiwi/substrate-types@npm:1.54.0"
@@ -2162,10 +2162,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/substrate-types@npm:1.55.0":
-  version: 1.55.0
-  resolution: "@qiwi/substrate-types@npm:1.55.0"
-  checksum: 27954477fd999b79d5a91fb4f9dc754e1314d32e79ab1fcbc9d620e28e5687f23de132a1cbc2a3f666a148ff06bf646a98cad0c26d41e92c782c55d850c2ef5e
+"@qiwi/substrate-types@npm:2.1.0":
+  version: 2.1.0
+  resolution: "@qiwi/substrate-types@npm:2.1.0"
+  checksum: 0748fed0670b54bfaf325104d8f3d159ac4459321e1151f11eea66bc33d14b2d7e1cc19d226aa69d902c6125bde6e1eded6ab8ffc0e53511f964a7526dd6976a
   languageName: node
   linkType: hard
 
@@ -2181,15 +2181,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/substrate@npm:^1.20.15":
-  version: 1.20.15
-  resolution: "@qiwi/substrate@npm:1.20.15"
+"@qiwi/substrate@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "@qiwi/substrate@npm:2.1.0"
   dependencies:
-    "@qiwi/substrate-abstract": "npm:1.20.9"
-    "@qiwi/substrate-std": "npm:1.3.10"
-    "@qiwi/substrate-types": "npm:1.55.0"
-    tslib: "npm:^2.4.0"
-  checksum: 8e47b67b2f9f9e7bb5d123134af7eb0b240f1f15aa4bdd58f4b19089660fc2665e62d4e5fa1f75f741fa0e0a117f5969cc737ec5ccf7ebdfed484cfbe7bd38b7
+    "@qiwi/substrate-abstract": "npm:2.1.0"
+    "@qiwi/substrate-std": "npm:2.1.0"
+    "@qiwi/substrate-types": "npm:2.1.0"
+    tslib: "npm:^2.6.2"
+  checksum: f310c4d725529d1a7400a884614dc25d1ee57a17f20de4067a8852e3963d16eaeb7c4776287beff7ef94b66588d25c951baccf1fdcc56376e739d62a6ccb66aa
   languageName: node
   linkType: hard
 
@@ -11295,6 +11295,13 @@ __metadata:
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: a739a21e3ff059e62c7c3c0845333fbc9c081bcc91e015f2d246a31eeaf1fb0e29b10c0913c7d22f692b3203bb469fd60ca5288aa4f27d351a969df2d0714899
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: e5654691294dfbc49d7f37c8476b11a90ab8a0af4ad8cc968af1d013600e84ecfcd9a68e1cb89f5dcfe5c88872e3fbacea830d237cfa063498115a88f4bd2de6
   languageName: node
   linkType: hard
 

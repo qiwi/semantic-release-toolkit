@@ -38,7 +38,7 @@
     "postupdate": "yarn && yarn build && yarn test"
   },
   "dependencies": {
-    "@qiwi/substrate": "^1.20.15",
+    "@qiwi/substrate": "^2.0.0",
     "@types/node": "^18.11.7",
     "@types/semantic-release": "^17.2.4",
     "lodash-es": "^4.17.21",
