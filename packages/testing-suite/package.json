@@ -43,7 +43,7 @@
     "@antongolub/git-root": "^1.5.7",
     "@qiwi/git-utils": "workspace:*",
     "@qiwi/semrel-common": "workspace:*",
-    "@qiwi/substrate": "^1.20.15",
+    "@qiwi/substrate": "^2.0.0",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
     "tempy": "^3.0.0",

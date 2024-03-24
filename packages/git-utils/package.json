@@ -40,7 +40,7 @@
   "dependencies": {
     "@antongolub/git-root": "^1.5.7",
     "@qiwi/semrel-common": "workspace:*",
-    "@qiwi/substrate": "^1.20.15",
+    "@qiwi/substrate": "^2.0.0",
     "@types/node": "^18.11.7",
     "debug": "^4.3.4",
     "execa": "^6.1.0",
