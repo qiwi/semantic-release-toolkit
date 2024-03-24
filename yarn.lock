@@ -1999,7 +1999,7 @@ __metadata:
     terser: "npm:^5.15.1"
     ts-jest: "npm:^29.0.3"
     tsc-esm-fix: "npm:^2.20.5"
-    typedoc: "npm:^0.24.0"
+    typedoc: "npm:^0.25.0"
     typescript: "npm:^4.8.4"
   bin:
     concurrently: ./../../node_modules/.bin/concurrently
@@ -8361,7 +8361,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^9.0.0":
+"minimatch@npm:^9.0.3":
   version: 9.0.3
   resolution: "minimatch@npm:9.0.3"
   dependencies:
@@ -10476,15 +10476,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.14.1":
-  version: 0.14.3
-  resolution: "shiki@npm:0.14.3"
+"shiki@npm:^0.14.7":
+  version: 0.14.7
+  resolution: "shiki@npm:0.14.7"
   dependencies:
     ansi-sequence-parser: "npm:^1.1.0"
     jsonc-parser: "npm:^3.2.0"
     vscode-oniguruma: "npm:^1.7.0"
     vscode-textmate: "npm:^8.0.0"
-  checksum: a62ecd31462a9206302fec40bd16185774d824a8fde68f919ea91b017345015448f24d60153cba64fb662b74cd5c67fe5a0f88a56d82cbd375b90958483d4833
+  checksum: 9bb69cc2e33c967c75e9caa28cdea3374c5b9fd918403a25234c62b499021d7e0f84c4fb55450334d75f7589437aa05ce04d0cd4cd53029fb366f07db97ce8b2
   languageName: node
   linkType: hard
 
@@ -11411,19 +11411,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.24.0":
-  version: 0.24.8
-  resolution: "typedoc@npm:0.24.8"
+"typedoc@npm:^0.25.0":
+  version: 0.25.12
+  resolution: "typedoc@npm:0.25.12"
   dependencies:
     lunr: "npm:^2.3.9"
     marked: "npm:^4.3.0"
-    minimatch: "npm:^9.0.0"
-    shiki: "npm:^0.14.1"
+    minimatch: "npm:^9.0.3"
+    shiki: "npm:^0.14.7"
   peerDependencies:
-    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x
+    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x
   bin:
     typedoc: bin/typedoc
-  checksum: 391223966e33420e63c46000a131ef6f28056f61d77f26f4df958def9cf54dad9076e59bfac7be2c025e8d88cb1e663b8a180d65b91fe8c7ab70a7cfffc46093
+  checksum: f8019b1d64528ca9e0845edf641f8d08146bc540230ae038fc461463af8bc696db097d831ee6b192b8b33d3e03731ba8444c5d89538dc9f7c4d7e3def1c4003b
   languageName: node
   linkType: hard
 
