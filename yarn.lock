@@ -1985,7 +1985,7 @@ __metadata:
     "@swissquote/crafty-preset-jest": "npm:^1.20.0"
     "@types/jest": "npm:^29.2.0"
     concurrently: "npm:^8.0.0"
-    cpy-cli: "npm:^4.2.0"
+    cpy-cli: "npm:^5.0.0"
     depcheck: "npm:^1.4.3"
     eslint: "npm:^8.26.0"
     eslint-config-prettier: "npm:^8.5.0"
@@ -4183,43 +4183,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cp-file@npm:^9.1.0":
-  version: 9.1.0
-  resolution: "cp-file@npm:9.1.0"
+"cp-file@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "cp-file@npm:10.0.0"
   dependencies:
-    graceful-fs: "npm:^4.1.2"
-    make-dir: "npm:^3.0.0"
-    nested-error-stacks: "npm:^2.0.0"
-    p-event: "npm:^4.1.0"
-  checksum: 13a8a619a79227967d478f7dcd824579654d8f0365993654d2d3e1c325a40d66b6e3dba95189bd7dd8fb39471115d64813e55e335a57d008fe9f88151eaaf734
+    graceful-fs: "npm:^4.2.10"
+    nested-error-stacks: "npm:^2.1.1"
+    p-event: "npm:^5.0.1"
+  checksum: aee7d73a43a788965ef2fadf9fe75d450e916f4099cc13ec0aa374e583b9d5fbf8c6fe038094753b9fce1ce3f6d2d7f6d1d2d43924a29bd444267e6910741046
   languageName: node
   linkType: hard
 
-"cpy-cli@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "cpy-cli@npm:4.2.0"
+"cpy-cli@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "cpy-cli@npm:5.0.0"
   dependencies:
-    cpy: "npm:^9.0.0"
-    meow: "npm:^10.1.2"
+    cpy: "npm:^10.1.0"
+    meow: "npm:^12.0.1"
   bin:
     cpy: cli.js
-  checksum: 8f57f91b7cfcc4c413ff3d9f0e39ff853a390e3b9b7a2bd0f46b41d12d03264f16e1998fe46e89a10d3ed7b4c666cc33ba23771ae3163eae2037c3f5d38f756d
+  checksum: e48425e345933b119190d0787a5af940381119076aa23500b0e1e0c7fdbcac4843338f6dae30d372dbb14547b810b4ec54880cf06fc8379fb2f62b0b63f0ea5f
   languageName: node
   linkType: hard
 
-"cpy@npm:^9.0.0":
-  version: 9.0.1
-  resolution: "cpy@npm:9.0.1"
+"cpy@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "cpy@npm:10.1.0"
   dependencies:
     arrify: "npm:^3.0.0"
-    cp-file: "npm:^9.1.0"
-    globby: "npm:^13.1.1"
-    junk: "npm:^4.0.0"
-    micromatch: "npm:^4.0.4"
-    nested-error-stacks: "npm:^2.1.0"
+    cp-file: "npm:^10.0.0"
+    globby: "npm:^13.1.4"
+    junk: "npm:^4.0.1"
+    micromatch: "npm:^4.0.5"
+    nested-error-stacks: "npm:^2.1.1"
     p-filter: "npm:^3.0.0"
-    p-map: "npm:^5.3.0"
-  checksum: f1bc4887f9b9460ca7fc03b6af7e959025d754dfbaddb37c6838aebcafdebb9841d76c1e384623ef182fe5f76de0bff202ff43974d9fae1e95f3dc5b02ede0fd
+    p-map: "npm:^6.0.0"
+  checksum: 29b3394077d4438a06aade4be27d2ac2ff3507652731c173a09c8ae56fdfbac75e373eb04dff96ab93171008cab3d970e58481bef674fba3ceb57dfda2fbd4d2
   languageName: node
   linkType: hard
 
@@ -5312,6 +5311,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:^3.3.0":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 2e0982646184c8abf70b22513fce699b1f8266ed9d7fee13a8290a96ffa2ee2baf772f2cf4d9bdff7ac76d1953dc4daa21a57461d581077f95a6137d7fe80e1c
+  languageName: node
+  linkType: hard
+
 "fast-json-stable-stringify@npm:2.x, fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
@@ -5862,7 +5874,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^13.1.1, globby@npm:^13.1.2":
+"globby@npm:^13.1.2":
   version: 13.1.2
   resolution: "globby@npm:13.1.2"
   dependencies:
@@ -5885,6 +5897,19 @@ __metadata:
     merge2: "npm:^1.4.1"
     slash: "npm:^4.0.0"
   checksum: a4b8f38a118310286f684c0146301f375f40b9550fa172f37a668f7de0b52d955f7f5c05e83885b517cedb39ebfc523a7155efa8e3366c375d3fff14e5924af4
+  languageName: node
+  linkType: hard
+
+"globby@npm:^13.1.4":
+  version: 13.2.2
+  resolution: "globby@npm:13.2.2"
+  dependencies:
+    dir-glob: "npm:^3.0.1"
+    fast-glob: "npm:^3.3.0"
+    ignore: "npm:^5.2.4"
+    merge2: "npm:^1.4.1"
+    slash: "npm:^4.0.0"
+  checksum: d1304681950c25e5d37b95a72a39146371efe30c73f1bc157c2f74d303524ef73f18e1bf579e34cc0798523a819bff7370be77e5acf817e621120510d387203a
   languageName: node
   linkType: hard
 
@@ -6153,6 +6178,13 @@ __metadata:
   version: 5.2.0
   resolution: "ignore@npm:5.2.0"
   checksum: 0086b6992b2e2c9ec23f009e5939022323f1b4ad291607507045cc67b0a3b5d9724fc425f5300b3ba6d10ef74311bdf71cd26040227c30a182cf1b2a5971226b
+  languageName: node
+  linkType: hard
+
+"ignore@npm:^5.2.4":
+  version: 5.3.1
+  resolution: "ignore@npm:5.3.1"
+  checksum: 6dd3f2217d7070196b53b869fde641d18b764c12fefe8b6d5513001c5fa6815084db68462dca1d855be0b2bfc1d5910ff4639a78ee270764a7e1f65ab0f569b6
   languageName: node
   linkType: hard
 
@@ -7742,10 +7774,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"junk@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "junk@npm:4.0.0"
-  checksum: ef6def8cc4f0ba0a25222a83d9fccd3ea3b9abea72dad106914be9e2856c8f79d0033aca40a42aac1b06ce24deb0dd0233af7313cf970eeb672dcfe7243a9a86
+"junk@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "junk@npm:4.0.1"
+  checksum: 8c750fccc6b3bef619a1e7026631d70bcaffdc0f1e574b469c372765e03a4cb306077e0a48a257de28654bebc1676d25ca226fe92ec69ed253fa142f0268453c
   languageName: node
   linkType: hard
 
@@ -8254,6 +8286,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"meow@npm:^12.0.1":
+  version: 12.1.1
+  resolution: "meow@npm:12.1.1"
+  checksum: 18e2220eaa94334511e0629560ce62228bbe550e44e786bf03adf220a12a69c6f8b5ec1bd0da2130cfb05ca45c7d320ebe6662422f74223221cc83e58d40d3c5
+  languageName: node
+  linkType: hard
+
 "meow@npm:^8.0.0":
   version: 8.1.2
   resolution: "meow@npm:8.1.2"
@@ -8287,7 +8326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -8589,7 +8628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nested-error-stacks@npm:^2.0.0, nested-error-stacks@npm:^2.1.0":
+"nested-error-stacks@npm:^2.1.1":
   version: 2.1.1
   resolution: "nested-error-stacks@npm:2.1.1"
   checksum: 9046e33acd3c96356fde0cf7aae9518ea591ea4c08e6d66aa3f7fe759bfb853c96150b2d1c6782bffc007110952f34ea5cdabd996e84abcc201e91e821fc9058
@@ -9095,12 +9134,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-event@npm:^4.1.0":
-  version: 4.2.0
-  resolution: "p-event@npm:4.2.0"
+"p-event@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "p-event@npm:5.0.1"
   dependencies:
-    p-timeout: "npm:^3.1.0"
-  checksum: d84171a48889b0ed09ab55e368f20eb690343ee1910a26901d79179bc6e47e85d66d0700b7ae0be8d7d719e9380b77c7a19711a5f254d22887ab8ade56fdf1eb
+    p-timeout: "npm:^5.0.2"
+  checksum: 44182b48764ae324be094877f1e2669c8a060d93538634cf64e214db349815e021fca636160be243e95f657ac1a621d6932b5eb30db2b99fdf009bd425084c23
   languageName: node
   linkType: hard
 
@@ -9119,13 +9158,6 @@ __metadata:
   dependencies:
     p-map: "npm:^5.1.0"
   checksum: 9f14a355d2bffc12e773047bf35304dc5314f8676f3c1b19e39365966df0e5ba195338af3fe968925d2163dface4cd7bc3fbb435cee951d4b7973504392e76c6
-  languageName: node
-  linkType: hard
-
-"p-finally@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "p-finally@npm:1.0.0"
-  checksum: e3452db75cacc60e8b834a905e38f3cd9dc21e76e471efcde8a36ea04ec6fc507f6b5f74cbd7252d8c9317846127084831f89318e476ca0023d4ab223f3e146b
   languageName: node
   linkType: hard
 
@@ -9224,12 +9256,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-map@npm:^5.1.0, p-map@npm:^5.3.0":
+"p-map@npm:^5.1.0":
   version: 5.5.0
   resolution: "p-map@npm:5.5.0"
   dependencies:
     aggregate-error: "npm:^4.0.0"
   checksum: 671f7c4885986caf8157ddbf5a4dca5ae51d9448445e42e148bfe156aca8925315bee300c529618300b2a1b82f238c0487e69c483425203896751d04f530d649
+  languageName: node
+  linkType: hard
+
+"p-map@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "p-map@npm:6.0.0"
+  checksum: d4b2abf8f7f5a4bd856e380128ad6a69bb9a56b2ba860dfd6dba19497697bbf7b561557765a6ca228ef0717b32c542834a91ea3c89147dd465df83ca9a52329f
   languageName: node
   linkType: hard
 
@@ -9250,12 +9289,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-timeout@npm:^3.1.0":
-  version: 3.2.0
-  resolution: "p-timeout@npm:3.2.0"
-  dependencies:
-    p-finally: "npm:^1.0.0"
-  checksum: 350fc15deef1aede66e4dc81b4ed92a0383108162b2528253850d1cf28f2e6847d4834c03bdc7e7143d106e569936495751ba52a521a82476b346cdd748293d3
+"p-timeout@npm:^5.0.2":
+  version: 5.1.0
+  resolution: "p-timeout@npm:5.1.0"
+  checksum: 76a7859acee180296d0f4a4650fa70b03973ec13ce73fa3a44540c19634a221592d1c05efff339e1bf76cc0b66bcc96fe51988ac11d451aa5cb13fbf752a2d2a
   languageName: node
   linkType: hard
 
