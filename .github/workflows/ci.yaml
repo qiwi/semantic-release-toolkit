@@ -10,7 +10,7 @@ jobs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - id: ci-skip-step
         uses: mstachniuk/ci-skip@v1
@@ -20,7 +20,7 @@ jobs:
     needs: init
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - uses: actions/setup-node@v3
         with:
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Restore target
         uses: actions/download-artifact@v3
@@ -102,7 +102,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Restore target
         uses: actions/download-artifact@v3
@@ -130,7 +130,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
