@@ -1829,7 +1829,7 @@ __metadata:
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/semrel-metabranch": "workspace:*"
     "@qiwi/semrel-testing-suite": "workspace:*"
-    "@types/node": "npm:^18.11.7"
+    "@types/node": "npm:^22.0.0"
     debug: "npm:^4.3.4"
     execa: "npm:^6.1.0"
     hosted-git-info: "npm:^5.2.0"
@@ -1845,7 +1845,7 @@ __metadata:
     "@qiwi/semrel-common": "workspace:*"
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.15"
-    "@types/node": "npm:^18.11.7"
+    "@types/node": "npm:^22.0.0"
     debug: "npm:^4.3.4"
     execa: "npm:^6.1.0"
     file-url: "npm:^4.0.0"
@@ -1946,7 +1946,7 @@ __metadata:
   dependencies:
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.15"
-    "@types/node": "npm:^18.11.7"
+    "@types/node": "npm:^22.0.0"
     "@types/semantic-release": "npm:^17.2.4"
     lodash-es: "npm:^4.17.21"
     minimist: "npm:^1.2.7"
@@ -2028,7 +2028,7 @@ __metadata:
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/semrel-plugin-creator": "workspace:*"
     "@qiwi/semrel-testing-suite": "workspace:*"
-    "@types/node": "npm:^18.11.7"
+    "@types/node": "npm:^22.0.0"
     "@types/semantic-release": "npm:^17.2.4"
     execa: "npm:^6.1.0"
     fs-extra: "npm:^10.1.0"
@@ -2048,7 +2048,7 @@ __metadata:
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/semrel-testing-suite": "workspace:*"
     "@types/lodash-es": "npm:^4.17.6"
-    "@types/node": "npm:^18.11.7"
+    "@types/node": "npm:^22.0.0"
     "@types/semantic-release": "npm:^17.2.4"
     debug: "npm:^4.3.4"
     lodash-es: "npm:^4.17.21"
@@ -2086,7 +2086,7 @@ __metadata:
     "@qiwi/semrel-common": "workspace:*"
     "@qiwi/semrel-infra": "workspace:*"
     "@qiwi/substrate": "npm:^1.20.15"
-    "@types/node": "npm:^18.11.7"
+    "@types/node": "npm:^22.0.0"
     execa: "npm:^6.1.0"
     fs-extra: "npm:^10.1.0"
     tempy: "npm:^3.0.0"
@@ -2692,10 +2692,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.11.7":
-  version: 18.11.7
-  resolution: "@types/node@npm:18.11.7"
-  checksum: 1756caf0177b764ca8153e7a5d58a2f70466105f5cd64933b40f0f390a0f53167f87898ef6e9e1da4b5ceb00468fca457fe174abd87b3b5b5a0ccc8aba38787a
+"@types/node@npm:^22.0.0":
+  version: 22.18.12
+  resolution: "@types/node@npm:22.18.12"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 94b0ba0e8270351139050d01df2f7a26f87c72bae1c322b3c7639198ad3ab97f0395fe8b43cd3c649a3289f37d211b8fc83d0a5584666380c341810857223dba
   languageName: node
   linkType: hard
 
@@ -11492,6 +11494,13 @@ __metadata:
     has-symbols: "npm:^1.0.3"
     which-boxed-primitive: "npm:^1.0.2"
   checksum: de21ca5e49bb56d46c7d3672d3d2900b3859ee9541903993bca02a94a317ec1c720b316f025bf5c0f51f7ff9ad383782970acae0408b900ae0537727f614c4e1
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: c30efd07d09b3e6ea31aae5acc3c708202ae3efc3360379050cfb72f3c95a8b934bd1e5c905d85605a3d1f3bdc33aa66461a4448da3321ae848554f0b500735b
   languageName: node
   linkType: hard
 

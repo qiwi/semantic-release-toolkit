@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@qiwi/semrel-infra": "workspace:*",
-    "@types/node": "^18.11.7"
+    "@types/node": "^22.0.0"
   },
   "repository": {
     "type": "git",
