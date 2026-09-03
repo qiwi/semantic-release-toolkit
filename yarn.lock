@@ -3773,6 +3773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "chalk@npm:6.0.0"
+  checksum: d4a4c9dbe8cc6387817123223b34f49f5ed212e507cbd3176b7648b2f52d150f361bfc222da67d2e4142d2b5eaa18cb419673e46e6f72426ac1c2ac7ac36ccf9
+  languageName: node
+  linkType: hard
+
 "char-regex@npm:^1.0.2":
   version: 1.0.2
   resolution: "char-regex@npm:1.0.2"
