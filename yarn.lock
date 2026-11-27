@@ -1988,7 +1988,7 @@ __metadata:
     cpy-cli: "npm:^4.2.0"
     depcheck: "npm:^1.4.3"
     eslint: "npm:^8.26.0"
-    eslint-config-prettier: "npm:^8.5.0"
+    eslint-config-prettier: "npm:^10.0.0"
     eslint-config-qiwi: "npm:^1.17.8"
     jest: "npm:^29.2.2"
     mkdirp: "npm:^1.0.4"
@@ -4825,14 +4825,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "eslint-config-prettier@npm:8.5.0"
+"eslint-config-prettier@npm:^10.0.0":
+  version: 10.1.9
+  resolution: "eslint-config-prettier@npm:10.1.9"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: fb61fae9c1ac23afddf046c17437c464ce74d16d86ca1e0ee0705a8c0b89c89baf24420451ae0eafd2789e06de21540b99ca2a8ebae13bcd862c02733df2c160
+  checksum: 527a17b6067b16f1e38809ccf105ed54a89e2aa57739636169499bc9b1ae34de8d2efc0708004b3e89b82ccf2736f9f7c6ae57536bf1b626e4f9e9ee795cc8ae
   languageName: node
   linkType: hard
 
